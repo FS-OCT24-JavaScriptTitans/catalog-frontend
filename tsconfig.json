@@ -9,9 +9,9 @@
     "paths": {
       "@/*": ["*"]
     },
-    "typeRoots": ["node_modules/@types", "src/typings.d.ts"],
-    "target": "es2024",
-    "lib": ["dom", "dom.iterable", "es2024"],
+    "typeRoots": ["node_modules/@types", "declarations.d.ts"],
+    "target": "es2023",
+    "lib": ["dom", "dom.iterable"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -34,6 +34,6 @@
     "declaration": true,
     "incremental": true
   },
-  "include": ["src"],
+  "include": ["src", "declarations.d.ts"],
   "exclude": ["eslint.config.js"]
 }
