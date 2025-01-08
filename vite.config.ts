@@ -15,7 +15,6 @@ export default ({ mode }) => {
         cache: false,
         include: ['src/**/*.ts', 'src/**/*.tsx'],
         exclude: ['node_modules', 'dist'],
-        overrideConfigFile: path.resolve(__dirname, '.eslintrc.cjs'),
       }),
     ],
     resolve: {
