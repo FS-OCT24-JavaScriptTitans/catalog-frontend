@@ -1,3 +1,3 @@
-export interface ICart {
+export interface icart {
   goods: string;
 }
