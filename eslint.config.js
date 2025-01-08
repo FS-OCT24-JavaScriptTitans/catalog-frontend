@@ -6,6 +6,13 @@ import tseslint from 'typescript-eslint';
 import prettier from 'eslint-config-prettier';
 import react from 'eslint-plugin-react';
 
+import parser from '@typescript-eslint/parser';
+import airbnb from 'eslint-config-airbnb';
+import airbnbTypescript from 'eslint-config-airbnb-typescript';
+import airbnbHooks from 'eslint-config-airbnb/hooks';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+
 export default tseslint.config(
   { ignores: ['dist'] },
   {
@@ -19,6 +26,12 @@ export default tseslint.config(
       'react-hooks': reactHooks,
       'react-refresh': reactRefresh,
       react,
+      parser,
+      airbnb,
+      airbnbTypescript,
+      airbnbHooks,
+      jsxA11y,
+      simpleImportSort,
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
@@ -31,6 +44,7 @@ export default tseslint.config(
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
       'react/jsx-props-no-spreading': 'off',
       'react/function-component-definition': 'off',
+      'react/prop-types': 'off',
 
       'no-debugger': 'warn',
       'no-console': ['warn', { allow: ['warn', 'error'] }],

@@ -34,5 +34,6 @@
     "declaration": true,
     "incremental": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["eslint.config.js"]
 }
