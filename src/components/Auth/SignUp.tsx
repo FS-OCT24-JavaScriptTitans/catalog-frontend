@@ -1,27 +1,25 @@
-import { useForm } from 'react-hook-form';
-
-import { signUp } from '@/api/firebase/signUp';
+import { PATH } from '@/constants/path';
+import { useSignUp } from '@/hooks/useSignUp';
+import { AuthForm } from '@/UI/AuthForm/AuthForm';
 
 export const SignUp = () => {
-  const {
-    register,
-    handleSubmit,
-    // formState: { errors },
-  } = useForm();
+  const { register, handleSubmit, errors, onSubmit, isValid } = useSignUp();
 
   return (
-    <form
-      onSubmit={handleSubmit((data) => {
-        const { email, name, password } = data;
-
-        signUp({ email, name, password });
-      })}
-      style={{ width: '300px', margin: '400px auto' }}
-    >
-      <input {...register('name')} />
-      <input {...register('email')} />
-      <input {...register('password')} />
-      <button type="submit">Sign Up</button>
-    </form>
+    <AuthForm
+      title="Sign Up"
+      fields={[
+        { label: 'Name', type: 'text', name: 'name' },
+        { label: 'Email', type: 'email', name: 'email' },
+        { label: 'Password', type: 'password', name: 'password' },
+      ]}
+      onSubmit={handleSubmit(onSubmit)}
+      register={register}
+      errors={errors}
+      isValid={isValid}
+      linkPath={PATH.SIGN_IN}
+      linkLabel="sign in"
+      buttonLabel="Sign Up"
+    />
   );
 };

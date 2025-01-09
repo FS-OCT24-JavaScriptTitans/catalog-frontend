@@ -1,0 +1,25 @@
+@use '../../styles/abstract/mixines' as mixin;
+@use '../../styles/abstract/constants' as constants;
+
+.signin {
+  min-height: 60vh;
+  @include mixin.flex-container(center, center);
+}
+
+.container {
+  width: 250px;
+  @include mixin.flex-container(center, center, column, 20px 0);
+}
+
+.form {
+  width: 100%;
+
+  button {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+
+.title {
+  text-transform: uppercase;
+}

@@ -1,5 +1,5 @@
- 
 import React, { useState } from 'react';
+
 import styles from './Button.module.scss';
 
 type Props = {
@@ -20,7 +20,7 @@ export const Button: React.FC<Props> = ({ label, secondaryLabel, variant = 'prim
 
   return (
     <button
-      type='button'
+      type="button"
       className={`${styles.button} ${styles[`button--${buttonVariant}`]}`}
       onClick={handleClick}
       aria-pressed={isToggled}
