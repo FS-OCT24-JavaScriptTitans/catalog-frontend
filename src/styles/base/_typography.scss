@@ -1,6 +1,10 @@
 @use '../abstract/mixines';
 @use '../abstract/constants';
 
+body {
+  @include mixines.font(14px, 21px);
+}
+
 h1 {
   @include mixines.font(32px, 41px, 800, Mont-Bold, -0.01em);
 }
