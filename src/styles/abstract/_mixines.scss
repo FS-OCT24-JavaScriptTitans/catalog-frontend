@@ -1,3 +1,5 @@
+@use './constants';
+
 @mixin font($size, $height, $weight: 500, $letter: normal, $style: normal) {
   font-size: $size;
   line-height: $height;
@@ -20,5 +22,22 @@
 
   @if $gap {
     gap: $gap;
+  }
+}
+@mixin tablet {
+  @media (min-width: constants.$tablet-min-whidth) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: constants.$laptop-min-whidth) {
+    @content;
+  }
+}
+
+@mixin desctop {
+  @media (min-width: constants.$desktop-min-whidth) {
+    @content;
   }
 }

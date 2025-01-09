@@ -3,7 +3,7 @@ import s from './Button.module.scss';
 import { signInWithGoogle } from '@/api/firebase/signInWithGoogle';
 import useAuthData from '@/hooks/useAuthData';
 
-const GoogleLoginButton = () => {
+const GoogleButton = () => {
   const { saveAuthData } = useAuthData();
 
   const handleLoginWithGoogle = async (): Promise<void> => {
@@ -24,4 +24,4 @@ const GoogleLoginButton = () => {
   );
 };
 
-export default GoogleLoginButton;
+export default GoogleButton;
