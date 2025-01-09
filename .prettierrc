@@ -5,9 +5,12 @@
   "singleQuote": true,
   "useTabs": false,
   "quoteProps": "as-needed",
-  "jsxSingleQuote": true,
+  "jsxSingleQuote": false,
   "trailingComma": "all",
   "bracketSpacing": true,
   "arrowParens": "always",
-  "endOfLine": "auto"
+  "endOfLine": "auto",
+  "experimentalTernaries": true,
+  "singleAttributePerLine": true,
+  "bracketSameLine": false
 }
