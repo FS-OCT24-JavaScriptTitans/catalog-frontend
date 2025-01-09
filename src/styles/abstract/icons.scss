@@ -51,26 +51,14 @@
     }
 
     &--left {
-      transform: rotate(180deg) translate(-3rem, -3rem);
-      transform: rotate(180deg) translate(-3rem, -3rem);
-      transform: rotate(180deg) translate(-3rem, -3rem);
-      transform: rotate(180deg) translate(-3rem, -3rem);
       transform: rotate(180deg);
     }
 
     &--up {
-      transform: rotate(270deg) translate(-3rem, -3rem);
-      transform: rotate(270deg) translate(-3rem, -3rem);
-      transform: rotate(270deg) translate(-3rem, -3rem);
-      transform: rotate(270deg) translate(-3rem, -3rem);
       transform: rotate(270deg);
     }
 
     &--down {
-      transform: rotate(90deg) translate(-3rem, -3rem);
-      transform: rotate(90deg) translate(-3rem, -3rem);
-      transform: rotate(90deg) translate(-3rem, -3rem);
-      transform: rotate(90deg) translate(-3rem, -3rem);
       transform: rotate(90deg);
     }
   }
