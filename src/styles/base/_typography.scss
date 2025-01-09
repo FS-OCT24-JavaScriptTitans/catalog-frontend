@@ -1,27 +1,34 @@
-@use './abstract/typogrphy';
+@use '../abstract/mixines';
+@use '../abstract/constants';
 
 h1 {
-  @include mixin.font(32px, 41px, 800, -0.01em);
+  @include mixines.font(32px, 41px, 800, Mont-Bold, -0.01em);
 }
 
-// h2 {
-//   @include font(22px, 31px, 800);
-// }
-// h3 {
-//   @include font(20px, 26px, 700);
-// }
-// h4 {
-//   @include font(16px, 20px, 700);
-// }
-// .uppercase-text {
-//   @include font(12px, 11px, 700, 0.04em);
-// }
-// .button-text {
-//   @include font(14px, 21px, 600);
-// }
-// .primary-text {
-//   @include font(14px, 21px, 500);
-// }
-// .small-text {
-//   @include font(12px, 15px, 600);
-// }
+h2 {
+  @include mixines.font(22px, 31px, 800, Mont-Bold);
+}
+
+h3 {
+  @include mixines.font(20px, 26px, 700, Mont-Bold);
+}
+
+h4 {
+  @include mixines.font(16px, 20px, 700, Mont-SemiBold);
+}
+
+.uppercase-text {
+  @include mixines.font(12px, 11px, 700, Mont-Bold, 0.04em);
+}
+
+.button-text {
+  @include mixines.font(14px, 21px, 600, Mont-SemiBold);
+}
+
+.primary-text {
+  @include mixines.font(14px, 21px);
+}
+
+.small-text {
+  @include mixines.font(12px, 15px, 600, Mont-SemiBold);
+}
