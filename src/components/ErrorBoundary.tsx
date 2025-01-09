@@ -28,14 +28,12 @@ class ErrorBoundary extends Component<Props, State> {
 
     const { children } = this.props;
 
-    return hasError ? (
-      <>
-        <h1 style={{ textAlign: 'center', margin: '3rem', fontSize: '5rem' }}>Sorry.. there was an error</h1>
-        <Navigate to='/home' />
-      </>
-    ) : (
-      children
-    );
+    return hasError ?
+        <>
+          <h1 style={{ textAlign: 'center', margin: '3rem', fontSize: '5rem' }}>Sorry.. there was an error</h1>
+          <Navigate to="/home" />
+        </>
+      : children;
   }
 }
 
