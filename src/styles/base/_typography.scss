@@ -1,0 +1,27 @@
+@use './abstract/typogrphy';
+
+h1 {
+  @include mixin.font(32px, 41px, 800, -0.01em);
+}
+
+// h2 {
+//   @include font(22px, 31px, 800);
+// }
+// h3 {
+//   @include font(20px, 26px, 700);
+// }
+// h4 {
+//   @include font(16px, 20px, 700);
+// }
+// .uppercase-text {
+//   @include font(12px, 11px, 700, 0.04em);
+// }
+// .button-text {
+//   @include font(14px, 21px, 600);
+// }
+// .primary-text {
+//   @include font(14px, 21px, 500);
+// }
+// .small-text {
+//   @include font(12px, 15px, 600);
+// }

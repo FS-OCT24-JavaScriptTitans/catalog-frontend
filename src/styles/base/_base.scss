@@ -1,0 +1,57 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.page {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+.page:has(.page__menu:target) {
+  overflow: hidden;
+}
+
+body {
+  position: relative;
+}
+
+a,
+input,
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+picture {
+  display: block;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+input,
+textarea {
+  display: block;
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
