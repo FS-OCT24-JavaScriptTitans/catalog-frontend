@@ -1,0 +1,15 @@
+export interface User {
+  name: string;
+  email: string;
+  password: string;
+}
+
+export interface FetchUser {
+  uid: string;
+  name: string;
+  email: string;
+  authProvider: string;
+  accessToken: string;
+  refreshToken: string;
+  expirationTime: number;
+}
