@@ -1,7 +1,7 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import useAuthData from './useAuthDats';
+import useAuthData from './useAuthData';
 
 import { SignInSchema } from '@/utils/validation/userSchema';
 import { signIn } from '@/api/firebase/signIn';

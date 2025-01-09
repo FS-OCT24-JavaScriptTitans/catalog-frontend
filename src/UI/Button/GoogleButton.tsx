@@ -1,7 +1,7 @@
 import s from './Button.module.scss';
 
 import { signInWithGoogle } from '@/api/firebase/signInWithGoogle';
-import useAuthData from '@/hooks/useAuthDats';
+import useAuthData from '@/hooks/useAuthData';
 
 const GoogleLoginButton = () => {
   const { saveAuthData } = useAuthData();

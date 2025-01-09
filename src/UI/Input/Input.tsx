@@ -1,5 +1,6 @@
 import { FieldValues, Path, UseFormRegister } from 'react-hook-form';
 import cn from 'classnames';
+import { memo } from 'react';
 
 import s from './Input.module.scss';
 
@@ -12,7 +13,7 @@ interface Props<T extends FieldValues> {
   isValid: boolean;
 }
 
-export const Input = <T extends FieldValues>(props: Props<T>) => {
+const FormInput = <T extends FieldValues>(props: Props<T>) => {
   const { name, label, register, type, err } = props;
 
   return (
@@ -42,3 +43,5 @@ export const Input = <T extends FieldValues>(props: Props<T>) => {
     </div>
   );
 };
+
+export const Input = memo(FormInput) as <T extends FieldValues>(props: Props<T>) => React.ReactNode;

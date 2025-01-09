@@ -5,7 +5,7 @@ import { PATH } from '@/constants/path';
 import { useAppSelector } from '@/redux/hooks';
 import useTokens from '@/hooks/useTokens';
 import { signInWithToken } from '@/api/firebase/signInWithToken';
-import useAuthData from '@/hooks/useAuthDats';
+import useAuthData from '@/hooks/useAuthData';
 
 const AuthRoute = (): ReactNode => {
   const location = useLocation();
