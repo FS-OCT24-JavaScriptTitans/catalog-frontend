@@ -1,0 +1,70 @@
+.icon {
+  display: block;
+  height: 16px;
+  width: 16px;
+  background-size: cover;
+  background-position: center;
+
+  &--home {
+    background-image: url('../../../public/icons/Home.svg');
+  }
+
+  &--search {
+    background-image: url('../../../public/icons/Search.svg');
+  }
+
+  &--plus {
+    background-image: url('../../../public/icons/Plus.svg');
+  }
+
+  &--minus {
+    background-image: url('../../../public/icons/Minus.svg');
+  }
+
+  &--close {
+    background-image: url('../../../public/icons/Close.svg');
+  }
+
+  &--menu {
+    background-image: url('../../../public/icons/Menu.svg');
+  }
+
+  &--favourites {
+    border: 1px solid #b4bdc3;
+    background-image: url('../../../public/icons/Favourites\ \(Heart\ Like\).svg');
+
+    &:hover {
+      border-color: #313237;
+    }
+  }
+
+  &--shopping-bag {
+    background-image: url('../../../public/icons/Shopping\ bag\ \(Cart\).svg');
+  }
+
+  &__chevron-arrow {
+    border: 1px solid #b4bdc3;
+    background-image: url('../../../public/icons/Chevron\ \(Arrow\ Right\).svg');
+
+    &:hover {
+      border-color: #313237;
+    }
+
+    &--left {
+      transform: rotate(180deg);
+    }
+
+    &--up {
+      transform: rotate(270deg);
+    }
+
+    &--down {
+      transform: rotate(90deg);
+    }
+  }
+
+  &:disabled {
+    filter: drop-shadow(0 10000px 0 #b4bdc3);
+    transform: translateY(-10000px);
+  }
+}
