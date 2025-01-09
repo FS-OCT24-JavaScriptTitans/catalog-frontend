@@ -1,7 +1,27 @@
+@use './constants';
+
 @mixin font($size, $height, $weight: 500, $letter: normal, $style: normal) {
   font-size: $size;
   line-height: $height;
   letter-spacing: $letter;
   font-weight: $weight;
   font-style: $style;
+}
+
+@mixin tablet {
+  @media (min-width: constants.$tablet-min-whidth) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: constants.$laptop-min-whidth) {
+    @content;
+  }
+}
+
+@mixin desctop {
+  @media (min-width: constants.$desktop-min-whidth) {
+    @content;
+  }
 }
