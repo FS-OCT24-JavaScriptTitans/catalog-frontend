@@ -5,9 +5,9 @@ import { getFirebaseErrorMessage } from './getFirebaseErrorMessage';
 import { getUser } from './db/getUser';
 import addUserToDb from './db/addUserToDb';
 
-import { FetchUser, User } from '@/types/User.type';
+import { ResponseUser, User } from '@/types/User.type';
 
-type TSignUp = (data: User) => Promise<FetchUser | string | null>;
+type TSignUp = (data: User) => Promise<ResponseUser | string | null>;
 
 export const signUp: TSignUp = async ({ name, email, password }) => {
   try {

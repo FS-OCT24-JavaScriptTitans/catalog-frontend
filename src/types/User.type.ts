@@ -4,7 +4,7 @@ export interface User {
   password: string;
 }
 
-export interface FetchUser {
+export interface ResponseUser {
   uid: string;
   name: string;
   email: string;

@@ -1,11 +1,11 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useNavigate } from 'react-router';
+
+import useAuthData from './useAuthDats';
 
 import { SignInSchema } from '@/utils/validation/userSchema';
 import { signIn } from '@/api/firebase/signIn';
 import { User } from '@/types/User.type';
-import { PATH } from '@/constants/path';
 
 export const useSignIn = () => {
   const {
@@ -18,13 +18,13 @@ export const useSignIn = () => {
     mode: 'onChange',
   });
 
-  const navigate = useNavigate();
+  const { saveAuthData } = useAuthData();
 
   const onSubmit: SubmitHandler<Pick<User, 'email' | 'password'>> = async ({ email, password }) => {
     const newUser = await signIn({ email, password });
 
     if (newUser) {
-      navigate(PATH.HOME);
+      saveAuthData(newUser);
       reset();
     }
   };

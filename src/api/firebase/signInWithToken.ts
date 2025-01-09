@@ -3,9 +3,9 @@ import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from './firebaseConfig';
 import { getFirebaseErrorMessage } from './getFirebaseErrorMessage';
 
-import { FetchUser } from '@/types/User.type';
+import { ResponseUser } from '@/types/User.type';
 
-type TSignInWithToken = (refreshToken: string) => Promise<FetchUser | string | null>;
+type TSignInWithToken = (refreshToken: string) => Promise<ResponseUser | string | null>;
 
 export const signInWithToken: TSignInWithToken = async (refreshToken) => {
   try {
@@ -13,7 +13,7 @@ export const signInWithToken: TSignInWithToken = async (refreshToken) => {
 
     const docs = await getDocs(q);
 
-    return docs.docs.length !== 0 ? (docs.docs[0].data() as FetchUser) : null;
+    return docs.docs.length !== 0 ? (docs.docs[0].data() as ResponseUser) : null;
   } catch (error) {
     return getFirebaseErrorMessage(error);
   }

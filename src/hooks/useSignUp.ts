@@ -1,11 +1,11 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useNavigate } from 'react-router';
+
+import useAuthData from './useAuthDats';
 
 import { SignUpSchema } from '@/utils/validation/userSchema';
 import { signUp } from '@/api/firebase/signUp';
 import { User } from '@/types/User.type';
-import { PATH } from '@/constants/path';
 
 export const useSignUp = () => {
   const {
@@ -18,14 +18,13 @@ export const useSignUp = () => {
     mode: 'onChange',
   });
 
-  const navigate = useNavigate();
+  const { saveAuthData } = useAuthData();
 
   const onSubmit: SubmitHandler<User> = async ({ name, email, password }) => {
     const newUser = await signUp({ name, email, password });
 
     if (newUser) {
-      navigate(PATH.HOME);
-
+      saveAuthData(newUser);
       reset();
     }
   };

@@ -5,11 +5,11 @@ import { getFirebaseErrorMessage } from './getFirebaseErrorMessage';
 import addUserToDb from './db/addUserToDb';
 import { getUser } from './db/getUser';
 
-import { FetchUser } from '@/types/User.type';
+import { ResponseUser } from '@/types/User.type';
 
 const googleProvider = new GoogleAuthProvider();
 
-type TSignInWithGoogle = () => Promise<string | FetchUser | null>;
+type TSignInWithGoogle = () => Promise<string | ResponseUser | null>;
 
 export const signInWithGoogle: TSignInWithGoogle = async () => {
   try {
