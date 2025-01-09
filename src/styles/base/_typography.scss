@@ -1,32 +1,32 @@
 @use '../abstract/mixines';
-@use '../abstract/constants';
 
 body {
+  font-family: Mont, Verdana, Geneva, Tahoma, sans-serif;
   @include mixines.font(14px, 21px);
 }
 
 h1 {
-  @include mixines.font(32px, 41px, 800, Mont-Bold, -0.01em);
+  @include mixines.font(32px, 41px, 800, -0.01em);
 }
 
 h2 {
-  @include mixines.font(22px, 31px, 800, Mont-Bold);
+  @include mixines.font(22px, 31px, 800);
 }
 
 h3 {
-  @include mixines.font(20px, 26px, 700, Mont-Bold);
+  @include mixines.font(20px, 26px, 700);
 }
 
 h4 {
-  @include mixines.font(16px, 20px, 700, Mont-SemiBold);
+  @include mixines.font(16px, 20px, 700);
 }
 
 .uppercase-text {
-  @include mixines.font(12px, 11px, 700, Mont-Bold, 0.04em);
+  @include mixines.font(12px, 11px, 700, 0.04em);
 }
 
 .button-text {
-  @include mixines.font(14px, 21px, 600, Mont-SemiBold);
+  @include mixines.font(14px, 21px, 600);
 }
 
 .primary-text {
@@ -34,5 +34,5 @@ h4 {
 }
 
 .small-text {
-  @include mixines.font(12px, 15px, 600, Mont-SemiBold);
+  @include mixines.font(12px, 15px, 600);
 }
