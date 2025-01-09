@@ -1,6 +1,8 @@
 import { UseFormRegister, FieldValues, Path } from 'react-hook-form';
 import { BaseSyntheticEvent } from 'react';
 
+import GoogleLoginButton from '../Button/GoogleButton';
+
 import s from './Auth.module.scss';
 
 import { Input } from '@/UI/Input/Input';
@@ -56,6 +58,8 @@ export const AuthForm = <T extends FieldValues>({
 
         <SubmitButton label={buttonLabel} />
       </form>
+
+      <GoogleLoginButton />
 
       <span>OR</span>
 
