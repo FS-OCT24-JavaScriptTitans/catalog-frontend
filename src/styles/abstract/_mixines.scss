@@ -24,6 +24,7 @@
     gap: $gap;
   }
 }
+
 @mixin tablet {
   @media (min-width: constants.$tablet-min-whidth) {
     @content;
