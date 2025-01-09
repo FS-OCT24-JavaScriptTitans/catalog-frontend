@@ -1,0 +1,58 @@
+:root {
+  --button-primary-bg: #313237;
+  --button-primary-color: #fff;
+  --button-hover-bg: #555;
+  --button-selected-bg: #fff;
+  --button-selected-color: #27ae60;
+  --button-border: #e2e6e9;
+}
+
+// .dark-mode {
+//     --button-primary-bg: #905BFF;;
+//     --button-primary-color: #fff;
+//     --button-hover-bg: #A378FF;
+//     --button-selected-bg: #323542;
+//     --button-selected-color: #F1F2F9;
+//     --button-border: #555;
+// }
+
+.button {
+  width: 176px;
+  height: 40px;
+  padding: 0;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }
+
+  &--primary {
+    background-color: var(--button-primary-bg);
+    color: var(--button-primary-color);
+
+    &:hover:not(:disabled) {
+      background-color: var(--button-hover-bg);
+    }
+  }
+
+  &--selected {
+    background-color: var(--button-selected-bg);
+    color: var(--button-selected-color);
+    border: 1px solid var(--button-border);
+
+    &:hover:not(:disabled) {
+      background-color: var(--button-hover-bg);
+    }
+  }
+}
