@@ -21,7 +21,7 @@
 }
 
 @mixin desctop {
-  @media (min-width: constants.$desktop-min-whidth) {
+  @media (min-width: constants.$desctop-min-whidth) {
     @content;
   }
 }
