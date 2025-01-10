@@ -15,6 +15,14 @@
   --dark-text-color: #75767f;
 }
 
+#root {
+  --main-text-color: var(--light-main-text-color);
+}
+
+#root.dark {
+  --main-text-color-dark: var(--dark-main-text-color);
+}
+
 // TRANSITION
 $transition-time: 0.5s;
 $tablet-min-whidth: 640px;
