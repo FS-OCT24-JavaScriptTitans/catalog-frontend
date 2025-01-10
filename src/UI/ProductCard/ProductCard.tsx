@@ -2,6 +2,7 @@ import React from 'react';
 
 import srcImg from '../../../public/img/phones/apple-iphone-11/black/00.webp';
 import { Button } from '../Button/Button';
+import { Specifications } from '../Specifications/Specifications';
 
 import styles from './ProductCard.module.scss';
 
@@ -77,20 +78,7 @@ export const ProductCard: React.FC = () => (
         <span className={styles.card__old_value}>$899</span>
       </div>
       <div className={styles.create_line}></div>
-      <div className={styles.specifications}>
-        <div className={styles.spec_item}>
-          <span className={styles.spec_name}>Screen</span>
-          <span className={styles.spec_value}>5.8” OLED</span>
-        </div>
-        <div className={styles.spec_item}>
-          <span className={styles.spec_name}>Capacity</span>
-          <span className={styles.spec_value}>64 GB</span>
-        </div>
-        <div className={styles.spec_item}>
-          <span className={styles.spec_name}>RAM</span>
-          <span className={styles.spec_value}>4 GB</span>
-        </div>
-      </div>
+      <Specifications />
       <div className="actions">
         <Button
           label="Add to cart"
