@@ -1,26 +1,38 @@
 :root {
-  --white-color: #fff;
   --green-color: #27ae60;
   --red-color: #eb5757;
-  --gray-color: #b4bdc3;
   --purple-color: #905bff;
   --hover-purple-color: #a378ff;
   --light-main-text-color: #313237;
   --light-text-color: #89939a;
-  --light-border-color: #e2e6e9;
+  --light-border-icon-color: #b4bdc3;
+  --light-element-color: #e2e6e9;
+  --white-color: #fff;
+  --light-hover-color: #e2e6e9;
   --dark-main-text-color: #f1f2f9;
   --dark-primary-color: #0f1121;
-  --dark-card-bg-color: #161827;
-  --dark-icon-bg-color: #3b3e4a;
   --dark-text-color: #75767f;
+  --dark-element-color: #3b3e4a;
+  --dark-icon-bg-color: #323542;
+  --dark-hover-color: #4a4d58;
 }
 
 #root {
-  --main-text-color: var(--light-main-text-color);
+  --main-bg-color: var(--white-color);
+  --main-color: var(--light-main-text-color);
+  --text-color: var(--light-text-color);
+  --icon-bg-color: var(--white-color);
+  --border-icon-color: var(--light-border-icon-color);
+  --element-color: var(--light-element-color);
 }
 
 #root.dark {
-  --main-text-color: var(--dark-main-text-color);
+  --main-bg-color: var(--dark-primary-color);
+  --main-color: var(--dark-main-text-color);
+  --text-color: var(--dark-text-color);
+  --icon-bg-color: var(--dark-icon-bg-color);
+  --border-icon-color: var(--dark-icon-bg-color);
+  --element-color: var(--dark-element-color);
 }
 
 // TRANSITION
