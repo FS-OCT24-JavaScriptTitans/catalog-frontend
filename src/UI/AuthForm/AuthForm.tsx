@@ -1,14 +1,14 @@
 import { UseFormRegister, FieldValues, Path } from 'react-hook-form';
 import { BaseSyntheticEvent } from 'react';
 
-import GoogleLoginButton from '../Button/GoogleButton';
+import { Button } from '../Button/Button';
 
 import s from './Auth.module.scss';
 
 import { Input } from '@/UI/Input/Input';
-import { SubmitButton } from '@/UI/Button/SubmitButton';
 import { CustomLink } from '@/UI/Link/Link';
 import { PATH } from '@/constants/path';
+import GoogleButton from '@/components/Auth/GoogleButton';
 
 interface AuthFormProps<T extends FieldValues> {
   title: string;
@@ -37,7 +37,7 @@ export const AuthForm = <T extends FieldValues>({
   linkLabel,
   buttonLabel,
 }: AuthFormProps<T>) => (
-  <article className={s.signin}>
+  <article className={s.auth}>
     <div className={s.container}>
       <h2 className={s.title}>{title}</h2>
       <form
@@ -56,12 +56,15 @@ export const AuthForm = <T extends FieldValues>({
           />
         ))}
 
-        <SubmitButton label={buttonLabel} />
+        <Button
+          label={buttonLabel}
+          type="submit"
+        />
       </form>
 
-      <GoogleLoginButton />
-
       <span>OR</span>
+
+      <GoogleButton />
 
       <CustomLink
         path={linkPath}
