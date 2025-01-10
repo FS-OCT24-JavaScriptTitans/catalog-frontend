@@ -68,6 +68,7 @@ export default tseslint.config(
       'import/no-nodejs-modules': 'warn',
       'import/order': [2, { 'newlines-between': 'always' }],
       'import/newline-after-import': [2, { count: 1 }],
+      'import/no-unresolved': 'warn',
 
       'no-debugger': 'warn',
       'no-console': ['warn', { allow: ['warn', 'error'] }],

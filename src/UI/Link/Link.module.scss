@@ -1,0 +1,10 @@
+@use '../../styles/abstract/constants' as constants;
+
+.link {
+  text-transform: uppercase;
+  color: constants.$text-color;
+
+  &:hover {
+    color: constants.$main-text-color;
+  }
+}
