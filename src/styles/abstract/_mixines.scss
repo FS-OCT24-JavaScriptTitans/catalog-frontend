@@ -8,6 +8,23 @@
   font-style: $style;
 }
 
+@mixin border($size, $color, $raduis: none) {
+  border: $size solid $color;
+  border-radius: $raduis;
+}
+
+@mixin flex-container($align-items: center, $justify-content: center, $flex-direction: row, $gap: null, $wrap: nowrap) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $flex-direction;
+  flex-wrap: $wrap;
+
+  @if $gap {
+    gap: $gap;
+  }
+}
+
 @mixin tablet {
   @media (min-width: constants.$tablet-min-whidth) {
     @content;

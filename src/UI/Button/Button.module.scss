@@ -1,3 +1,5 @@
+@use '../../styles/abstract/constants' as constants;
+
 :root {
   --button-primary-bg: #313237;
   --button-primary-color: #fff;
@@ -53,6 +55,7 @@
 
     &:hover:not(:disabled) {
       background-color: var(--button-hover-bg);
+      color: constants.$color-white;
     }
   }
 }
