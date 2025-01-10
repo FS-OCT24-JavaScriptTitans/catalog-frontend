@@ -1,0 +1,16 @@
+:root {
+  --white: #fff;
+  --color-green: #27ae60;
+  --color-red: #eb5757;
+  --color-gray: #b4bdc3;
+  --color-purple: #905bff;
+  --hover-purple: #a378ff;
+  --light-main-text: #313237;
+  --light-text-color: #89939a;
+  --light-border-color: #e2e6e9;
+  --dark-main-text-color: #f1f2f9;
+  --dark-primary-color: #0f1121;
+  --dark-card-bg-color: #161827;
+  --dark-icon-bg-color: #3b3e4a;
+  --dark-text-color: #75767f;
+}
