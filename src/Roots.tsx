@@ -32,6 +32,12 @@ export const Root = () => (
             path={PATH.CART}
             element={<Pages.CartPage />}
           />
+
+          {/*  PHONES */}
+          <Route
+            path={PATH.PHONES}
+            element={<Pages.PhonesPage />}
+          />
         </Route>
 
         {/* Auth Route */}
