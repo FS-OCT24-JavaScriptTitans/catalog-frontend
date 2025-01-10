@@ -32,6 +32,12 @@ export const Root = () => (
             path={PATH.CART}
             element={<Pages.CartPage />}
           />
+
+          {/*  FAVORITES */}
+          <Route
+            path={PATH.FAVORITES}
+            element={<Pages.FavoritesPage />}
+          />
         </Route>
 
         {/* Auth Route */}
