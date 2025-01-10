@@ -2,12 +2,11 @@ import { Navigate, Routes, Route, BrowserRouter } from 'react-router-dom';
 import { Suspense } from 'react';
 import { ToastContainer } from 'react-toastify';
 
-import { App } from './App';
 import { Loader } from './components/Loader/Loader';
 import { PATH } from './constants/path';
-import SignInPage from './pages/SignInPage';
-import SignUpPage from './pages/SignUpPage';
-// import AuthRoute from './routing/AuthRoute';
+import { Pages } from './routing/routes';
+import AuthRoute from './routing/AuthRoute';
+import { App } from './App';
 
 export const Root = () => (
   <BrowserRouter>
@@ -18,22 +17,34 @@ export const Root = () => (
           path={PATH.HOME}
           element={<App />}
         >
+          {/*  HOME */}
+          <Route
+            index
+            element={<Pages.HomePage />}
+          />
           <Route
             path="/home"
             element={<Navigate to={PATH.HOME} />}
           />
+
+          {/*  CART */}
+          <Route
+            path={PATH.CART}
+            element={<Pages.CartPage />}
+          />
         </Route>
 
-        {/* <Route element={<AuthRoute />}> */}
-        <Route
-          path={PATH.SIGN_IN}
-          element={<SignInPage />}
-        />
-        <Route
-          path={PATH.SIGN_UP}
-          element={<SignUpPage />}
-        />
-        {/* </Route> */}
+        {/* Auth Route */}
+        <Route element={<AuthRoute />}>
+          <Route
+            path={PATH.SIGN_IN}
+            element={<Pages.SignInPage />}
+          />
+          <Route
+            path={PATH.SIGN_UP}
+            element={<Pages.SignUpPage />}
+          />
+        </Route>
       </Routes>
     </Suspense>
   </BrowserRouter>
