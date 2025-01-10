@@ -1,3 +1,20 @@
+:root {
+  --white-color: #fff;
+  --green-color: #27ae60;
+  --red-color: #eb5757;
+  --gray-color: #b4bdc3;
+  --purple-color: #905bff;
+  --hover-purple-color: #a378ff;
+  --light-main-text-color: #313237;
+  --light-text-color: #89939a;
+  --light-border-color: #e2e6e9;
+  --dark-main-text-color: #f1f2f9;
+  --dark-primary-color: #0f1121;
+  --dark-card-bg-color: #161827;
+  --dark-icon-bg-color: #3b3e4a;
+  --dark-text-color: #75767f;
+}
+
 // TRANSITION
 $transition-time: 0.5s;
 $tablet-min-whidth: 640px;
