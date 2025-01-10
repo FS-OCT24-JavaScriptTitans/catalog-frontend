@@ -37,7 +37,7 @@ export const AuthForm = <T extends FieldValues>({
   linkLabel,
   buttonLabel,
 }: AuthFormProps<T>) => (
-  <article className={s.signin}>
+  <article className={s.auth}>
     <div className={s.container}>
       <h2 className={s.title}>{title}</h2>
       <form

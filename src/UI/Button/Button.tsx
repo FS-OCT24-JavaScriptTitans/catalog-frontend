@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import s from './Button.module.scss';
 
-type ButtonProps = {
+type Props = {
   label: string;
   secondaryLabel?: string;
   isSelected?: boolean;
@@ -11,7 +11,7 @@ type ButtonProps = {
   onClick?: () => void;
 };
 
-export const Button: FC<ButtonProps> = ({ label, secondaryLabel, onClick, isSelected = false, type = 'button' }) => (
+export const Button: FC<Props> = ({ label, secondaryLabel, onClick, isSelected = false, type = 'button' }) => (
   <button
     type={type}
     className={cn(s.button, 'primary-text', { [s.selected]: isSelected })}

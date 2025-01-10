@@ -5,7 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import { Loader } from './components/Loader/Loader';
 import { PATH } from './constants/path';
 import { Pages } from './routing/routes';
-// import AuthRoute from './routing/AuthRoute';
+import AuthRoute from './routing/AuthRoute';
 import { App } from './App';
 
 export const Root = () => (
@@ -35,16 +35,16 @@ export const Root = () => (
         </Route>
 
         {/* Auth Route */}
-        {/* <Route element={<AuthRoute />}> */}
-        <Route
-          path={PATH.SIGN_IN}
-          element={<Pages.SignInPage />}
-        />
-        <Route
-          path={PATH.SIGN_UP}
-          element={<Pages.SignUpPage />}
-        />
-        {/* </Route> */}
+        <Route element={<AuthRoute />}>
+          <Route
+            path={PATH.SIGN_IN}
+            element={<Pages.SignInPage />}
+          />
+          <Route
+            path={PATH.SIGN_UP}
+            element={<Pages.SignUpPage />}
+          />
+        </Route>
       </Routes>
     </Suspense>
   </BrowserRouter>
