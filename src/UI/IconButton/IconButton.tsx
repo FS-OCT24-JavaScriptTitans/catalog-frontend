@@ -4,7 +4,7 @@ import cn from 'classnames';
 import s from './IconButton.module.scss';
 
 interface Props {
-  onClick: () => void;
+  onClick?: () => void;
   children: ReactNode;
   hasBorder?: boolean;
 }
