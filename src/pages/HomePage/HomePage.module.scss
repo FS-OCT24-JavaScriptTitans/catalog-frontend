@@ -1,12 +1,19 @@
-@import '../../styles/fonts/mont';
+@use '../../styles/abstract/constants' as constants;
+@use '../../styles/abstract/mixines' as mixines;
 
 .welcomeMessage {
-  font-family: Mont-Bold, Arial, sans-serif;
-  font-weight: 800;
+  color: constants.$main-text-color;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   margin: 24px 16px;
   line-height: 40px;
+
+  @include mixines.tablet {
+    margin: 32px 24px;
+  }
+
+  @include mixines.desctop {
+    margin: 56px 32px;
+  }
 }
