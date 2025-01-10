@@ -41,31 +41,6 @@
   }
 }
 
-.specifications {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 8px;
-  gap: 8px;
-}
-
-.spec_item {
-  display: flex;
-  justify-content: space-between;
-
-  // padding: 4px 0;
-}
-
-.spec_name {
-  font-size: 12px;
-  color: #89939a;
-}
-
-.spec_value {
-  font-size: 12px;
-  font-weight: bold;
-  color: #313237;
-}
-
 .create_line {
   border-top: 1px solid #e2e6e9;
   margin-bottom: 8px;
