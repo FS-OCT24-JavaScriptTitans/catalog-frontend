@@ -1,7 +1,6 @@
-import s from './Button.module.scss';
-
 import { signInWithGoogle } from '@/api/firebase/signInWithGoogle';
 import useAuthData from '@/hooks/useAuthData';
+import { Button } from '@/UI/Button/Button';
 
 const GoogleButton = () => {
   const { saveAuthData } = useAuthData();
@@ -13,14 +12,12 @@ const GoogleButton = () => {
   };
 
   return (
-    <button
-      type="button"
-      className={`${s.button} ${s[`button--selected`]}`}
+    <Button
+      label="Sign in with Google"
       onClick={handleLoginWithGoogle}
-      style={{ width: '100%' }}
-    >
-      Sign In With Google
-    </button>
+      isSelected={true}
+      secondaryLabel="Sign in with Google"
+    />
   );
 };
 

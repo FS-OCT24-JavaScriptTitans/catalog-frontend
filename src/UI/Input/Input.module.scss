@@ -1,5 +1,5 @@
 @use '../../styles/abstract/mixines' as mixin;
-@use '../../styles/abstract/constants' as constants;
+@use '../../styles/abstract/constants';
 
 .label {
   display: flex;
@@ -10,16 +10,16 @@
 
 .input_error {
   margin-block: 0.5rem;
-  color: constants.$color-red;
+  color: var(--red-color);
   font-weight: 500;
 }
 
 .input {
   padding: 10px 12px;
-  color: constants.$text-color;
-  @include mixin.border(2px, constants.$main-text-color, 5px);
+  color: var(--text-color);
+  @include mixin.border(2px, var(--main-color));
 }
 
 .input-invalid {
-  @include mixin.border(2px, constants.$color-red);
+  @include mixin.border(2px, var(--red-color));
 }

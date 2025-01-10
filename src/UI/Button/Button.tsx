@@ -1,31 +1,23 @@
-import React, { useState } from 'react';
+import { FC } from 'react';
+import cn from 'classnames';
 
-import styles from './Button.module.scss';
+import s from './Button.module.scss';
 
-type Props = {
+type ButtonProps = {
   label: string;
   secondaryLabel?: string;
-  onClick: () => void;
-  variant: 'primary' | 'selected';
+  isSelected?: boolean;
+  type?: 'button' | 'submit' | 'reset';
+  onClick?: () => void;
 };
 
-export const Button: React.FC<Props> = ({ label, secondaryLabel, variant = 'primary' }) => {
-  const [isToggled, setIsToggled] = useState(false);
-
-  const handleClick = () => {
-    setIsToggled(!isToggled);
-  };
-
-  const buttonVariant = isToggled ? 'selected' : variant;
-
-  return (
-    <button
-      type="button"
-      className={`${styles.button} ${styles[`button--${buttonVariant}`]}`}
-      onClick={handleClick}
-      aria-pressed={isToggled}
-    >
-      {isToggled ? secondaryLabel : label}
-    </button>
-  );
-};
+export const Button: FC<ButtonProps> = ({ label, secondaryLabel, onClick, isSelected = false, type = 'button' }) => (
+  <button
+    type={type}
+    className={cn(s.button, 'primary-text', { [s.selected]: isSelected })}
+    onClick={onClick}
+    aria-pressed={isSelected}
+  >
+    {isSelected && secondaryLabel ? secondaryLabel : label}
+  </button>
+);
