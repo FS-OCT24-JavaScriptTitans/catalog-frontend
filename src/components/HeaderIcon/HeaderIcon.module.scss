@@ -1,0 +1,13 @@
+@use '../../styles/abstract/mixines';
+
+.container {
+  padding: 24px;
+  @include mixines.border(1px, var(--element-color));
+  border-bottom: 0;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  margin: auto;
+}

@@ -1,0 +1,10 @@
+@use '../../styles/abstract/mixines';
+
+.logo {
+  width: 100%;
+  max-width: 64px;
+
+  @include mixines.laptop {
+    max-width: 80px;
+  }
+}
