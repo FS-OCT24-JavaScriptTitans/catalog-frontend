@@ -1,4 +1,5 @@
-@use '../../styles/fonts/mont';
+@use '../../styles/base/typography';
+@use '../../styles/abstract/constants';
 
 .container {
   padding: 32px;
@@ -6,7 +7,7 @@
 
 .card {
   width: 272px;
-  border: 1px solid #f3f3f3;
+  border: 1px solid constants.$color-white;
 
   &__image {
     display: block;
@@ -14,11 +15,10 @@
   }
 
   &__title {
+    display: block;
     padding-top: 16px;
-    font-size: 14px;
-    line-height: 21px;
     margin-bottom: 8px;
-    color: #313237;
+    color: constants.$main-text-color;
   }
 
   &__price {
@@ -30,18 +30,23 @@
     font-weight: 700;
     font-size: 22px;
     line-height: 31px;
-    color: #313237;
+    color: constants.$main-text-color;
   }
 
   &__old_value {
     font-size: 22px;
     text-decoration: line-through;
-    color: #89939a;
+    color: constants.$text-color;
     margin-left: 10px;
   }
 }
 
 .create_line {
-  border-top: 1px solid #e2e6e9;
+  border-top: 1px solid constants.$border-color;
   margin-bottom: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
 }

@@ -1,0 +1,16 @@
+@use '../../styles/abstract/constants';
+
+.iconButton {
+  width: 40px;
+  height: 40px;
+  border: 1px solid constants.$color-gray;
+  cursor: pointer;
+
+  &.selected {
+    background-color: constants.$border-color;
+  }
+
+  &:hover {
+    border-color: constants.$main-text-color;
+  }
+}
