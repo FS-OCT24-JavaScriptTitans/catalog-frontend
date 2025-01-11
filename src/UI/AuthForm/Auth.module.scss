@@ -1,7 +1,6 @@
 @use '../../styles/abstract/mixines' as mixin;
-@use '../../styles/abstract/constants' as constants;
 
-.signin {
+.auth {
   min-height: 60vh;
   @include mixin.flex-container(center, center);
 }
