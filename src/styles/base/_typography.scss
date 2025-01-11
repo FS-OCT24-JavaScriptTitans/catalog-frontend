@@ -2,6 +2,7 @@
 
 body {
   font-family: Mont, Verdana, Geneva, Tahoma, sans-serif;
+
   @include mixines.font(14px, 21px);
 }
 

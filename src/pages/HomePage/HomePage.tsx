@@ -1,9 +1,8 @@
 import React from 'react';
 
-import Favorites from '../../../public/icons/Favourites.svg?react';
-
 import styles from './HomePage.module.scss';
 
+import Favorites from '@/assets/Favourites.svg?react';
 import Container from '@/components/Container/Container';
 
 const HomePage: React.FC = () => (

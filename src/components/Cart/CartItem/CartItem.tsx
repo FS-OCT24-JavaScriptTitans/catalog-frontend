@@ -1,14 +1,19 @@
 import cn from 'classnames';
-
-import Plus from '../../../../public/icons/Plus.svg?react';
-import Minus from '../../../../public/icons/Minus.svg?react';
-import Close from '../../../../public/icons/Close.svg?react';
+import { FC } from 'react';
 
 import s from './CartItem.module.scss';
 
 import { IconButton } from '@/UI/IconButton/IconButton';
+import { CartProduct } from '@/types/Cart.types';
+import Plus from '@/assets//Plus.svg?react';
+import Minus from '@/assets//Minus.svg?react';
+import Close from '@/assets/Close.svg?react';
 
-export const CartItem = () => (
+interface Props {
+  product: CartProduct;
+}
+
+export const CartItem: FC<Props> = ({ product }) => (
   <article className={s.cartItem}>
     <div className={s.description}>
       <button className={s.close}>
@@ -17,11 +22,11 @@ export const CartItem = () => (
       <div className={s.imgContainer}>
         <img
           className={s.img}
-          src="img/phones/apple-iphone-11/black/00.webp"
-          alt="Apple iPhone 11 128GB Black"
+          src={product.images[0]}
+          alt={product.name}
         />
       </div>
-      <h3 className={cn('primary-text', s.title)}>Apple iPhone 11 128GB Black</h3>
+      <h3 className={cn('primary-text', s.title)}>{product.name}</h3>
     </div>
 
     <div className={s.controls}>
@@ -30,7 +35,7 @@ export const CartItem = () => (
           <Minus />
         </IconButton>
 
-        <div className={s.quantity}>1</div>
+        <div className={s.quantity}>{product.quantity}</div>
 
         <IconButton onClick={() => {}}>
           <Plus />
