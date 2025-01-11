@@ -1,9 +1,9 @@
 import React from 'react';
 
 import { Button } from '../Button/Button';
+import { IconButton } from '../IconButton/IconButton';
 import { Specifications } from '../Specifications/Specifications';
 import IconContainer from '../IconContainer/IcontContainer';
-import { IconButton } from '../IconButton/IconButton';
 
 import styles from './ProductCard.module.scss';
 
