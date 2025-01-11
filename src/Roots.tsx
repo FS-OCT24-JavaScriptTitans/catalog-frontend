@@ -26,13 +26,15 @@ export const Root = () => (
             path="/home"
             element={<Navigate to={PATH.HOME} />}
           />
-
           {/*  CART */}
           <Route
             path={PATH.CART}
             element={<Pages.CartPage />}
           />
-
+          {/*  PHONES */}
+          <Route
+            path={PATH.PHONES}
+            element={<Pages.PhonesPage />}
           {/*  FAVORITES */}
           <Route
             path={PATH.FAVORITES}
