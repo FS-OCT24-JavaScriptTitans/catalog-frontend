@@ -1,3 +1,4 @@
+//eslint-disable-next-line
 import { useCookies } from 'react-cookie';
 
 import { COOKIES } from '@/constants/cookies';

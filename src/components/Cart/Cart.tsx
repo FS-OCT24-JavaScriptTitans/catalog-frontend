@@ -7,12 +7,9 @@ import { Summary } from './Summary/Summary';
 import { CartList } from './CartList/CartList';
 
 import { useAppSelector } from '@/redux/hooks';
-import { calculateCartSummary } from '@/utils/cart';
 
 export const Cart = () => {
   const cart = useAppSelector((state) => state.cart.cart);
-
-  const cartSummary = calculateCartSummary(cart);
 
   return (
     <Container>
@@ -20,7 +17,7 @@ export const Cart = () => {
       <div className={s.wrapper}>
         <CartList cart={cart} />
 
-        <Summary summary={cartSummary} />
+        <Summary cart={cart} />
       </div>
     </Container>
   );
