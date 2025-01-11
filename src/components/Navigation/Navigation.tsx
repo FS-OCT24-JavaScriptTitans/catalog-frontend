@@ -18,7 +18,7 @@ const navLinks = {
   Home: PATH.HOME,
   Phones: '/phones',
   Tablets: '/tablets',
-  Accessories: '/Accessories',
+  Accessories: '/accessories',
 };
 
 const navLinkStyle = ({ isActive }: NavLinkRenderProps) => `uppercase-text ${s.link} ${isActive ? s.active_link : ''}`;
