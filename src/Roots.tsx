@@ -26,13 +26,16 @@ export const Root = () => (
             path="/home"
             element={<Navigate to={PATH.HOME} />}
           />
-
           {/*  CART */}
           <Route
             path={PATH.CART}
             element={<Pages.CartPage />}
           />
-
+          {/*  PHONES */}
+          <Route
+            path={PATH.PHONES}
+            element={<Pages.PhonesPage />}
+          />
           {/*  FAVORITES */}
           <Route
             path={PATH.FAVORITES}
@@ -43,13 +46,18 @@ export const Root = () => (
         {/* Auth Route */}
         <Route element={<AuthRoute />}>
           <Route
-            path={PATH.SIGN_IN}
-            element={<Pages.SignInPage />}
-          />
-          <Route
-            path={PATH.SIGN_UP}
-            element={<Pages.SignUpPage />}
-          />
+            path={PATH.AUTH}
+            element={<Pages.AuthPage />}
+          >
+            <Route
+              path={`/auth${PATH.SIGN_IN}`}
+              element={<Pages.SignInPage />}
+            />
+            <Route
+              path={`/auth${PATH.SIGN_UP}`}
+              element={<Pages.SignUpPage />}
+            />
+          </Route>
         </Route>
       </Routes>
     </Suspense>

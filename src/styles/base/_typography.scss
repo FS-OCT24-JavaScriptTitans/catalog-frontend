@@ -2,12 +2,10 @@
 
 body {
   font-family: Mont, Verdana, Geneva, Tahoma, sans-serif;
-
   @include mixines.font(14px, 21px);
 }
 
-h1,
-.title {
+h1 {
   @include mixines.font(32px, 41px, 800, -0.01em);
 
   @include mixines.tablet {

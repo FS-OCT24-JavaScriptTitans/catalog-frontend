@@ -2,15 +2,10 @@ import React from 'react';
 
 import styles from './HomePage.module.scss';
 
-import Favorites from '@/assets/Favourites.svg?react';
 import Container from '@/components/Container/Container';
 
 const HomePage: React.FC = () => (
   <main>
-    <Favorites
-      fill="red"
-      color="red"
-    />
     <h1 className={styles.welcomeMessage}>Welcome to Nice Gadgets store!</h1>
     <Container className="slider">
       <h2>Slider</h2>
