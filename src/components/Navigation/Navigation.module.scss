@@ -15,30 +15,51 @@ $top-height: 65.6px;
 .link {
   color: var(--text-color);
   text-decoration: none;
-  padding: 8px 0;
   text-transform: uppercase;
+  position: relative;
+  line-height: calc($top-height / 3);
+
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--text-color);
+    transform: scale(0);
+    transition: transform 0.3s;
+  }
+
+  &:hover::after {
+    transform: scale(1);
+    color: var(--text-color);
+  }
 }
 
 .active_link {
   color: var(--main-color);
-  border-bottom: 2px solid var(--main-color);
+
+  &::after {
+    transform: scale(1);
+    background-color: var(--main-color);
+  }
 }
 
-.desctop {
+.desktop {
   display: none;
 }
 
 .navigation {
   width: 100vw;
   background-color: var(--main-bg-color);
-  text-transform: uppercase;
+  height: calc(100vh - $top-height - 2px);
   position: absolute;
-  height: calc(100vh - $top-height);
   top: $top-height;
   display: flex;
   flex-direction: column;
+  text-transform: uppercase;
   justify-content: space-between;
-  margin-top: 24px;
+  padding-top: 24px;
 
   &__links {
     @include mixines.flex-container(center, space-between, column, 24px);
@@ -56,10 +77,10 @@ $top-height: 65.6px;
   }
 
   .link {
-    padding: 0;
+    line-height: $top-height;
   }
 
-  .desctop {
+  .desktop {
     display: flex;
     justify-content: space-between;
     width: 100vw;

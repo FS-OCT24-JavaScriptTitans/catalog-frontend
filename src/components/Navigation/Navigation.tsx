@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-// import cn from 'classnames'
 
 import menu from '../../../public/icons/Menu.svg';
 import closeMenu from '../../../public/icons/Close.svg';
@@ -8,12 +6,19 @@ import cart from '../../../public/icons/Shopping bag (Cart).svg';
 import favorites from '../../../public/icons/Favourites (Heart Like).svg';
 import Logo from '../Logo/Logo';
 import HeaderIcon from '../HeaderIcon/HeaderIcont';
+import NavigationLink from '../NavLink/NavigationLink';
 // import Toggle from '../Toogle/Toggle';
 
-// import NavigationLink from './NavigationLink';
 import s from './Navigation.module.scss';
 
-// import { PATH } from '@/constants/path';
+import { PATH } from '@/constants/path';
+
+const navLinks = {
+  Home: PATH.HOME,
+  Phones: '/phones',
+  Tablets: '/tablets',
+  Accessories: '/Accessories',
+};
 
 const Navigation = () => {
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
@@ -24,51 +29,32 @@ const Navigation = () => {
         <Logo />
       </span>
 
-      {/* <nav className={`${s.navigation} ${isOpenMobileMenu && s.module}`}> */}
-      <nav className={isOpenMobileMenu ? s.navigation : s.desctop}>
+      <nav className={isOpenMobileMenu ? s.navigation : s.desktop}>
         <div className={s.navigation__links}>
-          <NavLink
-            to="/"
-            className={({ isActive }) => `uppercase-text ${s.link} ${isActive ? s.active_link : ''}`}
-            onClick={() => setIsOpenMobileMenu(false)}
-          >
-            Home
-          </NavLink>
-          <NavLink
-            to="/phones"
-            className={({ isActive }) => `uppercase-text ${s.link} ${isActive ? s.active_link : ''}`}
-          >
-            Phones
-          </NavLink>
-          <NavLink
-            to="/tablet"
-            className={({ isActive }) => `uppercase-text ${s.link} ${isActive ? s.active_link : ''}`}
-          >
-            Tablet
-          </NavLink>
-          <NavLink
-            to="/acses"
-            className={({ isActive }) => `uppercase-text ${s.link} ${isActive ? s.active_link : ''}`}
-          >
-            Acsesuares
-          </NavLink>
+          {Object.entries(navLinks).map(([link, path]) => (
+            <NavigationLink
+              key={link}
+              to={path}
+              link={link}
+              className={({ isActive }) => `uppercase-text ${s.link} ${isActive ? s.active_link : ''}`}
+              handleClick={() => setIsOpenMobileMenu(false)}
+            />
+          ))}
         </div>
 
         <div className={s.navigation__icons}>
-          <NavLink
-            to="/cart"
-            className={({ isActive }) => `uppercase-text ${s.link} ${isActive ? s.active : ''}`}
-            onClick={() => setIsOpenMobileMenu(false)}
-          >
-            <HeaderIcon icon={cart} />
-          </NavLink>
-
-          <NavLink
-            to="/favorites"
-            className={({ isActive }) => (isActive ? s.active : s.link)}
-          >
-            <HeaderIcon icon={favorites} />
-          </NavLink>
+          <NavigationLink
+            to={PATH.CART}
+            link={<HeaderIcon icon={cart} />}
+            className={({ isActive }) => `uppercase-text ${s.link} ${isActive ? s.active_link : ''}`}
+            handleClick={() => setIsOpenMobileMenu(false)}
+          />
+          <NavigationLink
+            to={'/favorites'}
+            link={<HeaderIcon icon={favorites} />}
+            className={({ isActive }) => `uppercase-text ${s.link} ${isActive ? s.active_link : ''}`}
+            handleClick={() => setIsOpenMobileMenu(false)}
+          />
         </div>
       </nav>
 
