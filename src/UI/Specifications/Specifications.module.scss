@@ -14,9 +14,9 @@
 }
 
 .spec_name {
-  color: constants.$text-color;
+  color: var(--text-color);
 }
 
 .spec_value {
-  color: constants.$main-text-color;
+  color: var(--main-color);
 }
