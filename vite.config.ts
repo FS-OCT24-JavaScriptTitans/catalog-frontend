@@ -33,6 +33,9 @@ export default ({ mode }) => {
     define: {
       'process.env': env,
     },
+    build: {
+      sourcemap: true,
+    },
     css: {
       modules: {
         localsConvention: 'camelCase',

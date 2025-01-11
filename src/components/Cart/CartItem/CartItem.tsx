@@ -42,7 +42,7 @@ export const CartItem: FC<Props> = ({ product }) => (
         </IconButton>
       </div>
 
-      <h2 className={s.price}>$799</h2>
+      <h2 className={s.price}>${product.priceRegular}</h2>
     </div>
   </article>
 );
