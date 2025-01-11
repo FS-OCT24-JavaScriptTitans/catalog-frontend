@@ -8,4 +8,6 @@ export const Pages = {
   HomePage: lazy(() => import('../pages/HomePage/HomePage')),
   FavoritesPage: lazy(() => import('../pages/FavoritesPage/FavoritesPage')),
   AuthPage: lazy(() => import('../pages/AuthPage/AuthPage')),
+  TabletsPage: lazy(() => import('../pages/TabletsPage/TabletsPage')),
+  AccessoriesPage: lazy(() => import('../pages/AccessoriesPage/AccessoriesPage')),
 };

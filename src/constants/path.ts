@@ -6,4 +6,6 @@ export enum PATH {
   PHONES = '/phones',
   FAVORITES = '/favorites',
   AUTH = '/auth',
+  TABLETS = '/tablets',
+  ACCESSORIES = '/accessories',
 }

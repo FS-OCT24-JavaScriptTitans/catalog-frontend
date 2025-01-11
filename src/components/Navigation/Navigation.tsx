@@ -3,8 +3,8 @@ import { NavLinkRenderProps } from 'react-router-dom';
 
 import menu from '../../../public/icons/Menu.svg';
 import closeMenu from '../../../public/icons/Close.svg';
-import cart from '../../../public/icons/Shopping bag (Cart).svg';
-import favorites from '../../../public/icons/Favourites (Heart Like).svg';
+import cart from '../../../public/icons/Shopping.svg';
+import favorites from '../../../public/icons/Favourites.svg';
 import Logo from '../Logo/Logo';
 import IconContainer from '../../UI/IconContainer/IcontContainer';
 import NavigationLink from '../../UI/NavLink/NavigationLink';
@@ -16,9 +16,9 @@ import { PATH } from '@/constants/path';
 
 const navLinks = {
   Home: PATH.HOME,
-  Phones: '/phones',
-  Tablets: '/tablets',
-  Accessories: '/accessories',
+  Phones: PATH.PHONES,
+  Tablets: PATH.TABLETS,
+  Accessories: PATH.ACCESSORIES,
 };
 
 const navLinkStyle = ({ isActive }: NavLinkRenderProps) => `uppercase-text ${s.link} ${isActive ? s.active_link : ''}`;
@@ -53,7 +53,7 @@ const Navigation = () => {
             handleClick={() => setIsOpenMobileMenu(false)}
           />
           <NavigationLink
-            to={'/favorites'}
+            to={PATH.FAVORITES}
             label={<IconContainer icon={favorites} />}
             className={navLinkStyle}
             handleClick={() => setIsOpenMobileMenu(false)}
