@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './IconButton.module.scss';
 
-// interface IconButtonProps {
+// type Props = {
 //   onClick: () => void;
 //   children: React.ReactNode;
 // }

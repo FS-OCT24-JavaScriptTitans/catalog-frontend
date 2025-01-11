@@ -2,15 +2,14 @@
 
 .iconButton {
   width: 40px;
-  height: 40px;
-  border: 1px solid constants.$color-gray;
+  border: 1px solid var(--border-icon-color);
   cursor: pointer;
 
   &.selected {
-    background-color: constants.$border-color;
+    background-color: var(--element-color);
   }
 
   &:hover {
-    border-color: constants.$main-text-color;
+    border-color: var(--main-color);
   }
 }
