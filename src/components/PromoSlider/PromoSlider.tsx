@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
+import { Swiper as SwiperClass } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 
@@ -7,57 +8,65 @@ import 'swiper/css/pagination';
 import styles from './PromoSlider.module.scss';
 
 const slides = [
-  {
-    id: 1,
-    title: 'Now available in our store!',
-    subtitle: 'iPhone 14 Pro',
-    description: 'Pro. Beyond.',
-    image: 'public/img/phones/apple-iphone-14/purple/00.webp',
-  },
-  {
-    id: 2,
-    title: 'Unleash the power!',
-    subtitle: 'iPad Pro',
-    description: 'Performance redefined.',
-    image: 'public/img/tablets/apple-ipad-mini-6th-gen/spacegray/02.webp',
-  },
-  {
-    id: 3,
-    title: 'Stay connected!',
-    subtitle: 'Apple Watch',
-    description: 'On your wrist.',
-    image: 'public/img/accessories/apple-watch-series-4/silver/00.webp',
-  },
+  'public/img/slides/banner/bgc-mobile.png',
+  'public/img/slides/banner/banner-accessories.png',
+  'public/img/slides/banner/banner-tablets.png',
 ];
 
-const PromoSlider: React.FC = () => (
-  <div className={styles.sliderContainer}>
-    <Swiper
-      modules={[Pagination]}
-      spaceBetween={10}
-      slidesPerView={1}
-      loop
-      pagination={{ clickable: true }}
-    >
-      {slides.map((slide) => (
-        <SwiperSlide key={slide.id}>
-          <div className={styles.slide}>
-            <div className={styles.textContainer}>
-              <h2 className={styles.title}>{slide.title}</h2>
-              <h1 className={styles.subtitle}>{slide.subtitle}</h1>
-              <p className={styles.description}>{slide.description}</p>
+const PromoSlider: React.FC = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const swiperRef = useRef<SwiperClass | null>(null);
 
-              <img
-                src={slide.image}
-                alt={slide.subtitle}
-                className={styles.image}
-              />
-            </div>
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
-  </div>
-);
+  const handleBulletClick = (index: number) => {
+    if (swiperRef.current) {
+      swiperRef.current.slideToLoop(index);
+      setActiveIndex(index);
+    }
+  };
+
+  return (
+    <div>
+      <div className={styles.sliderContainer}>
+        <Swiper
+          modules={[Pagination]}
+          spaceBetween={10}
+          slidesPerView={1}
+          loop
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+          pagination={false}
+        >
+          {slides.map((slide, index) => (
+            <SwiperSlide
+              key={index}
+              className={styles.swiperSlide}
+            >
+              <div className={styles.imageContainer}>
+                <img
+                  src={slide}
+                  alt={`Slide ${index + 1}`}
+                  className={styles.image}
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      {/* Кастомна пагінація */}
+      <div className={styles.paginationWrapper}>
+        {slides.map((_, index) => (
+          <div
+            key={index}
+            className={`${styles.bullet} ${index === activeIndex ? styles.active : ''}`}
+            onClick={() => handleBulletClick(index)}
+          ></div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default PromoSlider;
