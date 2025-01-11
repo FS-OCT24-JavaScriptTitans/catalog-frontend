@@ -1,12 +1,13 @@
 import { useState } from 'react';
+import { NavLinkRenderProps } from 'react-router-dom';
 
 import menu from '../../../public/icons/Menu.svg';
 import closeMenu from '../../../public/icons/Close.svg';
 import cart from '../../../public/icons/Shopping bag (Cart).svg';
 import favorites from '../../../public/icons/Favourites (Heart Like).svg';
 import Logo from '../Logo/Logo';
-import HeaderIcon from '../HeaderIcon/HeaderIcont';
-import NavigationLink from '../NavLink/NavigationLink';
+import IconContainer from '../../UI/IconContainer/IcontContainer';
+import NavigationLink from '../../UI/NavLink/NavigationLink';
 // import Toggle from '../Toogle/Toggle';
 
 import s from './Navigation.module.scss';
@@ -20,6 +21,8 @@ const navLinks = {
   Accessories: '/Accessories',
 };
 
+const navLinkStyle = ({ isActive }: NavLinkRenderProps) => `uppercase-text ${s.link} ${isActive ? s.active_link : ''}`;
+
 const Navigation = () => {
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
 
@@ -31,12 +34,12 @@ const Navigation = () => {
 
       <nav className={isOpenMobileMenu ? s.navigation : s.desktop}>
         <div className={s.navigation__links}>
-          {Object.entries(navLinks).map(([link, path]) => (
+          {Object.entries(navLinks).map(([label, path]) => (
             <NavigationLink
-              key={link}
+              key={label}
               to={path}
-              link={link}
-              className={({ isActive }) => `uppercase-text ${s.link} ${isActive ? s.active_link : ''}`}
+              label={label}
+              className={navLinkStyle}
               handleClick={() => setIsOpenMobileMenu(false)}
             />
           ))}
@@ -45,14 +48,14 @@ const Navigation = () => {
         <div className={s.navigation__icons}>
           <NavigationLink
             to={PATH.CART}
-            link={<HeaderIcon icon={cart} />}
-            className={({ isActive }) => `uppercase-text ${s.link} ${isActive ? s.active_link : ''}`}
+            label={<IconContainer icon={cart} />}
+            className={navLinkStyle}
             handleClick={() => setIsOpenMobileMenu(false)}
           />
           <NavigationLink
             to={'/favorites'}
-            link={<HeaderIcon icon={favorites} />}
-            className={({ isActive }) => `uppercase-text ${s.link} ${isActive ? s.active_link : ''}`}
+            label={<IconContainer icon={favorites} />}
+            className={navLinkStyle}
             handleClick={() => setIsOpenMobileMenu(false)}
           />
         </div>
@@ -62,7 +65,7 @@ const Navigation = () => {
         className={s.navigation__burger}
         onClick={() => setIsOpenMobileMenu(!isOpenMobileMenu)}
       >
-        <HeaderIcon icon={isOpenMobileMenu ? closeMenu : menu} />
+        <IconContainer icon={isOpenMobileMenu ? closeMenu : menu} />
       </span>
       {/* <Toggle /> */}
     </header>
