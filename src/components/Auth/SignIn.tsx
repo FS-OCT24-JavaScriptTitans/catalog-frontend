@@ -1,6 +1,5 @@
 import { AuthForm } from '../../UI/AuthForm/AuthForm';
 
-import { PATH } from '@/constants/path';
 import { useSignIn } from '@/hooks/useSignIn';
 
 export const SignIn = () => {
@@ -8,7 +7,6 @@ export const SignIn = () => {
 
   return (
     <AuthForm
-      title="Sign In"
       fields={[
         { label: 'Email', type: 'email', name: 'email' },
         { label: 'Password', type: 'password', name: 'password' },
@@ -17,8 +15,6 @@ export const SignIn = () => {
       register={register}
       errors={errors}
       isValid={isValid}
-      linkPath={PATH.SIGN_UP}
-      linkLabel="sign up"
       buttonLabel="Sign In"
     />
   );

@@ -1,0 +1,32 @@
+@use '../../styles/abstract/constants';
+@use '../../styles/abstract/mixines' as mixin;
+
+.auth {
+  width: 300px;
+  margin: 50px auto;
+  padding-block: 20px;
+  @include mixin.border(2px, var(--main-color));
+}
+
+.nav {
+  margin: 1rem 0 2rem;
+
+  @include mixin.flex-container(center, space-around);
+}
+
+.link {
+  border: 1px solid var(--element-color);
+  color: var(--text-color);
+  padding: 5px 10px;
+
+  &:hover {
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+  }
+}
+
+.active {
+  background-color: var(--main-bg-color);
+  color: var(--green-color);
+  border: 1px solid var(--element-color);
+}
