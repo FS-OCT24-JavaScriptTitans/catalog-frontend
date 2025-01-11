@@ -1,10 +1,10 @@
-import s from './HeaderIcon.module.scss';
+import s from './IconContainer.module.scss';
 
 type Props = {
   icon: string;
 };
 
-const HeaderIcon: React.FC<Props> = ({ icon }) => (
+const IconContainer: React.FC<Props> = ({ icon }) => (
   <div className={s.container}>
     <img
       src={icon}
@@ -14,4 +14,4 @@ const HeaderIcon: React.FC<Props> = ({ icon }) => (
   </div>
 );
 
-export default HeaderIcon;
+export default IconContainer;
