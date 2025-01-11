@@ -4,4 +4,5 @@ export enum PATH {
   SIGN_UP = '/signup',
   CART = '/cart',
   FAVORITES = '/favorites',
+  AUTH = '/auth',
 }

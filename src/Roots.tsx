@@ -43,13 +43,18 @@ export const Root = () => (
         {/* Auth Route */}
         <Route element={<AuthRoute />}>
           <Route
-            path={PATH.SIGN_IN}
-            element={<Pages.SignInPage />}
-          />
-          <Route
-            path={PATH.SIGN_UP}
-            element={<Pages.SignUpPage />}
-          />
+            path={PATH.AUTH}
+            element={<Pages.AuthPage />}
+          >
+            <Route
+              path={`/auth${PATH.SIGN_IN}`}
+              element={<Pages.SignInPage />}
+            />
+            <Route
+              path={`/auth${PATH.SIGN_UP}`}
+              element={<Pages.SignUpPage />}
+            />
+          </Route>
         </Route>
       </Routes>
     </Suspense>

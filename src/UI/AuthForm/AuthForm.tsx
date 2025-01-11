@@ -6,7 +6,7 @@ import { Button } from '../Button/Button';
 import s from './Auth.module.scss';
 
 import { Input } from '@/UI/Input/Input';
-import { CustomLink } from '@/UI/Link/Link';
+// import { CustomLink } from '@/UI/Link/Link';
 import { PATH } from '@/constants/path';
 import GoogleButton from '@/components/Auth/GoogleButton';
 
@@ -27,19 +27,19 @@ interface AuthFormProps<T extends FieldValues> {
 }
 
 export const AuthForm = <T extends FieldValues>({
-  title,
+  // title,
   fields,
   onSubmit,
   register,
   errors,
   isValid,
-  linkPath,
-  linkLabel,
+  // linkPath,
+  // linkLabel,
   buttonLabel,
 }: AuthFormProps<T>) => (
   <article className={s.auth}>
     <div className={s.container}>
-      <h2 className={s.title}>{title}</h2>
+      {/* <h2 className={s.title}>{title}</h2> */}
       <form
         className={s.form}
         onSubmit={onSubmit}
@@ -62,14 +62,14 @@ export const AuthForm = <T extends FieldValues>({
         />
       </form>
 
-      <span>OR</span>
-
       <GoogleButton />
+
+      {/* <span>OR</span>
 
       <CustomLink
         path={linkPath}
         label={linkLabel}
-      />
+      /> */}
     </div>
   </article>
 );

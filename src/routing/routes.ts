@@ -6,4 +6,5 @@ export const Pages = {
   CartPage: lazy(() => import('../pages/CartPage/CartPage')),
   HomePage: lazy(() => import('../pages/HomePage/HomePage')),
   FavoritesPage: lazy(() => import('../pages/FavoritesPage/FavoritesPage')),
+  AuthPage: lazy(() => import('../pages/AuthPage/AuthPage')),
 };
