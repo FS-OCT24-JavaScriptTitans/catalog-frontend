@@ -5,7 +5,8 @@ body {
   @include mixines.font(14px, 21px);
 }
 
-h1 {
+h1,
+.title {
   @include mixines.font(32px, 41px, 800, -0.01em);
 
   @include mixines.tablet {

@@ -1,0 +1,72 @@
+@use '@/styles/abstract/mixines';
+@use '@/styles/abstract/constants';
+
+.cart {
+  &__item {
+    @include mixines.border(1px, var(--element-color));
+    padding: 16px;
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include mixines.tablet {
+      padding: 24px;
+
+      @include mixines.flex-container(center, space-between, row, 0 24px);
+    }
+  }
+}
+
+.title,
+.price {
+  color: var(--main-color);
+}
+
+.img {
+  height: 100%;
+
+  &__container {
+    width: 80px;
+    height: 80px;
+    padding: 7px;
+    margin-right: 24px;
+  }
+}
+
+.description {
+  margin-bottom: 16px;
+
+  @include mixines.flex-container(center);
+}
+
+.close {
+  margin-right: 16px;
+
+  > svg {
+    color: var(--border-icon-color);
+  }
+
+  &:hover {
+    > svg {
+      color: var(--main-color);
+    }
+  }
+
+  @include mixines.tablet {
+    margin-right: 32px;
+  }
+}
+
+.controls {
+  @include mixines.flex-container(center, space-between, row, 0 24px);
+
+  &__container {
+    @include mixines.flex-container(center);
+  }
+}
+
+.quantity {
+  padding-inline: 13px;
+}

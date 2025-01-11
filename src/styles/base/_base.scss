@@ -75,3 +75,12 @@ button {
 .invisible {
   opacity: 0;
 }
+
+.section {
+  margin: 0 auto;
+}
+
+.line {
+  height: 1px;
+  background-color: var(--element-color);
+}

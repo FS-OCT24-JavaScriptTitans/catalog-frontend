@@ -1,0 +1,19 @@
+@use '@/styles/abstract/mixines';
+@use '@/styles/abstract/constants';
+
+.sectionTitle,
+.list {
+  margin-bottom: 32px;
+}
+
+.list {
+  @include mixines.desctop {
+    grid-column: 1/17;
+  }
+}
+
+.wrapper {
+  @include mixines.desctop {
+    @include mixines.page-grid;
+  }
+}
