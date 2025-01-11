@@ -1,7 +1,6 @@
 @use '../../styles/abstract/mixines' as mixin;
 
 .auth {
-  min-height: 60vh;
   @include mixin.flex-container(center, center);
 }
 

@@ -5,5 +5,5 @@ export enum PATH {
   CART = '/cart',
   PHONES = '/phones',
   FAVORITES = '/favorites',
-
+  AUTH = '/auth',
 }
