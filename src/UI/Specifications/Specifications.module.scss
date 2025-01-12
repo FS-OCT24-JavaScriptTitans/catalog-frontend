@@ -1,16 +1,14 @@
 @use '../../styles/base/typography';
 @use '../../styles/abstract/constants';
+@use '../../styles/abstract/mixines' as mixin;
 
 .specifications {
-  display: flex;
-  flex-direction: column;
+  @include mixin.flex-container(null, space-between, column, 8px);
   margin-bottom: 8px;
-  gap: 8px;
 }
 
 .spec_item {
-  display: flex;
-  justify-content: space-between;
+  @include mixin.flex-container(center, space-between);
 }
 
 .spec_name {
