@@ -8,7 +8,6 @@ import favorites from '../../../public/icons/Favourites.svg';
 import Logo from '../Logo/Logo';
 import IconContainer from '../../UI/IconContainer/IcontContainer';
 import NavigationLink from '../../UI/NavLink/NavigationLink';
-// import Toggle from '../Toogle/Toggle';
 
 import s from './Navigation.module.scss';
 
@@ -67,7 +66,6 @@ const Navigation = () => {
       >
         <IconContainer icon={isOpenMobileMenu ? closeMenu : menu} />
       </span>
-      {/* <Toggle /> */}
     </header>
   );
 };
