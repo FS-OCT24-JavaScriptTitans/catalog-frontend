@@ -1,11 +1,11 @@
 import cn from 'classnames';
 
 import Container from '../Container/Container';
+import EmpthyCart from '../../UI/EmpthyCart/EmpthyCart';
 
 import s from './Cart.module.scss';
 import { Summary } from './Summary/Summary';
 import { CartList } from './CartList/CartList';
-import EmpthyCart from './EmpthyCart/EmpthyCart';
 
 import { useAppSelector } from '@/redux/hooks';
 
