@@ -2,14 +2,17 @@ import React from 'react';
 
 import styles from './IconButton.module.scss';
 
-// type Props = {
-//   onClick: () => void;
-//   children: React.ReactNode;
-// }
+type Props = {
+  onClick?: () => void;
+  children: React.ReactNode;
+};
 
-export const IconButton: React.FC = () => (
+export const IconButton: React.FC<Props> = ({ onClick, children }) => (
   <button
+    onClick={onClick}
     className={styles.iconButton}
     type="button"
-  ></button>
+  >
+    {children}
+  </button>
 );

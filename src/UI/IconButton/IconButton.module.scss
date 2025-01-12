@@ -3,7 +3,6 @@
 .iconButton {
   width: 40px;
   border: 1px solid var(--border-icon-color);
-  cursor: pointer;
 
   &.selected {
     background-color: var(--element-color);
