@@ -2,11 +2,13 @@ import React from 'react';
 
 import { Button } from '../Button/Button';
 import { Specifications } from '../Specifications/Specifications';
+import IconContainer from '../IconContainer/IcontContainer';
+import { IconButton } from '../IconButton/IconButton';
 
 import styles from './ProductCard.module.scss';
 
-import { Product } from '@/types/Product';
 import { Spec } from '@/types/Spec';
+import { Product } from '@/types/Product';
 
 type Props = {
   product: Product;
@@ -21,7 +23,7 @@ export const ProductCard: React.FC<Props> = ({ product, specs }) => (
         alt="Product image"
         className={styles.card__image}
       />
-      <a className={`${styles.card__title} primary-text`}>Apple iPhone Xs 64GB Silver (iMT9G2FS/A)</a>
+      <a className={`${styles.card__title} primary-text`}>{product.title}</a>
       <div className={styles.card__price}>
         <span className={styles.card__value}>${product.price}</span>
         {product.fullPrice && <span className={styles.card__old_value}>${product.fullPrice}</span>}
@@ -33,7 +35,9 @@ export const ProductCard: React.FC<Props> = ({ product, specs }) => (
           label="Add to cart"
           secondaryLabel="Added"
         />
-        {/* <IconButton></IconButton> */}
+        <IconButton>
+          <IconContainer icon="/icons/Favourites.svg" />
+        </IconButton>
       </div>
     </div>
   </article>
