@@ -1,8 +1,10 @@
 import { Outlet } from 'react-router-dom';
 
+import Navigation from './components/Navigation/Navigation';
+
 export const App = () => (
   <>
-    <nav>Some Navigation</nav>
+    <Navigation />
     <main>
       <div className="container">
         <Outlet />

@@ -1,0 +1,19 @@
+@use '../../styles/abstract/mixines';
+@use '../../styles/abstract/constants';
+
+.container {
+  padding: 24px;
+  @include mixines.border(1px, var(--element-color));
+  border-bottom: 0;
+  transition: all constants.$transition-time;
+
+  &:hover {
+    border-color: var(--main-color);
+  }
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  margin: auto;
+}
