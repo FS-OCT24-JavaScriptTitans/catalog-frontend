@@ -36,6 +36,7 @@ export const Root = () => (
             path={PATH.PHONES}
             element={<Pages.PhonesPage />}
           />
+
           {/*  FAVORITES */}
           <Route
             path={PATH.FAVORITES}

@@ -12,6 +12,8 @@ import { useOrder } from '@/hooks/useOrder';
 import notification from '@/utils/notification';
 import { PATH } from '@/constants/path';
 import { clearCart } from '@/redux/slices/cart/carrt.slice';
+import { ProductPrices } from '@/UI/ProductPrices/ProductPrices';
+import { ProductPrice } from '@/UI/ProductPrices/ProductPice';
 
 interface Props {
   cart: CartProduct[];
@@ -23,7 +25,7 @@ export const Summary: FC<Props> = ({ cart }) => {
   const { setOrder } = useOrder();
   const navigate = useNavigate();
 
-  const summary = calculateCartSummary(cart);
+  const { totalDiscountPrice, totalQuantity, totalPrice } = calculateCartSummary(cart);
 
   const handleSetOrder = () => () => {
     if (!user) {
@@ -39,11 +41,16 @@ export const Summary: FC<Props> = ({ cart }) => {
     navigate(PATH.HOME);
   };
 
+  const priceDiff = totalPrice - totalDiscountPrice;
+
   return (
     <article className={s.container}>
       <div>
-        <h2 className={cn('title', s.price)}>${summary.totalPrice}</h2>
-        <h4 className={(cn('primary-text'), s.amount)}>Total for {summary.totalQuantity} items</h4>
+        {priceDiff ?
+          <ProductPrices prices={{ priceDiscount: totalDiscountPrice, priceRegular: totalPrice }} />
+        : <ProductPrice price={totalPrice} />}
+
+        <h4 className={(cn('primary-text'), s.amount)}>Total for {totalQuantity} items</h4>
         <div className={cn('line', s.line)}></div>
       </div>
 

@@ -1,0 +1,17 @@
+@use '@/styles/abstract/constants';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.price {
+  color: var(--main-color);
+
+  &__old {
+    font-weight: 600;
+    text-decoration: line-through;
+    color: var(--text-color);
+  }
+}

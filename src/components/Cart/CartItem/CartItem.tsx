@@ -10,12 +10,14 @@ import Minus from '@/assets//Minus.svg?react';
 import Close from '@/assets/Close.svg?react';
 import { useAppDispatch } from '@/redux/hooks';
 import { increaseQuantity, removeQuantity } from '@/redux/slices/cart/carrt.slice';
+import { ProductPrices } from '@/UI/ProductPrices/ProductPrices';
 
 interface Props {
   product: CartProduct;
 }
 
 export const CartItem: FC<Props> = ({ product }) => {
+  const { priceDiscount, priceRegular, quantity, name, images, id } = product;
   const dispatch = useAppDispatch();
 
   const handleIncrease = (id: string) => () => dispatch(increaseQuantity({ id }));
@@ -30,27 +32,27 @@ export const CartItem: FC<Props> = ({ product }) => {
         <div className={s.imgContainer}>
           <img
             className={s.img}
-            src={product.images[0]}
-            alt={product.name}
+            src={images[0]}
+            alt={name}
           />
         </div>
-        <h3 className={cn('primary-text', s.title)}>{product.name}</h3>
+        <h3 className={cn('primary-text', s.title)}>{name}</h3>
       </div>
 
       <div className={s.controls}>
         <div className={s.controlsContainer}>
-          <IconButton onClick={handleRemove(product.id)}>
+          <IconButton onClick={handleRemove(id)}>
             <Minus />
           </IconButton>
 
-          <div className={s.quantity}>{product.quantity}</div>
+          <div className={s.quantity}>{quantity}</div>
 
-          <IconButton onClick={handleIncrease(product.id)}>
+          <IconButton onClick={handleIncrease(id)}>
             <Plus />
           </IconButton>
         </div>
 
-        <h2 className={s.price}>${product.priceRegular}</h2>
+        <ProductPrices prices={{ priceDiscount, priceRegular }} />
       </div>
     </article>
   );
