@@ -7,10 +7,11 @@ import s from './Summary.module.scss';
 import { Button } from '@/UI/Button/Button';
 import { CartProduct } from '@/types/Cart.types';
 import { calculateCartSummary } from '@/utils/cart/calculateCartSummary';
-import { useAppSelector } from '@/redux/hooks';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { useOrder } from '@/hooks/useOrder';
 import notification from '@/utils/notification';
 import { PATH } from '@/constants/path';
+import { clearCart } from '@/redux/slices/cart/carrt.slice';
 
 interface Props {
   cart: CartProduct[];
@@ -18,6 +19,7 @@ interface Props {
 
 export const Summary: FC<Props> = ({ cart }) => {
   const user = useAppSelector((state) => state.user.user);
+  const dispatch = useAppDispatch();
   const { setOrder } = useOrder();
   const navigate = useNavigate();
 
@@ -32,6 +34,7 @@ export const Summary: FC<Props> = ({ cart }) => {
 
     setOrder(cart, user?.uid);
     notification('success', 'An order was created');
+    dispatch(clearCart());
 
     navigate(PATH.HOME);
   };
