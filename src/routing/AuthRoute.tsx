@@ -20,11 +20,7 @@ const AuthRoute = (): ReactNode => {
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (user) return;
-
-    if (!refreshToken) {
-      return;
-    }
+    if (user || !refreshToken) return;
 
     setLoading(true);
 
@@ -32,12 +28,11 @@ const AuthRoute = (): ReactNode => {
       .then((res) => {
         if (res) {
           saveAuthData(res);
-
           navigate(pathname.startsWith(PATH.AUTH) ? PATH.HOME : pathname);
         }
       })
       .catch(() => {
-        navigate(PATH.SIGN_IN);
+        navigate(PATH.AUTH + PATH.SIGN_IN);
       })
       .finally(() => setLoading(false));
   }, [refreshToken, user, saveAuthData, navigate, pathname]);
