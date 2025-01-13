@@ -1,0 +1,52 @@
+@use '../../styles/base/typography';
+@use '../../styles/abstract/constants';
+
+.container {
+  padding: 32px;
+}
+
+.card {
+  width: 272px;
+  border: 1px solid var(--element-color);
+
+  &__image {
+    display: block;
+    margin: 0 auto 8px;
+  }
+
+  &__title {
+    display: block;
+    padding-top: 16px;
+    margin-bottom: 8px;
+    color: var(--main-color);
+  }
+
+  &__price {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  &__value {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 31px;
+    color: var(--main-color);
+  }
+
+  &__old_value {
+    font-size: 22px;
+    text-decoration: line-through;
+    color: var(--text-color);
+    margin-left: 10px;
+  }
+}
+
+.create_line {
+  border-top: 1px solid var(--element-color);
+  margin-bottom: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
