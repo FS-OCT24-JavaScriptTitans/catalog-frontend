@@ -1,3 +1,43 @@
+@use '@/styles/abstract/mixines' as mixin;
+@use '@/styles/abstract/constants';
+
 .container {
-  display: block;
+  padding: 32px 16px;
+  @include mixin.flex-container(stretch, start, column, 32px);
+
+  @include mixin.tablet {
+    padding: 32px;
+    @include mixin.flex-container(stretch, start, row, 130px);
+  }
+
+  @include mixin.desctop {
+    padding: 32px;
+    @include mixin.flex-container(stretch, start, row, 290px);
+  }
+}
+
+.links {
+  @include mixin.flex-container(stretch, start, column, 16px);
+
+  @include mixin.tablet {
+    @include mixin.flex-container(center, start, row, 13px);
+  }
+
+  @include mixin.desctop {
+    @include mixin.flex-container(center, start, row, 107px);
+  }
+}
+
+.link {
+  @include mixin.font(12px, 11px, 700);
+  color: var(--text-color);
+  text-transform: uppercase;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.create_line {
+  border-top: 1px solid var(--element-color);
 }
