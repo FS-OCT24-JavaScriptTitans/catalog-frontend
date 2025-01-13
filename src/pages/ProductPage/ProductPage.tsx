@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-// import './ProductPage.scss';
+import './_product.scss';
 // import cn from 'classNames';
 
 import phones from '../../../public/api/phones.json';
