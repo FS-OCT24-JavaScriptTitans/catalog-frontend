@@ -17,56 +17,56 @@ export const Root = () => (
           path={PATH.HOME}
           element={<App />}
         >
-          {/*  HOME */}
-          <Route
-            index
-            element={<Pages.HomePage />}
-          />
-          <Route
-            path="/home"
-            element={<Navigate to={PATH.HOME} />}
-          />
-          {/*  CART */}
-          <Route
-            path={PATH.CART}
-            element={<Pages.CartPage />}
-          />
-          {/*  PHONES */}
-          <Route
-            path={PATH.PHONES}
-            element={<Pages.PhonesPage />}
-          />
-
-          <Route
-            path={PATH.TABLETS}
-            element={<Pages.TabletsPage />}
-          />
-          <Route
-            path={PATH.ACCESSORIES}
-            element={<Pages.AccessoriesPage />}
-          />
-
-          {/*  FAVORITES */}
-          <Route
-            path={PATH.FAVORITES}
-            element={<Pages.FavoritesPage />}
-          />
-        </Route>
-
-        {/* Auth Route */}
-        <Route element={<AuthRoute />}>
-          <Route
-            path={PATH.AUTH}
-            element={<Pages.AuthPage />}
-          >
+          <Route element={<AuthRoute />}>
+            {/*  HOME */}
             <Route
-              path={`/auth${PATH.SIGN_IN}`}
-              element={<Pages.SignInPage />}
+              index
+              element={<Pages.HomePage />}
             />
             <Route
-              path={`/auth${PATH.SIGN_UP}`}
-              element={<Pages.SignUpPage />}
+              path="/home"
+              element={<Navigate to={PATH.HOME} />}
             />
+            {/*  CART */}
+            <Route
+              path={PATH.CART}
+              element={<Pages.CartPage />}
+            />
+            {/*  PHONES */}
+            <Route
+              path={PATH.PHONES}
+              element={<Pages.PhonesPage />}
+            />
+
+            <Route
+              path={PATH.TABLETS}
+              element={<Pages.TabletsPage />}
+            />
+            <Route
+              path={PATH.ACCESSORIES}
+              element={<Pages.AccessoriesPage />}
+            />
+
+            {/*  FAVORITES */}
+            <Route
+              path={PATH.FAVORITES}
+              element={<Pages.FavoritesPage />}
+            />
+
+            {/* Auth Route */}
+            <Route
+              path={PATH.AUTH}
+              element={<Pages.AuthPage />}
+            >
+              <Route
+                path={`/auth${PATH.SIGN_IN}`}
+                element={<Pages.SignInPage />}
+              />
+              <Route
+                path={`/auth${PATH.SIGN_UP}`}
+                element={<Pages.SignUpPage />}
+              />
+            </Route>
           </Route>
         </Route>
       </Routes>

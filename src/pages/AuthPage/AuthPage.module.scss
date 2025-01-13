@@ -9,7 +9,7 @@
 }
 
 .nav {
-  margin: 1rem 0 2rem;
+  margin-bottom: 32px;
 
   @include mixin.flex-container(center, space-around);
 }

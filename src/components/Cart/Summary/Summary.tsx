@@ -1,6 +1,7 @@
 import cn from 'classnames';
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { shallowEqual } from 'react-redux';
 
 import s from './Summary.module.scss';
 
@@ -14,13 +15,14 @@ import { PATH } from '@/constants/path';
 import { clearCart } from '@/redux/slices/cart/carrt.slice';
 import { ProductPrices } from '@/UI/ProductPrices/ProductPrices';
 import { ProductPrice } from '@/UI/ProductPrices/ProductPice';
+import { selectUser } from '@/redux/selectors';
 
 interface Props {
   cart: CartProduct[];
 }
 
 export const Summary: FC<Props> = ({ cart }) => {
-  const user = useAppSelector((state) => state.user.user);
+  const user = useAppSelector(selectUser, shallowEqual);
   const dispatch = useAppDispatch();
   const { setOrder } = useOrder();
   const navigate = useNavigate();
