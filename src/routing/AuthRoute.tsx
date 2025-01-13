@@ -23,8 +23,6 @@ const AuthRoute = (): ReactNode => {
     if (user) return;
 
     if (!refreshToken) {
-      navigate(PATH.SIGN_IN);
-
       return;
     }
 
