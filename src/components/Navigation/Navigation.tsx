@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import { NavLinkRenderProps } from 'react-router-dom';
 
+import menu from '../../../public/icons/Menu.svg';
+import closeMenu from '../../../public/icons/Close.svg';
+import cart from '../../../public/icons/Shopping.svg';
+import favorites from '../../../public/icons/Favourites.svg';
 import Logo from '../Logo/Logo';
 import IconContainer from '../../UI/IconContainer/IcontContainer';
 import NavigationLink from '../../UI/NavLink/NavigationLink';
 
 import s from './Navigation.module.scss';
 
-import favorites from '@/assets/Favourites.svg';
-import cart from '@/assets/Shopping.svg';
-import closeMenu from '@/assets/Close.svg';
-import menu from '@/assets/Menu.svg';
 import { PATH } from '@/constants/path';
 
 const navLinks = {
