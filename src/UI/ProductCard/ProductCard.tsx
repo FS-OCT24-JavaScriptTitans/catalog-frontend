@@ -3,10 +3,10 @@ import React from 'react';
 import { Button } from '../Button/Button';
 import { IconButton } from '../IconButton/IconButton';
 import { Specifications } from '../Specifications/Specifications';
-import IconContainer from '../IconContainer/IcontContainer';
 
 import styles from './ProductCard.module.scss';
 
+import Favourites from '@/assets/Favourites.svg?react';
 import { Spec } from '@/types/Spec';
 import { Product } from '@/types/Product';
 
@@ -35,8 +35,11 @@ export const ProductCard: React.FC<Props> = ({ product, specs }) => (
           label="Add to cart"
           secondaryLabel="Added"
         />
-        <IconButton>
-          <IconContainer icon="/icons/Favourites.svg" />
+        <IconButton
+          onClick={() => {}}
+          hasBorder
+        >
+          <Favourites />
         </IconButton>
       </div>
     </div>
