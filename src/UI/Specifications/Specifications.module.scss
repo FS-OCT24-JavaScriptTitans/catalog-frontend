@@ -1,0 +1,20 @@
+@use '../../styles/base/typography';
+@use '../../styles/abstract/constants';
+@use '../../styles/abstract/mixines' as mixin;
+
+.specifications {
+  @include mixin.flex-container(null, space-between, column, 8px);
+  margin-bottom: 8px;
+}
+
+.spec_item {
+  @include mixin.flex-container(center, space-between);
+}
+
+.spec_name {
+  color: var(--text-color);
+}
+
+.spec_value {
+  color: var(--main-color);
+}
