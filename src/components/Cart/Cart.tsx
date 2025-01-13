@@ -1,4 +1,5 @@
 import cn from 'classnames';
+import { shallowEqual } from 'react-redux';
 
 import Container from '../Container/Container';
 import EmpthyCart from '../../UI/EmptyCart/EmptyCart';
@@ -8,9 +9,10 @@ import { Summary } from './Summary/Summary';
 import { CartList } from './CartList/CartList';
 
 import { useAppSelector } from '@/redux/hooks';
+import { selectCart } from '@/redux/selectors';
 
 export const Cart = () => {
-  const cart = useAppSelector((state) => state.cart.cart);
+  const cart = useAppSelector(selectCart, shallowEqual);
 
   return (
     <Container>

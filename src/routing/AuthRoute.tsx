@@ -1,5 +1,6 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { Navigate, Outlet, useLocation, useNavigate } from 'react-router-dom';
+import { shallowEqual } from 'react-redux';
 
 import { PATH } from '@/constants/path';
 import { useAppSelector } from '@/redux/hooks';
@@ -7,43 +8,45 @@ import useTokens from '@/hooks/useTokens';
 import { signInWithToken } from '@/api/firebase/signInWithToken';
 import useAuthData from '@/hooks/useAuthData';
 import { Loader } from '@/components/Loader/Loader';
+import { selectUser } from '@/redux/selectors';
 
 const AuthRoute = (): ReactNode => {
-  const location = useLocation();
+  const { pathname } = useLocation();
   const { getTokens } = useTokens();
   const { refreshToken } = getTokens();
   const { saveAuthData } = useAuthData();
   const navigate = useNavigate();
-  const user = useAppSelector((state) => state.user.user);
+  const user = useAppSelector(selectUser, shallowEqual);
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
-    if (refreshToken && !user) {
-      setLoading(true);
+    if (user) return;
 
-      signInWithToken(refreshToken)
-        .then((res) => {
-          if (res) saveAuthData(res);
-        })
-        .catch(() => {
-          navigate(PATH.SIGN_IN);
-        })
-        .finally(() => setLoading(false));
+    if (!refreshToken) {
+      navigate(PATH.SIGN_IN);
+
+      return;
     }
-  }, [refreshToken, user, saveAuthData, navigate]);
 
-  if (isLoading) {
-    return <Loader />;
-  }
+    setLoading(true);
 
-  const isAuthPath =
-    location.pathname === `${PATH.AUTH}/${PATH.SIGN_IN}` || location.pathname === `${PATH.AUTH}/${PATH.SIGN_UP}`;
+    signInWithToken(refreshToken)
+      .then((res) => {
+        if (res) {
+          saveAuthData(res);
 
-  if (!isLoading && user && isAuthPath) {
-    return <Navigate to={PATH.HOME} />;
-  }
+          navigate(pathname.startsWith(PATH.AUTH) ? PATH.HOME : pathname);
+        }
+      })
+      .catch(() => {
+        navigate(PATH.SIGN_IN);
+      })
+      .finally(() => setLoading(false));
+  }, [refreshToken, user, saveAuthData, navigate, pathname]);
 
-  return <Outlet />;
+  if (isLoading) return <Loader />;
+
+  return !isLoading && user && pathname.startsWith(PATH.AUTH) ? <Navigate to={PATH.HOME} /> : <Outlet />;
 };
 
 export default AuthRoute;

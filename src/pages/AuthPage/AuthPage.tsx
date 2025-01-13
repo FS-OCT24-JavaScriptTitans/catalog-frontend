@@ -5,7 +5,7 @@ import s from './AuthPage.module.scss';
 import { PATH } from '@/constants/path';
 
 const AuthPage = () => (
-  <main className={s.auth}>
+  <section className={s.auth}>
     <nav className={s.nav}>
       <NavLink
         className={({ isActive }) => `${s.link} ${isActive ? s.active : ''}`}
@@ -20,8 +20,9 @@ const AuthPage = () => (
         Sign Up
       </NavLink>
     </nav>
+
     <Outlet />
-  </main>
+  </section>
 );
 
 export default AuthPage;
