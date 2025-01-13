@@ -1,0 +1,11 @@
+@use '@/styles/abstract/mixines';
+
+.sectionTitle {
+  margin-bottom: 32px;
+}
+
+.wrapper {
+  @include mixines.desctop {
+    @include mixines.page-grid;
+  }
+}

@@ -1,0 +1,21 @@
+@use '../../styles/abstract/constants';
+
+.iconButton {
+  padding: 8px;
+
+  > svg {
+    color: var(--main-color);
+  }
+
+  &.selected {
+    background-color: var(--element-color);
+  }
+
+  &:hover {
+    border-color: var(--main-color);
+  }
+}
+
+.border {
+  border: 1px solid var(--border-icon-color);
+}
