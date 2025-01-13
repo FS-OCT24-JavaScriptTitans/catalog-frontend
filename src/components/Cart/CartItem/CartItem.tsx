@@ -41,13 +41,19 @@ export const CartItem: FC<Props> = ({ product }) => {
 
       <div className={s.controls}>
         <div className={s.controlsContainer}>
-          <IconButton onClick={handleRemove(id)}>
+          <IconButton
+            onClick={handleRemove(id)}
+            hasBorder
+          >
             <Minus />
           </IconButton>
 
           <div className={s.quantity}>{quantity}</div>
 
-          <IconButton onClick={handleIncrease(id)}>
+          <IconButton
+            onClick={handleIncrease(id)}
+            hasBorder
+          >
             <Plus />
           </IconButton>
         </div>

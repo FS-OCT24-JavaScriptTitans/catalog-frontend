@@ -23,9 +23,7 @@ const AuthRoute = (): ReactNode => {
 
       signInWithToken(refreshToken)
         .then((res) => {
-          if (res) {
-            saveAuthData(res);
-          }
+          if (res) saveAuthData(res);
         })
         .catch(() => {
           navigate(PATH.SIGN_IN);

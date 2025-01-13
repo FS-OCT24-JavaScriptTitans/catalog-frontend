@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
 
-import s from './EmpthyCart.module.scss';
+import s from './EmptyCart.module.scss';
 
 import { PATH } from '@/constants/path';
 
-const EmpthyCart = () => (
+const EmptyCart = () => (
   <article>
     <h2 className={cn(s.title)}>The Cart is empty</h2>
     <div className={s.imgContainer}>
@@ -28,4 +28,4 @@ const EmpthyCart = () => (
   </article>
 );
 
-export default EmpthyCart;
+export default EmptyCart;

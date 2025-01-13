@@ -9,5 +9,5 @@ export const calculateCartSummary = (cart: CartProduct[]): CartSummary =>
       totalPrice: summary.totalPrice + quantity * priceRegular,
       totalDiscountPrice: summary.totalDiscountPrice + quantity * priceDiscount,
     }),
-    intitialState,
+    { ...intitialState },
   );

@@ -1,7 +1,7 @@
 import cn from 'classnames';
 
 import Container from '../Container/Container';
-import EmpthyCart from '../../UI/EmpthyCart/EmpthyCart';
+import EmpthyCart from '../../UI/EmptyCart/EmptyCart';
 
 import s from './Cart.module.scss';
 import { Summary } from './Summary/Summary';

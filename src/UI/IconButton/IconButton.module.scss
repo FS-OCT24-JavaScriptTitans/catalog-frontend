@@ -1,7 +1,6 @@
 @use '../../styles/abstract/constants';
 
 .iconButton {
-  border: 1px solid var(--border-icon-color);
   padding: 8px;
 
   > svg {
@@ -15,4 +14,8 @@
   &:hover {
     border-color: var(--main-color);
   }
+}
+
+.border {
+  border: 1px solid var(--border-icon-color);
 }
