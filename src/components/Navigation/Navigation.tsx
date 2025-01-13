@@ -1,10 +1,11 @@
 import { useState } from 'react';
 import { NavLinkRenderProps } from 'react-router-dom';
 
-import menu from '../../../public/icons/Menu.svg';
-import closeMenu from '../../../public/icons/Close.svg';
-import cart from '../../../public/icons/Shopping.svg';
-import favorites from '../../../public/icons/Favourites.svg';
+import menu from '../../assets/Menu.svg';
+import auth from '../../assets/Auth.svg';
+import closeMenu from '../../assets/Close.svg';
+import cart from '../../assets/Shopping.svg';
+import favorites from '../../assets/Favourites.svg';
 import Logo from '../Logo/Logo';
 import IconContainer from '../../UI/IconContainer/IcontContainer';
 import NavigationLink from '../../UI/NavLink/NavigationLink';
@@ -18,6 +19,12 @@ const navLinks = {
   Phones: PATH.PHONES,
   Tablets: PATH.TABLETS,
   Accessories: PATH.ACCESSORIES,
+};
+
+const iconLinks = {
+  [auth]: `/auth${PATH.SIGN_IN}`,
+  [cart]: PATH.CART,
+  [favorites]: PATH.FAVORITES,
 };
 
 const navLinkStyle = ({ isActive }: NavLinkRenderProps) => `uppercase-text ${s.link} ${isActive ? s.active_link : ''}`;
@@ -45,18 +52,15 @@ const Navigation = () => {
         </div>
 
         <div className={s.navigation__icons}>
-          <NavigationLink
-            to={PATH.CART}
-            label={<IconContainer icon={cart} />}
-            className={navLinkStyle}
-            handleClick={() => setIsOpenMobileMenu(false)}
-          />
-          <NavigationLink
-            to={PATH.FAVORITES}
-            label={<IconContainer icon={favorites} />}
-            className={navLinkStyle}
-            handleClick={() => setIsOpenMobileMenu(false)}
-          />
+          {Object.entries(iconLinks).map(([icon, path]) => (
+            <NavigationLink
+              key={icon}
+              to={path}
+              label={<IconContainer icon={icon} />}
+              className={navLinkStyle}
+              handleClick={() => setIsOpenMobileMenu(false)}
+            />
+          ))}
         </div>
       </nav>
 
