@@ -4,11 +4,11 @@ import { CartProduct } from '@/types/Cart.types';
 import { decreaseProductQuantity, increaseProductQuantity } from '@/utils/cart/cartQuantity';
 import { Product } from '@/types/Product.type';
 
-interface cartState {
+export interface CartState {
   cart: CartProduct[];
 }
 
-const initialState: cartState = {
+const initialState: CartState = {
   cart: [
     {
       id: 'apple-watch-series-3-38mm-space-gray',
