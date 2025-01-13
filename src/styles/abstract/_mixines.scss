@@ -13,7 +13,7 @@
   border-radius: $raduis;
 }
 
-@mixin flex-container($align-items: center, $justify-content: center, $flex-direction: row, $gap: null, $wrap: nowrap) {
+@mixin flex-container($align-items: stretch, $justify-content: start, $flex-direction: row, $gap: null, $wrap: nowrap) {
   display: flex;
   justify-content: $justify-content;
   align-items: $align-items;
@@ -40,5 +40,20 @@
 @mixin desctop {
   @media (min-width: constants.$desctop-min-whidth) {
     @content;
+  }
+}
+
+@mixin page-grid() {
+  --column: 4;
+  display: grid;
+  column-gap: 16px;
+  grid-template-columns: repeat(var(--column), 1fr);
+
+  @include tablet {
+    --column: 12;
+  }
+
+  @include desctop {
+    --column: 24;
   }
 }

@@ -36,6 +36,7 @@ export const Root = () => (
             path={PATH.PHONES}
             element={<Pages.PhonesPage />}
           />
+
           <Route
             path={PATH.TABLETS}
             element={<Pages.TabletsPage />}

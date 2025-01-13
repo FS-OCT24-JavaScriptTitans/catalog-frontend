@@ -1,0 +1,26 @@
+@use '@/styles/abstract/constants';
+@use '@/styles/abstract/mixines';
+
+.container {
+  padding: 24px;
+  @include mixines.border(1px, var(--element-color));
+
+  @include mixines.desctop {
+    align-self: start;
+    grid-column: 17/25;
+  }
+}
+
+.amount {
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.price,
+.amount {
+  text-align: center;
+}
+
+.line {
+  margin-block: 16px;
+}

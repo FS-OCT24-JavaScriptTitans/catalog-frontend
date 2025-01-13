@@ -1,0 +1,17 @@
+@use '@/styles/abstract/mixines';
+
+.list {
+  margin-bottom: 32px;
+
+  @include mixines.desctop {
+    grid-column: 1/17;
+  }
+
+  &__item {
+    margin-bottom: 16px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -13,7 +13,11 @@ export default ({ mode }) => {
     plugins: [
       react(),
       tsconfigPaths(),
-      svgr(),
+      svgr({
+        svgrOptions: {
+          icon: true,
+        },
+      }),
       eslintPlugin({
         cache: false,
         include: ['src/**/*.ts', 'src/**/*.tsx'],
@@ -28,6 +32,9 @@ export default ({ mode }) => {
     },
     define: {
       'process.env': env,
+    },
+    build: {
+      sourcemap: true,
     },
     css: {
       modules: {

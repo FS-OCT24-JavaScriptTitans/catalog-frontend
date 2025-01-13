@@ -68,10 +68,24 @@ button {
   outline: none;
 }
 
+svg {
+  width: 16px;
+  height: 16px;
+}
+
 .visible {
   opacity: 1;
 }
 
 .invisible {
   opacity: 0;
+}
+
+.section {
+  margin: 0 auto;
+}
+
+.line {
+  height: 1px;
+  background-color: var(--element-color);
 }

@@ -7,9 +7,9 @@ interface ContainerProps {
   className?: string;
 }
 
-const Container: React.FC<ContainerProps> = ({ children, className }) => (
-  <section className={`${styles.container} ${className || ''}`}>
-    <div className={styles.wrapper}>{children}</div>
+const Container: React.FC<ContainerProps> = ({ children, className = '' }) => (
+  <section className={`section ${className}`}>
+    <div className={styles.container}>{children}</div>
   </section>
 );
 
