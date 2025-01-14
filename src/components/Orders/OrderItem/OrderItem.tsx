@@ -11,7 +11,10 @@ interface Props {
 }
 
 export const OrderItem: FC<Props> = ({ order }) => (
-  <article key={order.id}>
+  <article
+    key={order.id}
+    className={s.item}
+  >
     <h4 className={s.id}>
       Order ID: <span> {order.id}</span>
     </h4>

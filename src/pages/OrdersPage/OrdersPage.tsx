@@ -20,8 +20,6 @@ const OrdersPage = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (orders.length) return;
-
     setLoading(true);
 
     if (user) {
@@ -40,6 +38,7 @@ const OrdersPage = () => {
       : <EmptyContainer
           title="There no orders yet"
           pathToImg="/img/order-is-empty.png"
+          alt="empty-order"
         />
       }
     </>

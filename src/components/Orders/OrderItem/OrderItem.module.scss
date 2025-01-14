@@ -1,6 +1,12 @@
 @use '@/styles/abstract/mixines';
 @use '@/styles/abstract/constants';
 
+.item {
+  padding: 16px;
+  margin-bottom: 16px;
+  @include mixines.border(1px, var(--element-color), 9px);
+}
+
 .products {
   @include mixines.flex-container(center, center, row, 16px, wrap);
   margin-bottom: 16px;

@@ -29,6 +29,7 @@ export const Cart = () => {
       : <EmptyContainer
           title="The Cart is empty"
           pathToImg="/img/cart-is-empty.png"
+          alt="empty-cart"
         />
       }
     </Container>

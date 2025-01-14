@@ -9,15 +9,16 @@ import { PATH } from '@/constants/path';
 interface Props {
   title: string;
   pathToImg: string;
+  alt: string;
 }
 
-const EmptyContainer: FC<Props> = ({ title, pathToImg }) => (
+const EmptyContainer: FC<Props> = ({ title, pathToImg, alt }) => (
   <article>
     <h2 className={cn(s.title)}>{title}</h2>
     <div className={s.imgContainer}>
       <img
         src={pathToImg}
-        alt="empty-cart"
+        alt={alt}
       />
     </div>
 
