@@ -1,0 +1,103 @@
+@use '../../styles/abstract/mixines';
+
+.sliderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 640px;
+  background-color: black;
+  height: auto;
+  position: relative;
+
+  @include mixines.tablet {
+    width: 490px;
+  }
+
+  @include mixines.desctop {
+    width: 1040px;
+  }
+}
+
+.paginationWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 0;
+}
+
+.bullet {
+  width: 14px;
+  height: 4px;
+  background-color: #ccc;
+  border-radius: 0;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease;
+  cursor: pointer;
+}
+
+.bullet.active {
+  background-color: #313237;
+  transform: scale(1.2);
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container {
+  height: 100%;
+  width: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.image {
+  height: 350px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+
+  @include mixines.tablet {
+    height: 190px;
+    max-width: 490px;
+  }
+
+  @include mixines.desctop {
+    height: 190px;
+    max-width: 1000px;
+  }
+}
+
+.prevButton,
+.nextButton {
+  position: absolute;
+  width: 32px;
+  height: 190px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  opacity: 0;
+
+  @include mixines.tablet {
+    opacity: 1;
+  }
+}
+
+.prevButton {
+  transform: rotate(180deg);
+  left: 24px;
+
+  @include mixines.tablet {
+    left: 8px;
+  }
+}
+
+.nextButton {
+  right: 24px;
+}
