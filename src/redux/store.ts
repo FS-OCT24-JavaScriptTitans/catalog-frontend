@@ -1,21 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
-import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
+import { persistStore } from 'redux-persist';
 
 import userSlice from './slices/user/userSlice';
-import cartReducer, { CartState } from './slices/cart/carrt.slice';
-
-const persistConfig = {
-  key: 'cart',
-  storage,
-};
-
-const persistedCartReducer = persistReducer<CartState>(persistConfig, cartReducer);
+import { persistedCartReducer, persistedOrderReducer } from './persistors';
 
 export const store = configureStore({
   reducer: {
     cart: persistedCartReducer,
+    order: persistedOrderReducer,
     user: userSlice,
   },
   middleware: (getDefaultMiddleware) =>

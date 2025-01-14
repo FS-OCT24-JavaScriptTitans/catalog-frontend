@@ -5,6 +5,7 @@ const MAX_PASSWORD_LENGTH = 32;
 
 const password = yup
   .string()
+  .trim()
   .required('Password is required')
   .min(MIN_PASSWORD_LENGTH, `Should contain at least ${MIN_PASSWORD_LENGTH} symbols`)
   .max(MAX_PASSWORD_LENGTH, `Max length is ${MAX_PASSWORD_LENGTH} symbols`)
