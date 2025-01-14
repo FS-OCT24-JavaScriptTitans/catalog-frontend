@@ -14,6 +14,7 @@
     flex-direction: row;
     column-gap: 108px;
     align-items: center;
+    justify-content: space-between;
   }
 
   @include mixin.desctop {
@@ -35,7 +36,7 @@
 }
 
 .link {
-  @include mixin.font(12px, 11px, 700);
+  @include mixin.font(12px, 11px, 800);
   color: var(--text-color);
   text-transform: uppercase;
 
@@ -46,4 +47,17 @@
 
 .create_line {
   border-top: 1px solid var(--element-color);
+}
+
+.back_to_top {
+  @include mixin.flex-container(center, center, row, 16px);
+}
+
+.text {
+  @include mixin.font(12px, 11px, 700);
+  color: var(--text-color);
+}
+
+.rotated {
+  transform: rotate(270deg);
 }

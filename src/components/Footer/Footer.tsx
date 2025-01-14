@@ -5,6 +5,8 @@ import Logo from '../Logo/Logo';
 import s from './Footer.module.scss';
 
 import NavigationLink from '@/UI/NavLink/NavigationLink';
+import { IconButton } from '@/UI/IconButton/IconButton';
+import Arrow from '@/assets/Arrow.svg?react';
 
 export const Footer: React.FC = () => (
   <footer className={s.footer}>
@@ -30,6 +32,15 @@ export const Footer: React.FC = () => (
           className={s.link}
         />
       </nav>
+      <div className={s.back_to_top}>
+        <div className={s.text}>Back to top</div>
+        <IconButton
+          onClick={() => {}}
+          hasBorder
+        >
+          <Arrow className={s.rotated} />
+        </IconButton>
+      </div>
     </div>
   </footer>
 );
