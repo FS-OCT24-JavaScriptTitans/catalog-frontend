@@ -1,4 +1,11 @@
 export interface Spec {
-  name: string;
-  value: string;
+  id?: string;
+  screen?: string;
+  resolution?: string;
+  processor?: string;
+  ram?: string;
+  capacity?: string;
+  camera?: string;
+  zoom?: string;
+  cell?: string[];
 }

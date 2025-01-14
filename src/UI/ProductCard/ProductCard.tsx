@@ -8,40 +8,43 @@ import styles from './ProductCard.module.scss';
 
 import Favourites from '@/assets/Favourites.svg?react';
 import { Spec } from '@/types/Spec';
-import { Product } from '@/types/Product';
+import { Product } from '@/types/Product.type';
 
 type Props = {
   product: Product;
-  specs: Spec[];
 };
 
-export const ProductCard: React.FC<Props> = ({ product, specs }) => (
-  <article className={styles.card}>
-    <div className={styles.container}>
-      <img
-        src={product.image}
-        alt="Product image"
-        className={styles.card__image}
-      />
-      <a className={`${styles.card__title} primary-text`}>{product.title}</a>
-      <div className={styles.card__price}>
-        <span className={styles.card__value}>${product.price}</span>
-        {product.fullPrice && <span className={styles.card__old_value}>${product.fullPrice}</span>}
-      </div>
-      <div className={styles.create_line}></div>
-      <Specifications specs={specs} />
-      <div className={styles.actions}>
-        <Button
-          label="Add to cart"
-          secondaryLabel="Added"
+export const ProductCard: React.FC<Props> = ({ product }) => {
+  const specs: Spec = { screen: product.screen, capacity: product.capacity, ram: product.ram };
+
+  return (
+    <article className={styles.card}>
+      <div className={styles.container}>
+        <img
+          src={product.images[0]}
+          alt="Product image"
+          className={styles.card__image}
         />
-        <IconButton
-          onClick={() => {}}
-          hasBorder
-        >
-          <Favourites />
-        </IconButton>
+        <a className={`${styles.card__title} primary-text`}>{product.name}</a>
+        <div className={styles.card__price}>
+          <span className={styles.card__value}>${product.priceDiscount}</span>
+          {product.priceRegular && <span className={styles.card__old_value}>${product.priceRegular}</span>}
+        </div>
+        <div className={styles.create_line}></div>
+        <Specifications specs={specs} />
+        <div className={styles.actions}>
+          <Button
+            label="Add to cart"
+            secondaryLabel="Added"
+          />
+          <IconButton
+            onClick={() => {}}
+            hasBorder
+          >
+            <Favourites />
+          </IconButton>
+        </div>
       </div>
-    </div>
-  </article>
-);
+    </article>
+  );
+};
