@@ -2,6 +2,8 @@
 
 .container {
   padding-inline: 16px;
+  display: flex;
+  justify-content: center;
 
   @include mixines.tablet {
     padding-inline: 24px;
