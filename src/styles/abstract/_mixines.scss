@@ -25,6 +25,12 @@
   }
 }
 
+@mixin tablet-l {
+  @media (min-width: constants.$tablet-l-min-whidth) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (min-width: constants.$tablet-min-whidth) {
     @content;

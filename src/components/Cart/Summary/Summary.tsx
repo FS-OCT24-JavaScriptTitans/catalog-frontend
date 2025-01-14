@@ -2,6 +2,7 @@ import cn from 'classnames';
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { shallowEqual } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import s from './Summary.module.scss';
 
@@ -26,6 +27,7 @@ export const Summary: FC<Props> = ({ cart }) => {
   const dispatch = useAppDispatch();
   const { setOrder } = useOrder();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const { totalDiscountPrice, totalQuantity, totalPrice } = calculateCartSummary(cart);
 
@@ -52,13 +54,13 @@ export const Summary: FC<Props> = ({ cart }) => {
           <ProductPrices prices={{ priceDiscount: totalDiscountPrice, priceRegular: totalPrice }} />
         : <ProductPrice price={totalPrice} />}
 
-        <h4 className={(cn('primary-text'), s.amount)}>Total for {totalQuantity} items</h4>
+        <h4 className={(cn('primary-text'), s.amount)}>{t('cartPage.totalForItems', { totalQuantity })}</h4>
         <div className={cn('line', s.line)}></div>
       </div>
 
       <Button
         onClick={handleSetOrder()}
-        label="Checkout"
+        label={t('cartPage.checkout')}
       />
     </article>
   );

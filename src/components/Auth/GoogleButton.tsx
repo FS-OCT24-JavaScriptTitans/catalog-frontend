@@ -1,9 +1,13 @@
+import { useTranslation } from 'react-i18next';
+
 import { signInWithGoogle } from '@/api/firebase/signInWithGoogle';
 import useAuthData from '@/hooks/useAuthData';
 import { Button } from '@/UI/Button/Button';
 
 const GoogleButton = () => {
   const { saveAuthData } = useAuthData();
+
+  const { t } = useTranslation();
 
   const handleLoginWithGoogle = async (): Promise<void> => {
     const newUser = await signInWithGoogle();
@@ -13,10 +17,9 @@ const GoogleButton = () => {
 
   return (
     <Button
-      label="Sign in with Google"
+      label={t('authPage.google')}
       onClick={handleLoginWithGoogle}
       isSelected={true}
-      secondaryLabel="Sign in with Google"
     />
   );
 };
