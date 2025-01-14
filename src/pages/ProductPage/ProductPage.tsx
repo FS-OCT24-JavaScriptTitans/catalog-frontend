@@ -1,184 +1,173 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './_product.scss';
-// import cn from 'classNames';
+import { Link, NavLink, useParams } from 'react-router-dom';
+import cn from 'classnames';
 
 import phones from '../../../public/api/phones.json';
 
-export const ProductPage: React.FC = () => {
-  // const {param} = useParams();
-  const phone = phones[0];
-  const [chosenImage, setChosenImage] = useState(phone.images[0]);
+import styles from './ProductPage.module.scss';
+
+function capitalLetter(input: string) {
+  const letters = input.split('');
+  const [first, ...elseLetters] = letters;
+
+  return first.toUpperCase() + elseLetters.join('');
+}
+
+const ProductPage: React.FC = () => {
+  const { productId } = useParams();
+  const product = phones.find((phone) => productId === phone.id);
+  const [chosenImage, setChosenImage] = useState(product?.images[0]);
+  const techSpecsArray = Object.entries({ ...product }).slice(-7);
 
   return (
-    <section className="product-card">
-      <Link
-        to=".."
-        className="product-card__back"
-      >
-        Back
-      </Link>
-      <h2 className="product-card__main-title">{phone.name}</h2>
+    product && (
+      <section className={styles.productCard}>
+        <Link
+          to=".."
+          className="product-card__back"
+        >
+          Back
+        </Link>
+        <h2 className={styles.mainTitle}>{product.name}</h2>
 
-      <article className="product-card__images">
-        <div className="item__main">
-          <img
-            src={chosenImage}
-            alt="product image"
-            className="product-card__images--main-photo"
-          />
-        </div>
-
-        {phone.images.map((imagelink, index) => (
-          <div
-            key={index}
-            className={`item__${index}`}
-          >
+        <article className={styles.images}>
+          <div className={styles.mainImageBox}>
             <img
-              src={imagelink}
+              src={`/${chosenImage}`}
               alt="product image"
-              className="product-card__images--photo"
-              onClick={() => setChosenImage(imagelink)}
+              className={styles.mainPhoto}
             />
           </div>
-        ))}
-      </article>
 
-      <article className="product-card__main-chars">
-        <span style={{ color: 'grey' }}>Available colors</span>
-        <div className="product-card__main-chars--colors">
-          {phone.colorsAvailable.map((color) => (
+          {product.images.map((imageLink, index) => (
             <div
-              className="product-card__main-chars--color-box"
-              key={color}
+              key={index}
+              className={styles.imageBox}
             >
-              <div
-                className="product-card__main-chars--color"
-                style={{ backgroundColor: `${color}` }}
+              <img
+                src={`/${imageLink}`}
+                alt="product image"
+                className={cn(styles.photo, { [styles.active]: chosenImage === imageLink })}
+                onClick={() => setChosenImage(imageLink)}
               />
             </div>
           ))}
-        </div>
-
-        <div className="product-card__main-chars--dividing-line"></div>
-
-        <article className="product-card__main-chars--capacity-container">
-          <span style={{ color: 'grey' }}>Select capacity</span>
-          <div className="product-card__main-chars--capacities">
-            {phone.capacityAvailable.map((capacity) => (
-              <span
-                className="product-card__main-chars--capacity"
-                // className={({ isActive }: { isActive: boolean} ) =>
-                //   cn('product-card__main-chars--capacity', { 'active-capacity': isActive })
-                // }
-                key={capacity}
-              >
-                {capacity}
-              </span>
-            ))}
-          </div>
         </article>
 
-        <div className="product-card__main-chars--dividing-line"></div>
-
-        <h1>{`$${phone.priceDiscount} $${phone.priceRegular}`}</h1>
-
-        <button>Add to cart</button>
-
-        <div className="product-card__main-chars--specification">
-          <span style={{ color: 'grey' }}>Screen</span>
-          <span>{phone.screen}</span>
-        </div>
-
-        <div className="product-card__main-chars--specification">
-          <span style={{ color: 'grey' }}>Resolution</span>
-          <span>{phone.resolution}</span>
-        </div>
-
-        <div className="product-card__main-chars--specification">
-          <span style={{ color: 'grey' }}>Processor</span>
-          <span>{phone.processor}</span>
-        </div>
-
-        <div className="product-card__main-chars--specification">
-          <span style={{ color: 'grey' }}>RAM</span>
-          <span>{phone.ram}</span>
-        </div>
-      </article>
-
-      <article className="product-card__description">
-        <h3 className="product-card__secondary-titles">About</h3>
-
-        <div className="product-card__main-chars--dividing-line"></div>
-
-        {phone.description.map((description, index) => (
-          <div
-            className="product-card__description--container"
-            key={index}
-          >
-            <h4 className="product-card__description--title">{description.title}</h4>
-
-            {description.text.map((paragraph, index) => (
-              <p
-                className="product-card__description--text"
-                key={index}
+        <article className={styles.mainChars}>
+          <div className={styles.colorsTop}>
+            <span className={styles.smallGreyText}>Available colors</span>
+            <span className={styles.id}>{`ID: ${Math.floor(Math.random() * 1000000)}`}</span>
+          </div>
+          <div className={styles.colors}>
+            {product.colorsAvailable.map((color) => (
+              <NavLink
+                to=""
+                className={cn(styles.colorContainer, { [styles.active]: product.color === color })}
+                key={color}
               >
-                {paragraph}
-              </p>
+                <div
+                  style={{ backgroundColor: `${color}` }}
+                  className={styles.color}
+                />
+              </NavLink>
             ))}
           </div>
-        ))}
-      </article>
 
-      <article className="product-card__tech-specs">
-        <h3 className="product-card__secondary-titles">Tech specs</h3>
+          <div className={styles.dividingLine} />
 
-        <div className="product-card__main-chars--dividing-line"></div>
+          <article className={styles.capacityContainer}>
+            <span className={styles.smallText}>Select capacity</span>
+            <div className={styles.capacities}>
+              {product.capacityAvailable.map((capacity) => (
+                <NavLink
+                  to=""
+                  className={cn(styles.capacity, { [styles.currentCapacity]: product.capacity === capacity })}
+                  key={capacity}
+                >
+                  {capacity}
+                </NavLink>
+              ))}
+            </div>
+          </article>
 
-        <div className="product-card__main-chars--specification product-card__tech-specs--top-specification">
-          <span style={{ color: 'grey' }}>Screen</span>
-          <span>{phone.screen}</span>
-        </div>
+          <div className={styles.dividingLine}></div>
 
-        <div className="product-card__main-chars--specification">
-          <span style={{ color: 'grey' }}>Resolution</span>
-          <span>{phone.resolution}</span>
-        </div>
+          <div className={styles.prices}>
+            {product.priceDiscount ?
+              <>
+                <span className={styles.discountPrice}>{`$${product.priceDiscount}`}</span>
+                <span className={styles.regularPrice}>{`$${product.priceRegular}`}</span>
+              </>
+            : <span className={styles.discountPrice}>{`$${product.priceRegular}`}</span>}
+          </div>
 
-        <div className="product-card__main-chars--specification">
-          <span style={{ color: 'grey' }}>Processor</span>
-          <span>{phone.processor}</span>
-        </div>
+          <button className={styles.button}>Add to cart</button>
 
-        <div className="product-card__main-chars--specification">
-          <span style={{ color: 'grey' }}>RAM</span>
-          <span>{phone.ram}</span>
-        </div>
+          {techSpecsArray.map(
+            (specification, index) =>
+              index < 4 && (
+                <div
+                  className={styles.specification}
+                  key={specification[0]}
+                >
+                  <span className={styles.smallGreyText}>{capitalLetter(specification[0])}</span>
+                  <span className={styles.smallBlackText}>
+                    {typeof specification[1] === 'object' ? specification[1].join('') : specification[1]}
+                  </span>
+                </div>
+              ),
+          )}
+        </article>
 
-        <div className="product-card__main-chars--specification">
-          <span style={{ color: 'grey' }}>Built in memory</span>
-          <span>{phone.capacity}</span>
-        </div>
+        <article className={styles.description}>
+          <h3 className={styles.secondaryTitles}>About</h3>
 
-        <div className="product-card__main-chars--specification">
-          <span style={{ color: 'grey' }}>Camera</span>
-          <span>{phone.camera}</span>
-        </div>
+          <div className={styles.dividingLine}></div>
 
-        <div className="product-card__main-chars--specification">
-          <span style={{ color: 'grey' }}>Zoom</span>
-          <span>{phone.zoom}</span>
-        </div>
+          {product.description.map((description, index) => (
+            <div
+              className={styles.descriptionBox}
+              key={index}
+            >
+              <h4 className={styles.descriptionTitle}>{description.title}</h4>
 
-        <div className="product-card__main-chars--specification">
-          <span style={{ color: 'grey' }}>Cell</span>
-          <span>{phone.cell.join(', ')}</span>
-        </div>
-      </article>
+              {description.text.map((paragraph, index) => (
+                <p
+                  className={styles.descriptionText}
+                  key={index}
+                >
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+          ))}
+        </article>
 
-      <article>
-        <h3>You may also like</h3>
-      </article>
-    </section>
+        <article className={styles.techSpecs}>
+          <h3 className={styles.secondaryTitles}>Tech specs</h3>
+
+          <div className={styles.dividingLine}></div>
+
+          {techSpecsArray.map((specification) => (
+            <div
+              className={styles.specification}
+              key={specification[0]}
+            >
+              <span className={styles.smallGreyText}>{capitalLetter(specification[0])}</span>
+              <span className={styles.smallBlackText}>
+                {typeof specification[1] === 'object' ? specification[1].join(', ') : specification[1]}
+              </span>
+            </div>
+          ))}
+        </article>
+
+        <article className={styles.recommended}>
+          <h3>You may also like</h3>
+        </article>
+      </section>
+    )
   );
 };
+
+export default ProductPage;
