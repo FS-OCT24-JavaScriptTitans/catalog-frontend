@@ -1,5 +1,6 @@
-import { useState } from 'react';
 import { NavLinkRenderProps } from 'react-router-dom';
+import { useState } from 'react';
+import { shallowEqual } from 'react-redux';
 
 import menu from '../../assets/Menu.svg';
 import auth from '../../assets/Auth.svg';
@@ -10,9 +11,12 @@ import Logo from '../Logo/Logo';
 import IconContainer from '../../UI/IconContainer/IcontContainer';
 import NavigationLink from '../../UI/NavLink/NavigationLink';
 
+import { IconLink } from './IconLink/IconLink';
 import s from './Navigation.module.scss';
 
 import { PATH } from '@/constants/path';
+import { useAppSelector } from '@/redux/hooks';
+import { selectCart, selectUser } from '@/redux/selectors';
 
 const navLinks = {
   Home: PATH.HOME,
@@ -21,16 +25,12 @@ const navLinks = {
   Accessories: PATH.ACCESSORIES,
 };
 
-const iconLinks = {
-  [auth]: `/auth${PATH.SIGN_IN}`,
-  [cart]: PATH.CART,
-  [favorites]: PATH.FAVORITES,
-};
-
 const navLinkStyle = ({ isActive }: NavLinkRenderProps) => `uppercase-text ${s.link} ${isActive ? s.active_link : ''}`;
 
 const Navigation = () => {
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
+  const user = useAppSelector(selectUser, shallowEqual);
+  const cartList = useAppSelector(selectCart, shallowEqual);
 
   return (
     <header className={s.container}>
@@ -52,15 +52,30 @@ const Navigation = () => {
         </div>
 
         <div className={s.navigation__icons}>
-          {Object.entries(iconLinks).map(([icon, path]) => (
+          {!user && (
             <NavigationLink
-              key={icon}
-              to={path}
-              label={<IconContainer icon={icon} />}
+              key={auth}
+              to={`/auth${PATH.SIGN_IN}`}
+              label={<IconContainer icon={auth} />}
               className={navLinkStyle}
               handleClick={() => setIsOpenMobileMenu(false)}
             />
-          ))}
+          )}
+
+          <IconLink
+            icon={cart}
+            path={PATH.CART}
+            counter={cartList.length}
+            navLinkStyle={navLinkStyle}
+            handleClick={() => setIsOpenMobileMenu(false)}
+          />
+          <IconLink
+            icon={favorites}
+            path={PATH.FAVORITES}
+            counter={0}
+            navLinkStyle={navLinkStyle}
+            handleClick={() => setIsOpenMobileMenu(false)}
+          />
         </div>
       </nav>
 
