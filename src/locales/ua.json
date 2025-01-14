@@ -1,0 +1,19 @@
+{
+  "translation": {
+    "cartPage": { "cart": "Корзина", "totalForItems": "Всього за {{totalQuantity}} предметів", "checkout": "Оплатити" },
+    "authPage": {
+      "signIn": "Увійти",
+      "signUp": "Зареєструватися",
+      "name": "Ім'я",
+      "email": "Електронна пошта",
+      "password": "Пароль",
+      "google": "Увійти за допомогою Google"
+    },
+    "navigation": {
+      "Home": "Головна",
+      "Phones": "Телефони",
+      "Tablets": "Планшети",
+      "Accessories": "Аксесуари"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+@use '@/styles/abstract/constants';
+@use '@/styles/abstract/mixines';
+
+.border {
+  @include mixines.border(1px, var(--text-color));
+
+  &:hover {
+    border-color: var(--main-color);
+  }
+}
+
+.button,
+.item {
+  padding: 10px 12px;
+}
+
+.button {
+  @include mixines.flex-container(center, space-between);
+  color: var(--main-color);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  margin-top: 4px;
+  padding: 0;
+  background-color: var(--white-color);
+  box-shadow: 0 2px 15px 0 var(--black-hover-color);
+  z-index: 100;
+
+  @include mixines.border(1px, var(--element-color));
+}
+
+.item {
+  font-weight: 500;
+  color: var(--main-color);
+  cursor: pointer;
+  transition: background constants.$transition-time;
+
+  &:hover {
+    background: var(--dropdown-bg-color);
+    color: var(--main-color);
+  }
+}

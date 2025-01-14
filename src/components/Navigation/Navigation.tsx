@@ -49,8 +49,7 @@ const Navigation = () => {
               handleClick={() => setIsOpenMobileMenu(false)}
             />
           ))}
-        </div>
-
+        </div>{' '}
         <div className={s.navigation__icons}>
           {!user && (
             <NavigationLink
