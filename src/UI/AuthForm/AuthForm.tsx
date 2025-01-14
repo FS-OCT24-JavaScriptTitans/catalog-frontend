@@ -26,7 +26,6 @@ export const AuthForm = <T extends FieldValues>({
   onSubmit,
   register,
   errors,
-  isValid,
   buttonLabel,
 }: AuthFormProps<T>) => (
   <article className={s.auth}>
@@ -43,7 +42,6 @@ export const AuthForm = <T extends FieldValues>({
             register={register}
             name={field.name}
             err={errors[field.name]?.message || ''}
-            isValid={isValid}
           />
         ))}
 

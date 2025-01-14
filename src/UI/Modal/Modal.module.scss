@@ -1,0 +1,29 @@
+@use '../../styles/abstract/mixines';
+@use '../../styles/abstract/constants';
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  min-height: 100vh;
+  padding-inline: 10px;
+  background-color: var(--back-drop-color);
+  z-index: 999;
+  overflow-y: auto;
+
+  @include mixines.flex-container(center, center);
+}
+
+.modal {
+  padding: 20px;
+  height: auto;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  box-shadow:
+    0 5px 5px -3px var(--back-drop-color),
+    0 8px 10px 1px var(--back-drop-color),
+    0 3px 14px 2px var(--back-drop-color);
+}

@@ -10,7 +10,7 @@ interface Props<T extends FieldValues> {
   register: UseFormRegister<T>;
   type: string;
   err: string;
-  isValid: boolean;
+  isValid?: boolean;
 }
 
 const FormInput = <T extends FieldValues>(props: Props<T>) => {

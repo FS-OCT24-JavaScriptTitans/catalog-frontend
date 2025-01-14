@@ -1,0 +1,16 @@
+@use '../../styles/abstract/mixines';
+
+.form {
+  min-width: 320px;
+
+  @include mixines.flex-container(stretch, center, column, 16px);
+  @include mixines.mobile-l {
+    width: 500px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  > button {
+    grid-column: 1/ 3;
+  }
+}
