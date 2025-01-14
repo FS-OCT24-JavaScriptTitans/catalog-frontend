@@ -50,3 +50,9 @@
   display: flex;
   gap: 8px;
 }
+
+.favorite {
+  > svg {
+    fill: var(--red-color);
+  }
+}
