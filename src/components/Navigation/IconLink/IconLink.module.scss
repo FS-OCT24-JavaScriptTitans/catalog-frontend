@@ -1,0 +1,19 @@
+@use '../../../styles/abstract/mixines';
+
+.container {
+  position: relative;
+}
+
+.counter {
+  width: 14px;
+  font-size: 9px;
+  background-color: var(--red-color);
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  height: 14px;
+  line-height: 13px;
+  text-align: center;
+  color: var(--white-color);
+  @include mixines.border(1px, var(--main-bg-color), 50%);
+}
