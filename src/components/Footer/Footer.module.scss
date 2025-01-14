@@ -1,18 +1,24 @@
 @use '@/styles/abstract/mixines' as mixin;
 @use '@/styles/abstract/constants';
 
+.footer {
+  margin-top: auto;
+}
+
 .container {
   padding: 32px 16px;
   @include mixin.flex-container(stretch, start, column, 32px);
 
   @include mixin.tablet {
     padding: 32px;
-    @include mixin.flex-container(stretch, start, row, 130px);
+    flex-direction: row;
+    column-gap: 108px;
+    align-items: center;
   }
 
   @include mixin.desctop {
     padding: 32px;
-    @include mixin.flex-container(stretch, start, row, 290px);
+    column-gap: 290px;
   }
 }
 
