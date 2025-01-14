@@ -19,10 +19,15 @@ export const Favourites = () => {
           <span className={s.contaiter__text}>{favoritesLength} items</span>
           <section className={s.products}>
             {favorites.map((product) => (
-              <ProductCard
+              <span
                 key={product.id}
-                product={product}
-              />
+                className={s.product}
+              >
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                />
+              </span>
             ))}
           </section>
         </>

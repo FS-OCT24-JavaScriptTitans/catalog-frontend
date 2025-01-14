@@ -11,6 +11,16 @@
 
 .products {
   @include mixines.page-grid;
+  row-gap: 40px;
   padding-top: 40px;
   padding-bottom: 80px;
+}
+
+.product {
+  margin: auto;
+  grid-column: 1 / -1;
+
+  @include mixines.tablet {
+    grid-column: auto / span 6;
+  }
 }
