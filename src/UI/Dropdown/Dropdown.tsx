@@ -12,12 +12,13 @@ interface Props<T> {
   onChange?: (value: T) => void;
   width?: string;
   hasBorder?: boolean;
+  selectedOption?: Option<T>;
 }
 
-export const Dropdown = <T,>({ options, onChange, width, hasBorder }: Props<T>) => {
+export const Dropdown = <T,>({ options, onChange, width, hasBorder, selectedOption }: Props<T>) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const [option, setOption] = useState<Option<T>>(options[0]);
+  const [option, setOption] = useState<Option<T>>(selectedOption || options[0]);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 

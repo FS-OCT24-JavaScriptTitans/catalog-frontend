@@ -9,17 +9,14 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    resources: {
-      en: en,
-      ua: ua,
-    },
+    resources: { en, ua },
     lng: 'en',
-    fallbackLng: 'en',
+    fallbackLng: 'ua',
     interpolation: {
       escapeValue: false,
     },
     detection: {
-      order: ['localStorage', 'navigator'],
+      order: ['localStorage'],
       caches: ['localStorage'],
     },
   });

@@ -3,19 +3,22 @@ import { useLanguage } from '@/hooks/useLanguage';
 import { Option } from '@/types/Options.type';
 import { Dropdown } from '@/UI/Dropdown/Dropdown';
 
-const LanguageOpt: Option<LANGUAGE>[] = [
+const languageOpt: Option<LANGUAGE>[] = [
   { id: 1, value: LANGUAGE.EN, label: 'EN' },
   { id: 2, value: LANGUAGE.UA, label: 'UA' },
 ];
 
 export const LanguageSwitcher = () => {
-  const { setLanguage } = useLanguage();
+  const { setLanguage, getLanguage } = useLanguage();
+
+  const selectedLanguage = languageOpt.find((opt) => opt.value === getLanguage()) || languageOpt[0];
 
   return (
     <Dropdown
-      options={LanguageOpt}
+      options={languageOpt}
       onChange={setLanguage}
-      width="60px"
+      width="80px"
+      selectedOption={selectedLanguage}
     />
   );
 };
