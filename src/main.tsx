@@ -4,8 +4,10 @@ import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import { persistor, store } from './redux/store';
-import './styles/main.scss';
 import { Root } from './Roots';
+
+import './i18n';
+import './styles/main.scss';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <StrictMode>

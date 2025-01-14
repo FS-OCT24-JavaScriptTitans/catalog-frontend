@@ -1,0 +1,19 @@
+{
+  "translation": {
+    "cartPage": { "cart": "Cart", "totalForItems": "Total for {{totalQuantity}} items", "checkout": "Checkout" },
+    "authPage": {
+      "signIn": "Sign In",
+      "signUp": "Sign Up",
+      "name": "Ім'я",
+      "email": "Email",
+      "password": "Password",
+      "google": "Sign In with google"
+    },
+    "navigation": {
+      "Home": "Home",
+      "Phones": "Phones",
+      "Tablets": "Tablets",
+      "Accessories": "Accessories"
+    }
+  }
+}
