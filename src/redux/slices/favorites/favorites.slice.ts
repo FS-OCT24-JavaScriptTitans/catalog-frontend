@@ -95,7 +95,7 @@ const favorietesSlice = createSlice({
   name: 'favorites',
   initialState,
   reducers: {
-    toggleProduct: (state, { payload }: PayloadAction<{ product: Product }>) => {
+    toggleFavoriteProduct: (state, { payload }: PayloadAction<{ product: Product }>) => {
       const isProductInList = state.favorites.find((product) => product.id === payload.product.id);
 
       if (!isProductInList) {
@@ -109,6 +109,6 @@ const favorietesSlice = createSlice({
   },
 });
 
-export const { toggleProduct } = favorietesSlice.actions;
+export const { toggleFavoriteProduct } = favorietesSlice.actions;
 
 export default favorietesSlice.reducer;

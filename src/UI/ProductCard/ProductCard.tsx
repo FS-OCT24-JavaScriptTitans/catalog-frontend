@@ -48,9 +48,10 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
             hasBorder
           >
             {isFavorite ?
-              <span className={styles.favorite}>
-                <Favourites />
-              </span>
+              <Favourites
+                fill="red"
+                color="red"
+              />
             : <Favourites />}
           </IconButton>
         </div>
