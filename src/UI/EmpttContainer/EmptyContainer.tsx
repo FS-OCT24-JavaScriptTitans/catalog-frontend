@@ -1,16 +1,22 @@
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
+import { FC } from 'react';
 
-import s from './EmptyCart.module.scss';
+import s from './EmpttContainer.module.scss';
 
 import { PATH } from '@/constants/path';
 
-const EmptyCart = () => (
+interface Props {
+  title: string;
+  pathToImg: string;
+}
+
+const EmptyContainer: FC<Props> = ({ title, pathToImg }) => (
   <article>
-    <h2 className={cn(s.title)}>The Cart is empty</h2>
+    <h2 className={cn(s.title)}>{title}</h2>
     <div className={s.imgContainer}>
       <img
-        src="/img/cart-is-empty.png"
+        src={pathToImg}
         alt="empty-cart"
       />
     </div>
@@ -28,4 +34,4 @@ const EmptyCart = () => (
   </article>
 );
 
-export default EmptyCart;
+export default EmptyContainer;

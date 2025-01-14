@@ -1,0 +1,24 @@
+@use '@/styles/abstract/mixines';
+@use '@/styles/abstract/constants';
+
+.products {
+  @include mixines.flex-container(center, center, row, 16px, wrap);
+  margin-bottom: 16px;
+
+  :last-child {
+    margin-bottom: 0;
+  }
+
+  &__title {
+    margin-block: 16px;
+  }
+}
+
+.id {
+  color: var(--main-color);
+  margin-bottom: 10px;
+
+  > span {
+    color: var(--text-color);
+  }
+}

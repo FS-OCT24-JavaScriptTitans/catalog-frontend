@@ -1,3 +1,5 @@
+import { CartProduct } from './Cart.types';
+
 export interface Order {
   id: string;
   firstName: string;
@@ -8,4 +10,6 @@ export interface Order {
   postcode: number;
   phone: string;
   email: string;
+  products: CartProduct[];
+  totalPrice: number;
 }

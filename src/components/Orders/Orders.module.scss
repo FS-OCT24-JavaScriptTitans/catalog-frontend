@@ -1,0 +1,15 @@
+@use '@/styles/abstract/mixines';
+@use '@/styles/abstract/constants';
+
+.orders {
+  padding: 16px;
+
+  @include mixines.tablet {
+    padding: 24px;
+  }
+
+  .title {
+    margin-bottom: 16px;
+    color: var(--main-color);
+  }
+}

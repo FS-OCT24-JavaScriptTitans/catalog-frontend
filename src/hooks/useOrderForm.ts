@@ -5,12 +5,13 @@ import { useNavigate } from 'react-router-dom';
 
 import { type FormData, orderSchema } from '@/utils/validation/orderSchema';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
-import { selectUser } from '@/redux/selectors';
+import { selectCart, selectUser } from '@/redux/selectors';
 import { postOrder } from '@/api/firebase/db/order/postOrder';
 import { addOrder } from '@/redux/slices/orders/orders.slice';
 import { clearCart } from '@/redux/slices/cart/carrt.slice';
 import notification from '@/utils/notification';
 import { PATH } from '@/constants/path';
+import { calculateCartSummary } from '@/utils/cart/calculateCartSummary';
 
 interface Field {
   label: string;
@@ -32,6 +33,8 @@ export const useOrderForm = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
+  const products = useAppSelector(selectCart, shallowEqual);
+
   const fields: Field[] = [
     { label: 'First Name', type: 'text', name: 'firstName', value: user ? user.name : '' },
     { label: 'Last Name', type: 'text', name: 'lastName' },
@@ -45,7 +48,12 @@ export const useOrderForm = () => {
 
   const onSubmit = async (order: FormData) => {
     if (isValid) {
-      const newOrder = await postOrder({ ...order, postcode: Number(order.postcode) });
+      const newOrder = await postOrder({
+        ...order,
+        postcode: Number(order.postcode),
+        products,
+        totalPrice: calculateCartSummary(products).totalPrice,
+      });
 
       if (typeof newOrder !== 'string') {
         dispatch(addOrder({ order: newOrder }));
