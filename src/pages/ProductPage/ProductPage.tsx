@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink, useParams } from 'react-router-dom';
 import cn from 'classnames';
 
@@ -17,7 +17,12 @@ const ProductPage: React.FC = () => {
   const { productId } = useParams();
   const product = phones.find((phone) => productId === phone.id);
   const [chosenImage, setChosenImage] = useState(product?.images[0]);
+  const [ID, setID] = useState(0);
   const techSpecsArray = Object.entries({ ...product }).slice(-7);
+
+  useEffect(() => {
+    setID(Math.floor(Math.random() * 1000000));
+  }, []);
 
   return (
     product && (
@@ -57,7 +62,7 @@ const ProductPage: React.FC = () => {
         <article className={styles.mainChars}>
           <div className={styles.colorsTop}>
             <span className={styles.smallGreyText}>Available colors</span>
-            <span className={styles.id}>{`ID: ${Math.floor(Math.random() * 1000000)}`}</span>
+            <span className={styles.id}>{`ID: ${ID}`}</span>
           </div>
           <div className={styles.colors}>
             {product.colorsAvailable.map((color) => (
