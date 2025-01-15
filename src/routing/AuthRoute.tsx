@@ -17,12 +17,10 @@ const AuthRoute = (): ReactNode => {
   const { saveAuthData } = useAuthData();
   const navigate = useNavigate();
   const user = useAppSelector(selectUser, shallowEqual);
-  const [isLoading, setLoading] = useState(false);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     if (user || !refreshToken) return;
-
-    setLoading(true);
 
     signInWithToken(refreshToken)
       .then((res) => {
@@ -39,7 +37,15 @@ const AuthRoute = (): ReactNode => {
 
   if (isLoading) return <Loader />;
 
-  return !isLoading && user && pathname.startsWith(PATH.AUTH) ? <Navigate to={PATH.HOME} /> : <Outlet />;
+  if (!isLoading) {
+    if (user && pathname.startsWith(PATH.AUTH)) {
+      return <Navigate to={PATH.HOME} />;
+    } else {
+      return <Outlet />;
+    }
+  }
+
+  return null;
 };
 
 export default AuthRoute;
