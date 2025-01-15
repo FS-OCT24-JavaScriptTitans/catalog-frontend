@@ -1,3 +1,5 @@
-const FavoritesPage = () => <h2>Favorites</h2>;
+import { Favourites } from '@/components/Favorites/Favorites';
+
+const FavoritesPage = () => <Favourites />;
 
 export default FavoritesPage;

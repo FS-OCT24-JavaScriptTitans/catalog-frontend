@@ -11,4 +11,5 @@ export const Pages = {
   TabletsPage: lazy(() => import('../pages/TabletsPage/TabletsPage')),
   AccessoriesPage: lazy(() => import('../pages/AccessoriesPage/AccessoriesPage')),
   OrdersPage: lazy(() => import('../pages/OrdersPage/OrdersPage')),
+  ProductPage: lazy(() => import('../pages/ProductPage/ProductPage')),
 };

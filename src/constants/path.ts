@@ -9,4 +9,5 @@ export enum PATH {
   TABLETS = '/tablets',
   ACCESSORIES = '/accessories',
   ORDERS = '/orders',
+  PRODUCT = '/:productId?',
 }

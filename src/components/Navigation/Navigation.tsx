@@ -16,7 +16,7 @@ import s from './Navigation.module.scss';
 
 import { PATH } from '@/constants/path';
 import { useAppSelector } from '@/redux/hooks';
-import { selectCart, selectUser } from '@/redux/selectors';
+import { selectCart, selectFavorites, selectUser } from '@/redux/selectors';
 
 const navLinks = {
   Home: PATH.HOME,
@@ -31,6 +31,7 @@ const Navigation = () => {
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
   const user = useAppSelector(selectUser, shallowEqual);
   const cartList = useAppSelector(selectCart, shallowEqual);
+  const favoritesList = useAppSelector(selectFavorites, shallowEqual);
 
   return (
     <header className={s.container}>
@@ -49,7 +50,7 @@ const Navigation = () => {
               handleClick={() => setIsOpenMobileMenu(false)}
             />
           ))}
-        </div>{' '}
+        </div>
         <div className={s.navigation__icons}>
           {!user && (
             <NavigationLink
@@ -71,7 +72,7 @@ const Navigation = () => {
           <IconLink
             icon={favorites}
             path={PATH.FAVORITES}
-            counter={0}
+            counter={favoritesList.length}
             navLinkStyle={navLinkStyle}
             handleClick={() => setIsOpenMobileMenu(false)}
           />

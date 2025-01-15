@@ -1,4 +1,5 @@
 import React from 'react';
+import { shallowEqual } from 'react-redux';
 
 import { Button } from '../Button/Button';
 import { IconButton } from '../IconButton/IconButton';
@@ -9,6 +10,8 @@ import styles from './ProductCard.module.scss';
 import Favourites from '@/assets/Favourites.svg?react';
 import { Spec } from '@/types/Spec';
 import { Product } from '@/types/Product.type';
+import { useAppSelector } from '@/redux/hooks';
+import { selectFavorites } from '@/redux/selectors';
 
 type Props = {
   product: Product;
@@ -16,6 +19,9 @@ type Props = {
 
 export const ProductCard: React.FC<Props> = ({ product }) => {
   const specs: Spec = { screen: product.screen, capacity: product.capacity, ram: product.ram };
+
+  const favorites = useAppSelector(selectFavorites, shallowEqual);
+  const isFavorite = favorites.find((favorite) => product.id === favorite.id);
 
   return (
     <article className={styles.card}>
@@ -41,7 +47,12 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
             onClick={() => {}}
             hasBorder
           >
-            <Favourites />
+            {isFavorite ?
+              <Favourites
+                fill="red"
+                color="red"
+              />
+            : <Favourites />}
           </IconButton>
         </div>
       </div>
