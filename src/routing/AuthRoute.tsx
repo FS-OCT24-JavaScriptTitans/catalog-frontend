@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode, useLayoutEffect, useState } from 'react';
 import { Navigate, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import { shallowEqual } from 'react-redux';
 
@@ -9,6 +9,7 @@ import { signInWithToken } from '@/api/firebase/signInWithToken';
 import useAuthData from '@/hooks/useAuthData';
 import { Loader } from '@/components/Loader/Loader';
 import { selectUser } from '@/redux/selectors';
+import { initialLoading } from '@/utils/іnitialLoading';
 
 const AuthRoute = (): ReactNode => {
   const { pathname } = useLocation();
@@ -19,8 +20,10 @@ const AuthRoute = (): ReactNode => {
   const user = useAppSelector(selectUser, shallowEqual);
   const [isLoading, setLoading] = useState(true);
 
-  useEffect(() => {
-    if (user || !refreshToken) return;
+  useLayoutEffect(() => {
+    if (initialLoading(user, refreshToken, pathname, setLoading)) {
+      return;
+    }
 
     signInWithToken(refreshToken)
       .then((res) => {
@@ -38,11 +41,7 @@ const AuthRoute = (): ReactNode => {
   if (isLoading) return <Loader />;
 
   if (!isLoading) {
-    if (user && pathname.startsWith(PATH.AUTH)) {
-      return <Navigate to={PATH.HOME} />;
-    } else {
-      return <Outlet />;
-    }
+    return user && pathname.startsWith(PATH.AUTH) ? <Navigate to={PATH.HOME} /> : <Outlet />;
   }
 
   return null;
