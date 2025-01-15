@@ -1,27 +1,18 @@
-import { useEffect, useState } from 'react';
-
 import s from './ThemeSwitcher.module.scss';
 
-import useLocaLStorage from '@/hooks/useLocaLStorage';
-
-const DARK = 'dark';
+import { Theme } from '@/types/Theme';
+import { useTheme } from '@/hooks/useTheme';
 
 export const ThemeSwitcher = () => {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
-  const { setItem, getItem, removeItem } = useLocaLStorage('theme');
-  const root = document.querySelector('#root');
+  const { theme, setTheme } = useTheme();
 
-  useEffect(() => {
-    const theme = getItem();
-
-    if (theme) {
-      root?.classList.remove(DARK);
-      removeItem();
+  const handleSwitchTheme = () => {
+    if (theme === Theme.LIGHT) {
+      setTheme(Theme.DARK);
     } else {
-      root?.classList.add(DARK);
-      setItem(DARK);
+      setTheme(Theme.LIGHT);
     }
-  }, [getItem, isDarkTheme, removeItem, root?.classList, setItem]);
+  };
 
   return (
     <span className={s.container}>
@@ -29,7 +20,7 @@ export const ThemeSwitcher = () => {
         <input
           type="checkbox"
           className={s.input}
-          onChange={() => setIsDarkTheme(!isDarkTheme)}
+          onChange={handleSwitchTheme}
         />
         <span className={s.slider}></span>
       </label>
