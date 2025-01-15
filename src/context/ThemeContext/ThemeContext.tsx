@@ -4,7 +4,10 @@ import { Theme } from '@/types/Theme';
 
 interface Context {
   theme: Theme;
-  setTheme: (theme: Theme) => void;
+  handleSwitchTheme: () => void;
 }
 
-export const ThemeContext = createContext<Context>({ theme: Theme.LIGHT, setTheme: () => {} });
+export const ThemeContext = createContext<Context>({
+  theme: Theme.LIGHT,
+  handleSwitchTheme: () => {},
+});

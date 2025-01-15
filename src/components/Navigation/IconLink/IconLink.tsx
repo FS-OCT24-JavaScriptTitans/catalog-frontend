@@ -1,30 +1,32 @@
+/* eslint-disable react/no-children-prop */
 import { NavLinkRenderProps } from 'react-router-dom';
 
 import s from './IconLink.module.scss';
 
 import NavigationLink from '@/UI/NavLink/NavigationLink';
-import IconContainer from '@/UI/IconContainer/IcontContainer';
+import { IconButton } from '@/UI/IconButton/IconButton';
 
 type Props = {
-  icon: string;
+  icon: React.ReactNode;
   path: string;
-  counter: number;
-  navLinkStyle: ({ isActive }: NavLinkRenderProps) => string;
+  counter?: number;
   handleClick: () => void;
 };
 
 export const IconLink: React.FC<Props> = (props) => {
-  const { icon, path, counter, navLinkStyle, handleClick } = props;
+  const navLinkStyle = ({ isActive }: NavLinkRenderProps) => `${s.link} ${isActive ? s.active_link : ''}`;
+  const { icon, path, counter, handleClick } = props;
 
   return (
-    <span
-      key={icon}
-      className={s.container}
-    >
+    <span className={s.container}>
       <NavigationLink
-        key={icon}
         to={path}
-        label={<IconContainer icon={icon} />}
+        label={
+          <IconButton
+            children={icon}
+            hasBorder
+          />
+        }
         className={navLinkStyle}
         handleClick={handleClick}
       />

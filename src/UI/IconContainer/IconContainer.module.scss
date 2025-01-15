@@ -6,10 +6,6 @@
   @include mixines.border(1px, var(--element-color));
   border-bottom: 0;
   transition: all constants.$transition-time;
-
-  &:hover {
-    border-color: var(--main-color);
-  }
 }
 
 .icon {
