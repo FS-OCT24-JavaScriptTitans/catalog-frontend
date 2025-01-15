@@ -2,9 +2,7 @@
 @use '../../styles//abstract/constants';
 
 .sliderContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include mixines.flex-container(center, center);
   max-width: 1040px;
   width: 100%;
   height: auto;
@@ -26,9 +24,7 @@
 }
 
 .paginationWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include mixines.flex-container(center, center);
   gap: 8px;
   padding: 16px 0;
 }
@@ -50,9 +46,7 @@
 }
 
 .swiper-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include mixines.flex-container(center, center);
 }
 
 .image-container {
@@ -80,14 +74,12 @@
 
 .prevButton,
 .nextButton {
+  @include mixines.flex-container(center, center);
   position: absolute;
   width: 32px;
   height: 190px;
   border: 1px solid var(--border-icon-color);
   background-color: var(--icon-bg-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   cursor: pointer;
   opacity: 0;
 
