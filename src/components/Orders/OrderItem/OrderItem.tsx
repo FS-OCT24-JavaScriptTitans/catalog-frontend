@@ -15,7 +15,7 @@ export const OrderItem: FC<Props> = ({ order }) => (
     key={order.id}
     className={s.item}
   >
-    <h4 className={s.id}>
+    <h4 className={s.itemId}>
       Order ID: <span> {order.id}</span>
     </h4>
 

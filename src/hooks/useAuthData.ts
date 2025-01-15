@@ -5,7 +5,7 @@ import useTokens from './useTokens';
 import { useAppDispatch } from '@/redux/hooks';
 import { ResponseUser } from '@/types/User.type';
 import notification from '@/utils/notification';
-import { removeUser, setUser } from '@/redux/slices/user/userSlice';
+import { removeUser, setUser } from '@/redux/slices/user/user.slice';
 import { PATH } from '@/constants/path';
 
 const useAuthData = () => {

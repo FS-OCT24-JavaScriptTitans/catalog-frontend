@@ -5,6 +5,15 @@
   padding: 16px;
   margin-bottom: 16px;
   @include mixines.border(1px, var(--element-color), 9px);
+
+  &__id {
+    color: var(--main-color);
+    margin-bottom: 10px;
+
+    > span {
+      color: var(--text-color);
+    }
+  }
 }
 
 .products {
@@ -17,14 +26,5 @@
 
   &__title {
     margin-block: 16px;
-  }
-}
-
-.id {
-  color: var(--main-color);
-  margin-bottom: 10px;
-
-  > span {
-    color: var(--text-color);
   }
 }

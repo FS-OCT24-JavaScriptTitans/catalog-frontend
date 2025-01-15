@@ -2,14 +2,15 @@ import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 import { persistStore } from 'redux-persist';
 
-import userSlice from './slices/user/userSlice';
-import { persistedCartReducer, persistedOrderReducer } from './persistors';
+import { persistedCartReducer } from './persistors';
+import ordersReducer from './slices/orders/orders.slice';
+import userReducer from './slices/user/user.slice';
 
 export const store = configureStore({
   reducer: {
     cart: persistedCartReducer,
-    order: persistedOrderReducer,
-    user: userSlice,
+    order: ordersReducer,
+    user: userReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
