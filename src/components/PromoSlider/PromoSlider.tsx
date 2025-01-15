@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { Swiper as SwiperClass } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import { useNavigate } from 'react-router-dom';
 
 import 'swiper/css';
@@ -43,44 +43,49 @@ const PromoSlider: React.FC = () => {
   };
 
   return (
-    <>
-      <div>
-        <div className={styles.sliderContainer}>
-          <Swiper
-            modules={[Pagination, Navigation]}
-            spaceBetween={100}
-            slidesPerView={1}
-            loop
-            navigation={{
-              nextEl: `.${styles.nextButton}`,
-              prevEl: `.${styles.prevButton}`,
-            }}
-            onSwiper={(swiper) => {
-              swiperRef.current = swiper;
-            }}
-            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-            pagination={false}
-          >
-            {slides.map((slide, index) => (
-              <SwiperSlide
-                key={index}
-                className={styles.swiperSlide}
-              >
-                <div
-                  className={styles.imageContainer}
-                  onClick={() => handleSlideClick(slide.link)}
-                >
-                  <img
-                    src={slide.img}
-                    alt={`Slide ${index + 1}`}
-                    className={styles.image}
-                  />
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
+    <div className={styles.sliderWrapper}>
+      <div className={styles.prevButton}>
+        <Arrow direction={'left'} />
+      </div>
 
+      <div className={styles.sliderContainer}>
+        <Swiper
+          modules={[Pagination, Navigation, Autoplay]}
+          spaceBetween={100}
+          slidesPerView={1}
+          loop
+          autoplay={{
+            delay: 3000, // Затримка в мілісекундах (3 секунди)
+            disableOnInteraction: false, // Свайпер не зупиняється після взаємодії
+          }}
+          navigation={{
+            nextEl: `.${styles.nextButton}`,
+            prevEl: `.${styles.prevButton}`,
+          }}
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+          pagination={false}
+        >
+          {slides.map((slide, index) => (
+            <SwiperSlide
+              key={index}
+              className={styles.swiperSlide}
+            >
+              <div
+                className={styles.imageContainer}
+                onClick={() => handleSlideClick(slide.link)}
+              >
+                <img
+                  src={slide.img}
+                  alt={`Slide ${index + 1}`}
+                  className={styles.image}
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
         <div className={styles.paginationWrapper}>
           {slides.map((_, index) => (
             <div
@@ -92,13 +97,10 @@ const PromoSlider: React.FC = () => {
         </div>
       </div>
 
-      <div className={styles.prevButton}>
-        <Arrow direction={'left'} />
-      </div>
       <div className={styles.nextButton}>
         <Arrow direction={'rigth'} />
       </div>
-    </>
+    </div>
   );
 };
 
