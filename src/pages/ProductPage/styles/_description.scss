@@ -1,0 +1,33 @@
+@use '../../../styles/abstract/mixines';
+
+.description {
+  grid-column: 1/-1;
+
+  @include mixines.desctop {
+    grid-column: 1/12;
+  }
+
+  &__line {
+    margin-top: 16px;
+  }
+
+  &__box {
+    grid-column: 1/-1;
+    margin-top: 32px;
+  }
+
+  &__title {
+    @include mixines.font(16px, 20.5px, 700);
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    @include mixines.font(14px, 21px, 600);
+    color: var(--text-color);
+    margin-bottom: 21px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

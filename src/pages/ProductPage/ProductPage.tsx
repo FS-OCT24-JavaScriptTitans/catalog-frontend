@@ -3,8 +3,12 @@ import { Link, NavLink, useParams } from 'react-router-dom';
 import cn from 'classnames';
 
 import phones from '../../../public/api/phones.json';
+// import base from '../../styles/base/_base.scss';
+// import typography from '../../styles/base/_typography.scss';
 
 import styles from './ProductPage.module.scss';
+
+import { Product } from '@/types/Product.type';
 
 function capitalLetter(input: string) {
   const letters = input.split('');
@@ -13,37 +17,75 @@ function capitalLetter(input: string) {
   return first.toUpperCase() + elseLetters.join('');
 }
 
+function changeIdColor(inputObject: Product, inputColor: string) {
+  const wrappedId = inputObject.id.split('-');
+  const currentColor = wrappedId.find((word) => {
+    let color = '';
+
+    if (inputObject.colorsAvailable.includes(word)) {
+      color = word;
+    }
+
+    return !!color;
+  });
+
+  if (currentColor) {
+    const currentColorId = wrappedId.indexOf(currentColor);
+
+    wrappedId.splice(currentColorId, 1, inputColor);
+  }
+
+  return wrappedId.join('-');
+}
+
+function changeIdCapacity(inputObject: Product, inputCapacity: string) {
+  const wrappedId = inputObject.id.split('-');
+  const currentCapacity = wrappedId.find((word) => {
+    let capacity = '';
+
+    if (inputObject.capacityAvailable.includes(word.toUpperCase())) {
+      capacity = word;
+    }
+
+    return !!capacity;
+  });
+
+  if (currentCapacity) {
+    const currentCapacityId = wrappedId.indexOf(currentCapacity);
+
+    wrappedId.splice(currentCapacityId, 1, inputCapacity.toLowerCase());
+  }
+
+  return wrappedId.join('-');
+}
+
 const ProductPage: React.FC = () => {
   const { productId } = useParams();
   const product = phones.find((phone) => productId === phone.id);
-  const [chosenImage, setChosenImage] = useState(product?.images[0]);
+  const [selectedImage, setSelectedImage] = useState(product?.images[0]);
   const [ID, setID] = useState(0);
-  const techSpecsArray = Object.entries({ ...product }).slice(-7);
+  const techSpecs = Object.entries({ ...product }).slice(-7);
 
   useEffect(() => {
     setID(Math.floor(Math.random() * 1000000));
-  }, []);
+    setSelectedImage(product?.images[0]);
+  }, [product]);
 
   return (
     product && (
-      <section className={styles.productCard}>
-        <Link
-          to=".."
-          className="product-card__back"
-        >
-          Back
-        </Link>
+      <section className={cn(styles.productCard, 'section')}>
+        <Link to="..">Back</Link>
         <h2 className={styles.mainTitle}>{product.name}</h2>
 
-        <article className={styles.images}>
-          <div className={styles.mainImageBox}>
-            <img
-              src={`/${chosenImage}`}
-              alt="product image"
-              className={styles.mainPhoto}
-            />
-          </div>
+        <div className={styles.mainImageBox}>
+          <img
+            src={`/${selectedImage}`}
+            alt="product image"
+            className={styles.mainPhoto}
+          />
+        </div>
 
+        <div className={styles.imagesContainer}>
           {product.images.map((imageLink, index) => (
             <div
               key={index}
@@ -52,12 +94,12 @@ const ProductPage: React.FC = () => {
               <img
                 src={`/${imageLink}`}
                 alt="product image"
-                className={cn(styles.photo, { [styles.active]: chosenImage === imageLink })}
-                onClick={() => setChosenImage(imageLink)}
+                className={cn(styles.photo, { [styles.active]: selectedImage === imageLink })}
+                onClick={() => setSelectedImage(imageLink)}
               />
             </div>
           ))}
-        </article>
+        </div>
 
         <article className={styles.mainChars}>
           <div className={styles.colorsTop}>
@@ -67,7 +109,7 @@ const ProductPage: React.FC = () => {
           <div className={styles.colors}>
             {product.colorsAvailable.map((color) => (
               <NavLink
-                to=""
+                to={`/phones/${changeIdColor(product, color)}`}
                 className={cn(styles.colorContainer, { [styles.active]: product.color === color })}
                 key={color}
               >
@@ -79,14 +121,14 @@ const ProductPage: React.FC = () => {
             ))}
           </div>
 
-          <div className={styles.dividingLine} />
+          <div className="line" />
 
           <article className={styles.capacityContainer}>
-            <span className={styles.smallText}>Select capacity</span>
+            <span className={styles.smallGreyText}>Select capacity</span>
             <div className={styles.capacities}>
               {product.capacityAvailable.map((capacity) => (
                 <NavLink
-                  to=""
+                  to={`/phones/${changeIdCapacity(product, capacity)}`}
                   className={cn(styles.capacity, { [styles.currentCapacity]: product.capacity === capacity })}
                   key={capacity}
                 >
@@ -96,7 +138,7 @@ const ProductPage: React.FC = () => {
             </div>
           </article>
 
-          <div className={styles.dividingLine}></div>
+          <div className="line" />
 
           <div className={styles.prices}>
             {product.priceDiscount ?
@@ -109,7 +151,7 @@ const ProductPage: React.FC = () => {
 
           <button className={styles.button}>Add to cart</button>
 
-          {techSpecsArray.map(
+          {techSpecs.map(
             (specification, index) =>
               index < 4 && (
                 <div
@@ -128,18 +170,18 @@ const ProductPage: React.FC = () => {
         <article className={styles.description}>
           <h3 className={styles.secondaryTitles}>About</h3>
 
-          <div className={styles.dividingLine}></div>
+          <div className={cn(styles.description__line, 'line')} />
 
           {product.description.map((description, index) => (
             <div
-              className={styles.descriptionBox}
+              className={styles.description__box}
               key={index}
             >
-              <h4 className={styles.descriptionTitle}>{description.title}</h4>
+              <h4 className={styles.description__title}>{description.title}</h4>
 
               {description.text.map((paragraph, index) => (
                 <p
-                  className={styles.descriptionText}
+                  className={styles.description__text}
                   key={index}
                 >
                   {paragraph}
@@ -152,9 +194,9 @@ const ProductPage: React.FC = () => {
         <article className={styles.techSpecs}>
           <h3 className={styles.secondaryTitles}>Tech specs</h3>
 
-          <div className={styles.dividingLine}></div>
+          <div className={cn(styles.techSpecLine, 'line')} />
 
-          {techSpecsArray.map((specification) => (
+          {techSpecs.map((specification) => (
             <div
               className={styles.specification}
               key={specification[0]}

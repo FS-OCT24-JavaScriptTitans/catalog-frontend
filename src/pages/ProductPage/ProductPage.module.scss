@@ -1,203 +1,50 @@
-@use '../../styles/main';
-@use '../../styles/abstract/constants';
-@import '../../styles/abstract/mixines';
+@use '../../styles/abstract/mixines';
 
-$unactive-border: 1px solid var(--element-color);
-$active-border: 1px solid var(--main-color);
+@use './styles/photos';
+@use './styles/mainChars';
+@use './styles/description';
+@use './styles/techSpecs';
+@use './styles/recommended';
 
 .product-card {
   margin-inline: 16px;
-  @include page-grid;
+  max-width: 1200px;
 
-  @include tablet {
+  @include mixines.page-grid;
+
+  @include mixines.tablet {
     margin-inline: 24px;
+  }
+
+  @include mixines.desctop {
+    margin-inline: 32px;
+  }
+
+  @media (min-width: 1264px) {
+    margin-inline: auto;
   }
 }
 
 .smallGreyText {
-  @include font(12px, 15.4px, 600);
   color: var(--text-color);
 }
 
 .smallBlackText {
-  @include font(12px, 15.4px, 600);
   color: var(--main-color);
 }
 
 .mainTitle {
-  @include font(22px, 30.8px, 800, normal, bold);
   margin-bottom: 32px;
   grid-column: 1/-1;
 }
 
 .secondaryTitles {
-  @include font(20px, 25.6px, 700);
   margin-top: 56px;
 }
 
 .dividingLine {
+  @include mixines.border(1px, var(--element-color));
   height: 0;
   width: 100%;
-  border: $unactive-border;
   margin: 16px 0;
-}
-
-.images {
-  grid-column: 1/-1;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 288px 49px;
-  row-gap: 16px;
-  column-gap: 8px;
-  margin-bottom: 40px;
-
-  @include tablet {
-    grid-column: 1/7;
-  }
-}
-
-.mainImageBox {
-  grid-column: 1/-1;
-  grid-row: 1/2;
-}
-
-.imageBox {
-  grid-column: span 1;
-  grid-row: 2/-1;
-}
-
-.mainPhoto {
-  height: 100%;
-  object-fit: contain;
-  grid-column: 1/-1;
-  grid-row: 1/2;
-}
-
-.photo {
-  height: 100%;
-  object-fit: contain;
-  padding: 4.5px 4.3px;
-  border: $unactive-border;
-}
-
-.main-chars {
-  @include font(12px, 15.4px, 600);
-  grid-column: 1/-1;
-
-  @include tablet {
-    grid-column: 7/-1;
-  }
-}
-
-.colorsTop {
-  display: flex;
-  justify-content: space-between;
-}
-
-.id {
-  @include font(12px, 15.4px, 700);
-  color: var(--text-color);
-}
-
-.colors {
-  display: flex;
-  column-gap: 8px;
-  margin-bottom: 24px;
-}
-
-.colorContainer {
-  margin-top: 8px;
-  border: $unactive-border;
-  border-radius: 50%;
-}
-
-.color {
-  height: 30px;
-  aspect-ratio: 1;
-  border: 3px solid var(--icon-bg-color);
-  border-radius: 50%;
-}
-
-.active {
-  border: $active-border;
-}
-
-.capacityContainer {
-  margin-block: 24px;
-}
-
-.capacities {
-  margin-block: 8px;
-  display: flex;
-  column-gap: 8px;
-}
-
-.capacity {
-  line-height: 21px;
-  padding: 7px 8px 4px;
-  border: 1px solid var(--border-icon-color);
-}
-
-.currentCapacity {
-  background-color: var(--main-color);
-  color: var(--icon-bg-color);
-  border: none;
-}
-
-.prices {
-  display: flex;
-  align-items: center;
-  margin-top: 32px;
-}
-
-.discountPrice {
-  @include font(32px, 41px, 800);
-  color: var(--main-color);
-}
-
-.regularPrice {
-  @include font(22px, 28.1px, 500);
-  margin-left: 8px;
-  color: var(--text-color);
-  text-decoration: line-through;
-}
-
-.button {
-  margin: 16px 0 32px;
-}
-
-.specification {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 8px;
-}
-
-.description {
-  grid-column: 1/-1;
-}
-
-.descriptionBox {
-  grid-column: 1/-1;
-  margin-top: 32px;
-  display: flex;
-  flex-direction: column;
-}
-
-.descriptionTitle {
-  @include font(16px, 20.5px, 700);
-  margin-bottom: 16px;
-}
-
-.descriptionText {
-  @include font(14px, 21px, 600);
-  color: var(--text-color);
-}
-
-.techSpecs {
-  grid-column: 1/-1;
-}
-
-.recommended {
-  grid-column: 1/-1;
 }

@@ -1,0 +1,51 @@
+@use '../../../styles/abstract/mixines';
+
+.mainImageBox {
+  grid-column: 1/-1;
+  aspect-ratio: 1;
+  margin-bottom: 16px;
+
+  @include mixines.tablet {
+    grid-column: 2/8;
+    grid-row: 3;
+  }
+
+  @include mixines.desctop {
+    grid-column: 3/12;
+  }
+}
+
+.imagesContainer {
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 8px;
+  margin-bottom: 40px;
+
+  @include mixines.tablet {
+    grid-column: 1/2;
+    grid-template-columns: 1fr;
+    row-gap: 8px;
+  }
+
+  @include mixines.desctop {
+    grid-column: 1/3;
+  }
+}
+
+.imageBox {
+  aspect-ratio: 1;
+}
+
+.mainPhoto {
+  height: 100%;
+  object-fit: contain;
+}
+
+.photo {
+  @include mixines.border(1px, var(--element-color));
+  height: 100%;
+  object-fit: contain;
+  padding: 4.5px 4.3px;
+  grid-column: span 1;
+}
