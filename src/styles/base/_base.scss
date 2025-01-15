@@ -27,6 +27,10 @@ body {
   flex-direction: column;
 }
 
+.main {
+  background-color: var(--main-bg-color);
+}
+
 a,
 input,
 button {
