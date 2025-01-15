@@ -55,8 +55,8 @@ const PromoSlider: React.FC = () => {
           slidesPerView={1}
           loop
           autoplay={{
-            delay: 3000, // Затримка в мілісекундах (3 секунди)
-            disableOnInteraction: false, // Свайпер не зупиняється після взаємодії
+            delay: 3000,
+            disableOnInteraction: false,
           }}
           navigation={{
             nextEl: `.${styles.nextButton}`,
