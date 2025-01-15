@@ -1,0 +1,50 @@
+@use '../../styles/abstract/mixines';
+
+@use './styles/photos';
+@use './styles/mainChars';
+@use './styles/description';
+@use './styles/techSpecs';
+@use './styles/recommended';
+
+.product-card {
+  margin-inline: 16px;
+  max-width: 1200px;
+
+  @include mixines.page-grid;
+
+  @include mixines.tablet {
+    margin-inline: 24px;
+  }
+
+  @include mixines.desctop {
+    margin-inline: 32px;
+  }
+
+  @media (min-width: 1264px) {
+    margin-inline: auto;
+  }
+}
+
+.smallGreyText {
+  color: var(--text-color);
+}
+
+.smallBlackText {
+  color: var(--main-color);
+}
+
+.mainTitle {
+  margin-bottom: 32px;
+  grid-column: 1/-1;
+}
+
+.secondaryTitles {
+  margin-top: 56px;
+}
+
+.dividingLine {
+  @include mixines.border(1px, var(--element-color));
+  height: 0;
+  width: 100%;
+  margin: 16px 0;
+}

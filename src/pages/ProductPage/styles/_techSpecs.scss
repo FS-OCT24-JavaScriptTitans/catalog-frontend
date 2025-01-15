@@ -1,0 +1,13 @@
+@use '../../../styles/abstract/mixines';
+
+.techSpecs {
+  grid-column: 1/-1;
+
+  @include mixines.desctop {
+    grid-column: 13/-1;
+  }
+}
+
+.techSpecLine {
+  margin: 16px 0 24px;
+}
