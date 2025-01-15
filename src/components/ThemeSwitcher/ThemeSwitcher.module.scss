@@ -27,8 +27,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #aad3ff;
-  transition: 0.4s;
+  background-color: #e8f3ff;
   transition: 0.4s;
   border-radius: 34px;
 }
@@ -40,23 +39,21 @@
   width: 16px;
   left: 4px;
   bottom: 3.5px;
-  background-color: rgb(255 240 25);
-  transition: 0.4s;
+  background-image: url('../../assets/Sun.svg');
+  background-size: contain;
   transition: 0.4s;
   border-radius: 50%;
 }
 
 .input:checked + .slider {
-  background-color: #0c1720;
+  background-color: #013966;
 }
 
 .input:focus + .slider {
-  box-shadow: 0 0 1px #2196f3;
+  box-shadow: 0 0 1px #72c0ff;
 }
 
 .input:checked + .slider::before {
-  transform: translateX(18px);
-  transform: translateX(18px);
   transform: translateX(15px);
-  background-color: rgb(255 213 1);
+  background-image: url('../../assets/Moon.svg');
 }
