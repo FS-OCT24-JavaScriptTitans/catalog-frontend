@@ -2,25 +2,12 @@
 @use '../../styles//abstract/constants';
 
 .sliderContainer {
-  @include mixines.flex-container(center, center);
-  max-width: 1040px;
   width: 100%;
+  margin: 0 auto;
   height: auto;
   position: relative;
   overflow: hidden;
   background-color: var(--main-bg-color);
-
-  @include mixines.tablet {
-    width: 490px;
-  }
-
-  @include mixines.laptop {
-    width: 900px;
-  }
-
-  @include mixines.desctop {
-    width: 800px;
-  }
 }
 
 .paginationWrapper {
@@ -55,9 +42,15 @@
   position: relative;
   width: 320px;
 
+  .image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+
   @include mixines.tablet {
     height: 190px;
-    width: 490px;
+    width: 100%;
   }
 
   @include mixines.laptop {
@@ -65,17 +58,9 @@
   }
 }
 
-.image {
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  display: block;
-}
-
 .prevButton,
 .nextButton {
   @include mixines.flex-container(center, center);
-  position: absolute;
   width: 32px;
   height: 190px;
   border: 1px solid var(--border-icon-color);
@@ -114,4 +99,10 @@
   @include mixines.desctop {
     right: 152px;
   }
+}
+
+.sliderWrapper {
+  width: 100%;
+  @include mixines.flex-container(center, space-between);
+  gap: 20px;
 }

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import styles from './HomePage.module.scss';
 
 import Container from '@/components/Container/Container';
@@ -11,15 +9,18 @@ const HomePage: React.FC = () => (
     <Container className="slider">
       <PromoSlider />
     </Container>
+
     <Container className="brandNewModels">
-      <h2>Brand New Models</h2>
+      <h2>New modal</h2>
     </Container>
-    <Container className="shopByCategory">
-      <h2>Shop by Category</h2>
+
+    <Container className="brandNewModels">
+      <h2>Category</h2>
     </Container>
-    <Container className="hotPrices">
-      <h2>Hot Prices</h2>
-    </Container>
+
+    {/* <Container className="hotPrices">
+        <ProductSlider title="Hot Prices" products={hotPrices} />
+      </Container> */}
   </main>
 );
 
