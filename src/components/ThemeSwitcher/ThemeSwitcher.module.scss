@@ -1,10 +1,10 @@
+@use '../../styles/abstract/mixines';
+
 .container {
-  border: 1px solid var(--element-color);
-  width: 64px;
+  border-right: 1px solid var(--element-color);
+  width: 58px;
   height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include mixines.flex-container(center);
 }
 
 .switch {
@@ -27,7 +27,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #e8f3ff;
+  background-color: #d8ebff;
   transition: 0.4s;
   border-radius: 34px;
 }
@@ -47,10 +47,6 @@
 
 .input:checked + .slider {
   background-color: #013966;
-}
-
-.input:focus + .slider {
-  box-shadow: 0 0 1px #72c0ff;
 }
 
 .input:checked + .slider::before {

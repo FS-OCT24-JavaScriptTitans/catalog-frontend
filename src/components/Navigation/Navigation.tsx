@@ -10,6 +10,8 @@ import favorites from '../../assets/Favourites.svg';
 import Logo from '../Logo/Logo';
 import IconContainer from '../../UI/IconContainer/IcontContainer';
 import NavigationLink from '../../UI/NavLink/NavigationLink';
+import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
+import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
 
 import { IconLink } from './IconLink/IconLink';
 import s from './Navigation.module.scss';
@@ -25,7 +27,7 @@ const navLinks = {
   Accessories: PATH.ACCESSORIES,
 };
 
-const navLinkStyle = ({ isActive }: NavLinkRenderProps) => `uppercase-text ${s.link} ${isActive ? s.active_link : ''}`;
+const navLinkStyle = ({ isActive }: NavLinkRenderProps) => `${s.link} ${isActive ? s.active_link : ''}`;
 
 const Navigation = () => {
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
@@ -79,12 +81,17 @@ const Navigation = () => {
         </div>
       </nav>
 
-      <span
-        className={s.navigation__burger}
-        onClick={() => setIsOpenMobileMenu(!isOpenMobileMenu)}
-      >
-        <IconContainer icon={isOpenMobileMenu ? closeMenu : menu} />
-      </span>
+      <div className={s.wrapper}>
+        <ThemeSwitcher />
+        <LanguageSwitcher />
+
+        <span
+          className={s.navigation__burger}
+          onClick={() => setIsOpenMobileMenu(!isOpenMobileMenu)}
+        >
+          <IconContainer icon={isOpenMobileMenu ? closeMenu : menu} />
+        </span>
+      </div>
     </header>
   );
 };

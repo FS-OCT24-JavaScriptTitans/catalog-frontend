@@ -18,6 +18,8 @@ $top-height: 65.6px;
   text-transform: uppercase;
   position: relative;
   line-height: calc($top-height / 3);
+  font-size: 12px;
+  font-weight: 800;
 
   &::after {
     content: '';
@@ -69,7 +71,11 @@ $top-height: 65.6px;
   }
 }
 
-@include mixines.tablet {
+.wrapper {
+  @include mixines.flex-container(center, center);
+}
+
+@media (min-width: constants.$tablet-l-min-whidth) {
   .container {
     @include mixines.flex-container(center, start, row, 16px);
   }
