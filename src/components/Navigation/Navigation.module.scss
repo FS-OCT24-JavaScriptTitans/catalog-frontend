@@ -5,6 +5,8 @@ $top-height: 65.6px;
 
 .container {
   border-bottom: 1px solid var(--element-color);
+  background-color: var(--main-bg-color);
+
   @include mixines.flex-container(center, space-between, row, 16px);
 }
 
