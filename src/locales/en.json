@@ -4,7 +4,7 @@
     "authPage": {
       "signIn": "Sign In",
       "signUp": "Sign Up",
-      "name": "Ім'я",
+      "name": "Name",
       "email": "Email",
       "password": "Password",
       "google": "Sign In with google"

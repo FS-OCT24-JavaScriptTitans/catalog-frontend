@@ -1,7 +1,7 @@
 import { User } from 'firebase/auth';
 import { addDoc, collection } from 'firebase/firestore';
 
-import { db } from '../firebaseConfig';
+import { db } from '../../firebaseConfig';
 
 import getUserAccessToken from './getUserAccessToken';
 

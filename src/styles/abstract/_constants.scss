@@ -8,6 +8,7 @@
   --light-border-icon-color: #b4bdc3;
   --light-element-color: #e2e6e9;
   --light-dropdown-hover-bg-color: #fafbfc;
+  --light-back-drop-color: #0003;
   --white-color: #fff;
   --dark-main-text-color: #f1f2f9;
   --dark-primary-color: #0f1121;
@@ -17,6 +18,7 @@
   --dark-hover-color: #4a4d58;
   --button-hover-light-color: #17203166;
   --black-hover-color: #0000000d;
+  --dark-back-drop-color: #0003;
 }
 
 #root {
@@ -28,6 +30,7 @@
   --element-color: var(--light-element-color);
   --button-hover-color: var(--button-hover-light-color);
   --dropdown-bg-color: var(--light-dropdown-hover-bg-color);
+  --back-drop-color: var(--light-back-drop-color);
 }
 
 #root.dark {
@@ -39,6 +42,7 @@
   --element-color: var(--dark-element-color);
   --button-hover-color: var(--hover-purple-color);
   --dropdown-bg-color: var(--dark-icon-bg-color);
+  --back-drop-color: var(--dark-back-drop-color);
 }
 
 // TRANSITION
@@ -46,5 +50,6 @@
 $transition-time: 0.3s;
 $tablet-l-min-whidth: 700px;
 $tablet-min-whidth: 640px;
+$mobile-l-width: 550px;
 $laptop-min-whidth: 1024px;
 $desctop-min-whidth: 1200px;

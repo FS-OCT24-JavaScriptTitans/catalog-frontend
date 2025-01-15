@@ -8,5 +8,6 @@ export enum PATH {
   AUTH = '/auth',
   TABLETS = '/tablets',
   ACCESSORIES = '/accessories',
+  ORDERS = '/orders',
   PRODUCT = '/:productId?',
 }

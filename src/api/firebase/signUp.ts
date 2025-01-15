@@ -2,8 +2,8 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 import { auth } from './firebaseConfig';
 import { getFirebaseErrorMessage } from './getFirebaseErrorMessage';
-import { getUser } from './db/getUser';
-import addUserToDb from './db/addUserToDb';
+import addUserToDb from './db/user/addUserToDb';
+import { getUser } from './db/user/getUser';
 
 import { ResponseUser, User } from '@/types/User.type';
 

@@ -10,11 +10,12 @@ interface Props<T extends FieldValues> {
   register: UseFormRegister<T>;
   type: string;
   err: string;
-  isValid: boolean;
+  isValid?: boolean;
+  defaultValue?: string;
 }
 
 const FormInput = <T extends FieldValues>(props: Props<T>) => {
-  const { name, label, register, type, err } = props;
+  const { name, label, register, type, err, defaultValue } = props;
 
   return (
     <div>
@@ -30,6 +31,7 @@ const FormInput = <T extends FieldValues>(props: Props<T>) => {
           })}
           type={type}
           id={name}
+          defaultValue={defaultValue}
           {...(register ? register(name) : { name })}
         />
       </label>

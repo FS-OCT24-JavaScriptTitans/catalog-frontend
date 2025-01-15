@@ -32,7 +32,7 @@ export const Root = () => (
               path={PATH.CART}
               element={<Pages.CartPage />}
             />
-            {/*  PHONES */}
+            {/*  PRODUCTS  */}
             <Route
               path={PATH.PHONES}
               element={<Pages.PhonesPage />}
@@ -45,6 +45,13 @@ export const Root = () => (
             <Route
               path={PATH.ACCESSORIES}
               element={<Pages.AccessoriesPage />}
+            />
+
+            {/* ORDERS */}
+
+            <Route
+              path={PATH.ORDERS}
+              element={<Pages.OrdersPage />}
             />
 
             {/*  PRODUCT */}

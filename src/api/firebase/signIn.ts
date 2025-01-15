@@ -2,7 +2,7 @@ import { signInWithEmailAndPassword } from 'firebase/auth';
 
 import { auth } from './firebaseConfig';
 import { getFirebaseErrorMessage } from './getFirebaseErrorMessage';
-import { getUser } from './db/getUser';
+import { getUser } from './db/user/getUser';
 
 import { ResponseUser, User } from '@/types/User.type';
 import { LOGIN_ERROR } from '@/constants/errors';
