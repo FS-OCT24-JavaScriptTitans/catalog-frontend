@@ -21,6 +21,8 @@ export const ThemeSwitcher = () => {
           type="checkbox"
           className={s.input}
           onChange={handleSwitchTheme}
+          value={theme}
+          checked={theme === Theme.DARK}
         />
         <span className={s.slider}></span>
       </label>
