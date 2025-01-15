@@ -1,0 +1,96 @@
+@use '../../../styles/abstract/mixines';
+
+.mainChars {
+  @include mixines.font(12px, 15.4px, 600);
+  grid-column: 1/-1;
+
+  @include mixines.tablet {
+    grid-column: 8/-1;
+  }
+
+  @include mixines.desctop {
+    grid-column: 13/21;
+  }
+}
+
+.colorsTop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.id {
+  @include mixines.font(12px, 15.4px, 700);
+  color: var(--text-color);
+}
+
+.colors {
+  display: flex;
+  column-gap: 8px;
+  margin-bottom: 24px;
+}
+
+.colorContainer {
+  margin-top: 8px;
+  @include mixines.border(1px, var(--element-color), 50%);
+}
+
+.color {
+  height: 30px;
+  aspect-ratio: 1;
+  @include mixines.border(3px, var(--icon-bg-color), 50%);
+}
+
+.active {
+  @include mixines.border(1px, var(--main-color));
+}
+
+.capacityContainer {
+  margin-block: 24px;
+}
+
+.capacities {
+  margin-block: 8px;
+  display: flex;
+  column-gap: 8px;
+}
+
+.capacity {
+  line-height: 21px;
+  padding: 7px 8px 4px;
+  @include mixines.border(1px, var(--border-icon-color));
+  color: var(--main-color);
+}
+
+.currentCapacity {
+  background-color: var(--main-color);
+  color: var(--icon-bg-color);
+  border: none;
+}
+
+.prices {
+  display: flex;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.discountPrice {
+  @include mixines.font(32px, 41px, 800);
+  color: var(--main-color);
+}
+
+.regularPrice {
+  @include mixines.font(22px, 28.1px, 500);
+  margin-left: 8px;
+  color: var(--text-color);
+  text-decoration: line-through;
+}
+
+.button {
+  margin: 16px 0 32px;
+}
+
+.specification {
+  @include mixines.flex-container(stretch, space-between);
+  @include mixines.font(12px, 15.4px, 600);
+  margin-bottom: 8px;
+}
