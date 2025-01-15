@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 
 import Navigation from './components/Navigation/Navigation';
+import { Footer } from './components/Footer/Footer';
 
 export const App = () => (
   <>
@@ -10,5 +11,6 @@ export const App = () => (
         <Outlet />
       </div>
     </main>
+    <Footer />
   </>
 );

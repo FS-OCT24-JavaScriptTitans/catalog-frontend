@@ -16,12 +16,15 @@
 }
 
 body {
+  height: 100%;
   position: relative;
   transition: all constants.$transition-time;
 }
 
 #root {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a,
