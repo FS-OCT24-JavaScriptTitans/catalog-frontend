@@ -1,6 +1,6 @@
 import Orders from '@/components/Orders/Orders';
 import { Loader } from '@/components/Loader/Loader';
-import EmptyContainer from '@/UI/EmpttContainer/EmptyContainer';
+import EmptyContainer from '@/UI/EmptyContainer/EmptyContainer';
 import { useOrders } from '@/hooks/useOrders';
 
 const OrdersPage = () => {

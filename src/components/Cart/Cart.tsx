@@ -10,7 +10,7 @@ import { CartList } from './CartList/CartList';
 
 import { useAppSelector } from '@/redux/hooks';
 import { selectCart } from '@/redux/selectors';
-import EmptyContainer from '@/UI/EmpttContainer/EmptyContainer';
+import EmptyContainer from '@/UI/EmptyContainer/EmptyContainer';
 
 export const Cart = () => {
   const cart = useAppSelector(selectCart, shallowEqual);

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import cn from 'classnames';
 import { FC } from 'react';
 
-import s from './EmpttContainer.module.scss';
+import s from './EmptyContainer.module.scss';
 
 import { PATH } from '@/constants/path';
 
