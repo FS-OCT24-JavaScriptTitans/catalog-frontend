@@ -13,15 +13,15 @@ import { Arrow } from '@/UI/Arrow/Arrow';
 
 const slides = [
   {
-    img: 'public/img/slides/banner-phones.png',
+    img: 'img/slides/banner-phones.png',
     link: '/phones',
   },
   {
-    img: 'public/img/slides/banner-tablets.png',
+    img: 'img/slides/banner-tablets.png',
     link: '/tablets',
   },
   {
-    img: 'public/img/slides/banner-accessories.png',
+    img: 'img/slides/banner-accessories.png',
     link: '/accessories',
   },
 ];
