@@ -58,6 +58,14 @@
   color: var(--text-color);
 }
 
+.arrow_link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid var(--text-color);
+}
+
 .rotated {
   transform: rotate(270deg);
 }
