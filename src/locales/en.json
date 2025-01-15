@@ -32,6 +32,16 @@
       "addToCart": "Add to Cart",
       "addedToCart": "Added to Cart",
       "sortBy": "Sort by",
+      "resolution": "Resolution",
+      "processor": "Processor",
+      "builtMemory": "Built in memory",
+      "camera": "Camera",
+      "zoom": "Zoom",
+      "about": "About",
+      "wasPro": "And then there was Pro",
+      "shopIt": "Shoot it. Flip it. Zoom it. Crop it. Cut it. Light it. Tweak it. Love it.",
+      "techSpecs": "Tech specs",
+      "alsoLike": "You may also like",
       "sort": {
         "newest": "Newest",
         "alphabetically": "Alphabetically",
@@ -39,6 +49,12 @@
         "priceHigh": "Price high",
         "all": "All"
       }
-    }
+    },
+    "footer ": {
+      "contacts": "Contacts",
+      "rights": "Rights",
+      "backToTop": "Back to top"
+    },
+    "back": "Back"
   }
 }
