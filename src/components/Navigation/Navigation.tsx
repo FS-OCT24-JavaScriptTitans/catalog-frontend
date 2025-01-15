@@ -1,7 +1,8 @@
 /* eslint-disable react/no-children-prop */
 import { NavLinkRenderProps } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { shallowEqual } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 
 import Menu from '../../assets/Menu.svg?react';
 import Auth from '../../assets/Auth.svg?react';
@@ -20,7 +21,7 @@ import { IconButton } from '@/UI/IconButton/IconButton';
 import { PATH } from '@/constants/path';
 import { useAppSelector } from '@/redux/hooks';
 import { selectCart, selectFavorites, selectUser } from '@/redux/selectors';
-import { allowScroll, blockScroll } from '@/utils/scroll';
+// import { allowScroll, blockScroll } from '@/utils/scroll';
 
 const navLinks = {
   Home: PATH.HOME,
@@ -36,14 +37,15 @@ const Navigation = () => {
   const user = useAppSelector(selectUser, shallowEqual);
   const cartList = useAppSelector(selectCart, shallowEqual);
   const favoritesList = useAppSelector(selectFavorites, shallowEqual);
+  const { t } = useTranslation('navigation');
 
-  useEffect(() => {
-    if (isOpenMobileMenu) {
-      blockScroll();
-    } else {
-      allowScroll();
-    }
-  }, [isOpenMobileMenu]);
+  // useEffect(() => {
+  //   if (isOpenMobileMenu) {
+  //     blockScroll();
+  //   } else {
+  //     allowScroll();
+  //   }
+  // }, [isOpenMobileMenu]);
 
   return (
     <header className={s.container}>
@@ -57,7 +59,7 @@ const Navigation = () => {
             <NavigationLink
               key={label}
               to={path}
-              label={label}
+              label={t(label)}
               className={navLinkStyle}
               handleClick={() => setIsOpenMobileMenu(false)}
             />

@@ -2,8 +2,14 @@
 
 .container {
   position: relative;
-  width: 64px;
-  height: 64px;
+  min-width: 64px;
+  @include mixines.flex-container(center, center);
+  @include mixines.border(1px, var(--element-color));
+  border-bottom: none;
+
+  @include mixines.tablet {
+    border-top: none;
+  }
 }
 
 .counter {

@@ -12,7 +12,7 @@ export const Favourites = () => {
   const favoritesLength = favorites.length;
 
   return (
-    <section className={s.contaiter}>
+    <section className="section">
       <h2 className={s.title}>Favorites</h2>
       {favoritesLength ?
         <>

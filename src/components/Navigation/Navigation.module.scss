@@ -61,7 +61,6 @@ $top-height: 65.6px;
   position: absolute;
   top: $top-height;
   text-transform: uppercase;
-  padding-top: 24px;
   @include mixines.flex-container(stretch, space-between, column);
 
   &__links {

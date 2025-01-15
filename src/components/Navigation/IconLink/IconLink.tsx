@@ -21,12 +21,7 @@ export const IconLink: React.FC<Props> = (props) => {
     <span className={s.container}>
       <NavigationLink
         to={path}
-        label={
-          <IconButton
-            children={icon}
-            hasBorder
-          />
-        }
+        label={<IconButton children={icon} />}
         className={navLinkStyle}
         handleClick={handleClick}
       />
