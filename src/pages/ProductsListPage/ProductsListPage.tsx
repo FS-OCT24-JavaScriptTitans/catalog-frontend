@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import s from './ProductPage.module.scss';
+import s from './ProductsListPage.module.scss';
 
 import { Product } from '@/types/Product.type';
 import { getProducts } from '@/api/products/products.api';
@@ -56,7 +56,7 @@ const ProductsListPage: React.FC = () => {
   }, [location.pathname]);
 
   return (
-    <article className={s.page}>
+    <section className={s.container}>
       <div className={s.top_panel}>
         <div className={s.icons}>
           <Link to="#">
@@ -94,7 +94,7 @@ const ProductsListPage: React.FC = () => {
           </div>
         ))}
       </div>
-    </article>
+    </section>
   );
 };
 

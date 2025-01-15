@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 
 export const Pages = {
-  ProductsListPage: lazy(() => import('../pages/ProductsListPage/ProductPage')),
+  ProductsListPage: lazy(() => import('../pages/ProductsListPage/ProductsListPage')),
   SignInPage: lazy(() => import('../pages/SignInPage/SignInPage')),
   SignUpPage: lazy(() => import('../pages/SignUpPage/SignUpPage')),
   CartPage: lazy(() => import('../pages/CartPage/CartPage')),
