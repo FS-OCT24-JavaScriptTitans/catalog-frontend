@@ -6,11 +6,11 @@ import { PATH } from '@/constants/path';
 
 const routes = [
   { path: PATH.PHONES, element: <Pages.ProductsListPage /> },
-  { path: PATH.TABLETS, element: <Pages.TabletsPage /> },
-  { path: PATH.ACCESSORIES, element: <Pages.AccessoriesPage /> },
+  { path: PATH.TABLETS, element: <Pages.ProductsListPage /> },
+  { path: PATH.ACCESSORIES, element: <Pages.ProductsListPage /> },
   { path: PATH.PHONES + PATH.PRODUCT, element: <Pages.ProductPage /> },
-  { path: PATH.TABLETS + PATH.PRODUCT, element: <Pages.TabletsPage /> },
-  { path: PATH.ACCESSORIES + PATH.PRODUCT, element: <Pages.AccessoriesPage /> },
+  { path: PATH.TABLETS + PATH.PRODUCT, element: <Pages.ProductPage /> },
+  { path: PATH.ACCESSORIES + PATH.PRODUCT, element: <Pages.ProductPage /> },
 ];
 
 export const ProductRoutes = routes.map(({ path, element }) => (
