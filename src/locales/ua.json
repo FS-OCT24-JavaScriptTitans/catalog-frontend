@@ -10,10 +10,35 @@
       "google": "Увійти за допомогою Google"
     },
     "navigation": {
-      "Home": "Головна",
-      "Phones": "Телефони",
-      "Tablets": "Планшети",
-      "Accessories": "Аксесуари"
+      "home": "Головна",
+      "phones": "Телефони",
+      "tablets": "Планшети",
+      "accessories": "Аксесуари"
+    },
+    "home": {
+      "welcome": "Ласкаво просимо в магазин Nice Gadgets!",
+      "brand": "Нові моделі",
+      "shop": "За категоріями",
+      "prices": "Гарячі ціни",
+      "mobilePhones": "Мобільні телефони",
+      "accessories": "Аксесуари",
+      "tablets": "Планшети"
+    },
+    "product": {
+      "screen": "Екран",
+      "capacity": "Ємність",
+      "RAM": "ОЗП",
+      "itemsOnPage": "Товарів на сторінці",
+      "addToCart": "Додати в коши",
+      "addedToCart": "Додано в кошик",
+      "sortBy": "Сортувати за",
+      "sort": {
+        "newest": "Найновіші",
+        "alphabetically": "За алфавітом",
+        "priceLow": "За ціною (зростання)",
+        "priceHigh": "За ціною (спадання)",
+        "all": "Всі"
+      }
     }
   }
 }
