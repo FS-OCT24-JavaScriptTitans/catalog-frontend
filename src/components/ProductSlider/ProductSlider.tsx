@@ -18,16 +18,16 @@ interface ProductSliderProps {
 
 const ProductSlider: React.FC<ProductSliderProps> = ({ title, products }) => (
   <div className={styles.productSlider}>
-    <div>
+    <div className={styles.container}>
       <h2 className={styles.title}>{title}</h2>
-      <span className={styles.buttonContainer}>
-        <div className={styles.prevButton}>
+      <div className={styles.buttonContainer}>
+        <button className={styles.prevButton}>
           <Arrow direction="left" />
-        </div>
-        <div className={styles.nextButton}>
+        </button>
+        <button className={styles.nextButton}>
           <Arrow direction="rigth" />
-        </div>
-      </span>
+        </button>
+      </div>
     </div>
     <Swiper
       modules={[Navigation]}
