@@ -1,12 +1,12 @@
 import { collection, getDocs, query, where } from 'firebase/firestore';
 
-import { db } from '../firebaseConfig';
+import { db } from '../../firebaseConfig';
 
 import { ResponseUser } from '@/types/User.type';
 
-type TGetUser = (uid: string) => Promise<ResponseUser | null>;
+type GetUser = (uid: string) => Promise<ResponseUser | null>;
 
-export const getUser: TGetUser = async (uid) => {
+export const getUser: GetUser = async (uid) => {
   const q = query(collection(db, 'users'), where('uid', '==', uid));
 
   const docs = await getDocs(q);

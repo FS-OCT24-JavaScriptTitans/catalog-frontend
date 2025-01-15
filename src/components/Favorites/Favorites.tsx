@@ -5,7 +5,7 @@ import s from './Favorites.module.scss';
 import { useAppSelector } from '@/redux/hooks';
 import { selectFavorites } from '@/redux/selectors';
 import { ProductCard } from '@/UI/ProductCard/ProductCard';
-import EmptyCart from '@/UI/EmptyCart/EmptyCart';
+import EmptyContainer from '@/UI/EmptyContainer/EmptyContainer';
 
 export const Favourites = () => {
   const favorites = useAppSelector(selectFavorites, shallowEqual);
@@ -31,7 +31,12 @@ export const Favourites = () => {
             ))}
           </section>
         </>
-      : <EmptyCart />}
+      : <EmptyContainer
+          title="Theris no favoritess"
+          pathToImg="/img/cart-is-empty.png"
+          alt="empty-favorites"
+        />
+      }
     </section>
   );
 };

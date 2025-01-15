@@ -1,0 +1,34 @@
+@use '@/styles/abstract/mixines';
+
+.product {
+  width: 200px;
+  text-align: center;
+  padding: 16px;
+
+  @include mixines.border(1px, var(--element-color), 9px);
+  @include mixines.flex-container(center, start, column);
+}
+
+.image__container {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.details {
+  @include mixines.flex-container(stretch, start, column, 5px 0, wrap);
+}
+
+.name {
+  font-size: 14px;
+}
+
+.detail {
+  color: var(--text-color);
+
+  > span {
+    font-weight: 700;
+    color: var(--main-color);
+  }
+}

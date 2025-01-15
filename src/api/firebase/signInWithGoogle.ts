@@ -2,8 +2,8 @@ import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
 
 import { auth } from './firebaseConfig';
 import { getFirebaseErrorMessage } from './getFirebaseErrorMessage';
-import addUserToDb from './db/addUserToDb';
-import { getUser } from './db/getUser';
+import addUserToDb from './db/user/addUserToDb';
+import { getUser } from './db/user/getUser';
 
 import { ResponseUser } from '@/types/User.type';
 
