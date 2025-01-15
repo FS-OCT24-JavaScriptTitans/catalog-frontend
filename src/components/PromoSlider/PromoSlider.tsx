@@ -1,50 +1,35 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Swiper as SwiperClass } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
+import { useNavigate } from 'react-router-dom';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import styles from './PromoSlider.module.scss';
 
-import Arrow from '@/assets/Arrow.svg?react';
+import { Arrow } from '@/UI/Arrow/Arrow';
 
-const slides = {
-  titles: {
-    mobile: 'public/img/slides/banner/bgc-mobile.png',
-    tablet: 'public/img/slides/banner/bgc-tablet.jpg',
-    desktop: 'public/img/slides/banner/bgc-desctop.jpg',
+const slides = [
+  {
+    img: 'public/img/slides/banner-phones.png',
+    link: '/phones',
   },
-  common: ['public/img/slides/banner/banner-accessories.png', 'public/img/slides/banner/banner-tablets.png'],
-};
+  {
+    img: 'public/img/slides/banner-tablets.png',
+    link: '/tablets',
+  },
+  {
+    img: 'public/img/slides/banner-accessories.png',
+    link: '/accessories',
+  },
+];
 
 const PromoSlider: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [screenSize, setScreenSize] = useState<'mobile' | 'tablet' | 'desktop'>(
-    window.innerWidth >= 1200 ? 'desktop'
-    : window.innerWidth >= 640 ? 'tablet'
-    : 'mobile',
-  );
   const swiperRef = useRef<SwiperClass | null>(null);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1200) {
-        setScreenSize('desktop');
-      } else if (window.innerWidth >= 640) {
-        setScreenSize('tablet');
-      } else {
-        setScreenSize('mobile');
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
+  const navigate = useNavigate();
 
   const handleBulletClick = (index: number) => {
     if (swiperRef.current) {
@@ -53,8 +38,9 @@ const PromoSlider: React.FC = () => {
     }
   };
 
-  const titleSlide = slides.titles[screenSize];
-  const allSlides = [titleSlide, ...slides.common];
+  const handleSlideClick = (link: string) => {
+    navigate(link);
+  };
 
   return (
     <>
@@ -62,7 +48,7 @@ const PromoSlider: React.FC = () => {
         <div className={styles.sliderContainer}>
           <Swiper
             modules={[Pagination, Navigation]}
-            spaceBetween={10}
+            spaceBetween={100}
             slidesPerView={1}
             loop
             navigation={{
@@ -75,14 +61,17 @@ const PromoSlider: React.FC = () => {
             onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
             pagination={false}
           >
-            {allSlides.map((slide, index) => (
+            {slides.map((slide, index) => (
               <SwiperSlide
                 key={index}
                 className={styles.swiperSlide}
               >
-                <div className={styles.imageContainer}>
+                <div
+                  className={styles.imageContainer}
+                  onClick={() => handleSlideClick(slide.link)}
+                >
                   <img
-                    src={slide}
+                    src={slide.img}
                     alt={`Slide ${index + 1}`}
                     className={styles.image}
                   />
@@ -93,7 +82,7 @@ const PromoSlider: React.FC = () => {
         </div>
 
         <div className={styles.paginationWrapper}>
-          {allSlides.map((_, index) => (
+          {slides.map((_, index) => (
             <div
               key={index}
               className={`${styles.bullet} ${index === activeIndex ? styles.active : ''}`}
@@ -104,10 +93,10 @@ const PromoSlider: React.FC = () => {
       </div>
 
       <div className={styles.prevButton}>
-        <Arrow />
+        <Arrow direction={'left'} />
       </div>
       <div className={styles.nextButton}>
-        <Arrow />
+        <Arrow direction={'rigth'} />
       </div>
     </>
   );
