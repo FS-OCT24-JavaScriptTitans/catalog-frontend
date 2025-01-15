@@ -7,6 +7,7 @@ import { PATH } from './constants/path';
 import { Pages } from './routing/routes';
 import AuthRoute from './routing/AuthRoute';
 import { App } from './App';
+import { ProductRoutes } from './routing/ProductRoutes';
 
 export const Root = () => (
   <BrowserRouter>
@@ -32,32 +33,14 @@ export const Root = () => (
               path={PATH.CART}
               element={<Pages.CartPage />}
             />
-            {/*  PRODUCTS  */}
-            <Route
-              path={PATH.PHONES}
-              element={<Pages.ProductsListPage />}
-            />
 
-            <Route
-              path={PATH.TABLETS}
-              element={<Pages.TabletsPage />}
-            />
-            <Route
-              path={PATH.ACCESSORIES}
-              element={<Pages.AccessoriesPage />}
-            />
+            {...ProductRoutes}
 
             {/* ORDERS */}
 
             <Route
               path={PATH.ORDERS}
               element={<Pages.OrdersPage />}
-            />
-
-            {/*  PRODUCT */}
-            <Route
-              path={PATH.PHONES + PATH.PRODUCT}
-              element={<Pages.ProductPage />}
             />
 
             {/*  FAVORITES */}
