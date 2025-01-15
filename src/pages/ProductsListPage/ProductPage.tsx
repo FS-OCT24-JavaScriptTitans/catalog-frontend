@@ -12,27 +12,28 @@ import { Dropdown } from '@/UI/Dropdown/Dropdown';
 import { Option } from '@/types/Options.type';
 import { ProductEndPoints } from '@/constants/endPoints';
 
+const options: Option<string>[] = [
+  {
+    id: 1,
+    value: 'value1',
+    label: 'Option 1',
+  },
+  {
+    id: 2,
+    value: 'value2',
+    label: 'Option 2',
+  },
+  {
+    id: 3,
+    value: 'value3',
+    label: 'Option 3',
+  },
+];
+
 const ProductsListPage: React.FC = () => {
   const location = useLocation();
 
   const [products, setProducts] = useState<Product[] | null>(null);
-  const options: Option<string>[] = [
-    {
-      id: 1,
-      value: 'value1',
-      label: 'Option 1',
-    },
-    {
-      id: 2,
-      value: 'value2',
-      label: 'Option 2',
-    },
-    {
-      id: 3,
-      value: 'value3',
-      label: 'Option 3',
-    },
-  ];
 
   useEffect(() => {
     const fetchProducts = async () => {
