@@ -54,6 +54,7 @@ $top-height: 65.6px;
 }
 
 .navigation {
+  z-index: 100;
   width: 100vw;
   background-color: var(--main-bg-color);
   height: calc(100vh - $top-height - 2px);

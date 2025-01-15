@@ -1,14 +1,14 @@
+/* eslint-disable react/no-children-prop */
 import { NavLinkRenderProps } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { shallowEqual } from 'react-redux';
 
-import menu from '../../assets/Menu.svg';
-import auth from '../../assets/Auth.svg';
-import closeMenu from '../../assets/Close.svg';
-import cart from '../../assets/Shopping.svg';
-import favorites from '../../assets/Favourites.svg';
+import Menu from '../../assets/Menu.svg?react';
+import Auth from '../../assets/Auth.svg?react';
+import Close from '../../assets/Close.svg?react';
+import Cart from '../../assets/Shopping.svg?react';
+import Favorites from '../../assets/Favourites.svg?react';
 import Logo from '../Logo/Logo';
-import IconContainer from '../../UI/IconContainer/IcontContainer';
 import NavigationLink from '../../UI/NavLink/NavigationLink';
 import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
 import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
@@ -16,9 +16,11 @@ import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
 import { IconLink } from './IconLink/IconLink';
 import s from './Navigation.module.scss';
 
+import { IconButton } from '@/UI/IconButton/IconButton';
 import { PATH } from '@/constants/path';
 import { useAppSelector } from '@/redux/hooks';
 import { selectCart, selectFavorites, selectUser } from '@/redux/selectors';
+import { allowScroll, blockScroll } from '@/utils/scroll';
 
 const navLinks = {
   Home: PATH.HOME,
@@ -34,6 +36,14 @@ const Navigation = () => {
   const user = useAppSelector(selectUser, shallowEqual);
   const cartList = useAppSelector(selectCart, shallowEqual);
   const favoritesList = useAppSelector(selectFavorites, shallowEqual);
+
+  useEffect(() => {
+    if (isOpenMobileMenu) {
+      blockScroll();
+    } else {
+      allowScroll();
+    }
+  }, [isOpenMobileMenu]);
 
   return (
     <header className={s.container}>
@@ -55,27 +65,24 @@ const Navigation = () => {
         </div>
         <div className={s.navigation__icons}>
           {!user && (
-            <NavigationLink
-              key={auth}
-              to={`/auth${PATH.SIGN_IN}`}
-              label={<IconContainer icon={auth} />}
-              className={navLinkStyle}
+            <IconLink
+              icon={<Auth />}
+              path={`/auth${PATH.SIGN_IN}`}
+              counter={0}
               handleClick={() => setIsOpenMobileMenu(false)}
             />
           )}
 
           <IconLink
-            icon={cart}
+            icon={<Cart />}
             path={PATH.CART}
             counter={cartList.length}
-            navLinkStyle={navLinkStyle}
             handleClick={() => setIsOpenMobileMenu(false)}
           />
           <IconLink
-            icon={favorites}
+            icon={<Favorites />}
             path={PATH.FAVORITES}
             counter={favoritesList.length}
-            navLinkStyle={navLinkStyle}
             handleClick={() => setIsOpenMobileMenu(false)}
           />
         </div>
@@ -89,7 +96,7 @@ const Navigation = () => {
           className={s.navigation__burger}
           onClick={() => setIsOpenMobileMenu(!isOpenMobileMenu)}
         >
-          <IconContainer icon={isOpenMobileMenu ? closeMenu : menu} />
+          <IconButton children={isOpenMobileMenu ? <Close /> : <Menu />} />
         </span>
       </div>
     </header>
