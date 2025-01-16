@@ -23,7 +23,7 @@
   column-gap: 16px;
 
   @include mixin.laptop {
-    justify-content: space-between;
+    justify-content: flex-start;
   }
 }
 
