@@ -2,12 +2,7 @@
 @use '../../styles/abstract/constants';
 
 .productSliderContainer {
-  max-width: 1200px;
   width: 100%;
-
-  @include mixines.desctop {
-    width: 1200px;
-  }
 
   .prevButton,
   .nextButton {

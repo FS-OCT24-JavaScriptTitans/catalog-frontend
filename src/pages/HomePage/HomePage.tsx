@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import styles from './HomePage.module.scss';
 
 import PromoSlider from '@/components/PromoSlider/PromoSlider';
-import Container from '@/UI/Container/Container';
+import { Container } from '@/UI/Container/Container';
 import { Product } from '@/types/Product.type';
 import { getAllProducts } from '@/api/products/products.api';
 import ProductSlider from '@/components/ProductSlider/ProductSlider';
@@ -39,34 +39,30 @@ const HomePage: React.FC = () => {
   }
 
   return (
-    <main>
+    <>
       <h1 className={styles.welcomeMessage}>Welcome to Nice Gadgets store!</h1>
-      <Container className="slider">
+      <Container>
         <PromoSlider />
       </Container>
 
-      <Container className="brandNewModels">
+      <Container>
         <ProductSlider
           title={'Brand new modal'}
           products={newModelProducts}
         />
       </Container>
 
-      <Container className="ShopByCategory">
+      <Container>
         <h2>Shop by category</h2>
       </Container>
 
-      <Container className="hotPrice">
+      <Container>
         <ProductSlider
           title={'Hot Price'}
           products={hotPriceProducts}
         />
       </Container>
-
-      {/* <Container className="hotPrices">
-        <ProductSlider title="Hot Prices" products={hotPrices} />
-      </Container> */}
-    </main>
+    </>
   );
 };
 
