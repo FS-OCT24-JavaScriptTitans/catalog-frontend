@@ -2,9 +2,10 @@
 
 .logo {
   width: 100%;
-  max-width: 64px;
+  min-width: 64px;
+  height: 23px;
 
   @include mixines.laptop {
-    max-width: 80px;
+    min-width: 80px;
   }
 }
