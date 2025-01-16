@@ -8,7 +8,7 @@ import Plus from '@/assets//Plus.svg?react';
 import Minus from '@/assets//Minus.svg?react';
 import Close from '@/assets/Close.svg?react';
 import { useAppDispatch } from '@/redux/hooks';
-import { increaseQuantity, removeQuantity } from '@/redux/slices/cart/carrt.slice';
+import { increaseQuantity, removeCartProduct, removeQuantity } from '@/redux/slices/cart/carrt.slice';
 import { ProductPrices } from '@/UI/ProductPrices/ProductPrices';
 import { CustomLink } from '@/UI/Link/Link';
 
@@ -21,12 +21,16 @@ export const CartItem: FC<Props> = ({ product }) => {
   const dispatch = useAppDispatch();
 
   const handleIncrease = (id: string) => () => dispatch(increaseQuantity({ id }));
-  const handleRemove = (id: string) => () => dispatch(removeQuantity({ id }));
+  const handleDecrease = (id: string) => () => dispatch(removeQuantity({ id }));
+  const handleRemove = (id: string) => () => dispatch(removeCartProduct({ id }));
 
   return (
     <article className={s.cartItem}>
       <div className={s.description}>
-        <button className={s.close}>
+        <button
+          className={s.close}
+          onClick={handleRemove(id)}
+        >
           <Close />
         </button>
         <div className={s.imgContainer}>
@@ -41,13 +45,14 @@ export const CartItem: FC<Props> = ({ product }) => {
           label={name}
           path={`/${product.category}/${product.id}`}
         />
-      </div>{' '}
+      </div>
       <div className={s.controls}>
-        {' '}
         <div className={s.controlsContainer}>
           <IconButton
-            onClick={handleRemove(id)}
+            onClick={handleDecrease(id)}
             hasBorder
+            width="32px"
+            height="32px"
           >
             <Minus />
           </IconButton>
@@ -57,6 +62,8 @@ export const CartItem: FC<Props> = ({ product }) => {
           <IconButton
             onClick={handleIncrease(id)}
             hasBorder
+            width="32px"
+            height="32px"
           >
             <Plus />
           </IconButton>

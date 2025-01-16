@@ -13,7 +13,7 @@ export const Container: FC<Props> = ({ title, titlePB, children }) => (
     <div className={s.container}>
       <h2
         className={s.title}
-        style={{ paddingBottom: titlePB }}
+        style={{ paddingBottom: titlePB ? titlePB : '24px' }}
       >
         {title}
       </h2>

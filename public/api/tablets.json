@@ -1618,10 +1618,7 @@
     "priceDiscount": 499,
     "colorsAvailable": ["silver", "spacegray", "gold"],
     "color": "gold",
-    "images": [
-      "img/tablets/apple-ipad-mini-5th-gen/gold/00.webp",
-      "img/tablets/apple-ipad-mini-5th-gen/gold/01.webp"
-    ],
+    "images": ["img/tablets/apple-ipad-mini-5th-gen/gold/00.webp", "img/tablets/apple-ipad-mini-5th-gen/gold/01.webp"],
     "description": [
       {
         "title": "Compact and Powerful",
@@ -1664,10 +1661,7 @@
     "priceDiscount": 499,
     "colorsAvailable": ["silver", "spacegray", "gold"],
     "color": "gold",
-    "images": [
-      "img/tablets/apple-ipad-mini-5th-gen/gold/00.webp",
-      "img/tablets/apple-ipad-mini-5th-gen/gold/01.webp"
-    ],
+    "images": ["img/tablets/apple-ipad-mini-5th-gen/gold/00.webp", "img/tablets/apple-ipad-mini-5th-gen/gold/01.webp"],
     "description": [
       {
         "title": "Compact and Powerful",
