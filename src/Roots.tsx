@@ -42,6 +42,14 @@ export const Root = () => (
               path={PATH.ORDERS}
               element={<Pages.OrdersPage />}
             />
+            <Route
+              path={PATH.TABLETS + PATH.PRODUCT}
+              element={<Pages.ProductPage />}
+            />
+            <Route
+              path={PATH.ACCESSORIES + PATH.PRODUCT}
+              element={<Pages.ProductPage />}
+            />
 
             {/*  FAVORITES */}
             <Route
