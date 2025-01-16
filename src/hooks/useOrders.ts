@@ -1,11 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { shallowEqual } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { selectOrders, selectUser } from '@/redux/selectors';
 import { addOrders } from '@/redux/slices/orders/orders.slice';
 import { getOrders } from '@/api/firebase/db/order/getOrders';
 import notification from '@/utils/notification';
+import { PATH } from '@/constants/path';
 
 export const useOrders = () => {
   const [isLoading, setLoading] = useState(false);
@@ -13,7 +15,15 @@ export const useOrders = () => {
   const user = useAppSelector(selectUser, shallowEqual);
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
+  const navigate = useNavigate();
+
+  useLayoutEffect(() => {
+    if (!user) {
+      navigate(PATH.AUTH + PATH.SIGN_IN);
+
+      return;
+    }
+
     if (user) {
       setLoading(true);
       getOrders(user.email)
@@ -29,7 +39,7 @@ export const useOrders = () => {
         })
         .finally(() => setLoading(false));
     }
-  }, [user, dispatch]);
+  }, [user, dispatch, navigate]);
 
   return { orders, isLoading };
 };
