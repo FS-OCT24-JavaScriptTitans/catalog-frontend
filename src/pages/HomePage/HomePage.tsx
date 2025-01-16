@@ -7,6 +7,7 @@ import Container from '@/components/Container/Container';
 import { Product } from '@/types/Product.type';
 import { getAllProducts } from '@/api/products/products.api';
 import ProductSlider from '@/components/ProductSlider/ProductSlider';
+import { Loader } from '@/components/Loader/Loader';
 
 const HomePage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -21,20 +22,26 @@ const HomePage: React.FC = () => {
     fetchProducts();
   }, []);
 
-  const discountedProducts = products.filter((product) => product.priceDiscount < product.priceRegular);
+  const newModelProducts = products.reduceRight<Product[]>((acc, product) => {
+    if (product.priceDiscount < product.priceRegular) {
+      acc.push(product);
+    }
 
-  const sortHotPrices = [...products].sort(
+    return acc;
+  }, []);
+
+  const hotPriceProducts = [...products].sort(
     (p1, p2) => p2.priceRegular - p2.priceDiscount - (p1.priceRegular - p1.priceDiscount),
   );
 
-  console.log(sortHotPrices);
+  console.log(hotPriceProducts);
 
   // const regularProducts = products.filter(
   //   (product) => product.priceDiscount === product.priceRegular
   // );
 
   if (products.length === 0) {
-    return <div>Loading products...</div>;
+    return <Loader />;
   }
 
   return (
@@ -47,7 +54,7 @@ const HomePage: React.FC = () => {
       <Container className="brandNewModels">
         <ProductSlider
           title={'Brand new modal'}
-          products={discountedProducts}
+          products={newModelProducts}
         />
       </Container>
 
@@ -58,7 +65,7 @@ const HomePage: React.FC = () => {
       <Container className="hotPrice">
         <ProductSlider
           title={'Hot Price'}
-          products={sortHotPrices}
+          products={hotPriceProducts}
         />
       </Container>
 
