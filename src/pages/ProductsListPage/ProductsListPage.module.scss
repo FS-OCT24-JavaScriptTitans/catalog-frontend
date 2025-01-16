@@ -9,6 +9,7 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
+  padding-top: 24px;
 
   @include mixin.tablet {
     padding-inline: 24px;
@@ -28,10 +29,18 @@
   }
 }
 
+.dropdown {
+  width: 136px;
+}
+
 .icons {
   display: flex;
   column-gap: 8px;
   margin-bottom: 24px;
+}
+
+.mini_title {
+  color: var(--light-text-color);
 }
 
 .title {
@@ -46,4 +55,5 @@
 .filter_block {
   display: flex;
   gap: 16px;
+  margin-bottom: 24px;
 }
