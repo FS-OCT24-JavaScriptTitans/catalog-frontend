@@ -21,19 +21,25 @@ const sortOptions: Option<string>[] = [
   {
     id: 2,
     value: 'high-to-low',
-    label: 'Price High To Low',
+    label: 'Price To Low',
   },
   {
     id: 3,
     value: 'low-to-high',
-    label: 'Price Low To High',
+    label: 'Price To High',
   },
 ];
+
+enum Sort {
+  Newest = 'newest',
+  HighToLow = 'high-to-low',
+  LowToHigh = 'low-to-high',
+}
 
 const ProductsListPage: React.FC = () => {
   const location = useLocation();
 
-  const [products, setProducts] = useState<Product[] | null>(null);
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -49,11 +55,26 @@ const ProductsListPage: React.FC = () => {
 
       const productsData = await getProducts(ProductEndPoints[category as keyof typeof ProductEndPoints]);
 
-      setProducts(productsData);
+      setProducts(productsData || []);
     };
 
     fetchProducts();
   }, [location.pathname]);
+
+  const handleSortChange = (sortValue: Sort) => {
+    const sortedProducts = [...products].sort((a, b) => {
+      switch (sortValue) {
+        case Sort.HighToLow:
+          return b.priceRegular - a.priceRegular;
+        case Sort.LowToHigh:
+          return a.priceRegular - b.priceRegular;
+        default:
+          return 0;
+      }
+    });
+
+    setProducts(sortedProducts);
+  };
 
   return (
     <section className={s.container}>
@@ -75,6 +96,7 @@ const ProductsListPage: React.FC = () => {
               <Dropdown
                 options={sortOptions}
                 hasBorder
+                onChange={(value) => handleSortChange(value as Sort)}
               />
             </div>
           </div>
