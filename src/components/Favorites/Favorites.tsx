@@ -12,10 +12,10 @@ export const Favourites = () => {
   const favoritesLength = favorites.length;
 
   return (
-    <section className="section">
-      <h2 className={s.title}>Favorites</h2>
+    <section className={s.contaiter}>
       {favoritesLength ?
         <>
+          <h2 className={s.title}>Favorites</h2>
           <span className={s.contaiter__text}>{favoritesLength} items</span>
           <section className={s.products}>
             {favorites.map((product) => (
@@ -28,7 +28,7 @@ export const Favourites = () => {
         </>
       : <EmptyContainer
           title="Theris no favoritess"
-          pathToImg="/img/cart-is-empty.png"
+          pathToImg="/img/empty-fav-page.png"
           alt="empty-favorites"
         />
       }
