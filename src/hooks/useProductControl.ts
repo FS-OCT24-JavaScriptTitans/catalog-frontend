@@ -9,14 +9,13 @@ import { toggleFavoriteProduct } from '@/redux/slices/favorites/favorites.slice'
 export const useProductControl = (product: Product) => {
   const dispatch = useAppDispatch();
   const cart = useAppSelector(selectCart, shallowEqual);
-  const isProductInCart = !!cart.find(({ id }) => id === product.id) || false;
-
-  const handleAddToCart = () => dispatch(addProductToCart({ product }));
-
   const favorites = useAppSelector(selectFavorites, shallowEqual);
-  const isFavorite = favorites.find((favorite) => product.id === favorite.id);
+
+  const isProductInCart = !!cart.find(({ id }) => id === product.id) || false;
+  const isFavorite = !!favorites.find((favorite) => product.id === favorite.id) || false;
 
   const hadleToogleFavorite = () => dispatch(toggleFavoriteProduct({ product }));
+  const handleAddToCart = () => dispatch(addProductToCart({ product }));
 
   return { isProductInCart, handleAddToCart, isFavorite, hadleToogleFavorite };
 };

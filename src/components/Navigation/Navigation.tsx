@@ -13,6 +13,7 @@ import Logo from '../Logo/Logo';
 import NavigationLink from '../../UI/NavLink/NavigationLink';
 import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
 import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
+import { Search } from '../Search/Search';
 
 import { IconLink } from './IconLink/IconLink';
 import s from './Navigation.module.scss';
@@ -66,6 +67,7 @@ const Navigation = () => {
           ))}
         </div>
         <div className={s.navigation__icons}>
+          <Search isOpen />
           {!user && (
             <IconLink
               icon={<Auth />}
@@ -74,7 +76,6 @@ const Navigation = () => {
               handleClick={() => setIsOpenMobileMenu(false)}
             />
           )}
-
           <IconLink
             icon={<Cart />}
             path={PATH.CART}

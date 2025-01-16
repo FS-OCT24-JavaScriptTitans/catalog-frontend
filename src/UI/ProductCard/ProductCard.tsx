@@ -51,7 +51,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
               {isFavorite ?
                 <Favourites
                   fill="red"
-                  color="red"
+                  stroke="red"
                 />
               : <Favourites />}
             </IconButton>
