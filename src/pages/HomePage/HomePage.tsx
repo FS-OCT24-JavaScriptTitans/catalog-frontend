@@ -8,6 +8,7 @@ import { Product } from '@/types/Product.type';
 import { getAllProducts } from '@/api/products/products.api';
 import ProductSlider from '@/components/ProductSlider/ProductSlider';
 import { Loader } from '@/components/Loader/Loader';
+import { filterNewModelProducts, sortByHotPrice } from '@/utils/HomePage/productUtils';
 
 const HomePage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -22,17 +23,8 @@ const HomePage: React.FC = () => {
     fetchProducts();
   }, []);
 
-  const newModelProducts = products.reduceRight<Product[]>((acc, product) => {
-    if (product.priceDiscount < product.priceRegular) {
-      acc.push(product);
-    }
-
-    return acc;
-  }, []);
-
-  const hotPriceProducts = [...products].sort(
-    (p1, p2) => p2.priceRegular - p2.priceDiscount - (p1.priceRegular - p1.priceDiscount),
-  );
+  const newModelProducts = filterNewModelProducts(products);
+  const hotPriceProducts = sortByHotPrice(products);
 
   if (products.length === 0) {
     return <Loader />;
@@ -47,7 +39,7 @@ const HomePage: React.FC = () => {
 
       <Container>
         <ProductSlider
-          title={'Brand new modal'}
+          title="Brand new models"
           products={newModelProducts}
         />
       </Container>
@@ -58,7 +50,7 @@ const HomePage: React.FC = () => {
 
       <Container>
         <ProductSlider
-          title={'Hot Price'}
+          title="Hot Price"
           products={hotPriceProducts}
         />
       </Container>

@@ -16,11 +16,9 @@
   }
 
   .titleContainer {
+    @include mixines.flex-container(center, space-between);
     padding-top: 56px;
     padding-bottom: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding-right: 16px;
 
     @include mixines.tablet {
