@@ -1,4 +1,3 @@
-import cn from 'classnames';
 import { FC } from 'react';
 
 import s from './CartItem.module.scss';
@@ -11,6 +10,7 @@ import Close from '@/assets/Close.svg?react';
 import { useAppDispatch } from '@/redux/hooks';
 import { increaseQuantity, removeQuantity } from '@/redux/slices/cart/carrt.slice';
 import { ProductPrices } from '@/UI/ProductPrices/ProductPrices';
+import { CustomLink } from '@/UI/Link/Link';
 
 interface Props {
   product: CartProduct;
@@ -36,10 +36,14 @@ export const CartItem: FC<Props> = ({ product }) => {
             alt={name}
           />
         </div>
-        <h3 className={cn('primary-text', s.title)}>{name}</h3>
-      </div>
 
+        <CustomLink
+          label={name}
+          path={`/${product.category}/${product.id}`}
+        />
+      </div>{' '}
       <div className={s.controls}>
+        {' '}
         <div className={s.controlsContainer}>
           <IconButton
             onClick={handleRemove(id)}
@@ -57,7 +61,6 @@ export const CartItem: FC<Props> = ({ product }) => {
             <Plus />
           </IconButton>
         </div>
-
         <ProductPrices prices={{ priceDiscount, priceRegular }} />
       </div>
     </article>

@@ -3,10 +3,8 @@ import { Link } from 'react-router';
 
 import s from './Link.module.scss';
 
-import { PATH } from '@/constants/path';
-
 interface Props {
-  path: PATH;
+  path: string;
   label: string;
 }
 

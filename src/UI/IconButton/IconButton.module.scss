@@ -1,7 +1,8 @@
 @use '../../styles/abstract/constants';
 
 .iconButton {
-  padding: 8px;
+  width: 32px;
+  height: 32px;
 
   > svg {
     color: var(--main-color);

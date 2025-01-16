@@ -14,9 +14,7 @@
   }
 }
 
-.title,
 .price {
-  color: var(--main-color);
   font-weight: 600;
 }
 
@@ -39,14 +37,15 @@
 
 .close {
   margin-right: 16px;
+  width: 0;
 
   > svg {
-    color: var(--border-icon-color);
+    color: var(--main-color);
   }
 
   &:hover {
     > svg {
-      color: var(--main-color);
+      color: var(--red-color);
     }
   }
 
@@ -59,10 +58,12 @@
   @include mixines.flex-container(center, space-between, row, 0 24px);
 
   &__container {
+    flex-shrink: 0;
     @include mixines.flex-container(center);
   }
 }
 
 .quantity {
-  padding-inline: 13px;
+  width: 32px;
+  text-align: center;
 }
