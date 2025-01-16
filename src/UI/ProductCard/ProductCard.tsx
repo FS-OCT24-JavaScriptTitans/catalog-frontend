@@ -43,17 +43,19 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
             label="Add to cart"
             secondaryLabel="Added"
           />
-          <IconButton
-            onClick={() => {}}
-            hasBorder
-          >
-            {isFavorite ?
-              <Favourites
-                fill="red"
-                color="red"
-              />
-            : <Favourites />}
-          </IconButton>
+          <span className={styles.button_favorite}>
+            <IconButton
+              onClick={() => {}}
+              hasBorder
+            >
+              {isFavorite ?
+                <Favourites
+                  fill="red"
+                  color="red"
+                />
+              : <Favourites />}
+            </IconButton>
+          </span>
         </div>
       </div>
     </article>

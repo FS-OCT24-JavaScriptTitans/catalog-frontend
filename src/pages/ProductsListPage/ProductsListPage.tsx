@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import s from './ProductPage.module.scss';
+import s from './ProductsListPage.module.scss';
 
 import { Product } from '@/types/Product.type';
 import { getProducts } from '@/api/products/products.api';
@@ -12,21 +12,21 @@ import { Dropdown } from '@/UI/Dropdown/Dropdown';
 import { Option } from '@/types/Options.type';
 import { ProductEndPoints } from '@/constants/endPoints';
 
-const options: Option<string>[] = [
+const sortOptions: Option<string>[] = [
   {
     id: 1,
-    value: 'value1',
-    label: 'Option 1',
+    value: 'newest',
+    label: 'Newest',
   },
   {
     id: 2,
-    value: 'value2',
-    label: 'Option 2',
+    value: 'high-to-low',
+    label: 'Price High To Low',
   },
   {
     id: 3,
-    value: 'value3',
-    label: 'Option 3',
+    value: 'low-to-high',
+    label: 'Price Low To High',
   },
 ];
 
@@ -56,29 +56,35 @@ const ProductsListPage: React.FC = () => {
   }, [location.pathname]);
 
   return (
-    <article className={s.page}>
+    <section className={s.container}>
       <div className={s.top_panel}>
         <div className={s.icons}>
           <Link to="#">
             <Home />
           </Link>
           <Arrow />
-          <span>Phones</span>
+          <span className={s.mini_title}>Phones</span>
         </div>
         <h1 className={s.title}>Mobile phones</h1>
         <p className={`${s.counter} primary-text`}>{`${products?.length} models`}</p>
 
         <div className={s.filter_block}>
           <div className={s.filter_item}>
-            <label>Sort by</label>
-            <div className={s.sort_dropdown}>
-              <Dropdown options={options} />
+            <label className={s.mini_title}>Sort by</label>
+            <div className={s.dropdown}>
+              <Dropdown
+                options={sortOptions}
+                hasBorder
+              />
             </div>
           </div>
           <div className={s.filter_item}>
-            <label>Items on page</label>
-            <div className={s.count_item_dropdown}>
-              <Dropdown options={options} />
+            <label className={s.mini_title}>Items on page</label>
+            <div className={s.dropdown}>
+              <Dropdown
+                options={sortOptions}
+                hasBorder
+              />
             </div>
           </div>
         </div>
@@ -94,7 +100,7 @@ const ProductsListPage: React.FC = () => {
           </div>
         ))}
       </div>
-    </article>
+    </section>
   );
 };
 

@@ -13,7 +13,6 @@
 .paginationWrapper {
   @include mixines.flex-container(center, center);
   gap: 8px;
-  padding: 16px 0;
 }
 
 .bullet {
