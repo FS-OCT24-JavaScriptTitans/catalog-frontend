@@ -1,0 +1,35 @@
+@use '../../../styles/abstract/mixines';
+
+.smallGreyText {
+  color: var(--text-color);
+  text-transform: capitalize;
+}
+
+.smallBlackText {
+  color: var(--main-color);
+}
+
+.techSpecs {
+  grid-column: 1/-1;
+  margin-top: 56px;
+
+  @include mixines.tablet {
+    margin-top: 64px;
+  }
+
+  @include mixines.desctop {
+    grid-column: 13/-1;
+    grid-row: 4;
+    margin-top: 80px;
+  }
+}
+
+.techSpecLine {
+  margin: 16px 0 24px;
+}
+
+.specification {
+  @include mixines.flex-container(stretch, space-between);
+  @include mixines.font(12px, 15.4px, 600);
+  margin-bottom: 8px;
+}
