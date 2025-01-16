@@ -1,12 +1,22 @@
 @use '../../styles/base/typography';
 @use '../../styles/abstract/constants';
+@use '@/styles/abstract/mixines' as mixin;
 
 .container {
   padding: 32px;
 }
 
 .card {
-  width: 272px;
+  background-color: var(--bg-card-color);
+  max-width: 287px;
+
+  @include mixin.tablet-l {
+    width: 229px;
+  }
+
+  @include mixin.desctop {
+    width: 270px;
+  }
   border: 1px solid var(--element-color);
 
   &__image {
@@ -47,6 +57,16 @@
 }
 
 .actions {
-  display: flex;
+  @include mixin.flex-container(center, space-between);
   gap: 8px;
+}
+
+.button_favorite {
+  flex-grow: 2;
+
+  button {
+    @include mixin.flex-container(center, center);
+    display: inline-flex;
+    padding: 12.5px;
+  }
 }
