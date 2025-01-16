@@ -57,9 +57,7 @@
 }
 
 .actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  @include mixin.flex-container(center, space-between);
   gap: 8px;
 }
 
@@ -67,9 +65,8 @@
   flex-grow: 2;
 
   button {
+    @include mixin.flex-container(center, center);
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
     padding: 12.5px;
   }
 }
