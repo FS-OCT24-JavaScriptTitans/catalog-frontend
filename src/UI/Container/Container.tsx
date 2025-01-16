@@ -11,6 +11,7 @@ interface Props {
 export const Container: FC<Props> = ({ title, titlePB, children }) => (
   <section>
     <div className={s.container}>
+
       {title && (
         <h2
           className={s.title}
@@ -19,7 +20,6 @@ export const Container: FC<Props> = ({ title, titlePB, children }) => (
           {title}
         </h2>
       )}
-
       {children}
     </div>
   </section>
