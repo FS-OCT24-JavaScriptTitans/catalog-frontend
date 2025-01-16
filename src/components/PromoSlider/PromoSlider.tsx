@@ -13,15 +13,15 @@ import { Arrow } from '@/UI/Arrow/Arrow';
 
 const slides = [
   {
-    img: 'public/img/slides/banner-phones.png',
+    img: 'img/slides/banner-phones.png',
     link: '/phones',
   },
   {
-    img: 'public/img/slides/banner-tablets.png',
+    img: 'img/slides/banner-tablets.png',
     link: '/tablets',
   },
   {
-    img: 'public/img/slides/banner-accessories.png',
+    img: 'img/slides/banner-accessories.png',
     link: '/accessories',
   },
 ];
@@ -55,8 +55,8 @@ const PromoSlider: React.FC = () => {
           slidesPerView={1}
           loop
           autoplay={{
-            delay: 3000, // Затримка в мілісекундах (3 секунди)
-            disableOnInteraction: false, // Свайпер не зупиняється після взаємодії
+            delay: 3000,
+            disableOnInteraction: false,
           }}
           navigation={{
             nextEl: `.${styles.nextButton}`,
