@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 
-.page {
+html {
   font-size: 10px;
   scroll-behavior: smooth;
 }
@@ -25,10 +25,13 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: var(--main-bg-color);
+  color: var(--main-color);
 }
 
-.main {
-  background-color: var(--main-bg-color);
+main {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 a,
@@ -90,11 +93,11 @@ svg {
   opacity: 0;
 }
 
-.section {
-  margin: 0 auto;
-}
-
 .line {
   height: 1px;
   background-color: var(--element-color);
+}
+
+svg {
+  color: var(--main-color);
 }

@@ -12,10 +12,11 @@ interface Props<T> {
   onChange?: (value: T) => void;
   width?: string;
   hasBorder?: boolean;
+  hasButtonBGC?: boolean;
   selectedOption?: Option<T>;
 }
 
-export const Dropdown = <T,>({ options, onChange, width, hasBorder, selectedOption }: Props<T>) => {
+export const Dropdown = <T,>({ options, onChange, width, hasBorder, selectedOption, hasButtonBGC }: Props<T>) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const [option, setOption] = useState<Option<T>>(selectedOption || options[0]);
@@ -34,7 +35,7 @@ export const Dropdown = <T,>({ options, onChange, width, hasBorder, selectedOpti
       style={{ width }}
     >
       <button
-        className={s.button}
+        className={cn(s.button, { [s.buttonBgc]: hasButtonBGC })}
         onClick={toggleDropdown}
       >
         {String(option.label)}

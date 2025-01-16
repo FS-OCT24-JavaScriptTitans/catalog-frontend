@@ -22,27 +22,47 @@
 }
 
 #root {
+  --dropdown-bgc-color: var(--white-color);
+  --dropdown-hover-bgc-color: var(--light-dropdown-hover-bg-color);
+  --dropdown-color: var(--light-text-color);
+  --dropdown-hover-color: var(--light-main-text-color);
+  --dropdown-button-bgc-color: var(--white-color);
+  --dropdown-border-color: var(--white-color);
+  --button-bgc-color: var(--main-color);
+  --button-hover-color: var(--button-hover-light-color);
+  --button-hover-bgc-color: var(--main-color);
+  --button-selected-bgc-color: var(--white-color);
+  --button-selected-color: var(--green-color);
+  --button-selected-border-color: var(--element-color);
+  --button-selected-hover-border-color: var(--main-color);
   --main-bg-color: var(--white-color);
   --main-color: var(--light-main-text-color);
   --text-color: var(--light-text-color);
   --icon-bg-color: var(--white-color);
   --border-icon-color: var(--light-border-icon-color);
   --element-color: var(--light-element-color);
-  --button-hover-color: var(--button-hover-light-color);
-  --dropdown-bg-color: var(--light-dropdown-hover-bg-color);
-  --back-drop-color: var(--light-back-drop-color);
 }
 
 #root.dark {
+  --dropdown-bgc-color: var(--dark-primary-color);
+  --dropdown-hover-bgc-color: var(--dark-icon-bg-color);
+  --dropdown-color: var(--dark-text-color);
+  --dropdown-hover-color: var(--dark-main-text-color);
+  --dropdown-button-bgc-color: var(--dark-icon-bg-color);
+  --dropdown-border-color: var(--purple-color);
+  --button-bgc-color: var(--purple-color);
+  --button-hover-bgc-color: var(--purple-color);
+  --button-hover-color: var(--hover-purple-color);
+  --button-selected-bgc-color: var(--dark-icon-bg-color);
+  --button-selected-color: var(--white-color);
+  --button-selected-border-color: var(--dark-icon-bg-color);
+  --button-selected-hover-border-color: var(--purple-color);
   --main-bg-color: var(--dark-primary-color);
   --main-color: var(--dark-main-text-color);
   --text-color: var(--dark-text-color);
   --icon-bg-color: var(--dark-icon-bg-color);
   --border-icon-color: var(--dark-icon-bg-color);
   --element-color: var(--dark-element-color);
-  --button-hover-color: var(--hover-purple-color);
-  --dropdown-bg-color: var(--dark-icon-bg-color);
-  --back-drop-color: var(--dark-back-drop-color);
 }
 
 // TRANSITION

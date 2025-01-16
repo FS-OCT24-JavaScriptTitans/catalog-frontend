@@ -1,7 +1,9 @@
 @use '../../styles/abstract/mixines' as mixin;
+@use '../../styles/abstract/constants';
 
 .auth {
   @include mixin.flex-container(center, center);
+  color: var(--main-color);
 }
 
 .container {

@@ -21,6 +21,8 @@ export interface Product {
   processor: string;
   ram: string;
   cell: string[];
+  camera?: string;
+  zoom?: string;
 }
 
 export interface ProductItem {
