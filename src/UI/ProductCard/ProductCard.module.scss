@@ -4,11 +4,24 @@
 
 .container {
   padding: 32px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+// .img_container {
+//   padding-inline: 65px;
+// }
+
 .card {
+  border: 1px solid var(--element-color);
   background-color: var(--bg-card-color);
   max-width: 287px;
+  height: 100%;
+  min-height: max-content;
+
+  // max-width: 270px;
 
   @include mixin.tablet-l {
     width: 229px;
@@ -17,7 +30,6 @@
   @include mixin.desctop {
     width: 270px;
   }
-  border: 1px solid var(--element-color);
 
   &__image {
     display: block;
