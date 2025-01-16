@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import styles from './HomePage.module.scss';
 
 import PromoSlider from '@/components/PromoSlider/PromoSlider';
-import Container from '@/components/Container/Container';
+import Container from '@/UI/Container/Container';
 import { Product } from '@/types/Product.type';
 import { getAllProducts } from '@/api/products/products.api';
 import ProductSlider from '@/components/ProductSlider/ProductSlider';
@@ -33,12 +33,6 @@ const HomePage: React.FC = () => {
   const hotPriceProducts = [...products].sort(
     (p1, p2) => p2.priceRegular - p2.priceDiscount - (p1.priceRegular - p1.priceDiscount),
   );
-
-  console.log(hotPriceProducts);
-
-  // const regularProducts = products.filter(
-  //   (product) => product.priceDiscount === product.priceRegular
-  // );
 
   if (products.length === 0) {
     return <Loader />;

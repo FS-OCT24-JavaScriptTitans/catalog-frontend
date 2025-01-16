@@ -1,5 +1,5 @@
-import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React, { useRef } from 'react';
+import { Swiper, SwiperClass, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 
 import 'swiper/css';
@@ -16,48 +16,52 @@ interface ProductSliderProps {
   products: Product[];
 }
 
-const ProductSlider: React.FC<ProductSliderProps> = ({ title, products }) => (
-  <div className={styles.productSlider}>
-    <div className={styles.container}>
-      <h2 className={styles.title}>{title}</h2>
-      <div className={styles.buttonContainer}>
-        <button className={styles.prevButton}>
-          <Arrow direction="left" />
-        </button>
-        <button className={styles.nextButton}>
-          <Arrow direction="rigth" />
-        </button>
+const ProductSlider: React.FC<ProductSliderProps> = ({ title, products }) => {
+  const swiperRef = useRef<SwiperClass | null>(null);
+
+  return (
+    <div className={styles.productSliderContainer}>
+      <div className={styles.titleContainer}>
+        <h2 className={styles.title}>{title}</h2>
+        <div className={styles.buttonContainer}>
+          <button
+            className={styles.prevButton}
+            onClick={() => swiperRef.current?.slidePrev()}
+          >
+            <Arrow direction="left" />
+          </button>
+          <button
+            className={styles.nextButton}
+            onClick={() => swiperRef.current?.slideNext()}
+          >
+            <Arrow direction="rigth" />
+          </button>
+        </div>
       </div>
+      <Swiper
+        modules={[Navigation]}
+        spaceBetween={16}
+        slidesPerView={1.5}
+        onSwiper={(swiper) => {
+          swiperRef.current = swiper;
+        }}
+        breakpoints={{
+          640: {
+            slidesPerView: 2.5,
+          },
+          1024: {
+            slidesPerView: 4,
+          },
+        }}
+      >
+        {products.map((product) => (
+          <SwiperSlide key={product.id}>
+            <ProductCard product={product} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
-    <Swiper
-      modules={[Navigation]}
-      spaceBetween={10}
-      slidesPerView={1.5}
-      navigation={{
-        nextEl: `.${styles.nextButton}`,
-        prevEl: `.${styles.prevButton}`,
-      }}
-      breakpoints={{
-        640: {
-          slidesPerView: 2.5,
-          spaceBetween: 10,
-        },
-        1200: {
-          slidesPerView: 4,
-          spaceBetween: 10,
-        },
-      }}
-      onInit={(swiper) => {
-        swiper.update();
-      }}
-    >
-      {products.map((product) => (
-        <SwiperSlide key={product.id}>
-          <ProductCard product={product} />
-        </SwiperSlide>
-      ))}
-    </Swiper>
-  </div>
-);
+  );
+};
 
 export default ProductSlider;

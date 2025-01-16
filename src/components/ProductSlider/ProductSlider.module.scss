@@ -1,9 +1,13 @@
 @use '../../styles/abstract/mixines';
 @use '../../styles/abstract/constants';
 
-.productSlider {
+.productSliderContainer {
   max-width: 1200px;
   width: 100%;
+
+  @include mixines.desctop {
+    width: 1200px;
+  }
 
   .prevButton,
   .nextButton {
@@ -16,11 +20,13 @@
     z-index: 10;
   }
 
-  .container {
+  .titleContainer {
     padding-top: 56px;
+    padding-bottom: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-right: 16px;
 
     @include mixines.tablet {
       padding-top: 64px;
@@ -28,7 +34,7 @@
 
     @include mixines.laptop {
       padding-top: 80px;
-      padding-bottom: 24px;
+      padding-right: 0;
     }
   }
 
