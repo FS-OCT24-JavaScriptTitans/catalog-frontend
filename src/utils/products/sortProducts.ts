@@ -1,6 +1,6 @@
 import { Product } from '@/types/Product.type';
 
-export const filterNewModelProducts = (products: Product[]): Product[] =>
+export const sortNewModal = (products: Product[]): Product[] =>
   products.reduceRight<Product[]>((acc, product) => {
     if (product.priceDiscount < product.priceRegular) {
       acc.push(product);

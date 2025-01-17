@@ -8,7 +8,7 @@ import { Product } from '@/types/Product.type';
 import { getAllProducts } from '@/api/products/products.api';
 import ProductSlider from '@/components/ProductSlider/ProductSlider';
 import { Loader } from '@/components/Loader/Loader';
-import { filterNewModelProducts, sortByHotPrice } from '@/utils/HomePage/productUtils';
+import { sortNewModal, sortByHotPrice } from '@/utils/products/sortProducts';
 
 const HomePage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -23,7 +23,7 @@ const HomePage: React.FC = () => {
     fetchProducts();
   }, []);
 
-  const newModelProducts = filterNewModelProducts(products);
+  const newModelProducts = sortNewModal(products);
   const hotPriceProducts = sortByHotPrice(products);
 
   if (products.length === 0) {

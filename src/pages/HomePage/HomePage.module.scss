@@ -2,9 +2,7 @@
 @use '../../styles/abstract/constants';
 
 .welcomeMessage {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include mixines.flex-container(center, center);
   margin: 24px 16px;
   line-height: 40px;
   color: var(--main-color);

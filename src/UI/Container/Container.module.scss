@@ -2,6 +2,8 @@
 
 .container {
   padding-inline: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
 
   @include mixines.tablet {
     padding-inline: 24px;
