@@ -5,12 +5,12 @@ import s from './ProductsListPage.module.scss';
 
 import { Product } from '@/types/Product.type';
 import { getProducts } from '@/api/products/products.api';
-import { ProductCard } from '@/UI/ProductCard/ProductCard';
 import Home from '@/assets/Home.svg?react';
 import Arrow from '@/assets/Arrow.svg?react';
 import { Dropdown } from '@/UI/Dropdown/Dropdown';
 import { Option } from '@/types/Options.type';
 import { ProductEndPoints } from '@/constants/endPoints';
+import { ProductsList } from '@/UI/ProductsList/ProductsList';
 
 const sortOptions: Option<string>[] = [
   {
@@ -112,16 +112,7 @@ const ProductsListPage: React.FC = () => {
         </div>
       </div>
 
-      <div className={s.wrapper}>
-        {products?.map((product) => (
-          <div
-            className={s.product_card}
-            key={product.id}
-          >
-            <ProductCard product={product} />
-          </div>
-        ))}
-      </div>
+      <ProductsList products={products} />
     </section>
   );
 };
