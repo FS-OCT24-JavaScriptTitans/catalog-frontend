@@ -13,6 +13,15 @@
   }
 }
 
+.smallGreyText {
+  color: var(--text-color);
+  text-transform: capitalize;
+}
+
+.smallBlackText {
+  color: var(--main-color);
+}
+
 .colorsTop {
   display: flex;
   justify-content: space-between;
@@ -85,12 +94,16 @@
   text-decoration: line-through;
 }
 
-.button {
-  margin: 16px 0 32px;
-}
-
 .specification {
   @include mixines.flex-container(stretch, space-between);
   @include mixines.font(12px, 15.4px, 600);
   margin-bottom: 8px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 6fr 1fr;
+  column-gap: 8px;
+  height: 48px;
+  margin: 16px 0 32px;
 }

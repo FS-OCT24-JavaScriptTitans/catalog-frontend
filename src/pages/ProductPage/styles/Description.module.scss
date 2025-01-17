@@ -2,9 +2,16 @@
 
 .description {
   grid-column: 1/-1;
+  margin-top: 56px;
+
+  @include mixines.desctop {
+    margin-top: 64px;
+  }
 
   @include mixines.desctop {
     grid-column: 1/12;
+    grid-row: 4;
+    margin-top: 80px;
   }
 
   &__line {

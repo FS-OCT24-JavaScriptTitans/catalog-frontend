@@ -8,6 +8,7 @@
   @include mixines.tablet {
     grid-column: 2/8;
     grid-row: 3;
+    max-height: 440px;
   }
 
   @include mixines.desctop {
@@ -20,12 +21,11 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   column-gap: 8px;
-  margin-bottom: 40px;
+  margin: 16px 0 40px;
 
   @include mixines.tablet {
     grid-column: 1/2;
-    grid-template-columns: 1fr;
-    row-gap: 8px;
+    display: block;
   }
 
   @include mixines.desctop {
@@ -35,6 +35,7 @@
 
 .imageBox {
   aspect-ratio: 1;
+  margin-bottom: 8px;
 }
 
 .mainPhoto {
@@ -48,4 +49,8 @@
   object-fit: contain;
   padding: 4.5px 4.3px;
   grid-column: span 1;
+}
+
+.active {
+  @include mixines.border(1px, var(--main-color));
 }
