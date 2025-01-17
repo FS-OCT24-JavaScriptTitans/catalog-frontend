@@ -10,7 +10,7 @@ import Arrow from '@/assets/Arrow.svg?react';
 import { Dropdown } from '@/UI/Dropdown/Dropdown';
 import { Option } from '@/types/Options.type';
 import { ProductEndPoints } from '@/constants/endPoints';
-import { ProductsList } from '@/UI/ProductsList/ProductsList';
+import { ProductList } from '@/components/ProductList/ProductList';
 
 const sortOptions: Option<string>[] = [
   {
@@ -112,7 +112,7 @@ const ProductsListPage: React.FC = () => {
         </div>
       </div>
 
-      <ProductsList products={products} />
+      <ProductList products={products} />
     </section>
   );
 };
