@@ -5,12 +5,12 @@ import s from './ProductsListPage.module.scss';
 
 import { Product } from '@/types/Product.type';
 import { getProducts } from '@/api/products/products.api';
-import { ProductCard } from '@/UI/ProductCard/ProductCard';
 import Home from '@/assets/Home.svg?react';
 import Arrow from '@/assets/Arrow.svg?react';
 import { Dropdown } from '@/UI/Dropdown/Dropdown';
 import { Option } from '@/types/Options.type';
 import { ProductEndPoints } from '@/constants/endPoints';
+import { ProductList } from '@/components/ProductList/ProductList';
 
 const sortOptions: Option<string>[] = [
   {
@@ -21,19 +21,25 @@ const sortOptions: Option<string>[] = [
   {
     id: 2,
     value: 'high-to-low',
-    label: 'Price High To Low',
+    label: 'Price To Low',
   },
   {
     id: 3,
     value: 'low-to-high',
-    label: 'Price Low To High',
+    label: 'Price To High',
   },
 ];
+
+enum Sort {
+  Newest = 'newest',
+  HighToLow = 'high-to-low',
+  LowToHigh = 'low-to-high',
+}
 
 const ProductsListPage: React.FC = () => {
   const location = useLocation();
 
-  const [products, setProducts] = useState<Product[] | null>(null);
+  const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -49,11 +55,26 @@ const ProductsListPage: React.FC = () => {
 
       const productsData = await getProducts(ProductEndPoints[category as keyof typeof ProductEndPoints]);
 
-      setProducts(productsData);
+      setProducts(productsData || []);
     };
 
     fetchProducts();
   }, [location.pathname]);
+
+  const handleSortChange = (sortValue: Sort) => {
+    const sortedProducts = [...products].sort((a, b) => {
+      switch (sortValue) {
+        case Sort.HighToLow:
+          return b.priceRegular - a.priceRegular;
+        case Sort.LowToHigh:
+          return a.priceRegular - b.priceRegular;
+        default:
+          return 0;
+      }
+    });
+
+    setProducts(sortedProducts);
+  };
 
   return (
     <section className={s.container}>
@@ -75,6 +96,7 @@ const ProductsListPage: React.FC = () => {
               <Dropdown
                 options={sortOptions}
                 hasBorder
+                onChange={(value) => handleSortChange(value as Sort)}
               />
             </div>
           </div>
@@ -90,16 +112,7 @@ const ProductsListPage: React.FC = () => {
         </div>
       </div>
 
-      <div className={s.wrapper}>
-        {products?.map((product) => (
-          <div
-            className={s.product_card}
-            key={product.id}
-          >
-            <ProductCard product={product} />
-          </div>
-        ))}
-      </div>
+      <ProductList products={products} />
     </section>
   );
 };

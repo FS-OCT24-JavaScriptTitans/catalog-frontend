@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo, ReactNode } from 'react';
 
 import { Button } from '../Button/Button';
 import { IconButton } from '../IconButton/IconButton';
@@ -8,6 +8,7 @@ import { CustomLink } from '../Link/Link';
 import styles from './ProductCard.module.scss';
 
 import Favourites from '@/assets/Favourites.svg?react';
+import RedFavourites from '@/assets/RedFavorites.svg?react';
 import { Spec } from '@/types/Spec';
 import { Product } from '@/types/Product.type';
 import { useProductControl } from '@/hooks/useProductControl';
@@ -16,7 +17,7 @@ type Props = {
   product: Product;
 };
 
-export const ProductCard: React.FC<Props> = ({ product }) => {
+const ProductCardComponent: React.FC<Props> = ({ product }) => {
   const specs: Spec = { screen: product.screen, capacity: product.capacity, ram: product.ram };
 
   const { handleAddToCart, isFavorite, isProductInCart, hadleToogleFavorite } = useProductControl(product);
@@ -58,10 +59,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
                 hasBorder
               >
                 {isFavorite ?
-                  <Favourites
-                    fill="red"
-                    color="red"
-                  />
+                  <RedFavourites />
                 : <Favourites />}
               </IconButton>
             </span>
@@ -71,3 +69,5 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
     </article>
   );
 };
+
+export const ProductCard = memo(ProductCardComponent) as (props: Props) => ReactNode;
