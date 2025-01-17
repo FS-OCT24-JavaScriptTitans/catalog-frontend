@@ -1,17 +1,12 @@
 @use '../../styles/abstract/mixines';
 
 .products {
-  @include mixines.page-grid;
-  row-gap: 40px;
-  padding-top: 40px;
-  padding-bottom: 80px;
-}
-
-.product {
-  margin: auto;
-  grid-column: 1 / -1;
+  @include mixines.flex-container(stretch, center, row, 40px, wrap);
+  column-gap: 16px;
 
   @include mixines.tablet {
-    grid-column: auto / span 6;
+    justify-content: flex-start;
   }
+  padding-top: 40px;
+  padding-bottom: 80px;
 }

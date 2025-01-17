@@ -67,14 +67,16 @@ $top-height: 65.6px;
     @include mixines.flex-container(center, space-between, column, 24px);
   }
 
-  &__icons {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+  &__burger {
+    border-left: 1px solid var(--element-color);
+    padding-inline: 16px;
+    height: 66px;
+    @include mixines.flex-container(center, center);
   }
 }
 
-.wrapper {
-  @include mixines.flex-container(center, center);
+.switches {
+  @include mixines.flex-container(center, space-between);
 }
 
 @media (min-width: constants.$tablet-l-min-whidth) {
@@ -100,10 +102,6 @@ $top-height: 65.6px;
 
     &__links {
       flex-direction: row;
-    }
-
-    &__icons {
-      display: flex;
     }
 
     &__burger {
