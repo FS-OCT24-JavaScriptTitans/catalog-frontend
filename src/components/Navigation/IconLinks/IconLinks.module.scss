@@ -1,11 +1,31 @@
 @use '../../../styles/abstract/mixines';
 
-.container {
-  position: relative;
+.icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+
+  @include mixines.tablet {
+    display: flex;
+  }
+}
+
+.wrapper {
   min-width: 64px;
-  @include mixines.flex-container(center, center);
+  position: relative;
+}
+
+.icon {
   @include mixines.border(1px, var(--element-color));
   border-bottom: none;
+  min-height: 66px;
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    align-self: flex-end;
+  }
 
   @include mixines.tablet {
     border-top: none;

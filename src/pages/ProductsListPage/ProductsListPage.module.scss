@@ -19,7 +19,7 @@
 }
 
 .wrapper {
-  @include mixin.flex-container(stretch, center, row, 40px, wrap);
+  @include mixin.flex-container(center, center, row, 40px, wrap);
   column-gap: 16px;
 
   @include mixin.laptop {
