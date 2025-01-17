@@ -29,11 +29,6 @@ body {
   color: var(--main-color);
 }
 
-main {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 a,
 input,
 button {
@@ -96,8 +91,4 @@ svg {
 .line {
   height: 1px;
   background-color: var(--element-color);
-}
-
-svg {
-  color: var(--main-color);
 }

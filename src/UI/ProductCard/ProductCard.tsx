@@ -21,6 +21,8 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
 
   const { handleAddToCart, isFavorite, isProductInCart, hadleToogleFavorite } = useProductControl(product);
 
+  // const slicedName = product.name.length > 27 ? product.name.slice(0, 25) + '...' : product.name;
+
   return (
     <article className={styles.card}>
       <div className={styles.container}>
@@ -29,7 +31,8 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
           alt="Product image"
           className={styles.card__image}
         />
-        <a className={`${styles.card__title} primary-text`}>{product.name}</a>
+
+        <a className={`${styles.card__title} primary-text`}>{product.name} (iMT9G2FS/A)</a>
         <div className={styles.card__price}>
           <span className={styles.card__value}>${product.priceDiscount}</span>
           {product.priceRegular && <span className={styles.card__old_value}>${product.priceRegular}</span>}
