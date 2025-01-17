@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import CategoryCard from '../CategoryCard/CategoryCard';
 
@@ -17,7 +17,6 @@ interface Category {
 
 const CategorySection: React.FC = () => {
   const [categories, setCategories] = useState<Category[]>([]);
-  const categoryCardsRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -50,47 +49,10 @@ const CategorySection: React.FC = () => {
     fetchCategories();
   }, []);
 
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver((entries) => {
-  //     entries.forEach((entry) => {
-  //       if (entry.isIntersecting) {
-  //         entry.target.classList.add(styles.visible);
-  //       }
-  //     });
-  //   }, { threshold: 0.5 });
-
-  //   const currentCategoryCardsRef = categoryCardsRef.current;
-
-  //   if (currentCategoryCardsRef) {
-  //     const categoryCards = currentCategoryCardsRef.children;
-
-  //     if (categoryCards) {
-  //       for (const card of categoryCards) {
-  //         observer.observe(card);
-  //       }
-  //     }
-  //   }
-
-  //   return () => {
-  //     if (currentCategoryCardsRef) {
-  //       const categoryCards = currentCategoryCardsRef.children;
-
-  //       if (categoryCards) {
-  //         for (const card of categoryCards) {
-  //           observer.unobserve(card);
-  //         }
-  //       }
-  //     }
-  //   };
-  // }, [categories]);
-
   return (
     <>
       <h2 className={styles.heading}>Shop by category</h2>
-      <div
-        className={styles.categoryCards}
-        ref={categoryCardsRef}
-      >
+      <div className={styles.categoryCards}>
         {categories.map((category, index) => (
           <CategoryCard
             key={index}

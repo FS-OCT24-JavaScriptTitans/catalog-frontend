@@ -1,19 +1,7 @@
 .categoryCard {
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
   overflow: hidden;
-
-  // opacity: 0; /* Початковий стан — елементи невидимі */
-  // transform: translateX(-100%); /* Початкове положення — зліва */
-  // transition: all 0.5s ease-in-out; /* Плавний перехід */
 }
-
-//   .categoryCard.visible {
-//     opacity: 1;
-//     transform: translateX(0);
-//   }
 
 .imageContainer {
   position: relative;
@@ -23,9 +11,10 @@
 
 .title {
   padding-top: 24px;
+  font-size: 20px;
 }
 
 .models {
-  font-size: 1rem;
+  font-size: 14px;
   color: gray;
 }

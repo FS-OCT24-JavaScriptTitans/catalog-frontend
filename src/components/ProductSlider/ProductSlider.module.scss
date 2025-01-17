@@ -13,6 +13,7 @@
     background-color: var(--icon-bg-color);
     z-index: 10;
     cursor: pointer;
+    color: var(--main-color);
   }
 
   .titleContainer {
@@ -30,6 +31,6 @@
 
   .buttonContainer {
     display: flex;
-    gap: 8px;
+    gap: 16px;
   }
 }

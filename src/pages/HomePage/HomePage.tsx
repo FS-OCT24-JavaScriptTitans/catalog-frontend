@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import styles from './HomePage.module.scss';
-
 import PromoSlider from '@/components/PromoSlider/PromoSlider';
 import { Container } from '@/UI/Container/Container';
 import { Product } from '@/types/Product.type';
@@ -33,7 +31,6 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <h1 className={styles.welcomeMessage}>Welcome to Nice Gadgets store!</h1>
       <Container>
         <PromoSlider />
       </Container>

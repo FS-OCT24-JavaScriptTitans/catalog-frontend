@@ -1,9 +1,0 @@
-@use '../../styles/abstract/mixines';
-@use '../../styles/abstract/constants';
-
-.welcomeMessage {
-  @include mixines.flex-container(center, center);
-  margin: 24px 16px;
-  line-height: 40px;
-  color: var(--main-color);
-}
