@@ -14,7 +14,6 @@ import { useAppSelector } from '@/redux/hooks';
 import { selectCart, selectFavorites, selectUser } from '@/redux/selectors';
 import { Product } from '@/types/Product.type';
 import { CartProduct } from '@/types/Cart.types';
-import { Search } from '@/components/Search/Search';
 
 type Props = {
   handleClick: () => void;
@@ -33,8 +32,6 @@ export const IconLinks: React.FC<Props> = ({ handleClick }) => {
 
   return (
     <div className={s.icons}>
-      <Search isOpen />
-
       {!user && (
         <span className={s.wrapper}>
           <NavigationLink
