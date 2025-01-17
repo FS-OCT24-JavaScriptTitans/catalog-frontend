@@ -21,10 +21,6 @@
 .wrapper {
   @include mixin.flex-container(center, center, row, 40px, wrap);
   column-gap: 16px;
-
-  @include mixin.laptop {
-    justify-content: space-between;
-  }
 }
 
 .dropdown {

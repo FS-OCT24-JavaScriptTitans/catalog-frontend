@@ -7,9 +7,7 @@ export const App = () => (
   <>
     <Navigation />
     <main>
-      <div className="container">
-        <Outlet />
-      </div>
+      <Outlet />
     </main>
     <Footer />
   </>

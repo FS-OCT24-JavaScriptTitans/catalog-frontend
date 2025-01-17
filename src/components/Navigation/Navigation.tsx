@@ -53,7 +53,7 @@ const Navigation = () => {
               handleClick={closeBurgerMenu}
             />
           ))}
-        </div>
+        </div>{' '}
         <IconLinks handleClick={closeBurgerMenu} />
       </nav>
 
