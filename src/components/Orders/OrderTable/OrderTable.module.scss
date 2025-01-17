@@ -1,0 +1,19 @@
+@use '@/styles/abstract/constants';
+
+.table {
+  width: 100%;
+  min-width: 700px;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.thead {
+  background-color: var(--button-bgc-color);
+  color: var(--white-color);
+}
+
+.th {
+  padding: 10px;
+  text-align: left;
+}

@@ -1,30 +1,32 @@
 @use '@/styles/abstract/mixines';
 @use '@/styles/abstract/constants';
 
-.item {
-  padding: 16px;
-  margin-bottom: 16px;
-  @include mixines.border(1px, var(--element-color), 9px);
-
-  &__id {
-    color: var(--main-color);
-    margin-bottom: 10px;
-
-    > span {
-      color: var(--text-color);
-    }
-  }
+.container {
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid var(--light-border-icon-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px var(--table-shadow-color);
 }
 
-.products {
-  @include mixines.flex-container(center, center, row, 16px, wrap);
-  margin-bottom: 16px;
+.title {
+  margin-bottom: 10px;
+  vertical-align: bottom;
+}
 
-  :last-child {
-    margin-bottom: 0;
-  }
+.total__price {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
 
-  &__title {
-    margin-block: 16px;
-  }
+  @include mixines.flex-container(center, space-between);
+}
+
+.order__id {
+  color: var(--button-selected-color);
+}
+
+.table__container {
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
