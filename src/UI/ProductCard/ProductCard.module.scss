@@ -4,20 +4,23 @@
 
 .container {
   padding: 32px;
+  min-height: 100%;
+  @include mixin.flex-container(stretch, space-between, column);
 }
 
 .card {
+  border: 1px solid var(--element-color);
   background-color: var(--bg-card-color);
-  max-width: 287px;
+  max-width: 288px;
+  height: 100%;
+  min-height: max-content;
 
   @include mixin.tablet-l {
     width: 229px;
   }
-
-  @include mixin.desctop {
-    width: 270px;
+  @include mixin.laptop {
+    width: 272px;
   }
-  border: 1px solid var(--element-color);
 
   &__image {
     display: block;
@@ -33,7 +36,9 @@
     padding-top: 16px;
     margin-bottom: 8px;
     color: var(--main-color);
-    height: 63px;
+    height: 61px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   &__price {
