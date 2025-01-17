@@ -13,6 +13,7 @@ const Orders: React.FC<OrdersProps> = ({ orders }) => (
   <Container
     title="Orders:"
     mt="32px"
+    titlePB="24px"
   >
     {orders.map((order) => (
       <OrderItem
