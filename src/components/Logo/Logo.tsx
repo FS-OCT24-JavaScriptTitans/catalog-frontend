@@ -1,19 +1,15 @@
 import { Link } from 'react-router-dom';
 
-import logo from '../../assets/Logo.svg';
+import Logotype from '../../assets/Logo.svg?react';
 
 import s from './Logo.module.scss';
 
 const Logo = () => (
   <Link
     to="/"
-    className={s.link}
+    // className={s.link}
   >
-    <img
-      src={logo}
-      alt="logo"
-      className={s.logo}
-    />
+    <Logotype className={s.logo} />
   </Link>
 );
 

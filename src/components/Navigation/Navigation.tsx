@@ -1,28 +1,20 @@
 /* eslint-disable react/no-children-prop */
-import { NavLinkRenderProps } from 'react-router-dom';
-import { useState } from 'react';
-import { shallowEqual } from 'react-redux';
+import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Menu from '../../assets/Menu.svg?react';
-import Auth from '../../assets/Auth.svg?react';
 import Close from '../../assets/Close.svg?react';
-import Cart from '../../assets/Shopping.svg?react';
-import Favorites from '../../assets/Favourites.svg?react';
 import Logo from '../Logo/Logo';
 import NavigationLink from '../../UI/NavLink/NavigationLink';
 import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
 import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
-import { Search } from '../Search/Search';
 
-import { IconLink } from './IconLink/IconLink';
 import s from './Navigation.module.scss';
+import { IconLinks } from './IconLinks/IconLinks';
 
 import { IconButton } from '@/UI/IconButton/IconButton';
 import { PATH } from '@/constants/path';
-import { useAppSelector } from '@/redux/hooks';
-import { selectCart, selectFavorites, selectUser } from '@/redux/selectors';
-// import { allowScroll, blockScroll } from '@/utils/scroll';
+import { allowScroll, blockScroll } from '@/utils/scroll';
 
 const navLinks = {
   Home: PATH.HOME,
@@ -31,22 +23,18 @@ const navLinks = {
   Accessories: PATH.ACCESSORIES,
 };
 
-const navLinkStyle = ({ isActive }: NavLinkRenderProps) => `${s.link} ${isActive ? s.active_link : ''}`;
-
 const Navigation = () => {
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
-  const user = useAppSelector(selectUser, shallowEqual);
-  const cartList = useAppSelector(selectCart, shallowEqual);
-  const favoritesList = useAppSelector(selectFavorites, shallowEqual);
+  const closeBurgerMenu = () => setIsOpenMobileMenu(false);
   const { t } = useTranslation('navigation');
 
-  // useEffect(() => {
-  //   if (isOpenMobileMenu) {
-  //     blockScroll();
-  //   } else {
-  //     allowScroll();
-  //   }
-  // }, [isOpenMobileMenu]);
+  useEffect(() => {
+    if (isOpenMobileMenu) {
+      blockScroll();
+    } else {
+      allowScroll();
+    }
+  }, [isOpenMobileMenu]);
 
   return (
     <header className={s.container}>
@@ -61,37 +49,15 @@ const Navigation = () => {
               key={label}
               to={path}
               label={t(label)}
-              className={navLinkStyle}
-              handleClick={() => setIsOpenMobileMenu(false)}
+              className={({ isActive }) => `${s.link} ${isActive ? s.active_link : ''}`}
+              handleClick={closeBurgerMenu}
             />
           ))}
         </div>
-        <div className={s.navigation__icons}>
-          <Search isOpen />
-          {!user && (
-            <IconLink
-              icon={<Auth />}
-              path={`/auth${PATH.SIGN_IN}`}
-              counter={0}
-              handleClick={() => setIsOpenMobileMenu(false)}
-            />
-          )}
-          <IconLink
-            icon={<Cart />}
-            path={PATH.CART}
-            counter={cartList.length}
-            handleClick={() => setIsOpenMobileMenu(false)}
-          />
-          <IconLink
-            icon={<Favorites />}
-            path={PATH.FAVORITES}
-            counter={favoritesList.length}
-            handleClick={() => setIsOpenMobileMenu(false)}
-          />
-        </div>
+        <IconLinks handleClick={closeBurgerMenu} />
       </nav>
 
-      <div className={s.wrapper}>
+      <div className={s.switches}>
         <ThemeSwitcher />
         <LanguageSwitcher />
 

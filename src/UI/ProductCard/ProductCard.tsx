@@ -6,6 +6,7 @@ import { Specifications } from '../Specifications/Specifications';
 
 import styles from './ProductCard.module.scss';
 
+import RedFavorites from '@/assets/RedFavorites.svg?react';
 import Favourites from '@/assets/Favourites.svg?react';
 import { Spec } from '@/types/Spec';
 import { Product } from '@/types/Product.type';
@@ -52,10 +53,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
               hasBorder
             >
               {isFavorite ?
-                <Favourites
-                  fill="red"
-                  stroke="red"
-                />
+                <RedFavorites />
               : <Favourites />}
             </IconButton>
           </span>

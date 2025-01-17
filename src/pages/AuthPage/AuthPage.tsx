@@ -1,5 +1,7 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+
+import SignInPage from '../SignInPage/SignInPage';
 
 import s from './AuthPage.module.scss';
 
@@ -7,6 +9,10 @@ import { PATH } from '@/constants/path';
 
 const AuthPage = () => {
   const { t } = useTranslation();
+
+  const location = useLocation();
+
+  const hasAdditionalPath = location.pathname.includes(PATH.SIGN_IN) || location.pathname.includes(PATH.SIGN_UP);
 
   return (
     <section className={s.auth}>
@@ -25,7 +31,9 @@ const AuthPage = () => {
         </NavLink>
       </nav>
 
-      <Outlet />
+      {hasAdditionalPath ?
+        <Outlet />
+      : <SignInPage />}
     </section>
   );
 };
