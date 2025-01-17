@@ -7,7 +7,6 @@ import { CustomLink } from '../Link/Link';
 
 import styles from './ProductCard.module.scss';
 
-
 import Favourites from '@/assets/Favourites.svg?react';
 import { Spec } from '@/types/Spec';
 import { Product } from '@/types/Product.type';
@@ -35,7 +34,7 @@ export const ProductCard: React.FC<Props> = ({ product }) => {
         <span>
           <span className={`${styles.card__title} primary-text`}>
             <CustomLink
-              path={`/product/${product.id}`}
+              path={`/${product.category}/${product.id}`}
               label={`${product.name} (iMT9G2FS/A)`}
             />
           </span>
