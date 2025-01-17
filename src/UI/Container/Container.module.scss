@@ -1,6 +1,8 @@
 @use '@/styles/abstract/mixines';
 
 .container {
+  max-width: 1200px;
+  margin: 0 auto;
   padding-inline: 16px;
 
   @include mixines.tablet {

@@ -1,39 +1,30 @@
-import { ChangeEvent, FC, useCallback, useState } from 'react';
-import debounce from 'lodash.debounce';
+import { FC } from 'react';
+
+import { IconButton } from '../IconButton/IconButton';
 
 import s from './SearchInput.module.scss';
 
 import Search from '@/assets/Search.svg?react';
 
 interface Props {
-  handleSearch: (query: string) => void;
+  value: string;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const SearchInput: FC<Props> = ({ handleSearch }) => {
-  const [query, setQuery] = useState('');
+const SearchInput: FC<Props> = ({ handleChange, value }) => (
+  <div className={s.container}>
+    <input
+      type="text"
+      placeholder="Search for a product"
+      value={value}
+      onChange={handleChange}
+      className={s.input}
+    />
 
-  const debouncedHandleSearch = debounce((query: string) => handleSearch(query), 300);
-
-  const handleChange = useCallback(
-    (e: ChangeEvent<HTMLInputElement>) => {
-      setQuery(e.target.value.trim());
-      debouncedHandleSearch(e.target.value.trim());
-    },
-    [debouncedHandleSearch],
-  );
-
-  return (
-    <div className={s.container}>
-      <input
-        type="text"
-        placeholder="Search for a product"
-        value={query}
-        onChange={handleChange}
-        className={s.input}
-      />
-      <Search />
-    </div>
-  );
-};
+    <IconButton width="30px">
+      <Search fill="#313237" />
+    </IconButton>
+  </div>
+);
 
 export default SearchInput;
