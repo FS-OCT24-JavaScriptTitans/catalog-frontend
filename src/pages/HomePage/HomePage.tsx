@@ -1,27 +1,61 @@
+import { useEffect, useState } from 'react';
+
 import styles from './HomePage.module.scss';
 
-import Container from '@/components/Container/Container';
 import PromoSlider from '@/components/PromoSlider/PromoSlider';
+import { Container } from '@/UI/Container/Container';
+import { Product } from '@/types/Product.type';
+import { getAllProducts } from '@/api/products/products.api';
+import ProductSlider from '@/components/ProductSlider/ProductSlider';
+import { Loader } from '@/components/Loader/Loader';
+import { sortNewModal, sortByHotPrice } from '@/utils/products/sortProducts';
 
-const HomePage: React.FC = () => (
-  <main>
-    <h1 className={styles.welcomeMessage}>Welcome to Nice Gadgets store!</h1>
-    <Container className="slider">
-      <PromoSlider />
-    </Container>
+const HomePage: React.FC = () => {
+  const [products, setProducts] = useState<Product[]>([]);
 
-    <Container className="brandNewModels">
-      <h2>New modal</h2>
-    </Container>
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const allProducts = await getAllProducts();
 
-    <Container className="brandNewModels">
-      <h2>Category</h2>
-    </Container>
+      setProducts(allProducts || []);
+    };
 
-    {/* <Container className="hotPrices">
-        <ProductSlider title="Hot Prices" products={hotPrices} />
-      </Container> */}
-  </main>
-);
+    fetchProducts();
+  }, []);
+
+  const newModelProducts = sortNewModal(products);
+  const hotPriceProducts = sortByHotPrice(products);
+
+  if (products.length === 0) {
+    return <Loader />;
+  }
+
+  return (
+    <>
+      <h1 className={styles.welcomeMessage}>Welcome to Nice Gadgets store!</h1>
+      <Container>
+        <PromoSlider />
+      </Container>
+
+      <Container>
+        <ProductSlider
+          title="Brand new models"
+          products={newModelProducts}
+        />
+      </Container>
+
+      <Container>
+        <h2>Shop by category</h2>
+      </Container>
+
+      <Container>
+        <ProductSlider
+          title="Hot Price"
+          products={hotPriceProducts}
+        />
+      </Container>
+    </>
+  );
+};
 
 export default HomePage;
