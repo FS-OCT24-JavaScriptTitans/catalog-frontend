@@ -65,6 +65,7 @@
   background-color: var(--icon-bg-color);
   opacity: 0;
   color: var(--main-color);
+  cursor: pointer;
 
   @include mixines.tablet {
     opacity: 1;

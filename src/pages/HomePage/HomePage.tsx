@@ -9,6 +9,7 @@ import { getAllProducts } from '@/api/products/products.api';
 import ProductSlider from '@/components/ProductSlider/ProductSlider';
 import { Loader } from '@/components/Loader/Loader';
 import { sortNewModal, sortByHotPrice } from '@/utils/products/sortProducts';
+import CategorySection from '@/components/CategorySection/CategorySection';
 
 const HomePage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -45,7 +46,7 @@ const HomePage: React.FC = () => {
       </Container>
 
       <Container>
-        <h2>Shop by category</h2>
+        <CategorySection />
       </Container>
 
       <Container>
