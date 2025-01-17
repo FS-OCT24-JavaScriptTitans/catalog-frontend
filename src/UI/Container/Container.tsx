@@ -6,12 +6,13 @@ interface Props {
   title?: string;
   titlePB?: string;
   children: ReactNode;
+  mb?: string;
+  mt?: string;
 }
 
-export const Container: FC<Props> = ({ title, titlePB, children }) => (
-  <section>
+export const Container: FC<Props> = ({ title, titlePB, children, mb, mt }) => (
+  <section style={{ marginBottom: mb, marginTop: mt }}>
     <div className={s.container}>
-
       {title && (
         <h2
           className={s.title}

@@ -38,7 +38,7 @@ export const Search: FC<Props> = ({ isOpen = false }) => {
 
   const fiveProducts = useMemo(() => products.slice(0, 5), [products]);
 
-  const { query, handleChange } = useSearchProduct(handleSearchProducts);
+  const { query, handleChange } = useSearchProduct(handleSearchProducts, () => setListOpen(false));
 
   return isOpen ?
       <div className={s.container}>

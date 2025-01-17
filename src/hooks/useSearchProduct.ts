@@ -1,21 +1,37 @@
 import { useState, useCallback, useEffect } from 'react';
 import debounce from 'lodash.debounce';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
-export const useSearchProduct = (handleSearch: (query: string) => void) => {
+const DELAY = 300;
+
+type UseSearchProduct = (
+  handleSearch: (query: string) => void,
+  onClose?: () => void,
+) => {
+  query: string;
+  handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+};
+
+export const useSearchProduct: UseSearchProduct = (handleSearch, onClose) => {
   const [query, setQuery] = useState('');
   const navigate = useNavigate();
 
-  const debouncedHandleSearch = debounce((query: string) => handleSearch(query), 300);
+  const [searchParams] = useSearchParams();
+
+  const lang = searchParams.get('lang') || '';
+
+  const debouncedHandleSearch = debounce((query: string) => handleSearch(query), DELAY);
 
   const handleKeyPress = useCallback(
     (e: KeyboardEvent) => {
-      if (e.code === 'Enter') {
-        navigate('/');
+      if (e.code === 'Enter' && query.trim().length >= 3) {
+        navigate(`/search?query=${query}&lang=${lang || 'en'}`);
         setQuery('');
       }
+
+      setTimeout(() => onClose?.(), DELAY);
     },
-    [navigate],
+    [navigate, query, lang, onClose],
   );
 
   const handleChange = useCallback(
