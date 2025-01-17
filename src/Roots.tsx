@@ -34,10 +34,15 @@ export const Root = () => (
               element={<Pages.CartPage />}
             />
 
+            {/*  SEARCH */}
+            <Route
+              path={PATH.SEARCH__PRODUCT}
+              element={<Pages.SearchProductPage />}
+            />
+
             {...ProductRoutes}
 
             {/* ORDERS */}
-
             <Route
               path={PATH.ORDERS}
               element={<Pages.OrdersPage />}

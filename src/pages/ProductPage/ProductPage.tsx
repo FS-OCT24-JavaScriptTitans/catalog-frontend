@@ -17,15 +17,15 @@ function getProductApi(input: string): Promise<Product[]> {
 
   switch (searchedPath) {
     case 'phones':
-      API_URL = '../../../public/api/phones.json';
+      API_URL = '../../../api/phones.json';
       break;
 
     case 'tablets':
-      API_URL = '../../../public/api/tablets.json';
+      API_URL = '../../../api/tablets.json';
       break;
 
     case 'accessories':
-      API_URL = '../../../public/api/accessories.json';
+      API_URL = '../../../api/accessories.json';
       break;
   }
 
