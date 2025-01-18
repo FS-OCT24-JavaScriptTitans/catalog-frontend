@@ -2,11 +2,13 @@ import React, { useState, useRef } from 'react';
 import { Swiper as SwiperClass } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
+import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+
 import styles from './PromoSlider.module.scss';
 
 import { Arrow } from '@/UI/Arrow/Arrow';
@@ -30,6 +32,7 @@ const PromoSlider: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const swiperRef = useRef<SwiperClass | null>(null);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const handleBulletClick = (index: number) => {
     if (swiperRef.current) {
@@ -44,7 +47,7 @@ const PromoSlider: React.FC = () => {
 
   return (
     <>
-      <h1 className={styles.welcomeMessage}>Welcome to Nice Gadgets store!</h1>
+      <h1 className={styles.welcomeMessage}>{t('home.welcome')}</h1>
       <div className={styles.sliderWrapper}>
         <div className={styles.prevButton}>
           <Arrow direction={'left'} />

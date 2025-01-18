@@ -3,7 +3,7 @@
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 64px;
   padding-inline: 16px;
   @include mixin.flex-container(stretch, center, column);
   width: 100%;
@@ -11,6 +11,7 @@
 
   @include mixin.tablet {
     padding-inline: 24px;
+    margin-bottom: 80px;
   }
 
   @include mixin.laptop {

@@ -2,16 +2,15 @@
 @use '../../styles//abstract/constants';
 
 .welcomeMessage {
-  margin: 24px 16px;
-  line-height: 40px;
+  margin-bottom: 24px;
   color: var(--main-color);
 
   @include mixines.tablet {
-    margin: 32px 0;
+    margin-bottom: 32px;
   }
 
   @include mixines.laptop {
-    margin: 56px 0;
+    margin-bottom: 56px;
   }
 }
 

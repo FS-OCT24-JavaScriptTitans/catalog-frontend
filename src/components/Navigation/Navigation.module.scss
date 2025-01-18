@@ -1,13 +1,21 @@
-@use '../../styles/abstract/mixines';
-@use '../../styles/abstract/constants';
+@use '@/styles/abstract/mixines';
+@use '@/styles/abstract/constants';
 
 $top-height: 65.6px;
 
 .container {
   border-bottom: 1px solid var(--element-color);
   background-color: var(--main-bg-color);
-
+  margin-bottom: 24px;
   @include mixines.flex-container(center, space-between, row, 16px);
+
+  @include mixines.tablet {
+    margin-bottom: 32px;
+  }
+
+  @include mixines.laptop {
+    margin-bottom: 56px;
+  }
 }
 
 .logo {

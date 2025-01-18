@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import cn from 'classnames';
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-import styles from '../../pages/ProductPage/styles/MainChars.module.scss';
-import Favourites from '../../assets/Favourites.svg?react';
+import styles from './ProductMainChars.module.scss';
 
+import Favourites from '@/assets/Favourites.svg?react';
 import { Product } from '@/types/Product.type';
 import { Button } from '@/UI/Button/Button';
 import { IconButton } from '@/UI/IconButton/IconButton';
+import RedFavorites from '@/assets/RedFavorites.svg?react';
 
 function changeIdPart(input: string, inputLabel: string, inputPart: string) {
   const previousIdPart = input.toLowerCase().split(' ').join('-');
@@ -27,6 +29,7 @@ const ProductMainChars: React.FC<Props> = ({ product, location, techSpecs }) => 
   const [ID, setID] = useState(0);
   const [isSelected, setIsSelected] = useState(false);
   const [isFavorite, setIsFavorite] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     setID(Math.floor(Math.random() * 1000000));
@@ -35,7 +38,7 @@ const ProductMainChars: React.FC<Props> = ({ product, location, techSpecs }) => 
   return (
     <article className={styles.mainChars}>
       <div className={styles.colorsTop}>
-        <span className={styles.smallGreyText}>Available colors</span>
+        <span className={styles.smallGreyText}>{t('product.colors')}</span>
         <span className={styles.id}>{`ID: ${ID}`}</span>
       </div>
       <div className={styles.colors}>
@@ -56,7 +59,7 @@ const ProductMainChars: React.FC<Props> = ({ product, location, techSpecs }) => 
       <div className="line" />
 
       <article className={styles.capacityContainer}>
-        <span className={styles.smallGreyText}>Select capacity</span>
+        <span className={styles.smallGreyText}>{t('product.selectCapacity')}</span>
         <div className={styles.capacities}>
           {product.capacityAvailable.map((capacity) => (
             <NavLink
@@ -83,8 +86,8 @@ const ProductMainChars: React.FC<Props> = ({ product, location, techSpecs }) => 
 
       <div className={styles.buttons}>
         <Button
-          label="Add to cart"
-          secondaryLabel="Added to cart"
+          label={t('product.addToCart')}
+          secondaryLabel={t('product.addedToCart')}
           onClick={() => setIsSelected(isSelected ? false : true)}
           isSelected={isSelected}
         />
@@ -93,10 +96,7 @@ const ProductMainChars: React.FC<Props> = ({ product, location, techSpecs }) => 
           hasBorder
         >
           {isFavorite ?
-            <Favourites
-              fill="red"
-              color="red"
-            />
+            <RedFavorites />
           : <Favourites />}
         </IconButton>
       </div>
@@ -108,7 +108,7 @@ const ProductMainChars: React.FC<Props> = ({ product, location, techSpecs }) => 
               className={styles.specification}
               key={specification[0]}
             >
-              <span className={styles.smallGreyText}>{specification[0]}</span>
+              <span className={styles.smallGreyText}>{t(`product.${specification[0]}`)}</span>
               <span className={styles.smallBlackText}>
                 {typeof specification[1] === 'object' ? specification[1].join('') : specification[1]}
               </span>

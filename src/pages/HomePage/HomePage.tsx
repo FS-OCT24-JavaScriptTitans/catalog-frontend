@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import PromoSlider from '@/components/PromoSlider/PromoSlider';
 import { Container } from '@/UI/Container/Container';
@@ -11,6 +12,7 @@ import CategorySection from '@/components/CategorySection/CategorySection';
 
 const HomePage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -35,23 +37,17 @@ const HomePage: React.FC = () => {
         <PromoSlider />
       </Container>
 
-      <Container>
-        <ProductSlider
-          title="Brand new models"
-          products={newModelProducts}
-        />
-      </Container>
+      <ProductSlider
+        title={t('home.brand')}
+        products={newModelProducts}
+      />
 
-      <Container>
-        <CategorySection />
-      </Container>
+      <CategorySection />
 
-      <Container>
-        <ProductSlider
-          title="Hot Price"
-          products={hotPriceProducts}
-        />
-      </Container>
+      <ProductSlider
+        title={t('home.prices')}
+        products={hotPriceProducts}
+      />
     </>
   );
 };
