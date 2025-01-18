@@ -1,0 +1,21 @@
+@use '@/styles/abstract/mixines';
+@use '@/styles/abstract/constants';
+
+.tr {
+  background: var(--dropdown-hover-bgc-color);
+  color: var(--dropdown-hover-color);
+  border-bottom: 2px solid var(--table-border-color);
+}
+
+.td {
+  padding: 10px;
+  vertical-align: middle;
+
+  &__image {
+    @include mixines.flex-container(center, center);
+  }
+}
+
+.image {
+  width: 40px;
+}

@@ -22,8 +22,6 @@ const ProductCardComponent: React.FC<Props> = ({ product }) => {
 
   const { handleAddToCart, isFavorite, isProductInCart, hadleToogleFavorite } = useProductControl(product);
 
-  // const slicedName = product.name.length > 27 ? product.name.slice(0, 25) + '...' : product.name;
-
   return (
     <article className={styles.card}>
       <div className={styles.container}>

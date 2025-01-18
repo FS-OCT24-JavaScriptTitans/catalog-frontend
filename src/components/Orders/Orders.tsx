@@ -1,24 +1,27 @@
 import React from 'react';
 
-import styles from './Orders.module.scss';
 import { OrderItem } from './OrderItem/OrderItem';
 
 import { Order } from '@/types/Order.types';
+import { Container } from '@/UI/Container/Container';
 
 interface OrdersProps {
   orders: Order[];
 }
 
 const Orders: React.FC<OrdersProps> = ({ orders }) => (
-  <div className={styles.orders}>
-    <h2 className={styles.title}>Your Orders:</h2>
+  <Container
+    title="Orders:"
+    mt="32px"
+    titlePB="24px"
+  >
     {orders.map((order) => (
       <OrderItem
-        key={order.id}
         order={order}
+        key={order.id}
       />
     ))}
-  </div>
+  </Container>
 );
 
 export default Orders;

@@ -1,34 +1,40 @@
-import { FC } from 'react';
+import React from 'react';
+import cn from 'classnames';
 
-import { OrderProduct } from '../OrderProduct/OrderProduct';
+import { OrderTable } from '../OrderTable/OrderTable';
 
 import s from './OrderItem.module.scss';
 
 import { Order } from '@/types/Order.types';
+import { getFormatedPrice } from '@/utils/price';
 
 interface Props {
   order: Order;
 }
 
-export const OrderItem: FC<Props> = ({ order }) => (
-  <article
+export const OrderItem: React.FC<Props> = ({ order }) => (
+  <div
     key={order.id}
-    className={s.item}
+    className={s.container}
   >
-    <h4 className={s.itemId}>
-      Order ID: <span> {order.id}</span>
+    <h4 className={s.title}>
+      Order № <span className={cn('button-text', s.orderId)}>{order.id}</span>
     </h4>
-
-    <h3 className={s.productsTitle}>Products:</h3>
-    <div className={s.products}>
-      {order.products.map((product) => (
-        <OrderProduct
-          key={product.id}
-          product={product}
-        />
-      ))}
+    <p>
+      <strong>Customer:</strong> {order.firstName} {order.lastName}
+    </p>
+    <p>
+      <strong>Address:</strong> {order.streetAddress}, {order.city}, {order.state}, {order.postcode}
+    </p>
+    <p>
+      <strong>Contact:</strong> {order.phone} | {order.email}
+    </p>
+    <div className={s.tableContainer}>
+      <OrderTable products={order.products} />
     </div>
-
-    <h4 className={s.total}>Total order price : ${order.totalPrice} </h4>
-  </article>
+    <h3 className={s.totalPrice}>
+      <span> Order total:</span>
+      <span> ${getFormatedPrice(order.totalPrice)}</span>
+    </h3>
+  </div>
 );

@@ -9,6 +9,7 @@
   --light-element-color: #e2e6e9;
   --light-dropdown-hover-bg-color: #fafbfc;
   --light-back-drop-color: #0003;
+  --light-table-shadow-color: #fff3;
   --white-color: #fff;
   --dark-main-text-color: #f1f2f9;
   --dark-primary-color: #0f1121;
@@ -22,6 +23,8 @@
 }
 
 #root {
+  --table-shadow-color: var(--dark-back-drop-color);
+  --table-border-color: var(--dark-text-color);
   --dropdown-bgc-color: var(--white-color);
   --dropdown-hover-bgc-color: var(--light-dropdown-hover-bg-color);
   --dropdown-color: var(--light-text-color);
@@ -44,6 +47,8 @@
 }
 
 #root.dark {
+  --table-shadow-color: var(--light-table-shadow-color);
+  --table-border-color: var(--purple-color);
   --dropdown-bgc-color: var(--dark-primary-color);
   --dropdown-hover-bgc-color: var(--dark-icon-bg-color);
   --dropdown-color: var(--dark-text-color);
