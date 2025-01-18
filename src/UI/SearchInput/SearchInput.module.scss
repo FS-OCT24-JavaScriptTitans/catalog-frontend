@@ -3,7 +3,6 @@
 .container {
   display: flex;
   align-items: center;
-  border: 1px solid var(--border-icon-color);
   padding-inline: 16px;
 
   &:focus-within {

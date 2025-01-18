@@ -15,6 +15,7 @@ interface Props {
 const SearchInput: FC<Props> = ({ handleChange, value, onClickSearch }) => (
   <div className={s.container}>
     <input
+      autoFocus
       type="text"
       placeholder="Search for a product"
       value={value}
