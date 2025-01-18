@@ -51,9 +51,12 @@ $top-height: 65.6px;
 
 .desktop {
   display: none;
+  transform: translateY(-100%);
+  transition: transform 5s;
 }
 
 .navigation {
+  transform: translateY(0);
   z-index: 100;
   width: 100vw;
   background-color: var(--main-bg-color);
@@ -84,6 +87,7 @@ $top-height: 65.6px;
 .search {
   display: grid;
   min-width: 64px;
+  transition: transform 1s;
 
   &__open {
     width: 100%;
@@ -102,6 +106,12 @@ $top-height: 65.6px;
 
     @include mixines.laptop {
       position: static;
+    }
+  }
+
+  &:hover {
+    svg {
+      transform: scale(1.2);
     }
   }
 }
