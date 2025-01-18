@@ -1,6 +1,20 @@
 @use '../../styles/abstract/mixines';
 @use '../../styles//abstract/constants';
 
+.welcomeMessage {
+  margin: 24px 16px;
+  line-height: 40px;
+  color: var(--main-color);
+
+  @include mixines.tablet {
+    margin: 32px 0;
+  }
+
+  @include mixines.laptop {
+    margin: 56px 0;
+  }
+}
+
 .sliderContainer {
   width: 100%;
   margin: 0 auto;
@@ -65,6 +79,7 @@
   background-color: var(--icon-bg-color);
   opacity: 0;
   color: var(--main-color);
+  cursor: pointer;
 
   @include mixines.tablet {
     opacity: 1;

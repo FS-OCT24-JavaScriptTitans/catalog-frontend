@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import styles from './HomePage.module.scss';
-
 import PromoSlider from '@/components/PromoSlider/PromoSlider';
 import { Container } from '@/UI/Container/Container';
 import { Product } from '@/types/Product.type';
@@ -9,6 +7,7 @@ import { getAllProducts } from '@/api/products/products.api';
 import ProductSlider from '@/components/ProductSlider/ProductSlider';
 import { Loader } from '@/components/Loader/Loader';
 import { sortNewModal, sortByHotPrice } from '@/utils/products/sortProducts';
+import CategorySection from '@/components/CategorySection/CategorySection';
 
 const HomePage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -32,7 +31,6 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <h1 className={styles.welcomeMessage}>Welcome to Nice Gadgets store!</h1>
       <Container>
         <PromoSlider />
       </Container>
@@ -45,7 +43,7 @@ const HomePage: React.FC = () => {
       </Container>
 
       <Container>
-        <h2>Shop by category</h2>
+        <CategorySection />
       </Container>
 
       <Container>

@@ -43,64 +43,67 @@ const PromoSlider: React.FC = () => {
   };
 
   return (
-    <div className={styles.sliderWrapper}>
-      <div className={styles.prevButton}>
-        <Arrow direction={'left'} />
-      </div>
+    <>
+      <h1 className={styles.welcomeMessage}>Welcome to Nice Gadgets store!</h1>
+      <div className={styles.sliderWrapper}>
+        <div className={styles.prevButton}>
+          <Arrow direction={'left'} />
+        </div>
 
-      <div className={styles.sliderContainer}>
-        <Swiper
-          modules={[Pagination, Navigation, Autoplay]}
-          spaceBetween={100}
-          slidesPerView={1}
-          loop
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          navigation={{
-            nextEl: `.${styles.nextButton}`,
-            prevEl: `.${styles.prevButton}`,
-          }}
-          onSwiper={(swiper) => {
-            swiperRef.current = swiper;
-          }}
-          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-          pagination={false}
-        >
-          {slides.map((slide, index) => (
-            <SwiperSlide
-              key={index}
-              className={styles.swiperSlide}
-            >
-              <div
-                className={styles.imageContainer}
-                onClick={() => handleSlideClick(slide.link)}
+        <div className={styles.sliderContainer}>
+          <Swiper
+            modules={[Pagination, Navigation, Autoplay]}
+            spaceBetween={100}
+            slidesPerView={1}
+            loop
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            navigation={{
+              nextEl: `.${styles.nextButton}`,
+              prevEl: `.${styles.prevButton}`,
+            }}
+            onSwiper={(swiper) => {
+              swiperRef.current = swiper;
+            }}
+            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+            pagination={false}
+          >
+            {slides.map((slide, index) => (
+              <SwiperSlide
+                key={index}
+                className={styles.swiperSlide}
               >
-                <img
-                  src={slide.img}
-                  alt={`Slide ${index + 1}`}
-                  className={styles.image}
-                />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-        <div className={styles.paginationWrapper}>
-          {slides.map((_, index) => (
-            <div
-              key={index}
-              className={`${styles.bullet} ${index === activeIndex ? styles.active : ''}`}
-              onClick={() => handleBulletClick(index)}
-            ></div>
-          ))}
+                <div
+                  className={styles.imageContainer}
+                  onClick={() => handleSlideClick(slide.link)}
+                >
+                  <img
+                    src={slide.img}
+                    alt={`Slide ${index + 1}`}
+                    className={styles.image}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div className={styles.paginationWrapper}>
+            {slides.map((_, index) => (
+              <div
+                key={index}
+                className={`${styles.bullet} ${index === activeIndex ? styles.active : ''}`}
+                onClick={() => handleBulletClick(index)}
+              ></div>
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.nextButton}>
+          <Arrow direction={'rigth'} />
         </div>
       </div>
-
-      <div className={styles.nextButton}>
-        <Arrow direction={'rigth'} />
-      </div>
-    </div>
+    </>
   );
 };
 
