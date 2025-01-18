@@ -1,4 +1,3 @@
-/* eslint-disable react/no-children-prop */
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
@@ -14,7 +13,6 @@ import { Search } from '../Search/Search';
 import s from './Navigation.module.scss';
 import { IconLinks } from './IconLinks/IconLinks';
 
-import { IconButton } from '@/UI/IconButton/IconButton';
 import { PATH } from '@/constants/path';
 import { allowScroll, blockScroll } from '@/utils/scroll';
 
@@ -75,7 +73,9 @@ const Navigation = () => {
           className={s.navigation__burger}
           onClick={() => setIsOpenMobileMenu(!isOpenMobileMenu)}
         >
-          <IconButton children={isOpenMobileMenu ? <Close /> : <Menu />} />
+          {isOpenMobileMenu ?
+            <Close />
+          : <Menu />}
         </span>
       </div>
     </header>

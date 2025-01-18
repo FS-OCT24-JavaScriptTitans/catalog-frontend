@@ -59,12 +59,13 @@ $top-height: 65.6px;
   background-color: var(--main-bg-color);
   height: calc(100vh - $top-height - 2px);
   position: absolute;
-  top: $top-height;
+  top: $top-height + 2px;
   text-transform: uppercase;
   @include mixines.flex-container(stretch, space-between, column);
 
   &__links {
     @include mixines.flex-container(center, space-between, column, 24px);
+    margin-top: 30px;
   }
 
   &__burger {
@@ -121,6 +122,7 @@ $top-height: 65.6px;
 
     &__links {
       flex-direction: row;
+      margin-top: 0;
     }
 
     &__burger {
