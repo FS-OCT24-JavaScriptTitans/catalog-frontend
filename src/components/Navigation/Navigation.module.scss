@@ -77,6 +77,21 @@ $top-height: 65.6px;
 
 .switches {
   @include mixines.flex-container(center, space-between);
+  position: relative;
+}
+
+.search {
+  display: grid;
+
+  &__open {
+    width: 100%;
+    background-color: var(--main-bg-color);
+    position: absolute;
+    height: 64px;
+    border-left: 1px solid var(--element-color);
+    z-index: 10;
+    right: 65px;
+  }
 }
 
 @media (min-width: constants.$tablet-l-min-whidth) {
@@ -111,5 +126,10 @@ $top-height: 65.6px;
     &__burger {
       display: none;
     }
+  }
+
+  .search__open {
+    right: calc(80px + 64px + 1px);
+    width: max-content;
   }
 }
