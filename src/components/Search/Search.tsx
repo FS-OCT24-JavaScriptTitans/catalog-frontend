@@ -64,10 +64,7 @@ export const Search: FC<Props> = ({ isOpen = false }) => {
           </ul>
         )}
       </div>
-    : <IconButton
-        hasBorder
-        width="64px"
-      >
+    : <IconButton width="64px">
         <SearchIcon />
       </IconButton>;
 };

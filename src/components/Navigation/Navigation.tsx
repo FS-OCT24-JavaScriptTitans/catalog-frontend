@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import Logo from '../Logo/Logo';
 import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
 import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
+import { Search } from '../Search/Search';
 
 import s from './Navigation.module.scss';
 import { IconLinks } from './IconLinks/IconLinks';
@@ -58,6 +59,7 @@ const Navigation = () => {
       </nav>
 
       <div className={s.switches}>
+        <Search isOpen={false} />
         <ThemeSwitcher />
         <LanguageSwitcher />
 
