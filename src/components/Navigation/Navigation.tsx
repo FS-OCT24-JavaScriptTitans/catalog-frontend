@@ -1,6 +1,7 @@
 /* eslint-disable react/no-children-prop */
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import Logo from '../Logo/Logo';
 import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
@@ -61,10 +62,12 @@ const Navigation = () => {
       </nav>
 
       <div className={s.switches}>
-        <Search
-          isOpen={isOpenSearch}
-          onClickSearch={onClickSearch}
-        />
+        <span className={cn(s.search, { [s.search__open]: isOpenSearch })}>
+          <Search
+            isOpen={isOpenSearch}
+            onClickSearch={onClickSearch}
+          />
+        </span>
         <ThemeSwitcher />
         <LanguageSwitcher />
 
