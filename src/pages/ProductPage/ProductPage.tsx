@@ -10,6 +10,7 @@ import ProductMainChars from '@/components/Product/mainChars';
 import ProductDescription from '@/components/Product/description';
 import ProductTechSpecs from '@/components/Product/techSpecs';
 import { Product } from '@/types/Product.type';
+import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 
 function getProductApi(input: string): Promise<Product[]> {
   const searchedPath = input.split('/')[1];
@@ -52,6 +53,10 @@ const ProductPage: React.FC = () => {
   return (
     product && (
       <section className={cn(styles.productCard, 'section')}>
+        <div className={styles.breadCrumbs}>
+          <Breadcrumb />
+        </div>
+
         <NavLink
           to=".."
           className={cn(styles.back, 'small-text')}
