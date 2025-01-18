@@ -26,8 +26,10 @@ const navLinks = {
 
 const Navigation = () => {
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
+  const [isOpenSearch, setIsOpenSearch] = useState(false);
   const closeBurgerMenu = () => setIsOpenMobileMenu(false);
-  const { t } = useTranslation();
+  const onClickSearch = () => setIsOpenSearch(!isOpenSearch);
+  const { t } = useTranslation('navigation');
 
   useEffect(() => {
     if (isOpenMobileMenu) {
@@ -59,7 +61,10 @@ const Navigation = () => {
       </nav>
 
       <div className={s.switches}>
-        <Search isOpen={false} />
+        <Search
+          isOpen={isOpenSearch}
+          onClickSearch={onClickSearch}
+        />
         <ThemeSwitcher />
         <LanguageSwitcher />
 
