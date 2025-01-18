@@ -1,10 +1,10 @@
 @use '../../styles/abstract/mixines';
 
 .container {
-  border-right: 1px solid var(--element-color);
-  width: 58px;
+  border-inline: 1px solid var(--element-color);
+  width: 64px;
   height: 64px;
-  @include mixines.flex-container(center);
+  @include mixines.flex-container(center, center);
 }
 
 .switch {
