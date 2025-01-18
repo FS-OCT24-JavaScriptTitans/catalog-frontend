@@ -70,7 +70,9 @@ $top-height: 65.6px;
 
   &__burger {
     border-left: 1px solid var(--element-color);
-    padding-inline: 16px;
+
+    // padding-inline: 16px;
+    width: 64px;
     height: 66px;
     @include mixines.flex-container(center, center);
   }
@@ -83,6 +85,7 @@ $top-height: 65.6px;
 
 .search {
   display: grid;
+  width: 64px;
 
   &__open {
     width: 100%;
@@ -92,6 +95,16 @@ $top-height: 65.6px;
     border-left: 1px solid var(--element-color);
     z-index: 10;
     right: 65px;
+
+    @include mixines.tablet {
+      right: calc(80px + 64px + 64px + 1px);
+      width: max-content;
+      height: 66.5px;
+    }
+
+    @include mixines.laptop {
+      position: static;
+    }
   }
 }
 
@@ -133,5 +146,6 @@ $top-height: 65.6px;
   .search__open {
     right: calc(80px + 64px + 1px);
     width: max-content;
+    height: 66.5px;
   }
 }
