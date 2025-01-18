@@ -70,8 +70,6 @@ $top-height: 65.6px;
 
   &__burger {
     border-left: 1px solid var(--element-color);
-
-    // padding-inline: 16px;
     width: 64px;
     height: 66px;
     @include mixines.flex-container(center, center);
@@ -85,7 +83,7 @@ $top-height: 65.6px;
 
 .search {
   display: grid;
-  width: 64px;
+  min-width: 64px;
 
   &__open {
     width: 100%;
