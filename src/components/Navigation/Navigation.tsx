@@ -59,7 +59,7 @@ const Navigation = () => {
       </nav>
 
       <div className={s.switches}>
-        <span className={cn(s.search, { [s.search__open]: isOpenSearch })}>
+        <span className={cn(s.search, { [s.open]: isOpenSearch })}>
           <Search
             isOpen={isOpenSearch}
             onClickSearch={onClickSearch}
