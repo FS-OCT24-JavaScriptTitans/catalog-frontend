@@ -59,7 +59,9 @@ $top-height: 65.6px;
   opacity: 0;
   pointer-events: none;
   transform: translateY(-100%);
-  transition: all 1s;
+  transition:
+    transform 1s,
+    opacity 1s;
   z-index: 100;
   width: 100vw;
   background-color: var(--main-bg-color);
