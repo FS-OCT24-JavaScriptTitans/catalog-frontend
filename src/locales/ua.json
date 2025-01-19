@@ -27,10 +27,13 @@
     "product": {
       "screen": "Екран",
       "capacity": "Ємність",
-      "RAM": "ОЗП",
+      "ram": "ОЗП",
+      "colors": "Доступні кольори",
+      "cell": "Комірка ",
+      "selectCapacity": "Виберіть Ємність",
       "itemsOnPage": "Товарів на сторінці",
-      "addToCart": "Додати в коши",
-      "addedToCart": "Додано в кошик",
+      "addToCart": "Додати",
+      "addedToCart": "Додано",
       "sortBy": "Сортувати за",
       "resolution": "Роздільна здатність",
       "processor": "Процесор",
@@ -50,11 +53,26 @@
         "all": "Всі"
       }
     },
-    "footer ": {
+    "footer": {
       "contacts": "Контакти",
       "rights": "Права",
       "backToTop": "Вгору"
     },
+    "orders": {
+      "title": "Список замовленнь",
+      "order": "Замовлення",
+      "customer": "Клієнт",
+      "contact": "Контакт",
+      "address": "Адреса",
+      "orderTotal": "Загальна сума",
+      "photo": "Фото",
+      "product": "Продукт",
+      "quantity": "Кількість",
+      "price": "Ціна",
+      "total": "Усього"
+    },
+    "favorites": "Вибране",
+    "search": "Пошук продукту",
     "back": "Назад"
   }
 }

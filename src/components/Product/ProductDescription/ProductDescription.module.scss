@@ -1,12 +1,8 @@
-@use '../../../styles/abstract/mixines';
+@use '@/styles/abstract/mixines';
 
 .description {
   grid-column: 1/-1;
   margin-top: 56px;
-
-  @include mixines.desctop {
-    margin-top: 64px;
-  }
 
   @include mixines.desctop {
     grid-column: 1/12;

@@ -2,31 +2,31 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import Menu from '../../assets/Menu.svg?react';
-import Close from '../../assets/Close.svg?react';
 import Logo from '../Logo/Logo';
-import NavigationLink from '../../UI/NavLink/NavigationLink';
 import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
 import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
 
 import s from './Navigation.module.scss';
 import { IconLinks } from './IconLinks/IconLinks';
 
+import NavigationLink from '@/UI/NavLink/NavigationLink';
+import Close from '@/assets/Close.svg?react';
+import Menu from '@/assets/Menu.svg?react';
 import { IconButton } from '@/UI/IconButton/IconButton';
 import { PATH } from '@/constants/path';
 import { allowScroll, blockScroll } from '@/utils/scroll';
 
 const navLinks = {
-  Home: PATH.HOME,
-  Phones: PATH.PHONES,
-  Tablets: PATH.TABLETS,
-  Accessories: PATH.ACCESSORIES,
+  'navigation.home': PATH.HOME,
+  'navigation.phones': PATH.PHONES,
+  'navigation.tablets': PATH.TABLETS,
+  'navigation.accessories': PATH.ACCESSORIES,
 };
 
 const Navigation = () => {
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
   const closeBurgerMenu = () => setIsOpenMobileMenu(false);
-  const { t } = useTranslation('navigation');
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (isOpenMobileMenu) {
@@ -53,7 +53,7 @@ const Navigation = () => {
               handleClick={closeBurgerMenu}
             />
           ))}
-        </div>{' '}
+        </div>
         <IconLinks handleClick={closeBurgerMenu} />
       </nav>
 

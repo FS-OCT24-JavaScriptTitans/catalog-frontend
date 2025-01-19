@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 import cn from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 import styles from './Breadcrumb.module.scss';
 
@@ -12,6 +13,8 @@ const Breadcrumb: React.FC = () => {
   const locationParts = location.pathname.split('/');
   const firstPart = locationParts[1];
   const secondPart = locationParts[2].split('-').join(' ');
+
+  const { t } = useTranslation();
 
   return (
     <div className={cn(styles.breadCrumbs, 'small-text')}>
@@ -30,7 +33,7 @@ const Breadcrumb: React.FC = () => {
         to={`/${firstPart}`}
         className={cn(styles.firstPart, { [styles.active]: secondPart })}
       >
-        {firstPart}
+        {t(`navigation.${firstPart}`)}
       </NavLink>
       {secondPart && (
         <>

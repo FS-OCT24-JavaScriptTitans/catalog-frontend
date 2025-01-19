@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import CategoryCard from '../CategoryCard/CategoryCard';
 
@@ -7,6 +8,8 @@ import styles from './CategorySection.module.scss';
 import { getProducts } from '@/api/products/products.api';
 import { ProductEndPoints } from '@/constants/endPoints';
 import { Product } from '@/types/Product.type';
+import { Container } from '@/UI/Container/Container';
+import { PATH } from '@/constants/path';
 
 interface Category {
   title: string;
@@ -17,6 +20,7 @@ interface Category {
 
 const CategorySection: React.FC = () => {
   const [categories, setCategories] = useState<Category[]>([]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const fetchCategories = async () => {
@@ -26,32 +30,31 @@ const CategorySection: React.FC = () => {
 
       setCategories([
         {
-          title: 'Mobile phones',
+          title: t('home.mobilePhones'),
           products: phones || [],
           imageSrc: '/img/category/category-phones.png',
-          linkTo: '/phones',
+          linkTo: PATH.PHONES,
         },
         {
-          title: 'Tablets',
+          title: t('home.tablets'),
           products: tablets || [],
           imageSrc: '/img/category/category-tablets.png',
-          linkTo: '/tablets',
+          linkTo: PATH.TABLETS,
         },
         {
-          title: 'Accessories',
+          title: t('home.accessories'),
           products: accessories || [],
           imageSrc: '/img/category/category-accessories.png',
-          linkTo: '/accessories',
+          linkTo: PATH.ACCESSORIES,
         },
       ]);
     };
 
     fetchCategories();
-  }, []);
+  }, [t]);
 
   return (
-    <>
-      <h2 className={styles.heading}>Shop by category</h2>
+    <Container title={t('home.shop')}>
       <div className={styles.categoryCards}>
         {categories.map((category, index) => (
           <CategoryCard
@@ -63,7 +66,7 @@ const CategorySection: React.FC = () => {
           />
         ))}
       </div>
-    </>
+    </Container>
   );
 };
 

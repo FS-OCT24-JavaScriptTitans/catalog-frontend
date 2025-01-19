@@ -27,7 +27,10 @@
     "product": {
       "screen": "Screen",
       "capacity": "Capacity",
-      "RAM": "RAM",
+      "colors": "Available colors",
+      "selectCapacity": "Select capacity",
+      "ram": "RAM",
+      "cell": "Cell",
       "itemsOnPage": "Items on page",
       "addToCart": "Add to Cart",
       "addedToCart": "Added to Cart",
@@ -50,11 +53,26 @@
         "all": "All"
       }
     },
-    "footer ": {
+    "footer": {
       "contacts": "Contacts",
       "rights": "Rights",
       "backToTop": "Back to top"
     },
+    "orders": {
+      "title": "Orders list",
+      "order": "Order",
+      "customer": "Customer",
+      "contact": "Contact",
+      "address": "Address",
+      "orderTotal": "Order total",
+      "photo": "Photo",
+      "product": "Product",
+      "quantity": "Quantity",
+      "price": "Price",
+      "total": "Total"
+    },
+    "search": "Search for a product",
+    "favorites": "Favorites",
     "back": "Back"
   }
 }
