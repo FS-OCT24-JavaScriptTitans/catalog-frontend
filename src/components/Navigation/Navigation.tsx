@@ -43,7 +43,7 @@ const Navigation = () => {
         <Logo />
       </span>
 
-      <nav className={isOpenMobileMenu ? s.navigation : s.desktop}>
+      <nav className={cn(s.navigation, { [s.open_burger]: isOpenMobileMenu })}>
         <div className={s.navigation__links}>
           {Object.entries(navLinks).map(([label, path]) => (
             <NavigationLink
