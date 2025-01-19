@@ -5,7 +5,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
 
-  @include mixines.tablet {
+  @include mixines.tablet-l {
     display: flex;
   }
 }
@@ -29,7 +29,7 @@
     align-self: flex-end;
   }
 
-  @include mixines.tablet {
+  @include mixines.tablet-l {
     border-top: none;
   }
 

@@ -6,6 +6,8 @@ import linkStyle from '../Navigation.module.scss';
 import s from './IconLinks.module.scss';
 
 import Auth from '@/assets/Auth.svg?react';
+import Exit from '@/assets/Exit.svg?react';
+import Order from '@/assets/Order.svg?react';
 import Cart from '@/assets/Shopping.svg?react';
 import Favorites from '@/assets/Favourites.svg?react';
 import NavigationLink from '@/UI/NavLink/NavigationLink';
@@ -33,17 +35,6 @@ export const IconLinks: React.FC<Props> = ({ handleClick }) => {
 
   return (
     <div className={s.icons}>
-      {!user && (
-        <span className={s.wrapper}>
-          <NavigationLink
-            to={PATH.AUTH}
-            label={<Auth />}
-            className={navLinkStyle}
-            handleClick={handleClick}
-          />
-        </span>
-      )}
-
       <span className={s.wrapper}>
         <NavigationLink
           to={PATH.CART}
@@ -63,6 +54,36 @@ export const IconLinks: React.FC<Props> = ({ handleClick }) => {
         />
         {counter(favoritesList)}
       </span>
+
+      {!!user && (
+        <span className={s.wrapper}>
+          <NavigationLink
+            to={PATH.ORDERS}
+            label={<Order />}
+            className={navLinkStyle}
+            handleClick={handleClick}
+          />
+        </span>
+      )}
+
+      {!user ?
+        <span className={s.wrapper}>
+          <NavigationLink
+            to={PATH.AUTH}
+            label={<Auth />}
+            className={navLinkStyle}
+            handleClick={handleClick}
+          />
+        </span>
+      : <span className={s.wrapper}>
+          <NavigationLink
+            to={PATH.AUTH}
+            label={<Exit />}
+            className={navLinkStyle}
+            handleClick={handleClick}
+          />
+        </span>
+      }
 
       <span className={s.icon}>
         <ThemeSwitcher />

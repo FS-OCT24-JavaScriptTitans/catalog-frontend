@@ -99,10 +99,13 @@ $top-height: 65.6px;
     z-index: 10;
     right: 63px;
 
+    @media (min-width: 400px) {
+      width: max-content;
+    }
+
     @include mixines.tablet {
       right: calc(80px + 64px + 1px);
       height: 66.5px;
-      width: max-content;
     }
 
     @include mixines.laptop {
