@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import s from './ProductsListPage.module.scss';
 
@@ -38,28 +39,23 @@ enum Sort {
 
 const ProductsListPage: React.FC = () => {
   const location = useLocation();
+  const { t } = useTranslation();
 
   const [products, setProducts] = useState<Product[]>([]);
 
+  const formatLocation = location.pathname.replace('/', '');
+
   useEffect(() => {
     const fetchProducts = async () => {
-      let category;
-
-      if (location.pathname.includes('phones')) {
-        category = 'PHONES';
-      } else if (location.pathname.includes('tablets')) {
-        category = 'TABLETS';
-      } else if (location.pathname.includes('accessories')) {
-        category = 'ACCESSORIES';
-      }
-
-      const productsData = await getProducts(ProductEndPoints[category as keyof typeof ProductEndPoints]);
+      const productsData = await getProducts(
+        ProductEndPoints[formatLocation.toUpperCase() as keyof typeof ProductEndPoints],
+      );
 
       setProducts(productsData || []);
     };
 
     fetchProducts();
-  }, [location.pathname]);
+  }, [formatLocation]);
 
   const handleSortChange = (sortValue: Sort) => {
     const sortedProducts = [...products].sort((a, b) => {
@@ -84,14 +80,14 @@ const ProductsListPage: React.FC = () => {
             <Home />
           </Link>
           <Arrow />
-          <span className={s.mini_title}>Phones</span>
+          <span className={s.mini_title}>{t(`navigation.${formatLocation}`)}</span>
         </div>
-        <h1 className={s.title}>Mobile phones</h1>
+        <h2 className={s.title}>{t(`navigation.${formatLocation}`)}</h2>
         <p className={`${s.counter} primary-text`}>{`${products?.length} models`}</p>
 
         <div className={s.filter_block}>
           <div className={s.filter_item}>
-            <label className={s.mini_title}>Sort by</label>
+            <label className={s.mini_title}>{t('product.sortBy')}</label>
             <div className={s.dropdown}>
               <Dropdown
                 options={sortOptions}

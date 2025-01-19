@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import cn from 'classnames';
 
-import styles from '../../pages/ProductPage/styles/Photos.module.scss';
+import styles from './ProductPhotos.module.scss';
 
 import { Product } from '@/types/Product.type';
 

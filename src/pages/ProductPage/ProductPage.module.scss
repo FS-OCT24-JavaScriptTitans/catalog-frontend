@@ -1,14 +1,12 @@
 @use '../../styles/abstract/mixines';
 
-@use './styles/recommended';
-
 .product-card {
   margin-inline: 16px;
   max-width: 1200px;
 
   @include mixines.page-grid;
 
-  @include mixines.tablet {
+  @include mixines.tablet-l {
     margin-inline: 24px;
   }
 
@@ -39,4 +37,17 @@
 .mainTitle {
   margin-bottom: 32px;
   grid-column: 1/-1;
+}
+
+.recommended {
+  grid-column: 1/-1;
+  margin-top: 56px;
+
+  @include mixines.tablet-l {
+    margin-top: 64px;
+  }
+
+  @include mixines.desctop {
+    margin-top: 80px;
+  }
 }

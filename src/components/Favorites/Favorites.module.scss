@@ -1,12 +1,12 @@
 @use '../../styles/abstract/mixines';
+@use '@/styles/abstract/constants';
 
-.products {
-  @include mixines.flex-container(stretch, center, row, 40px, wrap);
-  column-gap: 16px;
+.items {
+  color: var(--text-color);
+  padding-bottom: 32px;
+  font-weight: 600;
 
   @include mixines.tablet {
-    justify-content: flex-start;
+    padding-bottom: 40px;
   }
-  padding-top: 40px;
-  padding-bottom: 80px;
 }

@@ -1,4 +1,5 @@
 import React, { memo, ReactNode } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Button } from '../Button/Button';
 import { IconButton } from '../IconButton/IconButton';
@@ -19,6 +20,7 @@ type Props = {
 
 const ProductCardComponent: React.FC<Props> = ({ product }) => {
   const specs: Spec = { screen: product.screen, capacity: product.capacity, ram: product.ram };
+  const { t } = useTranslation();
 
   const { handleAddToCart, isFavorite, isProductInCart, hadleToogleFavorite } = useProductControl(product);
 
@@ -26,7 +28,7 @@ const ProductCardComponent: React.FC<Props> = ({ product }) => {
     <article className={styles.card}>
       <div className={styles.container}>
         <img
-          src={product.images[0]}
+          src={`/${product.images[0]}`}
           alt="Product image"
           className={styles.card__image}
         />
@@ -41,12 +43,13 @@ const ProductCardComponent: React.FC<Props> = ({ product }) => {
             <span className={styles.card__value}>${product.priceDiscount}</span>
             {product.priceRegular && <span className={styles.card__old_value}>${product.priceRegular}</span>}
           </div>
+
           <div className={styles.create_line}></div>
           <Specifications specs={specs} />
           <div className={styles.actions}>
             <Button
-              label="Add to cart"
-              secondaryLabel="Added"
+              label={t('product.addToCart')}
+              secondaryLabel={t('product.addedToCart')}
               onClick={handleAddToCart}
               isSelected={isProductInCart}
               disabled={isProductInCart}
