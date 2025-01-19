@@ -28,7 +28,7 @@ const Navigation = () => {
   const [isOpenSearch, setIsOpenSearch] = useState(false);
   const closeBurgerMenu = () => setIsOpenMobileMenu(false);
   const onClickSearch = () => setIsOpenSearch(!isOpenSearch);
-  const { t } = useTranslation('navigation');
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (isOpenMobileMenu) {
