@@ -14,6 +14,7 @@ import { useAppSelector } from '@/redux/hooks';
 import { selectCart, selectFavorites, selectUser } from '@/redux/selectors';
 import { Product } from '@/types/Product.type';
 import { CartProduct } from '@/types/Cart.types';
+import { ThemeSwitcher } from '@/components/ThemeSwitcher/ThemeSwitcher';
 
 type Props = {
   handleClick: () => void;
@@ -61,6 +62,10 @@ export const IconLinks: React.FC<Props> = ({ handleClick }) => {
           handleClick={handleClick}
         />
         {counter(favoritesList)}
+      </span>
+
+      <span className={s.icon}>
+        <ThemeSwitcher />
       </span>
     </div>
   );

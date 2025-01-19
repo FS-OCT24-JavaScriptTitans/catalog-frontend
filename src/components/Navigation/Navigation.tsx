@@ -3,7 +3,6 @@ import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
 import Logo from '../Logo/Logo';
-import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
 import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
 import { Search } from '../Search/Search';
 
@@ -66,7 +65,6 @@ const Navigation = () => {
             onClickSearch={onClickSearch}
           />
         </span>
-        <ThemeSwitcher />
         <LanguageSwitcher />
 
         <span

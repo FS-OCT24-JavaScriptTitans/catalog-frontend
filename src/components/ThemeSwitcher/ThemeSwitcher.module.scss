@@ -1,8 +1,7 @@
 @use '../../styles/abstract/mixines';
 
 .container {
-  border-inline: 1px solid var(--element-color);
-  width: 64px;
+  min-width: 64px;
   height: 64px;
   @include mixines.flex-container(center, center);
 }
