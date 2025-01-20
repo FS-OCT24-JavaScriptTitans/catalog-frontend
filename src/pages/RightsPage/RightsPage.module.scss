@@ -1,0 +1,11 @@
+.container {
+  padding: 20px;
+  background-color: var(--main-colors);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.wrapper {
+  display: flex;
+}
