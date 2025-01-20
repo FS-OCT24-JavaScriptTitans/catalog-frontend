@@ -1,10 +1,10 @@
-/* eslint-disable react/no-children-prop */
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import Logo from '../Logo/Logo';
-import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
 import { LanguageSwitcher } from '../LanguageSwitcher/LanguageSwitcher';
+import { Search } from '../Search/Search';
 
 import s from './Navigation.module.scss';
 import { IconLinks } from './IconLinks/IconLinks';
@@ -12,7 +12,6 @@ import { IconLinks } from './IconLinks/IconLinks';
 import NavigationLink from '@/UI/NavLink/NavigationLink';
 import Close from '@/assets/Close.svg?react';
 import Menu from '@/assets/Menu.svg?react';
-import { IconButton } from '@/UI/IconButton/IconButton';
 import { PATH } from '@/constants/path';
 import { allowScroll, blockScroll } from '@/utils/scroll';
 
@@ -25,7 +24,9 @@ const navLinks = {
 
 const Navigation = () => {
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
+  const [isOpenSearch, setIsOpenSearch] = useState(false);
   const closeBurgerMenu = () => setIsOpenMobileMenu(false);
+  const onClickSearch = () => setIsOpenSearch(!isOpenSearch);
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -42,7 +43,7 @@ const Navigation = () => {
         <Logo />
       </span>
 
-      <nav className={isOpenMobileMenu ? s.navigation : s.desktop}>
+      <nav className={cn(s.navigation, { [s.open_burger]: isOpenMobileMenu })}>
         <div className={s.navigation__links}>
           {Object.entries(navLinks).map(([label, path]) => (
             <NavigationLink
@@ -58,14 +59,21 @@ const Navigation = () => {
       </nav>
 
       <div className={s.switches}>
-        <ThemeSwitcher />
+        <span className={cn(s.search, { [s.open]: isOpenSearch })}>
+          <Search
+            isOpen={isOpenSearch}
+            onClickSearch={onClickSearch}
+          />
+        </span>
         <LanguageSwitcher />
 
         <span
           className={s.navigation__burger}
           onClick={() => setIsOpenMobileMenu(!isOpenMobileMenu)}
         >
-          <IconButton children={isOpenMobileMenu ? <Close /> : <Menu />} />
+          {isOpenMobileMenu ?
+            <Close />
+          : <Menu />}
         </span>
       </div>
     </header>

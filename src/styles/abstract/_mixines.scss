@@ -37,6 +37,12 @@
   }
 }
 
+@mixin tablet-xl {
+  @media (min-width: constants.$tablet-xl-min-whidth) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (min-width: constants.$tablet-min-whidth) {
     @content;

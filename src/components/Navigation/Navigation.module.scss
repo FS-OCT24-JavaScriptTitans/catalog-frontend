@@ -6,20 +6,12 @@ $top-height: 65.6px;
 .container {
   border-bottom: 1px solid var(--element-color);
   background-color: var(--main-bg-color);
-  margin-bottom: 24px;
-  @include mixines.flex-container(center, space-between, row, 16px);
 
-  @include mixines.tablet {
-    margin-bottom: 32px;
-  }
-
-  @include mixines.laptop {
-    margin-bottom: 56px;
-  }
+  @include mixines.flex-container(center, space-between, row);
 }
 
 .logo {
-  margin: 0 16px;
+  margin: 0 8px;
 }
 
 .link {
@@ -57,27 +49,36 @@ $top-height: 65.6px;
   }
 }
 
-.desktop {
-  display: none;
+.navigation.open_burger {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: all;
 }
 
 .navigation {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
+  transition:
+    transform 1s,
+    opacity 1s;
   z-index: 100;
   width: 100vw;
   background-color: var(--main-bg-color);
   height: calc(100vh - $top-height - 2px);
   position: absolute;
-  top: $top-height;
+  top: $top-height + 2px;
   text-transform: uppercase;
   @include mixines.flex-container(stretch, space-between, column);
 
   &__links {
     @include mixines.flex-container(center, space-between, column, 24px);
+    margin-top: 30px;
   }
 
   &__burger {
     border-left: 1px solid var(--element-color);
-    padding-inline: 16px;
+    width: 64px;
     height: 66px;
     @include mixines.flex-container(center, center);
   }
@@ -85,35 +86,84 @@ $top-height: 65.6px;
 
 .switches {
   @include mixines.flex-container(center, space-between);
+  position: relative;
 }
 
-@media (min-width: constants.$tablet-l-min-whidth) {
+.search {
+  width: 64px;
+  transition: width 0.6s;
+  display: grid;
+  border-right: 1px solid var(--element-color);
+  height: 64px;
+
+  &.open {
+    width: 150px;
+    background-color: var(--main-bg-color);
+    position: absolute;
+    border-left: 1px solid var(--element-color);
+    z-index: 110;
+    right: 63px;
+
+    @media (min-width: 414px) {
+      width: 244.4px;
+    }
+
+    @include mixines.tablet {
+      right: calc(80px + 64px + 1px);
+      height: 66.5px;
+      width: 260px;
+    }
+
+    @include mixines.desctop {
+      position: static;
+      width: 244.4px;
+    }
+  }
+
+  &:hover {
+    svg {
+      transform: scale(1.2);
+    }
+  }
+}
+
+@include mixines.tablet-xl {
   .container {
-    @include mixines.flex-container(center, start, row, 16px);
+    @include mixines.flex-container(center, start, row);
+  }
+
+  .logo {
+    margin: 0 16px;
   }
 
   .link {
     line-height: $top-height;
   }
 
-  .desktop {
-    display: flex;
-    justify-content: space-between;
-    width: 100vw;
-  }
-
   .navigation {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100vw;
     position: static;
     height: auto;
-    flex-direction: row;
     margin-top: 0;
 
     &__links {
       flex-direction: row;
+      margin-top: 0;
     }
 
     &__burger {
       display: none;
     }
+  }
+
+  .search__open {
+    right: calc(80px + 64px + 1px);
+    width: max-content;
+    height: 66.5px;
   }
 }

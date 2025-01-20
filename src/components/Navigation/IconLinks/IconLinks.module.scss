@@ -1,10 +1,11 @@
 @use '../../../styles/abstract/mixines';
+@use '../../../styles/abstract/constants';
 
 .icons {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
 
-  @include mixines.tablet {
+  @include mixines.tablet-xl {
     display: flex;
   }
 }
@@ -22,13 +23,20 @@
   display: grid;
   justify-content: center;
   align-items: center;
+  transition: transform 1s;
 
   &::after {
     align-self: flex-end;
   }
 
-  @include mixines.tablet {
+  @include mixines.tablet-xl {
     border-top: none;
+  }
+
+  &:hover {
+    > svg {
+      transform: scale(1.2);
+    }
   }
 }
 

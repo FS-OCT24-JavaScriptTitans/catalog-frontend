@@ -14,9 +14,10 @@ import { useSearchProduct } from '@/hooks/useSearchProduct';
 
 interface Props {
   isOpen: boolean;
+  onClickSearch: () => void;
 }
 
-export const Search: FC<Props> = ({ isOpen = false }) => {
+export const Search: FC<Props> = ({ isOpen = false, onClickSearch }) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [isListOpen, setListOpen] = useState(false);
 
@@ -44,6 +45,7 @@ export const Search: FC<Props> = ({ isOpen = false }) => {
       <div className={s.container}>
         <SearchInput
           handleChange={handleChange}
+          onClickSearch={onClickSearch}
           value={query}
         />
 
@@ -65,8 +67,8 @@ export const Search: FC<Props> = ({ isOpen = false }) => {
         )}
       </div>
     : <IconButton
-        hasBorder
         width="64px"
+        onClick={onClickSearch}
       >
         <SearchIcon />
       </IconButton>;
