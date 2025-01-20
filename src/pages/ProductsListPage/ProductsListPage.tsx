@@ -13,6 +13,8 @@ import { Option } from '@/types/Options.type';
 import { ProductEndPoints } from '@/constants/endPoints';
 import { ProductList } from '@/components/ProductList/ProductList';
 import Pagination from '@/components/Pagination/Pagination';
+import { useLanguage } from '@/hooks/useLanguage';
+import { LANGUAGE } from '@/constants/language';
 
 const sortOptions: Option<string>[] = [
   {
@@ -49,6 +51,9 @@ const ProductsListPage: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(pageNumber);
   const [pagesCount, setPagesCount] = useState(0);
 
+  const { getLanguage } = useLanguage();
+  const language = getLanguage() as LANGUAGE;
+
   const productsPerPage = 16;
 
   const formatLocation = location.pathname.replace('/', '');
@@ -57,7 +62,9 @@ const ProductsListPage: React.FC = () => {
     const fetchProducts = async () => {
       const productsData = await getProducts(
         ProductEndPoints[formatLocation.toUpperCase() as keyof typeof ProductEndPoints],
+        language,
       );
+
       const pagesQuantity = Math.ceil((productsData?.length || 0) / productsPerPage);
 
       setPagesCount(pagesQuantity);
@@ -70,7 +77,7 @@ const ProductsListPage: React.FC = () => {
     };
 
     fetchProducts();
-  }, [currentPage, formatLocation]);
+  }, [currentPage, formatLocation, language]);
 
   const handleSortChange = (sortValue: Sort) => {
     const sortedProducts = [...products].sort((a, b) => {
