@@ -101,7 +101,7 @@ $top-height: 65.6px;
     background-color: var(--main-bg-color);
     position: absolute;
     border-left: 1px solid var(--element-color);
-    z-index: 10;
+    z-index: 110;
     right: 63px;
 
     @media (min-width: 414px) {
@@ -114,7 +114,7 @@ $top-height: 65.6px;
       width: 260px;
     }
 
-    @include mixines.laptop {
+    @include mixines.desctop {
       position: static;
       width: 244.4px;
     }
