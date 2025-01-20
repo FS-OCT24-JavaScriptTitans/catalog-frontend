@@ -67,6 +67,8 @@ const ProductsListPage: React.FC = () => {
         language,
       );
 
+      setIsLoading(false);
+
       const pagesQuantity = Math.ceil((productsData?.length || 0) / productsPerPage);
 
       setPagesCount(pagesQuantity);
@@ -79,7 +81,6 @@ const ProductsListPage: React.FC = () => {
     };
 
     fetchProducts();
-    setIsLoading(false);
   }, [currentPage, formatLocation, language]);
 
   const handleSortChange = (sortValue: Sort) => {
