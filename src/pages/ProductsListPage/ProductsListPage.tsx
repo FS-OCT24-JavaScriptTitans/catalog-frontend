@@ -1,3 +1,4 @@
+ 
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -15,6 +16,7 @@ import { ProductList } from '@/components/ProductList/ProductList';
 import Pagination from '@/components/Pagination/Pagination';
 import { useLanguage } from '@/hooks/useLanguage';
 import { LANGUAGE } from '@/constants/language';
+import { ProductListSceleton } from '@/UI/Sceletones/ProductListSceleton/ProductListSceleton';
 
 const sortOptions: Option<string>[] = [
   {
@@ -50,6 +52,7 @@ const ProductsListPage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [currentPage, setCurrentPage] = useState(pageNumber);
   const [pagesCount, setPagesCount] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   const { getLanguage } = useLanguage();
   const language = getLanguage() as LANGUAGE;
@@ -77,6 +80,7 @@ const ProductsListPage: React.FC = () => {
     };
 
     fetchProducts();
+    setIsLoading(true);
   }, [currentPage, formatLocation, language]);
 
   const handleSortChange = (sortValue: Sort) => {
@@ -136,7 +140,9 @@ const ProductsListPage: React.FC = () => {
         </div>
       </div>
 
-      <ProductList products={products} />
+      {isLoading ?
+        <ProductListSceleton />
+      : <ProductList products={products} />}
       <Pagination
         initialPage={pageNumber - 1}
         pageCount={pagesCount}
