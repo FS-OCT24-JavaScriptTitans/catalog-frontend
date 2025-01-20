@@ -1,4 +1,3 @@
- 
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
@@ -80,7 +79,7 @@ const ProductsListPage: React.FC = () => {
     };
 
     fetchProducts();
-    setIsLoading(true);
+    setIsLoading(false);
   }, [currentPage, formatLocation, language]);
 
   const handleSortChange = (sortValue: Sort) => {
