@@ -13,7 +13,7 @@ interface Props {
 }
 
 const EmptyContainer: FC<Props> = ({ title, pathToImg, alt }) => (
-  <article>
+  <article className={s.container}>
     <h2 className={cn(s.title)}>{title}</h2>
     <div className={s.imgContainer}>
       <img
