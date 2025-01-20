@@ -2,7 +2,7 @@ import { shallowEqual } from 'react-redux';
 
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { selectCart, selectFavorites } from '@/redux/selectors';
-import { addProductToCart } from '@/redux/slices/cart/carrt.slice';
+import { addProductToCart, removeCartProduct } from '@/redux/slices/cart/carrt.slice';
 import { Product } from '@/types/Product.type';
 import { toggleFavoriteProduct } from '@/redux/slices/favorites/favorites.slice';
 
@@ -16,6 +16,7 @@ export const useProductControl = (product: Product) => {
 
   const hadleToogleFavorite = () => dispatch(toggleFavoriteProduct({ product }));
   const handleAddToCart = () => dispatch(addProductToCart({ product }));
+  const handleRemoveFromCart = () => dispatch(removeCartProduct({ id: product.id }));
 
-  return { isProductInCart, handleAddToCart, isFavorite, hadleToogleFavorite };
+  return { isProductInCart, handleAddToCart, handleRemoveFromCart, isFavorite, hadleToogleFavorite };
 };

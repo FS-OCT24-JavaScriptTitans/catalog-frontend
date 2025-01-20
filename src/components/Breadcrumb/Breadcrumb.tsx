@@ -12,7 +12,11 @@ const Breadcrumb: React.FC = () => {
   const location = useLocation();
   const locationParts = location.pathname.split('/');
   const firstPart = locationParts[1];
-  const secondPart = locationParts[2].split('-').join(' ');
+  let secondPart;
+
+  if (locationParts.length > 2) {
+    secondPart = locationParts[2].split('-').join(' ');
+  }
 
   const { t } = useTranslation();
 

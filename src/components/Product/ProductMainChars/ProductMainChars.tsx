@@ -3,13 +3,16 @@ import cn from 'classnames';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
+import colors from '../../../pages/ProductPage/styles/colors.json';
+
 import styles from './ProductMainChars.module.scss';
 
 import Favourites from '@/assets/Favourites.svg?react';
+import RedFavorites from '@/assets/RedFavorites.svg?react';
 import { Product } from '@/types/Product.type';
 import { Button } from '@/UI/Button/Button';
 import { IconButton } from '@/UI/IconButton/IconButton';
-import RedFavorites from '@/assets/RedFavorites.svg?react';
+import { useProductControl } from '@/hooks/useProductControl';
 
 function changeIdPart(input: string, inputLabel: string, inputPart: string) {
   const previousIdPart = input.toLowerCase().split(' ').join('-');
@@ -17,6 +20,10 @@ function changeIdPart(input: string, inputLabel: string, inputPart: string) {
   const newId = inputLabel.replace(previousIdPart, newIdPart);
 
   return newId;
+}
+
+function rightColors(currentColor: string, neededColor: { [key: string]: string }) {
+  return neededColor[currentColor.replace(' ', '')];
 }
 
 type Props = {
@@ -27,9 +34,9 @@ type Props = {
 
 const ProductMainChars: React.FC<Props> = ({ product, location, techSpecs }) => {
   const [ID, setID] = useState(0);
-  const [isSelected, setIsSelected] = useState(false);
-  const [isFavorite, setIsFavorite] = useState(false);
   const { t } = useTranslation();
+  const { handleAddToCart, handleRemoveFromCart, isFavorite, isProductInCart, hadleToogleFavorite } =
+    useProductControl(product);
 
   useEffect(() => {
     setID(Math.floor(Math.random() * 1000000));
@@ -49,7 +56,7 @@ const ProductMainChars: React.FC<Props> = ({ product, location, techSpecs }) => 
             key={color}
           >
             <div
-              style={{ backgroundColor: `${color}` }}
+              style={{ backgroundColor: `${rightColors(color, colors)}` }}
               className={styles.color}
             />
           </NavLink>
@@ -88,11 +95,11 @@ const ProductMainChars: React.FC<Props> = ({ product, location, techSpecs }) => 
         <Button
           label={t('product.addToCart')}
           secondaryLabel={t('product.addedToCart')}
-          onClick={() => setIsSelected(isSelected ? false : true)}
-          isSelected={isSelected}
+          onClick={isProductInCart ? handleRemoveFromCart : handleAddToCart}
+          isSelected={isProductInCart}
         />
         <IconButton
-          onClick={() => setIsFavorite(isFavorite ? false : true)}
+          onClick={hadleToogleFavorite}
           hasBorder
         >
           {isFavorite ?
