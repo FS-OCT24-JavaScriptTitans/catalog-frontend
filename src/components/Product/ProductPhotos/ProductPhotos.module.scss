@@ -26,6 +26,7 @@
   @include mixines.tablet-l {
     grid-column: 1/2;
     display: block;
+    margin: 0;
   }
 
   @include mixines.desctop {
@@ -36,9 +37,7 @@
 .imageBox {
   aspect-ratio: 1;
   margin-bottom: 8px;
-  max-width: 80px;
   max-height: 80px;
-  cursor: pointer;
 }
 
 .mainPhoto {
