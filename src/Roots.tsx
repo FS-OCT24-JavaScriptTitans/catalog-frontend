@@ -54,6 +54,12 @@ export const Root = () => (
               element={<Pages.FavoritesPage />}
             />
 
+            {/*  NOT FOUND */}
+            <Route
+              path={'*'}
+              element={<Pages.NotFoundPage />}
+            />
+
             {/* Auth Route */}
             <Route
               path={PATH.AUTH}
