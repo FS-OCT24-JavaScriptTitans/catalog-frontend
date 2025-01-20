@@ -10,3 +10,12 @@
     padding-bottom: 40px;
   }
 }
+
+.breadcrumb {
+  max-width: 1200px;
+  display: flex;
+  margin: auto;
+  column-gap: 8px;
+  padding: 0 32px 24px;
+  color: var(--text-color);
+}

@@ -1,10 +1,14 @@
+/* eslint-disable react/jsx-no-useless-fragment */
 import { shallowEqual } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 import { ProductList } from '../ProductList/ProductList';
 
 import s from './Favorites.module.scss';
 
+import Home from '@/assets/Home.svg?react';
+import Arrow from '@/assets/Arrow.svg?react';
 import { useAppSelector } from '@/redux/hooks';
 import { selectFavorites } from '@/redux/selectors';
 import EmptyContainer from '@/UI/EmptyContainer/EmptyContainer';
@@ -16,18 +20,28 @@ export const Favourites = () => {
   const { t } = useTranslation();
 
   return (
-    <Container>
+    <>
       {favoritesLength ?
-        <Container title={t('favorites')}>
-          <p className={s.items}>{favoritesLength} items</p>
-          <ProductList products={favorites} />
-        </Container>
+        <>
+          <div className={s.breadcrumb}>
+            <Link to="/">
+              <Home />
+            </Link>
+            <Arrow />
+            <span className={s.mini_title}>{t('favorites')}</span>
+          </div>
+
+          <Container title={t('favorites')}>
+            <p className={s.items}>{favoritesLength} items</p>
+            <ProductList products={favorites} />
+          </Container>
+        </>
       : <EmptyContainer
-          title="Theris no favoritess"
+          title="There are no favorites"
           pathToImg="/img/empty-fav-page.png"
           alt="empty-favorites"
         />
       }
-    </Container>
+    </>
   );
 };

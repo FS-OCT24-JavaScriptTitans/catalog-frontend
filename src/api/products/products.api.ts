@@ -4,9 +4,11 @@ import { Product, ProductItem } from '@/types/Product.type';
 import { Response } from '@/types/Resonse.type';
 import { ProductEndPoints } from '@/constants/endPoints';
 import { handleRequest } from '@/utils/handleRequest';
+import { LANGUAGE } from '@/constants/language';
 
-export const getProducts = async (product: ProductEndPoints): Promise<Product[] | null> => {
-  const res: Response<Product[]> = await handleRequest(axios.get(`/api/${product}.json`));
+export const getProducts = async (product: ProductEndPoints, lang: LANGUAGE): Promise<Product[] | null> => {
+  const endpoint = `/api/${product}_${lang ? 'ua' : 'en'}.json`;
+  const res: Response<Product[]> = await handleRequest(axios.get(endpoint));
 
   return res.data;
 };
@@ -17,20 +19,20 @@ export const getProductItems = async (): Promise<ProductItem[] | null> => {
   return res.data;
 };
 
-export const getAllProducts = async (): Promise<Product[] | null> => {
+export const getAllProducts = async (lang: LANGUAGE): Promise<Product[] | null> => {
   const res = await handleRequest(
     Promise.all([
-      getProducts(ProductEndPoints.PHONES),
-      getProducts(ProductEndPoints.TABLETS),
-      getProducts(ProductEndPoints.ACCESSORIES),
+      getProducts(ProductEndPoints.PHONES, lang),
+      getProducts(ProductEndPoints.TABLETS, lang),
+      getProducts(ProductEndPoints.ACCESSORIES, lang),
     ]),
   );
 
   return res.flatMap((products) => products || []);
 };
 
-export const getProduct = async (productId: string): Promise<Product | null> => {
-  const products = await getAllProducts();
+export const getProduct = async (productId: string, lang: LANGUAGE): Promise<Product | null> => {
+  const products = await getAllProducts(lang);
 
   return products?.find(({ id }) => id === productId) || null;
 };

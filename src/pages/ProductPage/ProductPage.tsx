@@ -12,52 +12,70 @@ import ProductDescription from '@/components/Product/ProductDescription/ProductD
 import ProductTechSpecs from '@/components/Product/ProductTechSpecs/ProductTechSpecs';
 import { Product } from '@/types/Product.type';
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
+import { Spec } from '@/types/Spec';
+import { getAllProducts, getProduct } from '@/api/products/products.api';
+import { Container } from '@/UI/Container/Container';
+import ProductSlider from '@/components/ProductSlider/ProductSlider';
 import { CustomLink } from '@/UI/Link/Link';
 import { ProductRecommended } from '@/components/Product/ProductRecommended/ProductRecommended';
 import AnimatedSection from '@/components/AnimatedSection/AnimatedSection';
 
-function getProductApi(input: string): Promise<Product[]> {
-  const searchedPath = input.split('/')[1];
-  let API_URL = '';
+function shuffle(array: Product[]) {
+  let currentIndex = array.length;
 
-  switch (searchedPath) {
-    case 'phones':
-      API_URL = '../../../api/phones.json';
-      break;
+  while (currentIndex != 0) {
+    const randomIndex = Math.floor(Math.random() * currentIndex);
 
-    case 'tablets':
-      API_URL = '../../../api/tablets.json';
-      break;
+    currentIndex--;
 
-    case 'accessories':
-      API_URL = '../../../api/accessories.json';
-      break;
+    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
   }
 
-  return fetch(API_URL).then((response) => response.json());
+  return array;
 }
 
 const ProductPage: React.FC = () => {
   const { productId } = useParams();
   const location = useLocation();
-  const [product, setProduct] = useState<Product>();
+  const [product, setProduct] = useState<Product | null>();
+  const [products, setProducts] = useState<Product[]>([]);
 
   const { t } = useTranslation();
 
   useEffect(() => {
-    getProductApi(location.pathname).then((currentApi) => setProduct(currentApi.find((item) => productId === item.id)));
-  }, [location.pathname, productId]);
+    if (productId) {
+      getProduct(productId).then((currentItem) => setProduct(currentItem));
+    }
 
-  let techSpecs = [];
+    const fetchProducts = async () => {
+      const allProducts = await getAllProducts();
+
+      setProducts(allProducts || []);
+    };
+
+    fetchProducts();
+  }, [productId]);
+
+  const specs: Spec = {
+    screen: product?.screen,
+    resolution: product?.resolution,
+    processor: product?.processor,
+    ram: product?.ram,
+    camera: product?.camera,
+    zoom: product?.zoom,
+    cell: product?.cell,
+  };
+
+  const techSpecs = Object.entries(specs);
+  const randomProducts = shuffle(products);
 
   if (location.pathname.includes('accessories')) {
-    techSpecs = Object.entries({ ...product }).slice(-5);
-  } else {
-    techSpecs = Object.entries({ ...product }).slice(-7);
+    techSpecs.splice(4, 2);
   }
 
   return (
     product && (
+
       <>
         <AnimatedSection animationType={'fade-left'}>
           <section className={cn(styles.productCard, 'section')}>
@@ -81,6 +99,7 @@ const ProductPage: React.FC = () => {
               location={location.pathname}
               techSpecs={techSpecs}
             />
+
 
             <ProductDescription product={product} />
 
