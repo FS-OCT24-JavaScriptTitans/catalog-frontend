@@ -28,7 +28,7 @@
     <linearGradient id="fill">
       <stop
         offset="0.599964"
-        stop-color="#f0f0f0"
+        stop-color="#f3f3f3be"
         stop-opacity="1"
       >
         <animate
@@ -41,7 +41,7 @@
       </stop>
       <stop
         offset="1.59996"
-        stop-color="#e8e8e8"
+        stop-color='#fff'
         stop-opacity="1"
       >
         <animate
@@ -54,7 +54,7 @@
       </stop>
       <stop
         offset="2.59996"
-        stop-color="#f0f0f0"
+        stop-color="#f3f3f3be"
         stop-opacity="1"
       >
         <animate

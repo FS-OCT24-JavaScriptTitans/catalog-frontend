@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 
-import ScaletonDark from '../../../assets/SceletonDark.svg?react';
-import ScaletonLight from '../../../assets/ScaletonLight.svg?react';
+import SceletonDark from '../../../assets/SceletonDark.svg?react';
+import SceletonLight from '../../../assets/SceletonLight.svg?react';
 
 import s from './ProductCartSceleton.module.scss';
 
@@ -13,8 +13,8 @@ const ProductCardSceleton = () => {
   return (
     <span className={s.container}>
       {theme ?
-        <ScaletonDark />
-      : <ScaletonLight />}
+        <SceletonDark />
+      : <SceletonLight />}
     </span>
   );
 };
