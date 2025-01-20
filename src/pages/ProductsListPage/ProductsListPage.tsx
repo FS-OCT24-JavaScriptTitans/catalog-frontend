@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import s from './ProductsListPage.module.scss';
@@ -12,6 +12,7 @@ import { Dropdown } from '@/UI/Dropdown/Dropdown';
 import { Option } from '@/types/Options.type';
 import { ProductEndPoints } from '@/constants/endPoints';
 import { ProductList } from '@/components/ProductList/ProductList';
+import Pagination from '@/components/Pagination/Pagination';
 
 const sortOptions: Option<string>[] = [
   {
@@ -40,8 +41,15 @@ enum Sort {
 const ProductsListPage: React.FC = () => {
   const location = useLocation();
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const pageNumber = Number(new URLSearchParams(location.search).get('page')) || 1;
 
   const [products, setProducts] = useState<Product[]>([]);
+  const [currentPage, setCurrentPage] = useState(pageNumber);
+  const [pagesCount, setPagesCount] = useState(0);
+
+  const productsPerPage = 16;
 
   const formatLocation = location.pathname.replace('/', '');
 
@@ -50,12 +58,19 @@ const ProductsListPage: React.FC = () => {
       const productsData = await getProducts(
         ProductEndPoints[formatLocation.toUpperCase() as keyof typeof ProductEndPoints],
       );
+      const pagesQuantity = Math.ceil((productsData?.length || 0) / productsPerPage);
 
-      setProducts(productsData || []);
+      setPagesCount(pagesQuantity);
+
+      if (productsData) {
+        setProducts(productsData.slice((currentPage - 1) * productsPerPage, currentPage * productsPerPage));
+      } else {
+        setProducts([]);
+      }
     };
 
     fetchProducts();
-  }, [formatLocation]);
+  }, [currentPage, formatLocation]);
 
   const handleSortChange = (sortValue: Sort) => {
     const sortedProducts = [...products].sort((a, b) => {
@@ -70,6 +85,12 @@ const ProductsListPage: React.FC = () => {
     });
 
     setProducts(sortedProducts);
+  };
+
+  const handlePageChange = ({ selected }: { selected: number }) => {
+    setCurrentPage(selected + 1);
+    navigate(`${location.pathname}?page=${selected + 1}`);
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -109,6 +130,13 @@ const ProductsListPage: React.FC = () => {
       </div>
 
       <ProductList products={products} />
+      <Pagination
+        initialPage={pageNumber - 1}
+        pageCount={pagesCount}
+        onChange={handlePageChange}
+        pageRangeDisplayed={3}
+        marginPagesDisplayed={0}
+      />
     </section>
   );
 };

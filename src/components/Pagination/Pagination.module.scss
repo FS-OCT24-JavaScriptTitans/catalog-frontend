@@ -1,0 +1,27 @@
+@use '../../styles/abstract/constants';
+@use '@/styles/abstract/mixines' as mixin;
+
+.pagination {
+  @include mixin.flex-container(center, center);
+  column-gap: 8px;
+  padding: 24px 36px 64px;
+
+  & > li > a {
+    @include mixin.flex-container(center, center);
+    height: 32px;
+    width: 32px;
+    color: var(--light-main-text-color);
+    border: 1px solid var(--light-element-color);
+    outline: transparent;
+    cursor: pointer;
+
+    &:hover {
+      border: 1px solid var(--light-main-text-color);
+    }
+  }
+
+  & > .active > a {
+    background-color: var(--light-main-text-color);
+    color: var(--white-color);
+  }
+}
