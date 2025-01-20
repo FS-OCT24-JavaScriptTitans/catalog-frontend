@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import cn from 'classnames';
 
 import { Arrow } from '../Arrow/Arrow';
@@ -14,12 +14,34 @@ interface Props<T> {
   hasBorder?: boolean;
   hasButtonBGC?: boolean;
   selectedOption?: Option<T>;
+  urlParam: string;
 }
 
-export const Dropdown = <T,>({ options, onChange, width, hasBorder, selectedOption, hasButtonBGC }: Props<T>) => {
+export const Dropdown = <T,>({
+  options,
+  onChange,
+  width,
+  hasBorder,
+  selectedOption,
+  hasButtonBGC,
+  urlParam,
+}: Props<T>) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const [option, setOption] = useState<Option<T>>(selectedOption || options[0]);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const urlValue = params.get(urlParam);
+
+    if (urlValue) {
+      const matchingOption = options.find((opt) => opt.value === urlValue);
+
+      if (matchingOption) {
+        setOption(matchingOption);
+      }
+    }
+  }, [options, urlParam]);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
 
