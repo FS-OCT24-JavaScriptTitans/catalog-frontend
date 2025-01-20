@@ -14,6 +14,7 @@ import { Product } from '@/types/Product.type';
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import { CustomLink } from '@/UI/Link/Link';
 import { ProductRecommended } from '@/components/Product/ProductRecommended/ProductRecommended';
+import AnimatedSection from '@/components/AnimatedSection/AnimatedSection';
 
 function getProductApi(input: string): Promise<Product[]> {
   const searchedPath = input.split('/')[1];
@@ -58,33 +59,38 @@ const ProductPage: React.FC = () => {
   return (
     product && (
       <>
-        <section className={cn(styles.productCard, 'section')}>
-          <div className={styles.breadCrumbs}>
-            <Breadcrumb />
-          </div>
-
-          <CustomLink path="..">
-            <div className={cn(styles.back, 'small-text')}>
-              <Arrow transform="rotate(180)" />
-              {t('back')}
+        <AnimatedSection animationType={'fade-left'}>
+          <section className={cn(styles.productCard, 'section')}>
+            <div className={styles.breadCrumbs}>
+              <Breadcrumb />
             </div>
-          </CustomLink>
 
-          <h2 className={styles.mainTitle}>{product.name}</h2>
+            <CustomLink path="..">
+              <div className={cn(styles.back, 'small-text')}>
+                <Arrow transform="rotate(180)" />
+                {t('back')}
+              </div>
+            </CustomLink>
 
-          <ProductPhotos product={product} />
+            <h2 className={styles.mainTitle}>{product.name}</h2>
 
-          <ProductMainChars
-            product={product}
-            location={location.pathname}
-            techSpecs={techSpecs}
-          />
+            <ProductPhotos product={product} />
 
-          <ProductDescription product={product} />
+            <ProductMainChars
+              product={product}
+              location={location.pathname}
+              techSpecs={techSpecs}
+            />
 
-          <ProductTechSpecs techSpecs={techSpecs} />
-        </section>{' '}
-        <ProductRecommended />
+            <ProductDescription product={product} />
+
+            <ProductTechSpecs techSpecs={techSpecs} />
+          </section>{' '}
+        </AnimatedSection>
+
+        <AnimatedSection animationType={'fade-up'}>
+          <ProductRecommended />
+        </AnimatedSection>
       </>
     )
   );

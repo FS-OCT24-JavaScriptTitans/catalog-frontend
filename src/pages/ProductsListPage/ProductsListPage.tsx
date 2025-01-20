@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import AOS from 'aos';
 
 import s from './ProductsListPage.module.scss';
 
@@ -13,6 +14,7 @@ import { Option } from '@/types/Options.type';
 import { ProductEndPoints } from '@/constants/endPoints';
 import { ProductList } from '@/components/ProductList/ProductList';
 import Pagination from '@/components/Pagination/Pagination';
+import AnimatedSection from '@/components/AnimatedSection/AnimatedSection';
 
 const sortOptions: Option<string>[] = [
   {
@@ -72,6 +74,10 @@ const ProductsListPage: React.FC = () => {
     fetchProducts();
   }, [currentPage, formatLocation]);
 
+  useEffect(() => {
+    AOS.refresh();
+  }, [products]);
+
   const handleSortChange = (sortValue: Sort) => {
     const sortedProducts = [...products].sort((a, b) => {
       switch (sortValue) {
@@ -94,50 +100,52 @@ const ProductsListPage: React.FC = () => {
   };
 
   return (
-    <section className={s.container}>
-      <div className={s.top_panel}>
-        <div className={s.icons}>
-          <Link to="#">
-            <Home />
-          </Link>
-          <Arrow />
-          <span className={s.mini_title}>{t(`navigation.${formatLocation}`)}</span>
-        </div>
-        <h2 className={s.title}>{t(`navigation.${formatLocation}`)}</h2>
-        <p className={`${s.counter} primary-text`}>{`${products?.length} models`}</p>
+    <AnimatedSection animationType={'fade-right'}>
+      <section className={s.container}>
+        <div className={s.top_panel}>
+          <div className={s.icons}>
+            <Link to="#">
+              <Home />
+            </Link>
+            <Arrow />
+            <span className={s.mini_title}>{t(`navigation.${formatLocation}`)}</span>
+          </div>
+          <h2 className={s.title}>{t(`navigation.${formatLocation}`)}</h2>
+          <p className={`${s.counter} primary-text`}>{`${products?.length} models`}</p>
 
-        <div className={s.filter_block}>
-          <div className={s.filter_item}>
-            <label className={s.mini_title}>{t('product.sortBy')}</label>
-            <div className={s.dropdown}>
-              <Dropdown
-                options={sortOptions}
-                hasBorder
-                onChange={(value) => handleSortChange(value as Sort)}
-              />
+          <div className={s.filter_block}>
+            <div className={s.filter_item}>
+              <label className={s.mini_title}>{t('product.sortBy')}</label>
+              <div className={s.dropdown}>
+                <Dropdown
+                  options={sortOptions}
+                  hasBorder
+                  onChange={(value) => handleSortChange(value as Sort)}
+                />
+              </div>
+            </div>
+            <div className={s.filter_item}>
+              <label className={s.mini_title}>Items on page</label>
+              <div className={s.dropdown}>
+                <Dropdown
+                  options={sortOptions}
+                  hasBorder
+                />
+              </div>
             </div>
           </div>
-          <div className={s.filter_item}>
-            <label className={s.mini_title}>Items on page</label>
-            <div className={s.dropdown}>
-              <Dropdown
-                options={sortOptions}
-                hasBorder
-              />
-            </div>
-          </div>
         </div>
-      </div>
 
-      <ProductList products={products} />
-      <Pagination
-        initialPage={pageNumber - 1}
-        pageCount={pagesCount}
-        onChange={handlePageChange}
-        pageRangeDisplayed={3}
-        marginPagesDisplayed={0}
-      />
-    </section>
+        <ProductList products={products} />
+        <Pagination
+          initialPage={pageNumber - 1}
+          pageCount={pagesCount}
+          onChange={handlePageChange}
+          pageRangeDisplayed={3}
+          marginPagesDisplayed={0}
+        />
+      </section>
+    </AnimatedSection>
   );
 };
 
