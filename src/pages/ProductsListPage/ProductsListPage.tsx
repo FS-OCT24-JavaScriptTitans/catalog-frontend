@@ -34,6 +34,23 @@ const sortOptions: Option<string>[] = [
     label: 'Price To High',
   },
 ];
+const perPageOptions: Option<string>[] = [
+  {
+    id: 1,
+    value: '16',
+    label: '16',
+  },
+  {
+    id: 2,
+    value: '24',
+    label: '24',
+  },
+  {
+    id: 3,
+    value: '32',
+    label: '32',
+  },
+];
 
 enum Sort {
   Popularity = 'popularity',
@@ -46,19 +63,21 @@ const ProductsListPage: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  const pageNumber = Number(new URLSearchParams(location.search).get('page')) || 1;
-  const sortParam = new URLSearchParams(location.search).get('sort') || Sort.Popularity;
+  const params = new URLSearchParams(location.search);
+  const pageNumber = Number(params.get('page')) || 1;
+  const sortParam = params.get('sort') || Sort.Popularity;
+  const perProductSParam = params.get('perPage') || '16';
 
   const [allProducts, setAllProducts] = useState<Product[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
   const [pagesCount, setPagesCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-  const [sortValue, setSortValue] = useState<Sort>(sortParam as Sort);
+
 
   const { getLanguage } = useLanguage();
   const language = getLanguage() as LANGUAGE;
 
-  const productsPerPage = 16;
+
   const formatLocation = location.pathname.replace('/', '');
 
   useEffect(() => {
@@ -70,7 +89,7 @@ const ProductsListPage: React.FC = () => {
 
       setIsLoading(false);
 
-      const pagesQuantity = Math.ceil((productsData?.length || 0) / productsPerPage);
+      const pagesQuantity = Math.ceil((productsData?.length || 0) / +perProductSParam);
 
       setPagesCount(pagesQuantity);
 
@@ -82,18 +101,7 @@ const ProductsListPage: React.FC = () => {
     };
 
     fetchProducts();
-  }, [formatLocation, language]);
-
-  useEffect(() => {
-    const sortedProducts = sortProducts(allProducts, sortValue);
-    const totalPages = Math.ceil(sortedProducts.length / productsPerPage);
-
-    setPagesCount(totalPages);
-
-    const offset = (pageNumber - 1) * productsPerPage;
-
-    setProducts(sortedProducts.slice(offset, offset + productsPerPage));
-  }, [allProducts, sortValue, pageNumber]);
+  }, [formatLocation, language, perProductSParam]);
 
   const sortProducts = (productsData: Product[], sortValue: Sort) => {
     if (sortValue === Sort.Popularity) {
@@ -107,13 +115,27 @@ const ProductsListPage: React.FC = () => {
     );
   };
 
+  useEffect(() => {
+    const sortedProducts = sortProducts(allProducts, sortParam as Sort);
+    const totalPages = Math.ceil(sortedProducts.length / +perProductSParam);
+
+    setPagesCount(totalPages);
+
+    const offset = (pageNumber - 1) * +perProductSParam;
+
+    setProducts(sortedProducts.slice(offset, offset + +perProductSParam));
+  }, [allProducts, sortParam, pageNumber, perProductSParam]);
+
   const handleSortChange = (sortValue: Sort) => {
-    setSortValue(sortValue);
-    navigate(`${location.pathname}?page=1&sort=${sortValue}`);
+    navigate(`${location.pathname}?page=1&sort=${sortValue}&perPage=${perProductSParam}`);
+  };
+
+  const handlePerChange = (perQuantity: number) => {
+    navigate(`${location.pathname}?page=1&sort=${sortParam}&perPage=${perQuantity}`);
   };
 
   const handlePageChange = ({ selected }: { selected: number }) => {
-    navigate(`${location.pathname}?page=${selected + 1}&sort=${sortValue}`);
+    navigate(`${location.pathname}?page=${selected + 1}&sort=${sortParam}&perPage=${perProductSParam}`);
     window.scrollTo(0, 0);
   };
 
@@ -138,6 +160,7 @@ const ProductsListPage: React.FC = () => {
                 options={sortOptions}
                 hasBorder
                 onChange={(value) => handleSortChange(value as Sort)}
+                urlParam="sort"
               />
             </div>
           </div>
@@ -145,8 +168,10 @@ const ProductsListPage: React.FC = () => {
             <label className={s.mini_title}>Items on page</label>
             <div className={s.dropdown}>
               <Dropdown
-                options={sortOptions}
+                options={perPageOptions}
                 hasBorder
+                onChange={(value) => handlePerChange(+value)}
+                urlParam="perPage"
               />
             </div>
           </div>
