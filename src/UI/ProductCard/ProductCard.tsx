@@ -13,6 +13,7 @@ import RedFavourites from '@/assets/RedFavorites.svg?react';
 import { Spec } from '@/types/Spec';
 import { Product } from '@/types/Product.type';
 import { useProductControl } from '@/hooks/useProductControl';
+import { getTranslatedCategory } from '@/utils/products/getProductCategory';
 
 type Props = {
   product: Product;
@@ -24,18 +25,23 @@ const ProductCardComponent: React.FC<Props> = ({ product }) => {
 
   const { handleAddToCart, isFavorite, isProductInCart, hadleToogleFavorite } = useProductControl(product);
 
+  const path = `/${getTranslatedCategory(product.category)}/${product.id}`;
+
   return (
     <article className={styles.card}>
       <div className={styles.container}>
-        <img
-          src={`/${product.images[0]}`}
-          alt="Product image"
-          className={styles.card__image}
-        />
+        <CustomLink path={path}>
+          <img
+            src={`/${product.images[0]}`}
+            alt="Product image"
+            className={styles.card__image}
+          />
+        </CustomLink>
+
         <span>
           <span className={`${styles.card__title} primary-text`}>
             <CustomLink
-              path={`/${product.category}/${product.id}`}
+              path={path}
               label={`${product.name} (iMT9G2FS/A)`}
             />
           </span>
