@@ -141,12 +141,14 @@ $top-height: 65.6px;
   }
 
   .navigation {
-    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
     justify-content: space-between;
+    flex-direction: row;
     width: 100vw;
     position: static;
     height: auto;
-    flex-direction: row;
     margin-top: 0;
 
     &__links {
@@ -163,11 +165,5 @@ $top-height: 65.6px;
     right: calc(80px + 64px + 1px);
     width: max-content;
     height: 66.5px;
-  }
-
-  .navigation {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: all;
   }
 }
