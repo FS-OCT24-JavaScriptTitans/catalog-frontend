@@ -31,9 +31,10 @@
       "colors": "Доступні кольори",
       "cell": "Комірка ",
       "selectCapacity": "Виберіть Ємність",
-      "itemsOnPage": "Товарів на сторінці",
+      "itemsOnPage": "Кількість",
       "addToCart": "Додати",
       "addedToCart": "Додано",
+      "models": "моделей",
       "sortBy": "Сортувати за",
       "resolution": "Роздільна здатність",
       "processor": "Процесор",
@@ -48,9 +49,10 @@
       "sort": {
         "newest": "Найновіші",
         "alphabetically": "За алфавітом",
-        "priceLow": "За ціною (зростання)",
-        "priceHigh": "За ціною (спадання)",
-        "all": "Всі"
+        "priceLow": "Менша ціна",
+        "priceHigh": "Вища ціна",
+        "all": "Всі",
+        "popularity": "Ходові"
       }
     },
     "footer": {
@@ -114,6 +116,7 @@
         "highlight4": "приватність",
         "part5": " є важливою для нас."
       }
-    }
+    },
+    "searchTitle": "Знайдені товари "
   }
 }

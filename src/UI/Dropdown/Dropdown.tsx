@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import cn from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 import { Arrow } from '../Arrow/Arrow';
 
@@ -29,6 +30,7 @@ export const Dropdown = <T,>({
   const [isOpen, setIsOpen] = useState(false);
 
   const [option, setOption] = useState<Option<T>>(selectedOption || options[0]);
+  const { t } = useTranslation();
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -64,7 +66,7 @@ export const Dropdown = <T,>({
         className={cn(s.button, { [s.buttonBgc]: hasButtonBGC })}
         onClick={toggleDropdown}
       >
-        {String(option.label)}
+        {t(option.label)}
         {isOpen ?
           <Arrow direction="up" />
         : <Arrow direction="down" />}
@@ -77,7 +79,7 @@ export const Dropdown = <T,>({
               className={cn('primary-text', s.item)}
               onClick={handleChangeOption({ value, id, label })}
             >
-              {label}
+              {t(label)}
             </li>
           ))}
         </ul>

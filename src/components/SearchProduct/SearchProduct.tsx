@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { ProductList } from '../ProductList/ProductList';
 
@@ -9,12 +10,16 @@ interface Props {
   products: Product[];
 }
 
-export const SearchProduct: FC<Props> = ({ products }) => (
-  <Container
-    title="Search Products"
-    titlePB="32px"
-    mt="32px"
-  >
-    <ProductList products={products} />
-  </Container>
-);
+export const SearchProduct: FC<Props> = ({ products }) => {
+  const { t } = useTranslation();
+
+  return (
+    <Container
+      title={t('searchTitle')}
+      titlePB="32px"
+      mt="32px"
+    >
+      <ProductList products={products} />
+    </Container>
+  );
+};
