@@ -32,7 +32,6 @@ const ProductPage: React.FC = () => {
   useEffect(() => {
     if (productId) {
       getProduct(productId, language).then((currentItem) => {
-        console.log(currentItem);
         setProduct(currentItem);
       });
     }

@@ -10,6 +10,8 @@ import { ProductEndPoints } from '@/constants/endPoints';
 import { Product } from '@/types/Product.type';
 import { Container } from '@/UI/Container/Container';
 import { PATH } from '@/constants/path';
+import { useLanguage } from '@/hooks/useLanguage';
+import { LANGUAGE } from '@/constants/language';
 
 interface Category {
   title: string;
@@ -21,12 +23,14 @@ interface Category {
 const CategorySection: React.FC = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const { t } = useTranslation();
+  const { getLanguage } = useLanguage();
+  const language = getLanguage() as LANGUAGE;
 
   useEffect(() => {
     const fetchCategories = async () => {
-      const phones = await getProducts(ProductEndPoints.PHONES);
-      const tablets = await getProducts(ProductEndPoints.TABLETS);
-      const accessories = await getProducts(ProductEndPoints.ACCESSORIES);
+      const phones = await getProducts(ProductEndPoints.PHONES, language);
+      const tablets = await getProducts(ProductEndPoints.TABLETS, language);
+      const accessories = await getProducts(ProductEndPoints.ACCESSORIES, language);
 
       setCategories([
         {
@@ -51,7 +55,7 @@ const CategorySection: React.FC = () => {
     };
 
     fetchCategories();
-  }, [t]);
+  }, [t, language]);
 
   return (
     <Container title={t('home.shop')}>
