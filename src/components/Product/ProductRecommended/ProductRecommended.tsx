@@ -9,6 +9,7 @@ import { shuffle } from '@/utils/shuffle';
 import ProductSlider from '@/components/ProductSlider/ProductSlider';
 import { Container } from '@/UI/Container/Container';
 import { LANGUAGE } from '@/constants/language';
+import AnimatedSection from '@/components/AnimatedSection/AnimatedSection';
 
 type Props = {
   language: LANGUAGE;
@@ -31,12 +32,14 @@ export const ProductRecommended: React.FC<Props> = ({ language }) => {
 
   return (
     <div className={styles.productSlider}>
-      <Container>
-        <ProductSlider
-          title={t('product.alsoLike')}
-          products={shuffle(products)}
-        />
-      </Container>
+      <AnimatedSection animationType={'fade-up'}>
+        <Container>
+          <ProductSlider
+            title={t('product.alsoLike')}
+            products={shuffle(products)}
+          />
+        </Container>
+      </AnimatedSection>
     </div>
   );
 };
