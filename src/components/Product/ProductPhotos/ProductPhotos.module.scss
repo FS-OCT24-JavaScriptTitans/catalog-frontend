@@ -5,11 +5,14 @@
   display: flex;
   aspect-ratio: 1;
   margin-bottom: 16px;
+  max-height: 464px;
+  margin-inline: auto;
 
-  @include mixines.tablet {
+  @include mixines.tablet-l {
     grid-column: 2/8;
     grid-row: 4;
     max-height: 440px;
+    margin-inline: 0;
   }
 
   @include mixines.desctop {
@@ -23,8 +26,9 @@
   grid-template-columns: repeat(5, 1fr);
   column-gap: 8px;
   margin: 16px 0 40px;
+  justify-items: center;
 
-  @include mixines.tablet {
+  @include mixines.tablet-l {
     grid-column: 1/2;
     display: block;
     margin: 0;

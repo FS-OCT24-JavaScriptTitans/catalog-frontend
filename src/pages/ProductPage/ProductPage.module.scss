@@ -3,11 +3,10 @@
 .product-card {
   margin-inline: 16px;
   max-width: 1200px;
-  overflow-x: hidden;
 
   @include mixines.page-grid;
 
-  @include mixines.tablet {
+  @include mixines.tablet-l {
     margin-inline: 24px;
   }
 
