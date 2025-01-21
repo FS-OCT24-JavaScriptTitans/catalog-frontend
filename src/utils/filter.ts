@@ -7,5 +7,11 @@ export const combineSomeFilter =
 
 export const filterByString =
   <T>(query: string, key: keyof T) =>
-  (item: T) =>
-    String(item[key])?.toLowerCase().includes(query.toLowerCase());
+  (item: T) => {
+    const itemValue = String(item[key])?.toLowerCase();
+
+    return query
+      .toLowerCase()
+      .split(' ')
+      .every((q) => itemValue.includes(q));
+  };

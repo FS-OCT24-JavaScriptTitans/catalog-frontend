@@ -10,6 +10,7 @@ type UseSearchProduct = (
 ) => {
   query: string;
   handleChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: () => void;
 };
 
 export const useSearchProduct: UseSearchProduct = (handleSearch, onClose) => {
@@ -22,24 +23,29 @@ export const useSearchProduct: UseSearchProduct = (handleSearch, onClose) => {
 
   const debouncedHandleSearch = debounce((query: string) => handleSearch(query), DELAY);
 
+  const handleSubmit = useCallback(() => {
+    if (query.trim().length >= 3) {
+      navigate(`/search?query=${query}&lang=${lang || 'en'}`);
+      setQuery('');
+      onClose?.();
+    }
+
+    setTimeout(() => onClose?.(), DELAY);
+  }, [query, lang, navigate, onClose]);
+
   const handleKeyPress = useCallback(
     (e: KeyboardEvent) => {
       if (e.code === 'Enter' && query.trim().length >= 3) {
-        navigate(`/search?query=${query}&lang=${lang || 'en'}`);
-        setQuery('');
+        handleSubmit();
       }
-
-      setTimeout(() => onClose?.(), DELAY);
     },
-    [navigate, query, lang, onClose],
+    [handleSubmit, query],
   );
 
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
-      const trimmedQuery = e.target.value.trim();
-
-      setQuery(trimmedQuery);
-      debouncedHandleSearch(trimmedQuery);
+      setQuery(e.target.value);
+      debouncedHandleSearch(e.target.value);
     },
     [debouncedHandleSearch],
   );
@@ -52,5 +58,5 @@ export const useSearchProduct: UseSearchProduct = (handleSearch, onClose) => {
     };
   }, [handleKeyPress]);
 
-  return { query, handleChange };
+  return { query, handleChange, handleSubmit };
 };
