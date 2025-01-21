@@ -1,12 +1,13 @@
 import { useSearchParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
+import NotFoundPage from '../NotFoundPage/NotFoundPage';
+
 import { SearchProduct } from '@/components/SearchProduct/SearchProduct';
 import { Product } from '@/types/Product.type';
 import { getAllProducts } from '@/api/products/products.api';
 import getfilterProducts from '@/utils/filtredProducts';
 import { Loader } from '@/components/Loader/Loader';
-import EmptyContainer from '@/UI/EmptyContainer/EmptyContainer';
 import { useLanguage } from '@/hooks/useLanguage';
 import { LANGUAGE } from '@/constants/language';
 import Pagination from '@/components/Pagination/Pagination';
@@ -53,13 +54,7 @@ const SearchProductPage = () => {
         return <Loader />;
 
       case !isLoading && !products.length:
-        return (
-          <EmptyContainer
-            title="Products not found"
-            pathToImg="/img/product-not-found.png"
-            alt="Products not found"
-          />
-        );
+        return <NotFoundPage />;
 
       default:
         return (
