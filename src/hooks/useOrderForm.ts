@@ -57,9 +57,12 @@ export const useOrderForm = () => {
 
       if (typeof newOrder !== 'string') {
         dispatch(addOrder({ order: newOrder }));
-        dispatch(clearCart());
-        notification('success', 'An order was placed');
         navigate(PATH.ORDERS);
+        notification('success', 'An order was placed');
+
+        setTimeout(() => {
+          dispatch(clearCart());
+        }, 300);
       } else {
         notification('error', newOrder);
       }

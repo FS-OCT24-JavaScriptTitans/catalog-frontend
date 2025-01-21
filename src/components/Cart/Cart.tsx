@@ -26,7 +26,7 @@ export const Cart = () => {
       </Container>
     : <EmptyContainer
         title="The Cart is empty"
-        pathToImg="/img/cart-is-empty.png"
+        pathToImg="/img/empty-cart.webp"
         alt="empty-order"
       />;
 };
