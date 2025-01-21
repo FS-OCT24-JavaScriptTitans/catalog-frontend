@@ -12,4 +12,5 @@ export enum PATH {
   PRODUCT = '/:productId?',
   SEARCH__PRODUCT = '/search',
   RIGHTS = '/rights',
+  CONTACTS = '/contacts',
 }

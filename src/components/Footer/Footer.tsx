@@ -26,7 +26,7 @@ export const Footer: React.FC = () => {
             className={s.link}
           />
           <NavigationLink
-            to={PATH.HOME}
+            to={PATH.CONTACTS}
             label={t('footer.contacts')}
             className={s.link}
           />

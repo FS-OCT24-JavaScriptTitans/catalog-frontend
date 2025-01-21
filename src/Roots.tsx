@@ -65,6 +65,11 @@ export const Root = () => (
               element={<Pages.NotFoundPage />}
             />
 
+            <Route
+              path={PATH.CONTACTS}
+              element={<Pages.ContactsPage />}
+            />
+
             {/* Auth Route */}
             <Route
               path={PATH.AUTH}
