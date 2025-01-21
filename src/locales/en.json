@@ -40,6 +40,7 @@
       "builtMemory": "Built in memory",
       "camera": "Camera",
       "zoom": "Zoom",
+      "models": "models",
       "about": "About",
       "wasPro": "And then there was Pro",
       "shopIt": "Shoot it. Flip it. Zoom it. Crop it. Cut it. Light it. Tweak it. Love it.",
@@ -50,7 +51,8 @@
         "alphabetically": "Alphabetically",
         "priceLow": "Price low",
         "priceHigh": "Price high",
-        "all": "All"
+        "all": "All",
+        "popularity": "Popularity"
       }
     },
     "footer": {
@@ -114,6 +116,7 @@
         "highlight4": "privacy",
         "part5": " is important to us."
       }
-    }
+    },
+    "searchTitle": "Found products"
   }
 }

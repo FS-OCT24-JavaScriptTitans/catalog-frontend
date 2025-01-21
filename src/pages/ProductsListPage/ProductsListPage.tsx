@@ -21,18 +21,19 @@ import AnimatedSection from '@/components/AnimatedSection/AnimatedSection';
 const sortOptions: Option<string>[] = [
   {
     id: 1,
-    value: 'popularity',
-    label: 'Popularity',
+    value: 'low-to-high',
+    label: 'product.sort.priceHigh',
   },
+
   {
     id: 2,
     value: 'high-to-low',
-    label: 'Price To Low',
+    label: 'product.sort.priceLow',
   },
   {
     id: 3,
-    value: 'low-to-high',
-    label: 'Price To High',
+    value: 'popularity',
+    label: 'product.sort.popularity',
   },
 ];
 const perPageOptions: Option<string>[] = [
@@ -150,7 +151,9 @@ const ProductsListPage: React.FC = () => {
             <span className={s.mini_title}>{t(`navigation.${formatLocation}`)}</span>
           </div>
           <h2 className={s.title}>{t(`navigation.${formatLocation}`)}</h2>
-          <p className={`${s.counter} primary-text`}>{`${products.length} models`}</p>
+          <p className={`${s.counter} primary-text`}>
+            {products.length} {t('product.models')}
+          </p>
 
           <div className={s.filter_block}>
             <div className={s.filter_item}>
@@ -165,7 +168,7 @@ const ProductsListPage: React.FC = () => {
               </div>
             </div>
             <div className={s.filter_item}>
-              <label className={s.mini_title}>Items on page</label>
+              <label className={s.mini_title}>{t('product.itemsOnPage')}</label>
               <div className={s.dropdown}>
                 <Dropdown
                   options={perPageOptions}
