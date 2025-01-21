@@ -6,7 +6,7 @@ import s from './Pagination.module.scss';
 import { Arrow } from '@/UI/Arrow/Arrow';
 
 export interface Props {
-  initialPage?: number;
+  forcePage?: number;
   marginPagesDisplayed?: number;
   pageCount: number;
   pageRangeDisplayed?: number;
@@ -14,11 +14,11 @@ export interface Props {
 }
 
 const Pagination: React.FC<Props> = (props) => {
-  const { initialPage, marginPagesDisplayed, pageCount, pageRangeDisplayed, onChange } = props;
+  const { forcePage, marginPagesDisplayed, pageCount, pageRangeDisplayed, onChange } = props;
 
   return (
     <ReactPaginate
-      initialPage={initialPage}
+      forcePage={forcePage}
       marginPagesDisplayed={marginPagesDisplayed}
       pageCount={pageCount}
       pageRangeDisplayed={pageRangeDisplayed}

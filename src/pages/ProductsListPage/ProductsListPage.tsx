@@ -20,8 +20,8 @@ import { ProductListSceleton } from '@/UI/Sceletones/ProductListSceleton/Product
 const sortOptions: Option<string>[] = [
   {
     id: 1,
-    value: 'newest',
-    label: 'Newest',
+    value: 'popularity',
+    label: 'Popularity',
   },
   {
     id: 2,
@@ -34,9 +34,26 @@ const sortOptions: Option<string>[] = [
     label: 'Price To High',
   },
 ];
+const perPageOptions: Option<string>[] = [
+  {
+    id: 1,
+    value: '16',
+    label: '16',
+  },
+  {
+    id: 2,
+    value: '24',
+    label: '24',
+  },
+  {
+    id: 3,
+    value: '32',
+    label: '32',
+  },
+];
 
 enum Sort {
-  Newest = 'newest',
+  Popularity = 'popularity',
   HighToLow = 'high-to-low',
   LowToHigh = 'low-to-high',
 }
@@ -46,17 +63,19 @@ const ProductsListPage: React.FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  const pageNumber = Number(new URLSearchParams(location.search).get('page')) || 1;
+  const params = new URLSearchParams(location.search);
+  const pageNumber = Number(params.get('page')) || 1;
+  const sortParam = params.get('sort') || Sort.Popularity;
+  const perProductSParam = params.get('perPage') || '16';
 
+  const [allProducts, setAllProducts] = useState<Product[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
-  const [currentPage, setCurrentPage] = useState(pageNumber);
   const [pagesCount, setPagesCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
+
   const { getLanguage } = useLanguage();
   const language = getLanguage() as LANGUAGE;
-
-  const productsPerPage = 16;
 
   const formatLocation = location.pathname.replace('/', '');
 
@@ -69,38 +88,53 @@ const ProductsListPage: React.FC = () => {
 
       setIsLoading(false);
 
-      const pagesQuantity = Math.ceil((productsData?.length || 0) / productsPerPage);
+      const pagesQuantity = Math.ceil((productsData?.length || 0) / +perProductSParam);
 
       setPagesCount(pagesQuantity);
 
       if (productsData) {
-        setProducts(productsData.slice((currentPage - 1) * productsPerPage, currentPage * productsPerPage));
+        setAllProducts(productsData);
       } else {
-        setProducts([]);
+        setAllProducts([]);
       }
     };
 
     fetchProducts();
-  }, [currentPage, formatLocation, language]);
+  }, [formatLocation, language, perProductSParam]);
+
+  const sortProducts = (productsData: Product[], sortValue: Sort) => {
+    if (sortValue === Sort.Popularity) {
+      return [...productsData].sort(() => Math.random() - 0.5);
+    }
+
+    return [...productsData].sort((a, b) =>
+      sortValue === Sort.HighToLow ? b.priceRegular - a.priceRegular
+      : sortValue === Sort.LowToHigh ? a.priceRegular - b.priceRegular
+      : 0,
+    );
+  };
+
+  useEffect(() => {
+    const sortedProducts = sortProducts(allProducts, sortParam as Sort);
+    const totalPages = Math.ceil(sortedProducts.length / +perProductSParam);
+
+    setPagesCount(totalPages);
+
+    const offset = (pageNumber - 1) * +perProductSParam;
+
+    setProducts(sortedProducts.slice(offset, offset + +perProductSParam));
+  }, [allProducts, sortParam, pageNumber, perProductSParam]);
 
   const handleSortChange = (sortValue: Sort) => {
-    const sortedProducts = [...products].sort((a, b) => {
-      switch (sortValue) {
-        case Sort.HighToLow:
-          return b.priceRegular - a.priceRegular;
-        case Sort.LowToHigh:
-          return a.priceRegular - b.priceRegular;
-        default:
-          return 0;
-      }
-    });
+    navigate(`${location.pathname}?page=1&sort=${sortValue}&perPage=${perProductSParam}`);
+  };
 
-    setProducts(sortedProducts);
+  const handlePerChange = (perQuantity: number) => {
+    navigate(`${location.pathname}?page=1&sort=${sortParam}&perPage=${perQuantity}`);
   };
 
   const handlePageChange = ({ selected }: { selected: number }) => {
-    setCurrentPage(selected + 1);
-    navigate(`${location.pathname}?page=${selected + 1}`);
+    navigate(`${location.pathname}?page=${selected + 1}&sort=${sortParam}&perPage=${perProductSParam}`);
     window.scrollTo(0, 0);
   };
 
@@ -115,7 +149,7 @@ const ProductsListPage: React.FC = () => {
           <span className={s.mini_title}>{t(`navigation.${formatLocation}`)}</span>
         </div>
         <h2 className={s.title}>{t(`navigation.${formatLocation}`)}</h2>
-        <p className={`${s.counter} primary-text`}>{`${products?.length} models`}</p>
+        <p className={`${s.counter} primary-text`}>{`${products.length} models`}</p>
 
         <div className={s.filter_block}>
           <div className={s.filter_item}>
@@ -125,6 +159,7 @@ const ProductsListPage: React.FC = () => {
                 options={sortOptions}
                 hasBorder
                 onChange={(value) => handleSortChange(value as Sort)}
+                urlParam="sort"
               />
             </div>
           </div>
@@ -132,8 +167,10 @@ const ProductsListPage: React.FC = () => {
             <label className={s.mini_title}>Items on page</label>
             <div className={s.dropdown}>
               <Dropdown
-                options={sortOptions}
+                options={perPageOptions}
                 hasBorder
+                onChange={(value) => handlePerChange(+value)}
+                urlParam="perPage"
               />
             </div>
           </div>
@@ -144,11 +181,11 @@ const ProductsListPage: React.FC = () => {
         <ProductListSceleton />
       : <ProductList products={products} />}
       <Pagination
-        initialPage={pageNumber - 1}
+        forcePage={pageNumber - 1}
         pageCount={pagesCount}
         onChange={handlePageChange}
-        pageRangeDisplayed={3}
-        marginPagesDisplayed={0}
+        pageRangeDisplayed={1}
+        marginPagesDisplayed={1}
       />
     </section>
   );
