@@ -7,7 +7,7 @@
 
   @include mixines.page-grid;
 
-  @include mixines.tablet-l {
+  @include mixines.tablet {
     margin-inline: 24px;
   }
 

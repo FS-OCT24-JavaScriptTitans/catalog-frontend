@@ -4,7 +4,7 @@
   @include mixines.font(12px, 15.4px, 600);
   grid-column: 1/-1;
 
-  @include mixines.tablet-l {
+  @include mixines.tablet {
     grid-column: 8/-1;
   }
 
