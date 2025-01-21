@@ -40,9 +40,6 @@ const ProductPage: React.FC = () => {
         .then((currentItem) => {
           setProduct(currentItem);
         })
-        .catch(() => {
-          navigate('*');
-        })
         .finally(() => setLoading(false));
     }
   }, [productId, language, navigate]);
