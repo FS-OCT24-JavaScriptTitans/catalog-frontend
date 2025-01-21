@@ -17,7 +17,7 @@ const ProductPhotoSwiper: React.FC<Props> = ({ product, selectedImage, setSelect
   const swiperRef = useRef<SwiperClass | null>(null);
 
   const handleSlideChange = (swiper: SwiperClass) => {
-    const currentIndex = swiper.activeIndex;
+    const currentIndex = swiper.realIndex;
 
     setSelectedImage(product.images[currentIndex]);
   };
@@ -27,6 +27,7 @@ const ProductPhotoSwiper: React.FC<Props> = ({ product, selectedImage, setSelect
       modules={[Navigation]}
       spaceBetween={100}
       slidesPerView={1}
+      loop
       navigation={{
         nextEl: `.${styles.nextButton}`,
         prevEl: `.${styles.prevButton}`,
