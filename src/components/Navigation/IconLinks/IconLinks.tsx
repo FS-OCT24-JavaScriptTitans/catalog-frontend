@@ -12,11 +12,13 @@ import Cart from '@/assets/Shopping.svg?react';
 import Favorites from '@/assets/Favourites.svg?react';
 import NavigationLink from '@/UI/NavLink/NavigationLink';
 import { PATH } from '@/constants/path';
-import { useAppSelector } from '@/redux/hooks';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { selectCart, selectFavorites, selectUser } from '@/redux/selectors';
 import { Product } from '@/types/Product.type';
 import { CartProduct } from '@/types/Cart.types';
 import { ThemeSwitcher } from '@/components/ThemeSwitcher/ThemeSwitcher';
+import { removeUser } from '@/redux/slices/user/user.slice';
+import useTokens from '@/hooks/useTokens';
 
 type Props = {
   handleClick: () => void;
@@ -26,12 +28,19 @@ export const IconLinks: React.FC<Props> = ({ handleClick }) => {
   const user = useAppSelector(selectUser, shallowEqual);
   const cartList = useAppSelector(selectCart, shallowEqual);
   const favoritesList = useAppSelector(selectFavorites, shallowEqual);
+  const dispatch = useAppDispatch();
+  const { removeTokens } = useTokens();
 
   const counter = (list: Product[] | CartProduct[]) =>
     list.length !== 0 && <span className={s.counter}>{list.length}</span>;
 
   const navLinkStyle = ({ isActive }: NavLinkRenderProps) =>
     `${s.icon} ${linkStyle.link} ${isActive ? linkStyle.active_link : ''}`;
+
+  const handleLogOut = () => {
+    dispatch(removeUser());
+    removeTokens();
+  };
 
   return (
     <div className={s.icons}>
@@ -80,7 +89,7 @@ export const IconLinks: React.FC<Props> = ({ handleClick }) => {
             to={PATH.AUTH}
             label={<Exit />}
             className={navLinkStyle}
-            handleClick={handleClick}
+            handleClick={handleLogOut}
           />
         </span>
       }
