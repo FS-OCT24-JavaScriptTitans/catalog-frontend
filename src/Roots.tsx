@@ -54,6 +54,11 @@ export const Root = () => (
               element={<Pages.FavoritesPage />}
             />
 
+            <Route
+              path={PATH.RIGHTS}
+              element={<Pages.RightsPage />}
+            />
+
             {/*  NOT FOUND */}
             <Route
               path={'*'}

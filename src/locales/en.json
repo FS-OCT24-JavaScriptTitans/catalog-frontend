@@ -73,6 +73,47 @@
     },
     "search": "Search for a product",
     "favorites": "Favorites",
-    "back": "Back"
+    "back": "Back",
+    "rights": {
+      "title": "Rights",
+      "titleInfo": "Right to Information",
+      "titleReturn": "Right to Return",
+      "titleConfidentiality": "Right to Confidentiality",
+      "textInfo": {
+        "part1": "Customers have the right to receive ",
+        "highlight1": "accurate",
+        "part2": "and",
+        "highlight2": "comprehensive information",
+        "part3": " about products and services offered by our company. This includes details on product ",
+        "highlight3": "specifications",
+        "highlight4": "usage",
+        "highlight5": "warranties",
+        "part4": "and any associated ",
+        "highlight6": "terms and conditions",
+        "part5": "Transparency is our priority."
+      },
+      "textReturn": {
+        "part1": "Buyers have the right to return products under the conditions outlined in our ",
+        "highlight1": "return policy",
+        "part2": ". This includes maintaining the product's ",
+        "highlight2": "original condition",
+        "part3": " and ",
+        "highlight3": "packaging integrity",
+        "part4": ". Please refer to our detailed ",
+        "highlight4": "return guidelines",
+        "part5": " to ensure a smooth and hassle-free process."
+      },
+      "textConfidentiality": {
+        "part1": "We are committed to ensuring the ",
+        "highlight1": "security",
+        "part2": " and ",
+        "highlight2": "confidentiality",
+        "part3": " of your personal data. All information provided by customers is processed and stored strictly in compliance with applicable ",
+        "highlight3": "data protection laws",
+        "part4": " and regulations. Your ",
+        "highlight4": "privacy",
+        "part5": " is important to us."
+      }
+    }
   }
 }

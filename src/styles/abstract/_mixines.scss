@@ -25,6 +25,12 @@
   }
 }
 
+@mixin mobile-s {
+  @media (min-width: constants.$mobile-s-width) {
+    @content;
+  }
+}
+
 @mixin mobile-l {
   @media (min-width: constants.$mobile-l-width) {
     @content;

@@ -8,11 +8,15 @@ interface Props {
   children: ReactNode;
   mb?: string;
   mt?: string;
+  containerMb?: string;
 }
 
-export const Container: FC<Props> = ({ title, titlePB = '24px', children, mb, mt }) => (
+export const Container: FC<Props> = ({ title, titlePB = '24px', children, mb, mt, containerMb }) => (
   <section style={{ marginBottom: mb, marginTop: mt }}>
-    <div className={s.container}>
+    <div
+      className={s.container}
+      style={{ marginBottom: containerMb }}
+    >
       {title && (
         <h2
           className={s.title}

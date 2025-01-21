@@ -12,4 +12,5 @@ export const Pages = {
   ProductPage: lazy(() => import('../pages/ProductPage/ProductPage')),
   SearchProductPage: lazy(() => import('../pages/SearchProductPage/SearchProductPage')),
   NotFoundPage: lazy(() => import('../pages/NotFoundPage/NotFoundPage')),
+  RightsPage: lazy(() => import('../pages/RightsPage/RightsPage')),
 };

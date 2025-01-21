@@ -1,0 +1,14 @@
+@use '../../styles/abstract/mixines';
+
+.wrapper {
+  @include mixines.flex-container(center, start, column);
+  margin-bottom: 20px;
+
+  @include mixines.tablet-xl {
+    flex-direction: row;
+  }
+}
+
+.year {
+  text-align: center;
+}
