@@ -20,9 +20,12 @@
   --button-hover-light-color: #17203166;
   --black-hover-color: #0000000d;
   --dark-back-drop-color: #0003;
+  --modal-back-drop-color: rgb(0 0 0 / 58.6%);
 }
 
 #root {
+  --modal-backdrop-color: var(--modal-back-drop-color);
+  --modal-border-color: var(--dark-back-drop-color);
   --table-shadow-color: var(--dark-back-drop-color);
   --table-border-color: var(--dark-text-color);
   --dropdown-bgc-color: var(--white-color);
@@ -47,6 +50,7 @@
 }
 
 #root.dark {
+  --modal-border-color: var(--light-table-shadow-color);
   --table-shadow-color: var(--light-table-shadow-color);
   --table-border-color: var(--purple-color);
   --dropdown-bgc-color: var(--dark-primary-color);

@@ -6,19 +6,26 @@ import { useOrders } from '@/hooks/useOrders';
 const OrdersPage = () => {
   const { orders, isLoading } = useOrders();
 
-  return (
-    <>
-      {isLoading && <Loader />}
-      {orders.length ?
-        <Orders orders={orders} />
-      : <EmptyContainer
-          title="There no orders yet"
-          pathToImg="/img/order-is-empty.png"
-          alt="empty-order"
-        />
-      }
-    </>
-  );
+  const getView = () => {
+    switch (true) {
+      case isLoading:
+        return <Loader />;
+
+      case !isLoading && !!orders.length:
+        return <Orders orders={orders} />;
+
+      default:
+        return (
+          <EmptyContainer
+            title="There no orders yet"
+            pathToImg="/img/order-is-empty.png"
+            alt="empty-order"
+          />
+        );
+    }
+  };
+
+  return getView();
 };
 
 export default OrdersPage;
