@@ -20,11 +20,14 @@ export const Footer: React.FC = () => {
           <Logo />
         </span>
         <nav className={s.links}>
-          <NavigationLink
-            to={PATH.HOME}
-            label="Github"
+          <a
+            href={PATH.GITHUB}
             className={s.link}
-          />
+            target="_blank"
+            rel="noreferrer"
+          >
+            Github
+          </a>
           <NavigationLink
             to={PATH.CONTACTS}
             label={t('footer.contacts')}
