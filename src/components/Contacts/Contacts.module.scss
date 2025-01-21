@@ -1,6 +1,5 @@
+@use '../../styles/abstract/mixines';
+
 .container {
-  display: flex;
-  gap: 20px 10px;
-  flex-wrap: wrap;
-  justify-content: center;
+  @include mixines.flex-container(stretch, center, row, 20px 30px, wrap);
 }

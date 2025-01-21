@@ -9,7 +9,7 @@ type Props = {
 };
 
 export const ContactCard: React.FC<Props> = ({ developer }) => {
-  const { name, photo, github } = developer;
+  const { name, photo, github, desc } = developer;
 
   return (
     <article className={s.contact}>
@@ -18,13 +18,17 @@ export const ContactCard: React.FC<Props> = ({ developer }) => {
         alt="photo"
         className={s.contact__img}
       />
-      <h4>{name}</h4>
-      <Link
-        to={github}
-        target="_blank"
-      >
-        GitHub
-      </Link>
+      <span className={s.contacts__desc}>
+        <h4>{name}</h4>
+        <p className="small-text">{desc}</p>
+        <Link
+          to={github}
+          target="_blank"
+          className={s.link}
+        >
+          GitHub
+        </Link>
+      </span>
     </article>
   );
 };

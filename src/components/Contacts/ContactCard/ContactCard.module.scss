@@ -1,23 +1,49 @@
+@use '../../../styles/abstract/mixines';
+@use '../../../styles/abstract/constants';
+
 .contact {
   border: 1px solid var(--element-color);
   border-radius: 10px;
   padding: 24px;
-  max-width: 400px;
+  max-width: 480px;
+  width: 100%;
   transition: all 0.3s;
 
   &__img {
-    max-width: 250px;
+    max-width: 270px;
     max-height: 250px;
     width: 100%;
     height: 100%;
     object-position: center;
     object-fit: cover;
-    padding-bottom: 10px;
-    margin: 0 auto;
+    margin: 0 auto 10px;
     border-radius: 10px;
+  }
+
+  h4 {
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+
+  p {
+    color: var(--text-color);
+    margin-bottom: 7px;
   }
 
   &:hover {
     transform: scale(1.05);
   }
+
+  @include mixines.tablet {
+    max-width: 280px;
+  }
+
+  @include mixines.desctop {
+    max-width: 350px;
+  }
+}
+
+.link {
+  color: var(--main-color);
+  font-weight: 800;
 }
