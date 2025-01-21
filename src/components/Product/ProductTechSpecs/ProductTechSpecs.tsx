@@ -13,7 +13,7 @@ const ProductTechSpecs: React.FC<Props> = ({ techSpecs }) => {
 
   return (
     <article className={styles.techSpecs}>
-      <h3>Tech specs</h3>
+      <h3>{t('product.techSpecs')}</h3>
 
       <div className={cn(styles.techSpecLine, 'line')} />
 

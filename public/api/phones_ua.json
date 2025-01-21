@@ -13,14 +13,14 @@
         "priceRegular": 1100,
         "priceDiscount": 1050,
         "colorsAvailable": [
-            "чорний",
-            "зелений",
-            "жовтий",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "green",
+            "yellow",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "чорний",
+        "color": "black",
         "images": [
             "img/phones/apple-iphone-11/black/00.webp",
             "img/phones/apple-iphone-11/black/01.webp",
@@ -78,14 +78,14 @@
         "priceRegular": 1100,
         "priceDiscount": 1050,
         "colorsAvailable": [
-            "чорний",
-            "зелений",
-            "жовтий",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "green",
+            "yellow",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "зелений",
+        "color": "green",
         "images": [
             "img/phones/apple-iphone-11/green/00.webp",
             "img/phones/apple-iphone-11/green/01.webp",
@@ -143,14 +143,14 @@
         "priceRegular": 1100,
         "priceDiscount": 1050,
         "colorsAvailable": [
-            "чорний",
-            "зелений",
-            "жовтий",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "green",
+            "yellow",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "фіолетовий",
+        "color": "purple",
         "images": [
             "img/phones/apple-iphone-11/purple/00.webp",
             "img/phones/apple-iphone-11/purple/01.webp",
@@ -208,14 +208,14 @@
         "priceRegular": 1100,
         "priceDiscount": 1050,
         "colorsAvailable": [
-            "чорний",
-            "зелений",
-            "жовтий",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "green",
+            "yellow",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "червоний",
+        "color": "red",
         "images": [
             "img/phones/apple-iphone-11/red/00.webp",
             "img/phones/apple-iphone-11/red/01.webp",
@@ -273,14 +273,14 @@
         "priceRegular": 1100,
         "priceDiscount": 1050,
         "colorsAvailable": [
-            "чорний",
-            "зелений",
-            "жовтий",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "green",
+            "yellow",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "білий",
+        "color": "white",
         "images": [
             "img/phones/apple-iphone-11/white/00.webp",
             "img/phones/apple-iphone-11/white/01.webp",
@@ -338,14 +338,14 @@
         "priceRegular": 1100,
         "priceDiscount": 1050,
         "colorsAvailable": [
-            "чорний",
-            "зелений",
-            "жовтий",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "green",
+            "yellow",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "жовтий",
+        "color": "yellow",
         "images": [
             "img/phones/apple-iphone-11/yellow/00.webp",
             "img/phones/apple-iphone-11/yellow/01.webp",
@@ -403,14 +403,14 @@
         "priceRegular": 1172,
         "priceDiscount": 1115,
         "colorsAvailable": [
-            "чорний",
-            "зелений",
-            "жовтий",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "green",
+            "yellow",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "чорний",
+        "color": "black",
         "images": [
             "img/phones/apple-iphone-11/black/00.webp",
             "img/phones/apple-iphone-11/black/01.webp",
@@ -468,14 +468,14 @@
         "priceRegular": 1172,
         "priceDiscount": 1115,
         "colorsAvailable": [
-            "чорний",
-            "зелений",
-            "жовтий",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "green",
+            "yellow",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "зелений",
+        "color": "green",
         "images": [
             "img/phones/apple-iphone-11/green/00.webp",
             "img/phones/apple-iphone-11/green/01.webp",
@@ -533,14 +533,14 @@
         "priceRegular": 1172,
         "priceDiscount": 1115,
         "colorsAvailable": [
-            "чорний",
-            "зелений",
-            "жовтий",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "green",
+            "yellow",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "фіолетовий",
+        "color": "purple",
         "images": [
             "img/phones/apple-iphone-11/purple/00.webp",
             "img/phones/apple-iphone-11/purple/01.webp",
@@ -598,14 +598,14 @@
         "priceRegular": 1172,
         "priceDiscount": 1115,
         "colorsAvailable": [
-            "чорний",
-            "зелений",
-            "жовтий",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "green",
+            "yellow",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "червоний",
+        "color": "red",
         "images": [
             "img/phones/apple-iphone-11/red/00.webp",
             "img/phones/apple-iphone-11/red/01.webp",
@@ -663,14 +663,14 @@
         "priceRegular": 1172,
         "priceDiscount": 1115,
         "colorsAvailable": [
-            "чорний",
-            "зелений",
-            "жовтий",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "green",
+            "yellow",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "білий",
+        "color": "white",
         "images": [
             "img/phones/apple-iphone-11/white/00.webp",
             "img/phones/apple-iphone-11/white/01.webp",
@@ -728,14 +728,14 @@
         "priceRegular": 1172,
         "priceDiscount": 1115,
         "colorsAvailable": [
-            "чорний",
-            "зелений",
-            "жовтий",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "green",
+            "yellow",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "жовтий",
+        "color": "yellow",
         "images": [
             "img/phones/apple-iphone-11/yellow/00.webp",
             "img/phones/apple-iphone-11/yellow/01.webp",
@@ -793,14 +793,14 @@
         "priceRegular": 932,
         "priceDiscount": 880,
         "colorsAvailable": [
-            "чорний",
-            "зелений",
-            "жовтий",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "green",
+            "yellow",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "чорний",
+        "color": "black",
         "images": [
             "img/phones/apple-iphone-11/black/00.webp",
             "img/phones/apple-iphone-11/black/01.webp",
@@ -858,14 +858,14 @@
         "priceRegular": 932,
         "priceDiscount": 880,
         "colorsAvailable": [
-            "чорний",
-            "зелений",
-            "жовтий",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "green",
+            "yellow",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "зелений",
+        "color": "green",
         "images": [
             "img/phones/apple-iphone-11/green/00.webp",
             "img/phones/apple-iphone-11/green/01.webp",
@@ -923,14 +923,14 @@
         "priceRegular": 932,
         "priceDiscount": 880,
         "colorsAvailable": [
-            "чорний",
-            "зелений",
-            "жовтий",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "green",
+            "yellow",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "фіолетовий",
+        "color": "purple",
         "images": [
             "img/phones/apple-iphone-11/purple/00.webp",
             "img/phones/apple-iphone-11/purple/01.webp",
@@ -988,14 +988,14 @@
         "priceRegular": 932,
         "priceDiscount": 880,
         "colorsAvailable": [
-            "чорний",
-            "зелений",
-            "жовтий",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "green",
+            "yellow",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "червоний",
+        "color": "red",
         "images": [
             "img/phones/apple-iphone-11/red/00.webp",
             "img/phones/apple-iphone-11/red/01.webp",
@@ -1053,14 +1053,14 @@
         "priceRegular": 932,
         "priceDiscount": 880,
         "colorsAvailable": [
-            "чорний",
-            "зелений",
-            "жовтий",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "green",
+            "yellow",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "білий",
+        "color": "white",
         "images": [
             "img/phones/apple-iphone-11/white/00.webp",
             "img/phones/apple-iphone-11/white/01.webp",
@@ -1118,14 +1118,14 @@
         "priceRegular": 932,
         "priceDiscount": 880,
         "colorsAvailable": [
-            "чорний",
-            "зелений",
-            "жовтий",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "green",
+            "yellow",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "жовтий",
+        "color": "yellow",
         "images": [
             "img/phones/apple-iphone-11/yellow/00.webp",
             "img/phones/apple-iphone-11/yellow/01.webp",
@@ -1183,12 +1183,12 @@
         "priceRegular": 1640,
         "priceDiscount": 1570,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-11-pro/gold/00.webp",
             "img/phones/apple-iphone-11-pro/gold/01.webp",
@@ -1244,12 +1244,12 @@
         "priceRegular": 1640,
         "priceDiscount": 1570,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "темно-зелений",
+        "color": "midnightgreen",
         "images": [
             "img/phones/apple-iphone-11-pro/midnightgreen/00.webp",
             "img/phones/apple-iphone-11-pro/midnightgreen/01.webp",
@@ -1306,12 +1306,12 @@
         "priceRegular": 1640,
         "priceDiscount": 1570,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "сріблястий",
+        "color": "silver",
         "images": [
             "img/phones/apple-iphone-11-pro/silver/00.webp",
             "img/phones/apple-iphone-11-pro/silver/01.webp",
@@ -1367,12 +1367,12 @@
         "priceRegular": 1640,
         "priceDiscount": 1570,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "сірий космос",
+        "color": "space gray",
         "images": [
             "img/phones/apple-iphone-11-pro/spacegray/00.webp",
             "img/phones/apple-iphone-11-pro/spacegray/01.webp",
@@ -1428,12 +1428,12 @@
         "priceRegular": 1880,
         "priceDiscount": 1780,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-11-pro/gold/00.webp",
             "img/phones/apple-iphone-11-pro/gold/01.webp",
@@ -1489,12 +1489,12 @@
         "priceRegular": 1880,
         "priceDiscount": 1780,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "темно-зелений",
+        "color": "midnightgreen",
         "images": [
             "img/phones/apple-iphone-11-pro/midnightgreen/00.webp",
             "img/phones/apple-iphone-11-pro/midnightgreen/01.webp",
@@ -1551,12 +1551,12 @@
         "priceRegular": 1880,
         "priceDiscount": 1780,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "сріблястий",
+        "color": "silver",
         "images": [
             "img/phones/apple-iphone-11-pro/silver/00.webp",
             "img/phones/apple-iphone-11-pro/silver/01.webp",
@@ -1612,12 +1612,12 @@
         "priceRegular": 1880,
         "priceDiscount": 1780,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "сірий космос",
+        "color": "space gray",
         "images": [
             "img/phones/apple-iphone-11-pro/spacegray/00.webp",
             "img/phones/apple-iphone-11-pro/spacegray/01.webp",
@@ -1673,12 +1673,12 @@
         "priceRegular": 1312,
         "priceDiscount": 1270,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-11-pro/gold/00.webp",
             "img/phones/apple-iphone-11-pro/gold/01.webp",
@@ -1734,12 +1734,12 @@
         "priceRegular": 1312,
         "priceDiscount": 1270,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "темно-зелений",
+        "color": "midnightgreen",
         "images": [
             "img/phones/apple-iphone-11-pro/midnightgreen/00.webp",
             "img/phones/apple-iphone-11-pro/midnightgreen/01.webp",
@@ -1796,12 +1796,12 @@
         "priceRegular": 1312,
         "priceDiscount": 1270,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "сріблястий",
+        "color": "silver",
         "images": [
             "img/phones/apple-iphone-11-pro/silver/00.webp",
             "img/phones/apple-iphone-11-pro/silver/01.webp",
@@ -1857,12 +1857,12 @@
         "priceRegular": 1312,
         "priceDiscount": 1270,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "сірий космос",
+        "color": "space gray",
         "images": [
             "img/phones/apple-iphone-11-pro/spacegray/00.webp",
             "img/phones/apple-iphone-11-pro/spacegray/01.webp",
@@ -1918,12 +1918,12 @@
         "priceRegular": 1776,
         "priceDiscount": 1680,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-11-pro-max/gold/00.webp",
             "img/phones/apple-iphone-11-pro-max/gold/01.webp",
@@ -1979,12 +1979,12 @@
         "priceRegular": 1776,
         "priceDiscount": 1680,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "темно-зелений",
+        "color": "midnightgreen",
         "images": [
             "img/phones/apple-iphone-11-pro-max/midnightgreen/00.webp",
             "img/phones/apple-iphone-11-pro-max/midnightgreen/01.webp",
@@ -2040,12 +2040,12 @@
         "priceRegular": 1776,
         "priceDiscount": 1680,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "сріблястий",
+        "color": "silver",
         "images": [
             "img/phones/apple-iphone-11-pro-max/silver/00.webp",
             "img/phones/apple-iphone-11-pro-max/silver/01.webp",
@@ -2101,12 +2101,12 @@
         "priceRegular": 1776,
         "priceDiscount": 1680,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "сірий космос",
+        "color": "space gray",
         "images": [
             "img/phones/apple-iphone-11-pro-max/spacegray/00.webp",
             "img/phones/apple-iphone-11-pro-max/spacegray/01.webp",
@@ -2162,12 +2162,12 @@
         "priceRegular": 2020,
         "priceDiscount": 1930,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-11-pro-max/gold/00.webp",
             "img/phones/apple-iphone-11-pro-max/gold/01.webp",
@@ -2223,12 +2223,12 @@
         "priceRegular": 2020,
         "priceDiscount": 1930,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "темно-зелений",
+        "color": "midnightgreen",
         "images": [
             "img/phones/apple-iphone-11-pro-max/midnightgreen/00.webp",
             "img/phones/apple-iphone-11-pro-max/midnightgreen/01.webp",
@@ -2284,12 +2284,12 @@
         "priceRegular": 2020,
         "priceDiscount": 1930,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "сріблястий",
+        "color": "silver",
         "images": [
             "img/phones/apple-iphone-11-pro-max/silver/00.webp",
             "img/phones/apple-iphone-11-pro-max/silver/01.webp",
@@ -2345,12 +2345,12 @@
         "priceRegular": 2020,
         "priceDiscount": 1930,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "сірий космос",
+        "color": "space gray",
         "images": [
             "img/phones/apple-iphone-11-pro-max/spacegray/00.webp",
             "img/phones/apple-iphone-11-pro-max/spacegray/01.webp",
@@ -2406,12 +2406,12 @@
         "priceRegular": 1480,
         "priceDiscount": 1400,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-11-pro-max/gold/00.webp",
             "img/phones/apple-iphone-11-pro-max/gold/01.webp",
@@ -2467,12 +2467,12 @@
         "priceRegular": 1480,
         "priceDiscount": 1400,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "темно-зелений",
+        "color": "midnightgreen",
         "images": [
             "img/phones/apple-iphone-11-pro-max/midnightgreen/00.webp",
             "img/phones/apple-iphone-11-pro-max/midnightgreen/01.webp",
@@ -2528,12 +2528,12 @@
         "priceRegular": 1480,
         "priceDiscount": 1400,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "сріблястий",
+        "color": "silver",
         "images": [
             "img/phones/apple-iphone-11-pro-max/silver/00.webp",
             "img/phones/apple-iphone-11-pro-max/silver/01.webp",
@@ -2589,12 +2589,12 @@
         "priceRegular": 1480,
         "priceDiscount": 1400,
         "colorsAvailable": [
-            "сірий космос",
-            "темно-зелений",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "midnightgreen",
+            "gold",
+            "silver"
         ],
-        "color": "сірий космос",
+        "color": "space gray",
         "images": [
             "img/phones/apple-iphone-11-pro-max/spacegray/00.webp",
             "img/phones/apple-iphone-11-pro-max/spacegray/01.webp",
@@ -2648,12 +2648,12 @@
         "priceRegular": 400,
         "priceDiscount": 375,
         "colorsAvailable": [
-            "чорний",
+            "black",
             "rosegold",
-            "золотий",
-            "сріблястий"
+            "gold",
+            "silver"
         ],
-        "color": "чорний",
+        "color": "black",
         "images": [
             "img/phones/apple-iphone-7/black/00.webp",
             "img/phones/apple-iphone-7/black/01.webp",
@@ -2709,12 +2709,12 @@
         "priceRegular": 400,
         "priceDiscount": 375,
         "colorsAvailable": [
-            "чорний",
+            "black",
             "rosegold",
-            "золотий",
-            "сріблястий"
+            "gold",
+            "silver"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-7/gold/00.webp",
             "img/phones/apple-iphone-7/gold/01.webp",
@@ -2770,10 +2770,10 @@
         "priceRegular": 400,
         "priceDiscount": 375,
         "colorsAvailable": [
-            "чорний",
+            "black",
             "rosegold",
-            "золотий",
-            "сріблястий"
+            "gold",
+            "silver"
         ],
         "color": "rosegold",
         "images": [
@@ -2831,12 +2831,12 @@
         "priceRegular": 400,
         "priceDiscount": 375,
         "colorsAvailable": [
-            "чорний",
+            "black",
             "rosegold",
-            "золотий",
-            "сріблястий"
+            "gold",
+            "silver"
         ],
-        "color": "сріблястий",
+        "color": "silver",
         "images": [
             "img/phones/apple-iphone-7/silver/00.webp",
             "img/phones/apple-iphone-7/silver/01.webp",
@@ -2892,12 +2892,12 @@
         "priceRegular": 540,
         "priceDiscount": 500,
         "colorsAvailable": [
-            "чорний",
+            "black",
             "rosegold",
-            "золотий",
-            "сріблястий"
+            "gold",
+            "silver"
         ],
-        "color": "чорний",
+        "color": "black",
         "images": [
             "img/phones/apple-iphone-7-plus/black/00.webp",
             "img/phones/apple-iphone-7-plus/black/01.webp",
@@ -2953,12 +2953,12 @@
         "priceRegular": 540,
         "priceDiscount": 500,
         "colorsAvailable": [
-            "чорний",
+            "black",
             "rosegold",
-            "золотий",
-            "сріблястий"
+            "gold",
+            "silver"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-7-plus/gold/00.webp",
             "img/phones/apple-iphone-7-plus/gold/01.webp",
@@ -3014,10 +3014,10 @@
         "priceRegular": 540,
         "priceDiscount": 500,
         "colorsAvailable": [
-            "чорний",
+            "black",
             "rosegold",
-            "золотий",
-            "сріблястий"
+            "gold",
+            "silver"
         ],
         "color": "rosegold",
         "images": [
@@ -3075,12 +3075,12 @@
         "priceRegular": 540,
         "priceDiscount": 500,
         "colorsAvailable": [
-            "чорний",
+            "black",
             "rosegold",
-            "золотий",
-            "сріблястий"
+            "gold",
+            "silver"
         ],
-        "color": "сріблястий",
+        "color": "silver",
         "images": [
             "img/phones/apple-iphone-7-plus/silver/00.webp",
             "img/phones/apple-iphone-7-plus/silver/01.webp",
@@ -3136,11 +3136,11 @@
         "priceRegular": 600,
         "priceDiscount": 550,
         "colorsAvailable": [
-            "сірий космос",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "gold",
+            "silver"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-8/gold/00.webp",
             "img/phones/apple-iphone-8/gold/01.webp",
@@ -3195,11 +3195,11 @@
         "priceRegular": 600,
         "priceDiscount": 550,
         "colorsAvailable": [
-            "сірий космос",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "gold",
+            "silver"
         ],
-        "color": "сріблястий",
+        "color": "silver",
         "images": [
             "img/phones/apple-iphone-8/silver/00.webp",
             "img/phones/apple-iphone-8/silver/01.webp",
@@ -3254,11 +3254,11 @@
         "priceRegular": 600,
         "priceDiscount": 550,
         "colorsAvailable": [
-            "сірий космос",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "gold",
+            "silver"
         ],
-        "color": "сірий космос",
+        "color": "space gray",
         "images": [
             "img/phones/apple-iphone-8/spacegray/00.webp",
             "img/phones/apple-iphone-8/spacegray/01.webp",
@@ -3314,9 +3314,9 @@
         "priceRegular": 880,
         "priceDiscount": 815,
         "colorsAvailable": [
-            "білий",
-            "жовтий",
-            "червоний",
+            "white",
+            "yellow",
+            "red",
             "coral"
         ],
         "color": "coral",
@@ -3376,12 +3376,12 @@
         "priceRegular": 880,
         "priceDiscount": 815,
         "colorsAvailable": [
-            "білий",
-            "жовтий",
-            "червоний",
+            "white",
+            "yellow",
+            "red",
             "coral"
         ],
-        "color": "червоний",
+        "color": "red",
         "images": [
             "img/phones/apple-iphone-xr/red/00.webp",
             "img/phones/apple-iphone-xr/red/01.webp",
@@ -3438,12 +3438,12 @@
         "priceRegular": 880,
         "priceDiscount": 815,
         "colorsAvailable": [
-            "білий",
-            "жовтий",
-            "червоний",
+            "white",
+            "yellow",
+            "red",
             "coral"
         ],
-        "color": "білий",
+        "color": "white",
         "images": [
             "img/phones/apple-iphone-xr/white/00.webp",
             "img/phones/apple-iphone-xr/white/01.webp",
@@ -3500,12 +3500,12 @@
         "priceRegular": 880,
         "priceDiscount": 815,
         "colorsAvailable": [
-            "білий",
-            "жовтий",
-            "червоний",
+            "white",
+            "yellow",
+            "red",
             "coral"
         ],
-        "color": "жовтий",
+        "color": "yellow",
         "images": [
             "img/phones/apple-iphone-xr/yellow/00.webp",
             "img/phones/apple-iphone-xr/yellow/01.webp",
@@ -3562,9 +3562,9 @@
         "priceRegular": 712,
         "priceDiscount": 670,
         "colorsAvailable": [
-            "білий",
-            "жовтий",
-            "червоний",
+            "white",
+            "yellow",
+            "red",
             "coral"
         ],
         "color": "coral",
@@ -3622,12 +3622,12 @@
         "priceRegular": 712,
         "priceDiscount": 670,
         "colorsAvailable": [
-            "білий",
-            "жовтий",
-            "червоний",
+            "white",
+            "yellow",
+            "red",
             "coral"
         ],
-        "color": "червоний",
+        "color": "red",
         "images": [
             "img/phones/apple-iphone-xr/red/00.webp",
             "img/phones/apple-iphone-xr/red/01.webp",
@@ -3684,12 +3684,12 @@
         "priceRegular": 712,
         "priceDiscount": 670,
         "colorsAvailable": [
-            "білий",
-            "жовтий",
-            "червоний",
+            "white",
+            "yellow",
+            "red",
             "coral"
         ],
-        "color": "білий",
+        "color": "white",
         "images": [
             "img/phones/apple-iphone-xr/white/00.webp",
             "img/phones/apple-iphone-xr/white/01.webp",
@@ -3746,12 +3746,12 @@
         "priceRegular": 712,
         "priceDiscount": 670,
         "colorsAvailable": [
-            "білий",
-            "жовтий",
-            "червоний",
+            "white",
+            "yellow",
+            "red",
             "coral"
         ],
-        "color": "жовтий",
+        "color": "yellow",
         "images": [
             "img/phones/apple-iphone-xr/yellow/00.webp",
             "img/phones/apple-iphone-xr/yellow/01.webp",
@@ -3808,10 +3808,10 @@
         "priceRegular": 960,
         "priceDiscount": 900,
         "colorsAvailable": [
-            "сірий космос",
-            "золотий"
+            "space gray",
+            "gold"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-xs/gold/00.webp",
             "img/phones/apple-iphone-xs/gold/01.webp",
@@ -3868,10 +3868,10 @@
         "priceRegular": 960,
         "priceDiscount": 900,
         "colorsAvailable": [
-            "сірий космос",
-            "золотий"
+            "space gray",
+            "gold"
         ],
-        "color": "сірий космос",
+        "color": "space gray",
         "images": [
             "img/phones/apple-iphone-xs/spacegray/00.webp",
             "img/phones/apple-iphone-xs/spacegray/01.webp",
@@ -3928,10 +3928,10 @@
         "priceRegular": 760,
         "priceDiscount": 720,
         "colorsAvailable": [
-            "сірий космос",
-            "золотий"
+            "space gray",
+            "gold"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-xs/gold/00.webp",
             "img/phones/apple-iphone-xs/gold/01.webp",
@@ -3988,10 +3988,10 @@
         "priceRegular": 760,
         "priceDiscount": 720,
         "colorsAvailable": [
-            "сірий космос",
-            "золотий"
+            "space gray",
+            "gold"
         ],
-        "color": "сірий космос",
+        "color": "space gray",
         "images": [
             "img/phones/apple-iphone-xs/spacegray/00.webp",
             "img/phones/apple-iphone-xs/spacegray/01.webp",
@@ -4048,11 +4048,11 @@
         "priceRegular": 1080,
         "priceDiscount": 1000,
         "colorsAvailable": [
-            "сірий космос",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "gold",
+            "silver"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-xs-max/gold/00.webp",
             "img/phones/apple-iphone-xs-max/gold/01.webp",
@@ -4109,11 +4109,11 @@
         "priceRegular": 1080,
         "priceDiscount": 1000,
         "colorsAvailable": [
-            "сірий космос",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "gold",
+            "silver"
         ],
-        "color": "сріблястий",
+        "color": "silver",
         "images": [
             "img/phones/apple-iphone-xs-max/silver/00.webp",
             "img/phones/apple-iphone-xs-max/silver/01.webp",
@@ -4170,11 +4170,11 @@
         "priceRegular": 1080,
         "priceDiscount": 1000,
         "colorsAvailable": [
-            "сірий космос",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "gold",
+            "silver"
         ],
-        "color": "сірий космос",
+        "color": "space gray",
         "images": [
             "img/phones/apple-iphone-xs-max/spacegray/00.webp",
             "img/phones/apple-iphone-xs-max/spacegray/01.webp",
@@ -4231,11 +4231,11 @@
         "priceRegular": 960,
         "priceDiscount": 900,
         "colorsAvailable": [
-            "сірий космос",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "gold",
+            "silver"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-xs-max/gold/00.webp",
             "img/phones/apple-iphone-xs-max/gold/01.webp",
@@ -4292,11 +4292,11 @@
         "priceRegular": 960,
         "priceDiscount": 900,
         "colorsAvailable": [
-            "сірий космос",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "gold",
+            "silver"
         ],
-        "color": "сріблястий",
+        "color": "silver",
         "images": [
             "img/phones/apple-iphone-xs-max/silver/00.webp",
             "img/phones/apple-iphone-xs-max/silver/01.webp",
@@ -4353,11 +4353,11 @@
         "priceRegular": 960,
         "priceDiscount": 900,
         "colorsAvailable": [
-            "сірий космос",
-            "золотий",
-            "сріблястий"
+            "space gray",
+            "gold",
+            "silver"
         ],
-        "color": "сірий космос",
+        "color": "space gray",
         "images": [
             "img/phones/apple-iphone-xs-max/spacegray/00.webp",
             "img/phones/apple-iphone-xs-max/spacegray/01.webp",
@@ -4416,8 +4416,8 @@
         "priceDiscount": 980,
         "colorsAvailable": [
             "midnight",
-            "жовтий",
-            "фіолетовий"
+            "yellow",
+            "purple"
         ],
         "color": "midnight",
         "images": [
@@ -4479,8 +4479,8 @@
         "priceDiscount": 1160,
         "colorsAvailable": [
             "midnight",
-            "жовтий",
-            "фіолетовий"
+            "yellow",
+            "purple"
         ],
         "color": "midnight",
         "images": [
@@ -4542,8 +4542,8 @@
         "priceDiscount": 1378,
         "colorsAvailable": [
             "midnight",
-            "жовтий",
-            "фіолетовий"
+            "yellow",
+            "purple"
         ],
         "color": "midnight",
         "images": [
@@ -4605,10 +4605,10 @@
         "priceDiscount": 980,
         "colorsAvailable": [
             "midnight",
-            "жовтий",
-            "фіолетовий"
+            "yellow",
+            "purple"
         ],
-        "color": "жовтий",
+        "color": "yellow",
         "images": [
             "img/phones/apple-iphone-14/yellow/00.webp",
             "img/phones/apple-iphone-14/yellow/01.webp",
@@ -4668,10 +4668,10 @@
         "priceDiscount": 1160,
         "colorsAvailable": [
             "midnight",
-            "жовтий",
-            "фіолетовий"
+            "yellow",
+            "purple"
         ],
-        "color": "жовтий",
+        "color": "yellow",
         "images": [
             "img/phones/apple-iphone-14/yellow/00.webp",
             "img/phones/apple-iphone-14/yellow/01.webp",
@@ -4731,10 +4731,10 @@
         "priceDiscount": 1378,
         "colorsAvailable": [
             "midnight",
-            "жовтий",
-            "фіолетовий"
+            "yellow",
+            "purple"
         ],
-        "color": "жовтий",
+        "color": "yellow",
         "images": [
             "img/phones/apple-iphone-14/yellow/00.webp",
             "img/phones/apple-iphone-14/yellow/01.webp",
@@ -4794,10 +4794,10 @@
         "priceDiscount": 980,
         "colorsAvailable": [
             "midnight",
-            "жовтий",
-            "фіолетовий"
+            "yellow",
+            "purple"
         ],
-        "color": "фіолетовий",
+        "color": "purple",
         "images": [
             "img/phones/apple-iphone-14/purple/00.webp",
             "img/phones/apple-iphone-14/purple/01.webp",
@@ -4857,10 +4857,10 @@
         "priceDiscount": 1180,
         "colorsAvailable": [
             "midnight",
-            "жовтий",
-            "фіолетовий"
+            "yellow",
+            "purple"
         ],
-        "color": "фіолетовий",
+        "color": "purple",
         "images": [
             "img/phones/apple-iphone-14/purple/00.webp",
             "img/phones/apple-iphone-14/purple/01.webp",
@@ -4920,10 +4920,10 @@
         "priceDiscount": 1450,
         "colorsAvailable": [
             "midnight",
-            "жовтий",
-            "фіолетовий"
+            "yellow",
+            "purple"
         ],
-        "color": "фіолетовий",
+        "color": "purple",
         "images": [
             "img/phones/apple-iphone-14/purple/00.webp",
             "img/phones/apple-iphone-14/purple/01.webp",
@@ -4984,7 +4984,7 @@
         "priceDiscount": 980,
         "colorsAvailable": [
             "spaceblack",
-            "золотий"
+            "gold"
         ],
         "color": "spaceblack",
         "images": [
@@ -5047,7 +5047,7 @@
         "priceDiscount": 1160,
         "colorsAvailable": [
             "spaceblack",
-            "золотий"
+            "gold"
         ],
         "color": "spaceblack",
         "images": [
@@ -5110,7 +5110,7 @@
         "priceDiscount": 1378,
         "colorsAvailable": [
             "spaceblack",
-            "золотий"
+            "gold"
         ],
         "color": "spaceblack",
         "images": [
@@ -5173,7 +5173,7 @@
         "priceDiscount": 1520,
         "colorsAvailable": [
             "spaceblack",
-            "золотий"
+            "gold"
         ],
         "color": "spaceblack",
         "images": [
@@ -5234,12 +5234,12 @@
         "priceRegular": 880,
         "priceDiscount": 800,
         "colorsAvailable": [
-            "чорний",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "чорний",
+        "color": "black",
         "images": [
             "img/phones/apple-iphone-12/black/00.webp",
             "img/phones/apple-iphone-12/black/01.webp",
@@ -5295,12 +5295,12 @@
         "priceRegular": 980,
         "priceDiscount": 900,
         "colorsAvailable": [
-            "чорний",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "чорний",
+        "color": "black",
         "images": [
             "img/phones/apple-iphone-12/black/00.webp",
             "img/phones/apple-iphone-12/black/01.webp",
@@ -5356,12 +5356,12 @@
         "priceRegular": 1180,
         "priceDiscount": 1100,
         "colorsAvailable": [
-            "чорний",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "чорний",
+        "color": "black",
         "images": [
             "img/phones/apple-iphone-12/black/00.webp",
             "img/phones/apple-iphone-12/black/01.webp",
@@ -5417,12 +5417,12 @@
         "priceRegular": 880,
         "priceDiscount": 800,
         "colorsAvailable": [
-            "чорний",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "фіолетовий",
+        "color": "purple",
         "images": [
             "img/phones/apple-iphone-12/purple/00.webp",
             "img/phones/apple-iphone-12/purple/01.webp",
@@ -5478,12 +5478,12 @@
         "priceRegular": 980,
         "priceDiscount": 900,
         "colorsAvailable": [
-            "чорний",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "фіолетовий",
+        "color": "purple",
         "images": [
             "img/phones/apple-iphone-12/purple/00.webp",
             "img/phones/apple-iphone-12/purple/01.webp",
@@ -5539,12 +5539,12 @@
         "priceRegular": 1180,
         "priceDiscount": 1100,
         "colorsAvailable": [
-            "чорний",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "фіолетовий",
+        "color": "purple",
         "images": [
             "img/phones/apple-iphone-12/purple/00.webp",
             "img/phones/apple-iphone-12/purple/01.webp",
@@ -5600,12 +5600,12 @@
         "priceRegular": 880,
         "priceDiscount": 800,
         "colorsAvailable": [
-            "чорний",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "червоний",
+        "color": "red",
         "images": [
             "img/phones/apple-iphone-12/red/00.webp",
             "img/phones/apple-iphone-12/red/01.webp",
@@ -5661,12 +5661,12 @@
         "priceRegular": 980,
         "priceDiscount": 900,
         "colorsAvailable": [
-            "чорний",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "червоний",
+        "color": "red",
         "images": [
             "img/phones/apple-iphone-12/red/00.webp",
             "img/phones/apple-iphone-12/red/01.webp",
@@ -5722,12 +5722,12 @@
         "priceRegular": 1180,
         "priceDiscount": 1100,
         "colorsAvailable": [
-            "чорний",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "червоний",
+        "color": "red",
         "images": [
             "img/phones/apple-iphone-12/red/00.webp",
             "img/phones/apple-iphone-12/red/01.webp",
@@ -5783,12 +5783,12 @@
         "priceRegular": 880,
         "priceDiscount": 800,
         "colorsAvailable": [
-            "чорний",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "білий",
+        "color": "white",
         "images": [
             "img/phones/apple-iphone-12/white/00.webp",
             "img/phones/apple-iphone-12/white/01.webp",
@@ -5844,12 +5844,12 @@
         "priceRegular": 980,
         "priceDiscount": 900,
         "colorsAvailable": [
-            "чорний",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "білий",
+        "color": "white",
         "images": [
             "img/phones/apple-iphone-12/white/00.webp",
             "img/phones/apple-iphone-12/white/01.webp",
@@ -5905,12 +5905,12 @@
         "priceRegular": 1180,
         "priceDiscount": 1100,
         "colorsAvailable": [
-            "чорний",
-            "білий",
-            "фіолетовий",
-            "червоний"
+            "black",
+            "white",
+            "purple",
+            "red"
         ],
-        "color": "білий",
+        "color": "white",
         "images": [
             "img/phones/apple-iphone-12/white/00.webp",
             "img/phones/apple-iphone-12/white/01.webp",
@@ -5967,7 +5967,7 @@
         "priceDiscount": 800,
         "colorsAvailable": [
             "midnight",
-            "білий",
+            "white",
             "blue",
             "pink"
         ],
@@ -6028,7 +6028,7 @@
         "priceDiscount": 900,
         "colorsAvailable": [
             "midnight",
-            "білий",
+            "white",
             "blue",
             "pink"
         ],
@@ -6089,7 +6089,7 @@
         "priceDiscount": 1100,
         "colorsAvailable": [
             "midnight",
-            "білий",
+            "white",
             "blue",
             "pink"
         ],
@@ -6150,7 +6150,7 @@
         "priceDiscount": 800,
         "colorsAvailable": [
             "midnight",
-            "білий",
+            "white",
             "blue",
             "pink"
         ],
@@ -6211,7 +6211,7 @@
         "priceDiscount": 900,
         "colorsAvailable": [
             "midnight",
-            "білий",
+            "white",
             "blue",
             "pink"
         ],
@@ -6272,7 +6272,7 @@
         "priceDiscount": 1100,
         "colorsAvailable": [
             "midnight",
-            "білий",
+            "white",
             "blue",
             "pink"
         ],
@@ -6333,11 +6333,11 @@
         "priceDiscount": 800,
         "colorsAvailable": [
             "midnight",
-            "білий",
+            "white",
             "blue",
             "pink"
         ],
-        "color": "білий",
+        "color": "white",
         "images": [
             "img/phones/apple-iphone-13-mini/white/00.webp",
             "img/phones/apple-iphone-13-mini/white/01.webp",
@@ -6394,11 +6394,11 @@
         "priceDiscount": 900,
         "colorsAvailable": [
             "midnight",
-            "білий",
+            "white",
             "blue",
             "pink"
         ],
-        "color": "білий",
+        "color": "white",
         "images": [
             "img/phones/apple-iphone-13-mini/white/00.webp",
             "img/phones/apple-iphone-13-mini/white/01.webp",
@@ -6455,11 +6455,11 @@
         "priceDiscount": 949,
         "colorsAvailable": [
             "midnight",
-            "білий",
+            "white",
             "blue",
             "pink"
         ],
-        "color": "білий",
+        "color": "white",
         "images": [
             "img/phones/apple-iphone-13-mini/white/00.webp",
             "img/phones/apple-iphone-13-mini/white/01.webp",
@@ -6516,7 +6516,7 @@
         "priceDiscount": 800,
         "colorsAvailable": [
             "midnight",
-            "білий",
+            "white",
             "blue",
             "pink"
         ],
@@ -6577,7 +6577,7 @@
         "priceDiscount": 900,
         "colorsAvailable": [
             "midnight",
-            "білий",
+            "white",
             "blue",
             "pink"
         ],
@@ -6638,7 +6638,7 @@
         "priceDiscount": 949,
         "colorsAvailable": [
             "midnight",
-            "білий",
+            "white",
             "blue",
             "pink"
         ],
@@ -6700,7 +6700,7 @@
         "priceDiscount": 1260,
         "colorsAvailable": [
             "graphite",
-            "золотий",
+            "gold",
             "sierrablue"
         ],
         "color": "sierrablue",
@@ -6767,7 +6767,7 @@
         "priceDiscount": 1379,
         "colorsAvailable": [
             "graphite",
-            "золотий",
+            "gold",
             "sierrablue"
         ],
         "color": "sierrablue",
@@ -6834,7 +6834,7 @@
         "priceDiscount": 1371,
         "colorsAvailable": [
             "graphite",
-            "золотий",
+            "gold",
             "sierrablue"
         ],
         "color": "sierrablue",
@@ -6901,7 +6901,7 @@
         "priceDiscount": 1540,
         "colorsAvailable": [
             "graphite",
-            "золотий",
+            "gold",
             "sierrablue"
         ],
         "color": "sierrablue",
@@ -6964,7 +6964,7 @@
         "priceDiscount": 1260,
         "colorsAvailable": [
             "graphite",
-            "золотий",
+            "gold",
             "sierrablue"
         ],
         "color": "graphite",
@@ -7031,7 +7031,7 @@
         "priceDiscount": 1379,
         "colorsAvailable": [
             "graphite",
-            "золотий",
+            "gold",
             "sierrablue"
         ],
         "color": "graphite",
@@ -7098,7 +7098,7 @@
         "priceDiscount": 1371,
         "colorsAvailable": [
             "graphite",
-            "золотий",
+            "gold",
             "sierrablue"
         ],
         "color": "graphite",
@@ -7165,7 +7165,7 @@
         "priceDiscount": 1540,
         "colorsAvailable": [
             "graphite",
-            "золотий",
+            "gold",
             "sierrablue"
         ],
         "color": "graphite",
@@ -7228,10 +7228,10 @@
         "priceDiscount": 1260,
         "colorsAvailable": [
             "graphite",
-            "золотий",
+            "gold",
             "sierrablue"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-13-pro-max/gold/00.webp",
             "img/phones/apple-iphone-13-pro-max/gold/01.webp",
@@ -7295,10 +7295,10 @@
         "priceDiscount": 1379,
         "colorsAvailable": [
             "graphite",
-            "золотий",
+            "gold",
             "sierrablue"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-13-pro-max/gold/00.webp",
             "img/phones/apple-iphone-13-pro-max/gold/01.webp",
@@ -7362,10 +7362,10 @@
         "priceDiscount": 1371,
         "colorsAvailable": [
             "graphite",
-            "золотий",
+            "gold",
             "sierrablue"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-13-pro-max/gold/00.webp",
             "img/phones/apple-iphone-13-pro-max/gold/01.webp",
@@ -7429,10 +7429,10 @@
         "priceDiscount": 1540,
         "colorsAvailable": [
             "graphite",
-            "золотий",
+            "gold",
             "sierrablue"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-13-pro-max/gold/00.webp",
             "img/phones/apple-iphone-13-pro-max/gold/01.webp",
@@ -7492,9 +7492,9 @@
         "priceDiscount": 980,
         "colorsAvailable": [
             "spaceblack",
-            "золотий"
+            "gold"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-14-pro/gold/00.webp",
             "img/phones/apple-iphone-14-pro/gold/01.webp",
@@ -7555,9 +7555,9 @@
         "priceDiscount": 1160,
         "colorsAvailable": [
             "spaceblack",
-            "золотий"
+            "gold"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-14-pro/gold/00.webp",
             "img/phones/apple-iphone-14-pro/gold/01.webp",
@@ -7618,9 +7618,9 @@
         "priceDiscount": 1378,
         "colorsAvailable": [
             "spaceblack",
-            "золотий"
+            "gold"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-14-pro/gold/00.webp",
             "img/phones/apple-iphone-14-pro/gold/01.webp",
@@ -7681,9 +7681,9 @@
         "priceDiscount": 1520,
         "colorsAvailable": [
             "spaceblack",
-            "золотий"
+            "gold"
         ],
-        "color": "золотий",
+        "color": "gold",
         "images": [
             "img/phones/apple-iphone-14-pro/gold/00.webp",
             "img/phones/apple-iphone-14-pro/gold/01.webp",

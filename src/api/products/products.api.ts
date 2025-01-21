@@ -7,7 +7,7 @@ import { handleRequest } from '@/utils/handleRequest';
 import { LANGUAGE } from '@/constants/language';
 
 export const getProducts = async (product: ProductEndPoints, lang: LANGUAGE): Promise<Product[] | null> => {
-  const endpoint = `/api/${product}_${lang ? 'ua' : 'en'}.json`;
+  const endpoint = `/api/${product}_${lang === 'en' ? 'en' : 'ua'}.json`;
   const res: Response<Product[]> = await handleRequest(axios.get(endpoint));
 
   return res.data;

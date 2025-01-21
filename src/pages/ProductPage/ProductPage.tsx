@@ -13,46 +13,28 @@ import ProductTechSpecs from '@/components/Product/ProductTechSpecs/ProductTechS
 import { Product } from '@/types/Product.type';
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import { Spec } from '@/types/Spec';
-import { getAllProducts, getProduct } from '@/api/products/products.api';
-import { Container } from '@/UI/Container/Container';
-import ProductSlider from '@/components/ProductSlider/ProductSlider';
+import { getProduct } from '@/api/products/products.api';
 import { CustomLink } from '@/UI/Link/Link';
-
-function shuffle(array: Product[]) {
-  let currentIndex = array.length;
-
-  while (currentIndex != 0) {
-    const randomIndex = Math.floor(Math.random() * currentIndex);
-
-    currentIndex--;
-
-    [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-  }
-
-  return array;
-}
+import { ProductRecommended } from '@/components/Product/ProductRecommended/ProductRecommended';
+import { LANGUAGE } from '@/constants/language';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const ProductPage: React.FC = () => {
   const { productId } = useParams();
   const location = useLocation();
   const [product, setProduct] = useState<Product | null>();
-  const [products, setProducts] = useState<Product[]>([]);
+  const { getLanguage } = useLanguage();
+  const language = getLanguage() as LANGUAGE;
 
   const { t } = useTranslation();
 
   useEffect(() => {
     if (productId) {
-      getProduct(productId).then((currentItem) => setProduct(currentItem));
+      getProduct(productId, language).then((currentItem) => {
+        setProduct(currentItem);
+      });
     }
-
-    const fetchProducts = async () => {
-      const allProducts = await getAllProducts();
-
-      setProducts(allProducts || []);
-    };
-
-    fetchProducts();
-  }, [productId]);
+  }, [productId, language]);
 
   const specs: Spec = {
     screen: product?.screen,
@@ -65,7 +47,6 @@ const ProductPage: React.FC = () => {
   };
 
   const techSpecs = Object.entries(specs);
-  const randomProducts = shuffle(products);
 
   if (location.pathname.includes('accessories')) {
     techSpecs.splice(4, 2);
@@ -99,14 +80,7 @@ const ProductPage: React.FC = () => {
 
         <ProductTechSpecs techSpecs={techSpecs} />
 
-        <div className={styles.productSlider}>
-          <Container>
-            <ProductSlider
-              title="You may also like"
-              products={randomProducts}
-            />
-          </Container>
-        </div>
+        <ProductRecommended language={language} />
       </section>
     )
   );
