@@ -28,11 +28,13 @@ export const Search: FC<Props> = ({ isOpen = false, onClickSearch }) => {
 
   const handleSearchProducts = useCallback(
     async (query: string) => {
-      if (query.length >= 3) {
+      const trimmedQuery = query.trim();
+
+      if (trimmedQuery.length >= 3) {
         const allProducts = await getAllProducts(language);
 
         if (allProducts) {
-          const filteredProducts = getfilterProducts(allProducts, query);
+          const filteredProducts = getfilterProducts(allProducts, trimmedQuery);
 
           if (filteredProducts.length) {
             setListOpen(true);
@@ -47,7 +49,7 @@ export const Search: FC<Props> = ({ isOpen = false, onClickSearch }) => {
 
   const fiveProducts = useMemo(() => products.slice(0, 5), [products]);
 
-  const { query, handleChange } = useSearchProduct(handleSearchProducts, () => setListOpen(false));
+  const { query, handleChange, handleSubmit } = useSearchProduct(handleSearchProducts, () => setListOpen(false));
 
   return isOpen ?
       <div className={s.container}>
@@ -55,6 +57,7 @@ export const Search: FC<Props> = ({ isOpen = false, onClickSearch }) => {
           handleChange={handleChange}
           onClickSearch={onClickSearch}
           value={query}
+          handleSubmit={handleSubmit}
         />
 
         {isListOpen && (

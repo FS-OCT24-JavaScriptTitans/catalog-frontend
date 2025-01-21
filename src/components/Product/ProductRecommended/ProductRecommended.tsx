@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import styles from './ProductRecommended.module.scss';
-
 import { getAllProducts } from '@/api/products/products.api';
 import { Product } from '@/types/Product.type';
 import { shuffle } from '@/utils/shuffle';
 import ProductSlider from '@/components/ProductSlider/ProductSlider';
-import { Container } from '@/UI/Container/Container';
 import { LANGUAGE } from '@/constants/language';
 import AnimatedSection from '@/components/AnimatedSection/AnimatedSection';
 
