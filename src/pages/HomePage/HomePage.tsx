@@ -49,7 +49,7 @@ const HomePage: React.FC = () => {
       </AnimatedSection>
 
       <AnimatedSection
-        animationType="fade-down"
+        animationType="fade-up"
         animationOffset="380"
       >
         <ProductSlider
