@@ -15,6 +15,7 @@ import { ProductList } from '@/components/ProductList/ProductList';
 import Pagination from '@/components/Pagination/Pagination';
 import { useLanguage } from '@/hooks/useLanguage';
 import { LANGUAGE } from '@/constants/language';
+import { ProductListSceleton } from '@/UI/Sceletones/ProductListSceleton/ProductListSceleton';
 
 const sortOptions: Option<string>[] = [
   {
@@ -50,6 +51,7 @@ const ProductsListPage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [currentPage, setCurrentPage] = useState(pageNumber);
   const [pagesCount, setPagesCount] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
 
   const { getLanguage } = useLanguage();
   const language = getLanguage() as LANGUAGE;
@@ -64,6 +66,8 @@ const ProductsListPage: React.FC = () => {
         ProductEndPoints[formatLocation.toUpperCase() as keyof typeof ProductEndPoints],
         language,
       );
+
+      setIsLoading(false);
 
       const pagesQuantity = Math.ceil((productsData?.length || 0) / productsPerPage);
 
@@ -136,7 +140,9 @@ const ProductsListPage: React.FC = () => {
         </div>
       </div>
 
-      <ProductList products={products} />
+      {isLoading ?
+        <ProductListSceleton />
+      : <ProductList products={products} />}
       <Pagination
         initialPage={pageNumber - 1}
         pageCount={pagesCount}
