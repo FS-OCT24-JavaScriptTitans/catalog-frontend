@@ -23,7 +23,7 @@ export const developers: Contact[] = [
     name: 'Oleksandr Andrushchenko',
     photo: '/img/developers/Oleksandr-Andrushchenko.png',
     github: 'https://github.com/andrushchenkoo',
-    desc: 'Frontend developer with experience in creating modern and interactive web applications. Proficient in HTML, CSS, JavaScript, and the React framework. Experienced in responsive design, website performance optimization, and API integration. Goal-oriented to create user-friendly and efficient interfaces.',
+    desc: 'Frontend developer with experience in creating modern and interactive web applications. Proficient in HTML, CSS, JavaScript, and React. Experienced in responsive design, website performance optimization, and API integration.',
   },
   {
     name: 'Illia Morderer',
