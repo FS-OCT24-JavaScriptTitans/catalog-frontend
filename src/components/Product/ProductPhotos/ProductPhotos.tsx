@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import cn from 'classnames';
 
 import styles from './ProductPhotos.module.scss';
+import ProductPhotoSwiper from './ProductPhotoSwiper';
 
 import { Product } from '@/types/Product.type';
 
@@ -19,10 +20,10 @@ const ProductPhotos: React.FC<Props> = ({ product }) => {
   return (
     <>
       <div className={styles.mainImageBox}>
-        <img
-          src={`/${selectedImage}`}
-          alt="product image"
-          className={styles.mainPhoto}
+        <ProductPhotoSwiper
+          product={product}
+          selectedImage={selectedImage}
+          setSelectedImage={setSelectedImage}
         />
       </div>
 

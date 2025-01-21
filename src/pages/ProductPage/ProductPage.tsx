@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
 
@@ -14,7 +14,6 @@ import ProductDescription from '@/components/Product/ProductDescription/ProductD
 import { Product } from '@/types/Product.type';
 import Breadcrumb from '@/components/Breadcrumb/Breadcrumb';
 import { getProduct } from '@/api/products/products.api';
-import { CustomLink } from '@/UI/Link/Link';
 import { ProductRecommended } from '@/components/Product/ProductRecommended/ProductRecommended';
 import { LANGUAGE } from '@/constants/language';
 import { useLanguage } from '@/hooks/useLanguage';
@@ -24,10 +23,11 @@ import { Loader } from '@/components/Loader/Loader';
 
 const ProductPage: React.FC = () => {
   const { productId } = useParams();
-  const location = useLocation();
   const [product, setProduct] = useState<Product | null>();
+  const location = useLocation();
   const { getLanguage } = useLanguage();
   const language = getLanguage() as LANGUAGE;
+  const navigate = useNavigate();
 
   const [isLoading, setLoading] = useState(true);
 
@@ -57,12 +57,12 @@ const ProductPage: React.FC = () => {
                   <Breadcrumb />
                 </div>
 
-                <CustomLink path="..">
+                <button onClick={() => navigate(-1)}>
                   <div className={cn(styles.back, 'small-text')}>
                     <Arrow transform="rotate(180)" />
                     {t('back')}
                   </div>
-                </CustomLink>
+                </button>
 
                 <h2 className={styles.mainTitle}>{product.name}</h2>
 
