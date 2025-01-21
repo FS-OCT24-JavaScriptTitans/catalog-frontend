@@ -10,6 +10,10 @@
     padding-top: 40px;
   }
 
+  // & > li {
+  //   background-color: var(--button-bgc-color)
+  // }
+
   & > li > a {
     @include mixin.flex-container(center, center);
     height: 32px;
@@ -25,7 +29,7 @@
   }
 
   & > .active > a {
-    background-color: var(--light-main-text-color);
+    background-color: var(--button-bgc-color);
     color: var(--white-color);
   }
 }
