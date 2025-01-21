@@ -1,15 +1,15 @@
-import React, { FC } from 'react';
+import React from 'react';
 
 import s from './Modal.module.scss';
 
-interface IModalProps {
+interface Props {
   children: React.ReactNode;
   onClose: () => void;
   style?: object;
 }
 
-const Modal: FC<IModalProps> = ({ children, onClose, style = {} }) => {
-  const backdropRef: React.RefObject<HTMLInputElement> = React.useRef(null);
+const Modal: React.FC<Props> = ({ children, onClose, style = {} }) => {
+  const backdropRef: React.RefObject<HTMLDivElement> = React.useRef(null);
 
   React.useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => e.code === 'Escape' && onClose();
@@ -34,6 +34,13 @@ const Modal: FC<IModalProps> = ({ children, onClose, style = {} }) => {
         className={s.modal}
         style={style}
       >
+        <button
+          className={s.closeButton}
+          onClick={onClose}
+          aria-label="Close"
+        >
+          &times;
+        </button>
         {children}
       </div>
     </div>
