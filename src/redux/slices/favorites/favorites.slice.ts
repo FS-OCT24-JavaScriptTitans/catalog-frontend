@@ -2,11 +2,11 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { Product } from '@/types/Product.type';
 
-interface Favorites {
+export interface FavoritesState {
   favorites: Product[];
 }
 
-const initialState: Favorites = {
+const initialState: FavoritesState = {
   favorites: [],
 };
 
