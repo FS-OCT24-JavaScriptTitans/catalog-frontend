@@ -28,15 +28,11 @@ export const ProductRecommended: React.FC<Props> = ({ language }) => {
   }, [language]);
 
   return (
-    <div className={styles.productSlider}>
-      <AnimatedSection animationType={'fade-up'}>
-        <Container>
-          <ProductSlider
-            title={t('product.alsoLike')}
-            products={shuffle(products)}
-          />
-        </Container>
-      </AnimatedSection>
-    </div>
+    <AnimatedSection animationType={'fade-up'}>
+      <ProductSlider
+        title={t('product.alsoLike')}
+        products={shuffle(products)}
+      />
+    </AnimatedSection>
   );
 };
