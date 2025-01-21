@@ -3,7 +3,7 @@ import cn from 'classnames';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import colors from '../../../pages/ProductPage/styles/colors.json';
+import colors from '../../../../public/api/colors.json';
 
 import styles from './ProductMainChars.module.scss';
 

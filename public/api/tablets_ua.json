@@ -15,10 +15,10 @@
     "priceRegular": 799,
     "priceDiscount": 749,
     "colorsAvailable": [
-      "космічний сірий",
-      "сріблястий"
+      "space gray",
+      "silver"
     ],
-    "color": "космічний сірий",
+    "color": "space gray",
     "images": [
       "img/tablets/apple-ipad-pro-11-2021/spacegray/00.webp",
       "img/tablets/apple-ipad-pro-11-2021/spacegray/01.webp",
@@ -73,10 +73,10 @@
     "priceRegular": 829,
     "priceDiscount": 799,
     "colorsAvailable": [
-      "космічний сірий",
-      "сріблястий"
+      "space gray",
+      "silver"
     ],
-    "color": "космічний сірий",
+    "color": "space gray",
     "images": [
       "img/tablets/apple-ipad-pro-11-2021/spacegray/00.webp",
       "img/tablets/apple-ipad-pro-11-2021/spacegray/01.webp",
@@ -131,10 +131,10 @@
     "priceRegular": 869,
     "priceDiscount": 819,
     "colorsAvailable": [
-      "космічний сірий",
-      "сріблястий"
+      "space gray",
+      "silver"
     ],
-    "color": "космічний сірий",
+    "color": "space gray",
     "images": [
       "img/tablets/apple-ipad-pro-11-2021/spacegray/00.webp",
       "img/tablets/apple-ipad-pro-11-2021/spacegray/01.webp",
@@ -189,10 +189,10 @@
     "priceRegular": 899,
     "priceDiscount": 879,
     "colorsAvailable": [
-      "космічний сірий",
-      "сріблястий"
+      "space gray",
+      "silver"
     ],
-    "color": "космічний сірий",
+    "color": "space gray",
     "images": [
       "img/tablets/apple-ipad-pro-11-2021/spacegray/00.webp",
       "img/tablets/apple-ipad-pro-11-2021/spacegray/01.webp",
@@ -247,10 +247,10 @@
     "priceRegular": 999,
     "priceDiscount": 939,
     "colorsAvailable": [
-      "космічний сірий",
-      "сріблястий"
+      "space gray",
+      "silver"
     ],
-    "color": "космічний сірий",
+    "color": "space gray",
     "images": [
       "img/tablets/apple-ipad-pro-11-2021/spacegray/00.webp",
       "img/tablets/apple-ipad-pro-11-2021/spacegray/01.webp",
@@ -305,10 +305,10 @@
     "priceRegular": 799,
     "priceDiscount": 749,
     "colorsAvailable": [
-      "космічний сірий",
-      "сріблястий"
+      "space gray",
+      "silver"
     ],
-    "color": "сріблястий",
+    "color": "silver",
     "images": [
       "img/tablets/apple-ipad-pro-11-2021/silver/00.webp",
       "img/tablets/apple-ipad-pro-11-2021/silver/01.webp",
@@ -363,10 +363,10 @@
     "priceRegular": 829,
     "priceDiscount": 799,
     "colorsAvailable": [
-      "космічний сірий",
-      "сріблястий"
+      "space gray",
+      "silver"
     ],
-    "color": "сріблястий",
+    "color": "silver",
     "images": [
       "img/tablets/apple-ipad-pro-11-2021/silver/00.webp",
       "img/tablets/apple-ipad-pro-11-2021/silver/01.webp",
@@ -421,10 +421,10 @@
     "priceRegular": 869,
     "priceDiscount": 819,
     "colorsAvailable": [
-      "космічний сірий",
-      "сріблястий"
+      "space gray",
+      "silver"
     ],
-    "color": "сріблястий",
+    "color": "silver",
     "images": [
       "img/tablets/apple-ipad-pro-11-2021/silver/00.webp",
       "img/tablets/apple-ipad-pro-11-2021/silver/01.webp",
@@ -479,10 +479,10 @@
     "priceRegular": 899,
     "priceDiscount": 879,
     "colorsAvailable": [
-      "космічний сірий",
-      "сріблястий"
+      "space gray",
+      "silver"
     ],
-    "color": "сріблястий",
+    "color": "silver",
     "images": [
       "img/tablets/apple-ipad-pro-11-2021/silver/00.webp",
       "img/tablets/apple-ipad-pro-11-2021/silver/01.webp",
@@ -537,10 +537,10 @@
     "priceRegular": 999,
     "priceDiscount": 939,
     "colorsAvailable": [
-      "космічний сірий",
-      "сріблястий"
+      "space gray",
+      "silver"
     ],
-    "color": "сріблястий",
+    "color": "silver",
     "images": [
       "img/tablets/apple-ipad-pro-11-2021/silver/00.webp",
       "img/tablets/apple-ipad-pro-11-2021/silver/01.webp",
@@ -592,12 +592,12 @@
     "priceRegular": 749,
     "priceDiscount": 699,
     "colorsAvailable": [
-      "рожеве золото",
-      "сріблястий",
-      "зелений",
-      "небесно-блакитний"
+      "rosegold",
+      "silver",
+      "green",
+      "skyblue"
     ],
-    "color": "рожеве золото",
+    "color": "rosegold",
     "images": [
       "img/tablets/apple-ipad-air-4th-gen/rose-gold/00.webp",
       "img/tablets/apple-ipad-air-4th-gen/rose-gold/01.webp",
@@ -650,12 +650,12 @@
     "priceRegular": 599,
     "priceDiscount": 549,
     "colorsAvailable": [
-      "рожеве золото",
-      "сріблястий",
-      "зелений",
-      "небесно-блакитний"
+      "rosegold",
+      "silver",
+      "green",
+      "skyblue"
     ],
-    "color": "рожеве золото",
+    "color": "rosegold",
     "images": [
       "img/tablets/apple-ipad-air-4th-gen/rose-gold/00.webp",
       "img/tablets/apple-ipad-air-4th-gen/rose-gold/01.webp",
@@ -708,12 +708,12 @@
     "priceRegular": 599,
     "priceDiscount": 549,
     "colorsAvailable": [
-      "рожеве золото",
-      "сріблястий",
-      "зелений",
-      "небесно-блакитний"
+      "rosegold",
+      "silver",
+      "green",
+      "skyblue"
     ],
-    "color": "сріблястий",
+    "color": "silver",
     "images": [
       "img/tablets/apple-ipad-air-4th-gen/silver/00.webp",
       "img/tablets/apple-ipad-air-4th-gen/silver/01.webp",
@@ -766,12 +766,12 @@
     "priceRegular": 749,
     "priceDiscount": 699,
     "colorsAvailable": [
-      "рожеве золото",
-      "сріблястий",
-      "зелений",
-      "небесно-блакитний"
+      "rosegold",
+      "silver",
+      "green",
+      "skyblue"
     ],
-    "color": "сріблястий",
+    "color": "silver",
     "images": [
       "img/tablets/apple-ipad-air-4th-gen/silver/00.webp",
       "img/tablets/apple-ipad-air-4th-gen/silver/01.webp",
@@ -824,12 +824,12 @@
     "priceRegular": 749,
     "priceDiscount": 699,
     "colorsAvailable": [
-      "рожеве золото",
-      "сріблястий",
-      "зелений",
-      "небесно-блакитний"
+      "rosegold",
+      "silver",
+      "green",
+      "skyblue"
     ],
-    "color": "зелений",
+    "color": "green",
     "images": [
       "img/tablets/apple-ipad-air-4th-gen/green/00.webp",
       "img/tablets/apple-ipad-air-4th-gen/green/01.webp",
@@ -882,12 +882,12 @@
     "priceRegular": 599,
     "priceDiscount": 549,
     "colorsAvailable": [
-      "рожеве золото",
-      "сріблястий",
-      "зелений",
-      "небесно-блакитний"
+      "rosegold",
+      "silver",
+      "green",
+      "skyblue"
     ],
-    "color": "зелений",
+    "color": "green",
     "images": [
       "img/tablets/apple-ipad-air-4th-gen/green/00.webp",
       "img/tablets/apple-ipad-air-4th-gen/green/01.webp",
@@ -940,12 +940,12 @@
     "priceRegular": 599,
     "priceDiscount": 549,
     "colorsAvailable": [
-      "рожеве золото",
-      "сріблястий",
-      "зелений",
-      "небесно-блакитний"
+      "rosegold",
+      "silver",
+      "green",
+      "skyblue"
     ],
-    "color": "небесно-блакитний",
+    "color": "skyblue",
     "images": [
       "img/tablets/apple-ipad-air-4th-gen/sky-blue/00.webp",
       "img/tablets/apple-ipad-air-4th-gen/sky-blue/01.webp",
@@ -998,12 +998,12 @@
     "priceRegular": 749,
     "priceDiscount": 699,
     "colorsAvailable": [
-      "рожеве золото",
-      "сріблястий",
-      "зелений",
-      "небесно-блакитний"
+      "rosegold",
+      "silver",
+      "green",
+      "skyblue"
     ],
-    "color": "небесно-блакитний",
+    "color": "skyblue",
     "images": [
       "img/tablets/apple-ipad-air-4th-gen/sky-blue/00.webp",
       "img/tablets/apple-ipad-air-4th-gen/sky-blue/01.webp",
@@ -1056,11 +1056,11 @@
     "priceRegular": 499,
     "priceDiscount": 469,
     "colorsAvailable": [
-      "космічний сірий",
-      "зіркове сяйво",
-      "рожевий"
+      "space gray",
+      "starlight",
+      "pink"
     ],
-    "color": "космічний сірий",
+    "color": "space gray",
     "images": [
       "img/tablets/apple-ipad-mini-6th-gen/spacegray/00.webp",
       "img/tablets/apple-ipad-mini-6th-gen/spacegray/01.webp",
@@ -1112,11 +1112,11 @@
     "priceRegular": 649,
     "priceDiscount": 599,
     "colorsAvailable": [
-      "космічний сірий",
-      "зіркове сяйво",
-      "рожевий"
+      "space gray",
+      "starlight",
+      "pink"
     ],
-    "color": "космічний сірий",
+    "color": "space gray",
     "images": [
       "img/tablets/apple-ipad-mini-6th-gen/spacegray/00.webp",
       "img/tablets/apple-ipad-mini-6th-gen/spacegray/01.webp",
@@ -1168,11 +1168,11 @@
     "priceRegular": 649,
     "priceDiscount": 599,
     "colorsAvailable": [
-      "космічний сірий",
-      "зіркове сяйво",
-      "рожевий"
+      "space gray",
+      "starlight",
+      "pink"
     ],
-    "color": "зіркове сяйво",
+    "color": "starlight",
     "images": [
       "img/tablets/apple-ipad-mini-6th-gen/starlight/00.webp",
       "img/tablets/apple-ipad-mini-6th-gen/starlight/01.webp",
@@ -1224,11 +1224,11 @@
     "priceRegular": 499,
     "priceDiscount": 469,
     "colorsAvailable": [
-      "космічний сірий",
-      "зіркове сяйво",
-      "рожевий"
+      "space gray",
+      "starlight",
+      "pink"
     ],
-    "color": "зіркове сяйво",
+    "color": "starlight",
     "images": [
       "img/tablets/apple-ipad-mini-6th-gen/starlight/00.webp",
       "img/tablets/apple-ipad-mini-6th-gen/starlight/01.webp",
@@ -1280,11 +1280,11 @@
     "priceRegular": 499,
     "priceDiscount": 469,
     "colorsAvailable": [
-      "космічний сірий",
-      "зіркове сяйво",
-      "рожевий"
+      "space gray",
+      "starlight",
+      "pink"
     ],
-    "color": "рожевий",
+    "color": "pink",
     "images": [
       "img/tablets/apple-ipad-mini-6th-gen/pink/00.webp",
       "img/tablets/apple-ipad-mini-6th-gen/pink/01.webp",
@@ -1336,11 +1336,11 @@
     "priceRegular": 649,
     "priceDiscount": 619,
     "colorsAvailable": [
-      "космічний сірий",
-      "зіркове сяйво",
-      "рожевий"
+      "space gray",
+      "starlight",
+      "pink"
     ],
-    "color": "рожевий",
+    "color": "pink",
     "images": [
       "img/tablets/apple-ipad-mini-6th-gen/pink/00.webp",
       "img/tablets/apple-ipad-mini-6th-gen/pink/01.webp",
@@ -1392,11 +1392,11 @@
     "priceRegular": 429,
     "priceDiscount": 399,
     "colorsAvailable": [
-      "золотий",
-      "сріблястий",
-      "космічний сірий"
+      "gold",
+      "silver",
+      "space gray"
     ],
-    "color": "золотий",
+    "color": "gold",
     "images": [
       "img/tablets/apple-ipad-10-2-2020/gold/00.webp",
       "img/tablets/apple-ipad-10-2-2020/gold/01.webp",
@@ -1449,11 +1449,11 @@
     "priceRegular": 329,
     "priceDiscount": 299,
     "colorsAvailable": [
-      "золотий",
-      "сріблястий",
-      "космічний сірий"
+      "gold",
+      "silver",
+      "space gray"
     ],
-    "color": "золотий",
+    "color": "gold",
     "images": [
       "img/tablets/apple-ipad-10-2-2020/gold/00.webp",
       "img/tablets/apple-ipad-10-2-2020/gold/01.webp",
@@ -1506,11 +1506,11 @@
     "priceRegular": 329,
     "priceDiscount": 299,
     "colorsAvailable": [
-      "золотий",
-      "сріблястий",
-      "космічний сірий"
+      "gold",
+      "silver",
+      "space gray"
     ],
-    "color": "сріблястий",
+    "color": "silver",
     "images": [
       "img/tablets/apple-ipad-10-2-2020/silver/00.webp",
       "img/tablets/apple-ipad-10-2-2020/silver/01.webp",
@@ -1563,11 +1563,11 @@
     "priceRegular": 429,
     "priceDiscount": 399,
     "colorsAvailable": [
-      "золотий",
-      "сріблястий",
-      "космічний сірий"
+      "gold",
+      "silver",
+      "space gray"
     ],
-    "color": "сріблястий",
+    "color": "silver",
     "images": [
       "img/tablets/apple-ipad-10-2-2020/silver/00.webp",
       "img/tablets/apple-ipad-10-2-2020/silver/01.webp",
@@ -1620,11 +1620,11 @@
     "priceRegular": 429,
     "priceDiscount": 399,
     "colorsAvailable": [
-      "золотий",
-      "сріблястий",
-      "космічний сірий"
+      "gold",
+      "silver",
+      "space gray"
     ],
-    "color": "космічний сірий",
+    "color": "space gray",
     "images": [
       "img/tablets/apple-ipad-10-2-2020/spacegray/00.webp",
       "img/tablets/apple-ipad-10-2-2020/spacegray/01.webp",
@@ -1677,11 +1677,11 @@
     "priceRegular": 329,
     "priceDiscount": 299,
     "colorsAvailable": [
-      "золотий",
-      "сріблястий",
-      "космічний сірий"
+      "gold",
+      "silver",
+      "space gray"
     ],
-    "color": "космічний сірий",
+    "color": "space gray",
     "images": [
       "img/tablets/apple-ipad-10-2-2020/spacegray/00.webp",
       "img/tablets/apple-ipad-10-2-2020/spacegray/01.webp",
@@ -1734,11 +1734,11 @@
     "priceRegular": 549,
     "priceDiscount": 499,
     "colorsAvailable": [
-      "сріблястий",
-      "космічний сірий",
-      "золотий"
+      "silver",
+      "space gray",
+      "gold"
     ],
-    "color": "сріблястий",
+    "color": "silver",
     "images": [
       "img/tablets/apple-ipad-mini-5th-gen/silver/00.webp",
       "img/tablets/apple-ipad-mini-5th-gen/silver/01.webp"
@@ -1789,11 +1789,11 @@
     "priceRegular": 549,
     "priceDiscount": 499,
     "colorsAvailable": [
-      "сріблястий",
-      "космічний сірий",
-      "золотий"
+      "silver",
+      "space gray",
+      "gold"
     ],
-    "color": "сріблястий",
+    "color": "silver",
     "images": [
       "img/tablets/apple-ipad-mini-5th-gen/silver/00.webp",
       "img/tablets/apple-ipad-mini-5th-gen/silver/01.webp"
@@ -1844,11 +1844,11 @@
     "priceRegular": 549,
     "priceDiscount": 499,
     "colorsAvailable": [
-      "сріблястий",
-      "космічний сірий",
-      "золотий"
+      "silver",
+      "space gray",
+      "gold"
     ],
-    "color": "космічний сірий",
+    "color": "space gray",
     "images": [
       "img/tablets/apple-ipad-mini-5th-gen/spacegray/00.webp",
       "img/tablets/apple-ipad-mini-5th-gen/spacegray/01.webp"
@@ -1899,11 +1899,11 @@
     "priceRegular": 549,
     "priceDiscount": 499,
     "colorsAvailable": [
-      "сріблястий",
-      "космічний сірий",
-      "золотий"
+      "silver",
+      "space gray",
+      "gold"
     ],
-    "color": "космічний сірий",
+    "color": "space gray",
     "images": [
       "img/tablets/apple-ipad-mini-5th-gen/spacegray/00.webp",
       "img/tablets/apple-ipad-mini-5th-gen/spacegray/01.webp"
@@ -1954,11 +1954,11 @@
     "priceRegular": 549,
     "priceDiscount": 499,
     "colorsAvailable": [
-      "сріблястий",
-      "космічний сірий",
-      "золотий"
+      "silver",
+      "space gray",
+      "gold"
     ],
-    "color": "золотий",
+    "color": "gold",
     "images": [
       "img/tablets/apple-ipad-mini-5th-gen/gold/00.webp",
       "img/tablets/apple-ipad-mini-5th-gen/gold/01.webp"
@@ -2009,11 +2009,11 @@
     "priceRegular": 549,
     "priceDiscount": 499,
     "colorsAvailable": [
-      "сріблястий",
-      "космічний сірий",
-      "золотий"
+      "silver",
+      "space gray",
+      "gold"
     ],
-    "color": "золотий",
+    "color": "gold",
     "images": [
       "img/tablets/apple-ipad-mini-5th-gen/gold/00.webp",
       "img/tablets/apple-ipad-mini-5th-gen/gold/01.webp"

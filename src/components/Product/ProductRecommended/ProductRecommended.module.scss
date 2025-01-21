@@ -1,0 +1,14 @@
+@use '@/styles/abstract/mixines';
+
+.productSlider {
+  grid-column: 1/-1;
+  margin-bottom: 56px;
+
+  @include mixines.tablet {
+    margin-bottom: 64px;
+  }
+
+  @include mixines.desctop {
+    margin-bottom: 80px;
+  }
+}
