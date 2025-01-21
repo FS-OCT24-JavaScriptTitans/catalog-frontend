@@ -73,7 +73,6 @@ const ProductsListPage: React.FC = () => {
   const [pagesCount, setPagesCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
 
-
   const { getLanguage } = useLanguage();
   const language = getLanguage() as LANGUAGE;
 
