@@ -2,6 +2,7 @@ import Orders from '@/components/Orders/Orders';
 import { Loader } from '@/components/Loader/Loader';
 import EmptyContainer from '@/UI/EmptyContainer/EmptyContainer';
 import { useOrders } from '@/hooks/useOrders';
+import AnimatedSection from '@/components/AnimatedSection/AnimatedSection';
 
 const OrdersPage = () => {
   const { orders, isLoading } = useOrders();
@@ -18,14 +19,14 @@ const OrdersPage = () => {
         return (
           <EmptyContainer
             title="There no orders yet"
-            pathToImg="/img/order-is-empty.png"
+            pathToImg="/img/order-empty.png"
             alt="empty-order"
           />
         );
     }
   };
 
-  return getView();
+  return <AnimatedSection animationType={'fade-right'}>{getView()} </AnimatedSection>;
 };
 
 export default OrdersPage;
