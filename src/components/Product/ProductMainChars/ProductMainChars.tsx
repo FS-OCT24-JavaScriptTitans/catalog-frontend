@@ -3,8 +3,6 @@ import cn from 'classnames';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import colors from '../../../../public/api/colors.json';
-
 import styles from './ProductMainChars.module.scss';
 
 import Favourites from '@/assets/Favourites.svg?react';
@@ -13,6 +11,7 @@ import { Product } from '@/types/Product.type';
 import { Button } from '@/UI/Button/Button';
 import { IconButton } from '@/UI/IconButton/IconButton';
 import { useProductControl } from '@/hooks/useProductControl';
+import { COLORS } from '@/constants/colors';
 
 function changeIdPart(input: string, inputLabel: string, inputPart: string) {
   const previousIdPart = input.toLowerCase().split(' ').join('-');
@@ -56,7 +55,7 @@ const ProductMainChars: React.FC<Props> = ({ product, location, techSpecs }) => 
             key={color}
           >
             <div
-              style={{ backgroundColor: `${rightColors(color, colors)}` }}
+              style={{ backgroundColor: `${rightColors(color, COLORS)}` }}
               className={styles.color}
             />
           </NavLink>
