@@ -12,7 +12,13 @@ const ProductTechSpecs: React.FC<Props> = ({ techSpecs }) => {
   const { t } = useTranslation();
 
   return (
-    <article className={styles.techSpecs}>
+    <article
+      className={styles.techSpecs}
+      data-aos="fade-left"
+      data-aos-anchor-placement="top-center"
+      data-aos-duration="1000"
+      data-aos-once="false"
+    >
       <h3>{t('product.techSpecs')}</h3>
 
       <div className={cn(styles.techSpecLine, 'line')} />

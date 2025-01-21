@@ -16,6 +16,7 @@ import Pagination from '@/components/Pagination/Pagination';
 import { useLanguage } from '@/hooks/useLanguage';
 import { LANGUAGE } from '@/constants/language';
 import { ProductListSceleton } from '@/UI/Sceletones/ProductListSceleton/ProductListSceleton';
+import AnimatedSection from '@/components/AnimatedSection/AnimatedSection';
 
 const sortOptions: Option<string>[] = [
   {
@@ -72,7 +73,6 @@ const ProductsListPage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [pagesCount, setPagesCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-
 
   const { getLanguage } = useLanguage();
   const language = getLanguage() as LANGUAGE;
@@ -139,55 +139,57 @@ const ProductsListPage: React.FC = () => {
   };
 
   return (
-    <section className={s.container}>
-      <div className={s.top_panel}>
-        <div className={s.icons}>
-          <Link to="#">
-            <Home />
-          </Link>
-          <Arrow />
-          <span className={s.mini_title}>{t(`navigation.${formatLocation}`)}</span>
-        </div>
-        <h2 className={s.title}>{t(`navigation.${formatLocation}`)}</h2>
-        <p className={`${s.counter} primary-text`}>{`${products.length} models`}</p>
+    <AnimatedSection animationType={'fade-right'}>
+      <section className={s.container}>
+        <div className={s.top_panel}>
+          <div className={s.icons}>
+            <Link to="#">
+              <Home />
+            </Link>
+            <Arrow />
+            <span className={s.mini_title}>{t(`navigation.${formatLocation}`)}</span>
+          </div>
+          <h2 className={s.title}>{t(`navigation.${formatLocation}`)}</h2>
+          <p className={`${s.counter} primary-text`}>{`${products.length} models`}</p>
 
-        <div className={s.filter_block}>
-          <div className={s.filter_item}>
-            <label className={s.mini_title}>{t('product.sortBy')}</label>
-            <div className={s.dropdown}>
-              <Dropdown
-                options={sortOptions}
-                hasBorder
-                onChange={(value) => handleSortChange(value as Sort)}
-                urlParam="sort"
-              />
+          <div className={s.filter_block}>
+            <div className={s.filter_item}>
+              <label className={s.mini_title}>{t('product.sortBy')}</label>
+              <div className={s.dropdown}>
+                <Dropdown
+                  options={sortOptions}
+                  hasBorder
+                  onChange={(value) => handleSortChange(value as Sort)}
+                  urlParam="sort"
+                />
+              </div>
+            </div>
+            <div className={s.filter_item}>
+              <label className={s.mini_title}>Items on page</label>
+              <div className={s.dropdown}>
+                <Dropdown
+                  options={perPageOptions}
+                  hasBorder
+                  onChange={(value) => handlePerChange(+value)}
+                  urlParam="perPage"
+                />
+              </div>
             </div>
           </div>
-          <div className={s.filter_item}>
-            <label className={s.mini_title}>Items on page</label>
-            <div className={s.dropdown}>
-              <Dropdown
-                options={perPageOptions}
-                hasBorder
-                onChange={(value) => handlePerChange(+value)}
-                urlParam="perPage"
-              />
-            </div>
-          </div>
         </div>
-      </div>
 
-      {isLoading ?
-        <ProductListSceleton />
-      : <ProductList products={products} />}
-      <Pagination
-        forcePage={pageNumber - 1}
-        pageCount={pagesCount}
-        onChange={handlePageChange}
-        pageRangeDisplayed={1}
-        marginPagesDisplayed={1}
-      />
-    </section>
+        {isLoading ?
+          <ProductListSceleton />
+        : <ProductList products={products} />}
+        <Pagination
+          forcePage={pageNumber - 1}
+          pageCount={pagesCount}
+          onChange={handlePageChange}
+          pageRangeDisplayed={1}
+          marginPagesDisplayed={1}
+        />
+      </section>
+    </AnimatedSection>
   );
 };
 

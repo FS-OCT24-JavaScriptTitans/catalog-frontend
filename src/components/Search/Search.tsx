@@ -11,6 +11,8 @@ import { getAllProducts } from '@/api/products/products.api';
 import getfilterProducts from '@/utils/filtredProducts';
 import { CustomLink } from '@/UI/Link/Link';
 import { useSearchProduct } from '@/hooks/useSearchProduct';
+import { useLanguage } from '@/hooks/useLanguage';
+import { LANGUAGE } from '@/constants/language';
 
 interface Props {
   isOpen: boolean;
@@ -21,21 +23,27 @@ export const Search: FC<Props> = ({ isOpen = false, onClickSearch }) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [isListOpen, setListOpen] = useState(false);
 
-  const handleSearchProducts = useCallback(async (query: string) => {
-    if (query.length >= 3) {
-      const allProducts = await getAllProducts();
+  const { getLanguage } = useLanguage();
+  const language = getLanguage() as LANGUAGE;
 
-      if (allProducts) {
-        const filteredProducts = getfilterProducts(allProducts, query);
+  const handleSearchProducts = useCallback(
+    async (query: string) => {
+      if (query.length >= 3) {
+        const allProducts = await getAllProducts(language);
 
-        if (filteredProducts.length) {
-          setListOpen(true);
+        if (allProducts) {
+          const filteredProducts = getfilterProducts(allProducts, query);
+
+          if (filteredProducts.length) {
+            setListOpen(true);
+          }
+
+          setProducts(filteredProducts);
         }
-
-        setProducts(filteredProducts);
       }
-    }
-  }, []);
+    },
+    [language],
+  );
 
   const fiveProducts = useMemo(() => products.slice(0, 5), [products]);
 
