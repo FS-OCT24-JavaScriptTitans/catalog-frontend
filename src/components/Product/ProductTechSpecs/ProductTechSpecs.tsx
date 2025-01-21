@@ -1,15 +1,20 @@
-import React from 'react';
+import { FC } from 'react';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
 
 import styles from './ProductTechSpecs.module.scss';
 
+import { Product } from '@/types/Product.type';
+import { getProductSpecs } from '@/utils/products/getProductSpecs';
+
 type Props = {
-  techSpecs: [string, string | number | string[] | { title: string; text: string[] }[]][];
+  product: Product;
 };
 
-const ProductTechSpecs: React.FC<Props> = ({ techSpecs }) => {
+const ProductTechSpecs: FC<Props> = ({ product }) => {
   const { t } = useTranslation();
+
+  const specs = Object.entries(getProductSpecs(product));
 
   return (
     <article
@@ -23,7 +28,7 @@ const ProductTechSpecs: React.FC<Props> = ({ techSpecs }) => {
 
       <div className={cn(styles.techSpecLine, 'line')} />
 
-      {techSpecs.map((specification) => (
+      {specs.map((specification) => (
         <div
           className={styles.specification}
           key={specification[0]}
