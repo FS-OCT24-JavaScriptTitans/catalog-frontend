@@ -6,6 +6,7 @@ import { Product } from '@/types/Product.type';
 import { shuffle } from '@/utils/shuffle';
 import ProductSlider from '@/components/ProductSlider/ProductSlider';
 import { LANGUAGE } from '@/constants/language';
+import AnimatedSection from '@/components/AnimatedSection/AnimatedSection';
 
 type Props = {
   language: LANGUAGE;
@@ -27,9 +28,11 @@ export const ProductRecommended: React.FC<Props> = ({ language }) => {
   }, [language]);
 
   return (
-    <ProductSlider
-      title={t('product.alsoLike')}
-      products={shuffle(products)}
-    />
+    <AnimatedSection animationType={'fade-up'}>
+      <ProductSlider
+        title={t('product.alsoLike')}
+        products={shuffle(products)}
+      />
+    </AnimatedSection>
   );
 };
