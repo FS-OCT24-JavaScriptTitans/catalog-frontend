@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
 
@@ -30,7 +30,6 @@ const ProductPage: React.FC = () => {
   const language = getLanguage() as LANGUAGE;
 
   const [isLoading, setLoading] = useState(true);
-  const navigate = useNavigate();
 
   const { t } = useTranslation();
 
@@ -42,7 +41,7 @@ const ProductPage: React.FC = () => {
         })
         .finally(() => setLoading(false));
     }
-  }, [productId, language, navigate]);
+  }, [productId, language]);
 
   const getView = () => {
     switch (true) {
