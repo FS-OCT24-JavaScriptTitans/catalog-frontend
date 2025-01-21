@@ -8,7 +8,7 @@ export const developers: Contact[] = [
     desc: "I'm a front-end developer specializing in building web applications with React and TypeScript. I focus on delivering high-quality user experiences and writing clean, maintainable code. My goal is to achieve efficiency and excellence in every project, creating modern and visually appealing web solutions",
   },
   {
-    name: 'Ivanyshyn Oleksii',
+    name: 'Oleksii Ivanyshyn',
     photo: '../../../public/img/developers/Ivanyshyn Oleksii.png',
     github: 'https://github.com/Eeoneishin',
     desc: '',
@@ -26,7 +26,7 @@ export const developers: Contact[] = [
     desc: '',
   },
   {
-    name: 'Morderer Illia',
+    name: 'Illia Morderer',
     photo: '../../../public/img/developers/Morderer Illia.png',
     github: 'https://github.com/IlMarauder',
     desc: '',
