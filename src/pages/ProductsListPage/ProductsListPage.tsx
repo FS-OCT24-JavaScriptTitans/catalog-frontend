@@ -77,7 +77,6 @@ const ProductsListPage: React.FC = () => {
   const { getLanguage } = useLanguage();
   const language = getLanguage() as LANGUAGE;
 
-
   const formatLocation = location.pathname.replace('/', '');
 
   useEffect(() => {
