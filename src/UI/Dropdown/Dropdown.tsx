@@ -14,7 +14,7 @@ interface Props<T> {
   hasBorder?: boolean;
   hasButtonBGC?: boolean;
   selectedOption?: Option<T>;
-  urlParam: string;
+  urlParam?: string;
 }
 
 export const Dropdown = <T,>({
@@ -32,7 +32,11 @@ export const Dropdown = <T,>({
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const urlValue = params.get(urlParam);
+    let urlValue: string | null = '';
+
+    if (urlParam) {
+      urlValue = params.get(urlParam);
+    }
 
     if (urlValue) {
       const matchingOption = options.find((opt) => opt.value === urlValue);

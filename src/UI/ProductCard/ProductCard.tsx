@@ -23,9 +23,18 @@ const ProductCardComponent: React.FC<Props> = ({ product }) => {
   const specs: Spec = { screen: product.screen, capacity: product.capacity, ram: product.ram };
   const { t } = useTranslation();
 
-  const { handleAddToCart, isFavorite, isProductInCart, hadleToogleFavorite } = useProductControl(product);
+  const { handleAddToCart, isFavorite, isProductInCart, hadleToogleFavorite, handleRemoveFromCart } =
+    useProductControl(product);
 
   const path = `/${getTranslatedCategory(product.category)}/${product.id}`;
+
+  const handleToogleToCart = () => {
+    if (isProductInCart) {
+      handleRemoveFromCart();
+    } else {
+      handleAddToCart();
+    }
+  };
 
   return (
     <article className={styles.card}>
@@ -56,9 +65,8 @@ const ProductCardComponent: React.FC<Props> = ({ product }) => {
             <Button
               label={t('product.addToCart')}
               secondaryLabel={t('product.addedToCart')}
-              onClick={handleAddToCart}
+              onClick={handleToogleToCart}
               isSelected={isProductInCart}
-              disabled={isProductInCart}
             />
             <span className={styles.button_favorite}>
               <IconButton
