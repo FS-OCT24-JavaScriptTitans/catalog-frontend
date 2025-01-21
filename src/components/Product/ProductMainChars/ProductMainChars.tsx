@@ -12,6 +12,7 @@ import { Button } from '@/UI/Button/Button';
 import { IconButton } from '@/UI/IconButton/IconButton';
 import { useProductControl } from '@/hooks/useProductControl';
 import { COLORS } from '@/constants/colors';
+import { getProductSpecs } from '@/utils/products/getProductSpecs';
 
 function changeIdPart(input: string, inputLabel: string, inputPart: string) {
   const previousIdPart = input.toLowerCase().split(' ').join('-');
@@ -28,10 +29,9 @@ function rightColors(currentColor: string, neededColor: { [key: string]: string 
 type Props = {
   product: Product;
   location: string;
-  techSpecs: [string, string | number | string[] | { title: string; text: string[] }[]][];
 };
 
-const ProductMainChars: React.FC<Props> = ({ product, location, techSpecs }) => {
+const ProductMainChars: React.FC<Props> = ({ product, location }) => {
   const [ID, setID] = useState(0);
   const { t } = useTranslation();
   const { handleAddToCart, handleRemoveFromCart, isFavorite, isProductInCart, hadleToogleFavorite } =
@@ -40,6 +40,12 @@ const ProductMainChars: React.FC<Props> = ({ product, location, techSpecs }) => 
   useEffect(() => {
     setID(Math.floor(Math.random() * 1000000));
   }, []);
+
+  let specs = Object.entries(getProductSpecs(product));
+
+  if (product.category === 'accessories') {
+    specs = specs.slice(4, 2);
+  }
 
   return (
     <article className={styles.mainChars}>
@@ -107,7 +113,7 @@ const ProductMainChars: React.FC<Props> = ({ product, location, techSpecs }) => 
         </IconButton>
       </div>
 
-      {techSpecs.map(
+      {specs.map(
         (specification, index) =>
           index < 4 && (
             <div
