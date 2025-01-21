@@ -54,11 +54,6 @@ const ProductPhotos: React.FC<Props> = ({ product }) => {
             </SwiperSlide>
           ))}
         </Swiper>
-        {/* <img
-          src={`/${selectedImage}`}
-          alt="product image"
-          className={styles.mainPhoto}
-        /> */}
       </div>
 
       <div className={styles.imagesContainer}>
