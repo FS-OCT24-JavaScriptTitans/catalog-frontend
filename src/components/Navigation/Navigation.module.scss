@@ -8,6 +8,9 @@ $top-height: 65.6px;
   background-color: var(--main-bg-color);
   margin-bottom: 24px;
   @include mixines.flex-container(center, space-between, row);
+  position: sticky;
+  top: 0;
+  z-index: 9;
 }
 
 .logo {

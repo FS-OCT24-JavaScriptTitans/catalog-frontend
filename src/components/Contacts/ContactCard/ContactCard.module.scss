@@ -1,23 +1,69 @@
+@use '../../../styles/abstract/mixines';
+@use '../../../styles/abstract/constants';
+
 .contact {
-  border: 1px solid var(--element-color);
   border-radius: 10px;
   padding: 24px;
-  max-width: 400px;
-  transition: all 0.3s;
+  max-width: 300px;
+  border: 1px solid var(--element-color);
+  width: 100%;
+  transition: max-height 1s;
+
+  @include mixines.desctop {
+    border: none;
+    max-height: 260px;
+    max-width: 200px;
+
+    &__desc {
+      opacity: 0;
+      transform: translateY(-100%);
+      max-width: 200px;
+      transition:
+        transform 1s,
+        opacity 1s;
+      position: absolute;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+
+      .contact__desc {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+        background-color: var(--main-bg-color);
+        border: 10px;
+      }
+    }
+  }
 
   &__img {
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 180px;
+    max-height: 180px;
     width: 100%;
     height: 100%;
     object-position: center;
     object-fit: cover;
-    padding-bottom: 10px;
-    margin: 0 auto;
+    margin: 0 auto 10px;
     border-radius: 10px;
+  }
+
+  p {
+    color: var(--text-color);
+    margin-bottom: 7px;
   }
 
   &:hover {
     transform: scale(1.05);
   }
+}
+
+.link {
+  color: var(--main-color);
+  font-weight: 800;
+}
+
+.text {
+  font-size: 11px;
+  line-height: 13px;
 }
