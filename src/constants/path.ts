@@ -13,4 +13,5 @@ export enum PATH {
   SEARCH__PRODUCT = '/search',
   RIGHTS = '/rights',
   CONTACTS = '/contacts',
+  GITHUB = 'https://github.com/FS-OCT24-JavaScriptTitans',
 }

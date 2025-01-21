@@ -74,6 +74,7 @@ const ProductsListPage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [pagesCount, setPagesCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
+  const [resetKey, setResetKey] = useState(0);
 
   const { getLanguage } = useLanguage();
   const language = getLanguage() as LANGUAGE;
@@ -139,12 +140,16 @@ const ProductsListPage: React.FC = () => {
     window.scrollTo(0, 0);
   };
 
+  useEffect(() => {
+    setResetKey((prevKey) => prevKey + 1);
+  }, [location.pathname]);
+
   return (
     <AnimatedSection animationType={'fade-right'}>
       <section className={s.container}>
         <div className={s.top_panel}>
           <div className={s.icons}>
-            <Link to="#">
+            <Link to="/home">
               <Home />
             </Link>
             <Arrow />
@@ -160,6 +165,7 @@ const ProductsListPage: React.FC = () => {
               <label className={s.mini_title}>{t('product.sortBy')}</label>
               <div className={s.dropdown}>
                 <Dropdown
+                  key={resetKey}
                   options={sortOptions}
                   hasBorder
                   onChange={(value) => handleSortChange(value as Sort)}
@@ -171,6 +177,7 @@ const ProductsListPage: React.FC = () => {
               <label className={s.mini_title}>{t('product.itemsOnPage')}</label>
               <div className={s.dropdown}>
                 <Dropdown
+                  key={resetKey}
                   options={perPageOptions}
                   hasBorder
                   onChange={(value) => handlePerChange(+value)}
