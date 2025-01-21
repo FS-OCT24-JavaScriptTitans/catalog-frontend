@@ -16,6 +16,10 @@
   @include mixines.desctop {
     grid-column: 3/12;
   }
+
+  &:active {
+    cursor: grabbing;
+  }
 }
 
 .imagesContainer {
