@@ -73,29 +73,29 @@ const ProductPage: React.FC = () => {
 
   return (
     product && (
-        <section className={cn(styles.productCard, 'section')}>
-          <div className={styles.breadCrumbs}>
-            <Breadcrumb />
+      <section className={cn(styles.productCard, 'section')}>
+        <div className={styles.breadCrumbs}>
+          <Breadcrumb />
+        </div>
+
+        <CustomLink path="..">
+          <div className={cn(styles.back, 'small-text')}>
+            <Arrow transform="rotate(180)" />
+            {t('back')}
           </div>
+        </CustomLink>
 
-          <CustomLink path="..">
-            <div className={cn(styles.back, 'small-text')}>
-              <Arrow transform="rotate(180)" />
-              {t('back')}
-            </div>
-          </CustomLink>
+        <h2 className={styles.mainTitle}>{product.name}</h2>
 
-          <h2 className={styles.mainTitle}>{product.name}</h2>
+        <ProductPhotos product={product} />
 
-          <ProductPhotos product={product} />
+        <ProductMainChars
+          product={product}
+          location={location.pathname}
+          techSpecs={techSpecs}
+        />
 
-          <ProductMainChars
-            product={product}
-            location={location.pathname}
-            techSpecs={techSpecs}
-          />
-
-          <ProductDescription product={product} />
+        <ProductDescription product={product} />
 
         <ProductTechSpecs techSpecs={techSpecs} />
 

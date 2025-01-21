@@ -1,11 +1,9 @@
-.container {
-  padding: 20px;
-  background-color: var(--main-colors);
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
+@use '../../styles/abstract/mixines';
 
 .wrapper {
-  display: flex;
+  @include mixines.flex-container(center, start, column);
+
+  @include mixines.tablet-xl {
+    flex-direction: row;
+  }
 }

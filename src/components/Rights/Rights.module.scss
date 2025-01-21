@@ -1,0 +1,42 @@
+@use '@/styles/abstract/mixines';
+
+.container {
+  padding: 20px;
+  background-color: var(--main-colors);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 100%;
+
+  @include mixines.tablet-xl {
+    max-width: 50%;
+  }
+}
+
+.highlight {
+  color: var(--purple-color);
+  font-weight: bold;
+}
+
+.title {
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--purple-color), var(--light-text-color));
+}
+
+.description {
+  line-height: 1.6;
+
+  &::first-letter {
+    padding-inline-start: 20px;
+  }
+}

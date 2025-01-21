@@ -1,0 +1,16 @@
+@use '../../styles/abstract/mixines';
+
+.container {
+  width: 100%;
+  height: 50vh;
+  background-color: transparent;
+  overflow: hidden;
+
+  @include mixines.mobile-s {
+    height: 55vh;
+  }
+
+  @include mixines.tablet-xl {
+    max-width: 50%;
+  }
+}

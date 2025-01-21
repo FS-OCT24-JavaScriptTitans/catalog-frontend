@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
             className={s.link}
           />
           <NavigationLink
-            to={PATH.HOME}
+            to={PATH.RIGHTS}
             label={t('footer.rights')}
             className={s.link}
           />
