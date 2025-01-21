@@ -9,20 +9,25 @@ import ProductSlider from '@/components/ProductSlider/ProductSlider';
 import { Loader } from '@/components/Loader/Loader';
 import { sortNewModal, sortByHotPrice } from '@/utils/products/sortProducts';
 import CategorySection from '@/components/CategorySection/CategorySection';
+import { useLanguage } from '@/hooks/useLanguage';
+import { LANGUAGE } from '@/constants/language';
+import AnimatedSection from '@/components/AnimatedSection/AnimatedSection';
 
 const HomePage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const { t } = useTranslation();
+  const { getLanguage } = useLanguage();
+  const language = getLanguage() as LANGUAGE;
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const allProducts = await getAllProducts();
+      const allProducts = await getAllProducts(language);
 
       setProducts(allProducts || []);
     };
 
     fetchProducts();
-  }, []);
+  }, [language]);
 
   const newModelProducts = sortNewModal(products);
   const hotPriceProducts = sortByHotPrice(products);
@@ -33,21 +38,42 @@ const HomePage: React.FC = () => {
 
   return (
     <>
-      <Container>
-        <PromoSlider />
-      </Container>
+      <AnimatedSection
+        animationType="zoom-in"
+        animationDelay="0"
+        animationDuration="1000"
+      >
+        <Container>
+          <PromoSlider />
+        </Container>
+      </AnimatedSection>
 
-      <ProductSlider
-        title={t('home.brand')}
-        products={newModelProducts}
-      />
+      <AnimatedSection
+        animationType="fade-down"
+        animationOffset="380"
+      >
+        <ProductSlider
+          title={t('home.brand')}
+          products={newModelProducts}
+        />
+      </AnimatedSection>
 
-      <CategorySection />
+      <AnimatedSection
+        animationType="fade-right"
+        animationOffset="250"
+      >
+        <CategorySection />
+      </AnimatedSection>
 
-      <ProductSlider
-        title={t('home.prices')}
-        products={hotPriceProducts}
-      />
+      <AnimatedSection
+        animationType="fade-up"
+        animationOffset="475"
+      >
+        <ProductSlider
+          title={t('home.prices')}
+          products={hotPriceProducts}
+        />
+      </AnimatedSection>
     </>
   );
 };

@@ -42,7 +42,11 @@ export const Summary: FC<Props> = ({ cart }) => {
 
   return (
     <>
-      <article className={s.container}>
+      <article
+        className={s.container}
+        data-aos="fade-left"
+        data-aos-duration="1500"
+      >
         <div>
           {priceDiff ?
             <ProductPrices prices={{ priceDiscount: totalDiscountPrice, priceRegular: totalPrice }} />

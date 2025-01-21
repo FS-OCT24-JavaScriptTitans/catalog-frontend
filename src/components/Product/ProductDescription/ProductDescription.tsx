@@ -14,7 +14,13 @@ const ProductDescription: React.FC<Props> = ({ product }) => {
   const { t } = useTranslation();
 
   return (
-    <article className={styles.description}>
+    <article
+      className={styles.description}
+      data-aos="fade-right"
+      data-aos-anchor-placement="top-center"
+      data-aos-duration="1000"
+      data-aos-once="false"
+    >
       <h3>{t('product.about')}</h3>
 
       <div className={cn(styles.description__line, 'line')} />
