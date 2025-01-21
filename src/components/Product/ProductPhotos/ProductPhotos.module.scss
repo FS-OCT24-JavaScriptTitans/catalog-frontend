@@ -5,12 +5,12 @@
   display: flex;
   aspect-ratio: 1;
   margin-bottom: 16px;
+  cursor: grab;
 
   @include mixines.tablet {
     grid-column: 2/8;
     grid-row: 4;
     max-height: 440px;
-    margin-inline: 0;
   }
 
   @include mixines.desctop {
@@ -41,6 +41,7 @@
   aspect-ratio: 1;
   margin-bottom: 8px;
   max-width: 80px;
+  cursor: pointer;
 }
 
 .mainPhoto {
