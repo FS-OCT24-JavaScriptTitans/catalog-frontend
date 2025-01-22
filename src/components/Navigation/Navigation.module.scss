@@ -4,13 +4,13 @@
 $top-height: 65.6px;
 
 .container {
-  border-bottom: 1px solid var(--element-color);
+  width: 100vw;
   background-color: var(--main-bg-color);
+  border-bottom: 1px solid var(--element-color);
   margin-bottom: 24px;
-  @include mixines.flex-container(center, space-between, row);
-  position: sticky;
   top: 0;
-  z-index: 9;
+  z-index: 999;
+  @include mixines.flex-container(center, space-between, row);
 }
 
 .logo {
@@ -70,7 +70,7 @@ $top-height: 65.6px;
   background-color: var(--main-bg-color);
   height: calc(100vh - $top-height - 2px);
   position: absolute;
-  top: $top-height + 2px;
+  top: $top-height + 1px;
   text-transform: uppercase;
   @include mixines.flex-container(stretch, space-between, column);
 
