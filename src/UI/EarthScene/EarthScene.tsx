@@ -32,8 +32,8 @@ const EarthScene: React.FC = () => {
     window.addEventListener('resize', onResize);
 
     const animate = () => {
-      globe.rotation.y += 0.001;
-      clouds.rotation.y += 0.0005;
+      globe.rotation.y += 0.005;
+      clouds.rotation.y += 0.005;
       controls.update();
       renderer.render(scene, camera);
       requestAnimationFrame(animate);

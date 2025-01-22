@@ -5,6 +5,7 @@
   height: 50vh;
   background-color: transparent;
   overflow: hidden;
+  cursor: pointer;
 
   @include mixines.mobile-s {
     height: 55vh;

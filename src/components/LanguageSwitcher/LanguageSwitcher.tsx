@@ -4,8 +4,8 @@ import { Option } from '@/types/Options.type';
 import { Dropdown } from '@/UI/Dropdown/Dropdown';
 
 const languageOpt: Option<LANGUAGE>[] = [
-  { id: 1, value: LANGUAGE.EN, label: 'EN' },
-  { id: 2, value: LANGUAGE.UA, label: 'UA' },
+  { id: 1, value: LANGUAGE.EN, label: 'lang.en' },
+  { id: 2, value: LANGUAGE.UA, label: 'lang.ua' },
 ];
 
 export const LanguageSwitcher = () => {

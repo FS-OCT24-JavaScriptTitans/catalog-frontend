@@ -7,7 +7,8 @@
   max-width: 300px;
   border: 1px solid var(--element-color);
   width: 100%;
-  transition: max-height 1s;
+  transition: all 1s;
+  cursor: pointer;
 
   @include mixines.desctop {
     border: none;

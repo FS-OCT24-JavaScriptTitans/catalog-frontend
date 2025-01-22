@@ -24,6 +24,7 @@
 }
 
 #root {
+  --shadow-card-color: var(--dark-back-drop-color);
   --modal-backdrop-color: var(--modal-back-drop-color);
   --modal-border-color: var(--dark-back-drop-color);
   --table-shadow-color: var(--dark-back-drop-color);
@@ -50,6 +51,7 @@
 }
 
 #root.dark {
+  --shadow-card-color: var(--hover-purple-color);
   --modal-border-color: var(--light-table-shadow-color);
   --table-shadow-color: var(--light-table-shadow-color);
   --table-border-color: var(--purple-color);

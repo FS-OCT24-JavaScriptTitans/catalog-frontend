@@ -68,12 +68,12 @@
       "address": "Address",
       "orderTotal": "Order total",
       "photo": "Photo",
-      "product": "Product",
+      "product": "Gadget",
       "quantity": "Quantity",
       "price": "Price",
       "total": "Total"
     },
-    "search": "Search for a product",
+    "search": "Search for a gadget",
     "favorites": "Favorites",
     "back": "Back",
     "rights": {
@@ -117,6 +117,10 @@
         "part5": " is important to us."
       }
     },
-    "searchTitle": "Found products"
+    "searchTitle": "Found gadgets",
+    "lang": {
+      "en": "EN",
+      "ua": "UA"
+    }
   }
 }
