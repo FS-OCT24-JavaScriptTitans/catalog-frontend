@@ -9,7 +9,6 @@ import { getProducts } from '@/api/products/products.api';
 import Home from '@/assets/Home.svg?react';
 import Arrow from '@/assets/Arrow.svg?react';
 import { Dropdown } from '@/UI/Dropdown/Dropdown';
-import { Option } from '@/types/Options.type';
 import { ProductEndPoints } from '@/constants/endPoints';
 import { ProductList } from '@/components/ProductList/ProductList';
 import Pagination from '@/components/Pagination/Pagination';
@@ -17,48 +16,9 @@ import { useLanguage } from '@/hooks/useLanguage';
 import { LANGUAGE } from '@/constants/language';
 import { ProductListSceleton } from '@/UI/Sceletones/ProductListSceleton/ProductListSceleton';
 import AnimatedSection from '@/components/AnimatedSection/AnimatedSection';
-
-const sortOptions: Option<string>[] = [
-  {
-    id: 1,
-    value: 'low-to-high',
-    label: 'product.sort.priceHigh',
-  },
-
-  {
-    id: 2,
-    value: 'high-to-low',
-    label: 'product.sort.priceLow',
-  },
-  {
-    id: 3,
-    value: 'popularity',
-    label: 'product.sort.popularity',
-  },
-];
-const perPageOptions: Option<string>[] = [
-  {
-    id: 1,
-    value: '16',
-    label: '16',
-  },
-  {
-    id: 2,
-    value: '24',
-    label: '24',
-  },
-  {
-    id: 3,
-    value: '32',
-    label: '32',
-  },
-];
-
-enum Sort {
-  Popularity = 'popularity',
-  HighToLow = 'high-to-low',
-  LowToHigh = 'low-to-high',
-}
+import { Sort } from '@/constants/sort';
+import { perPageOptions, sortOptions } from '@/constants/options';
+import { sortProducts } from '@/utils/products/sortProducts';
 
 const ProductsListPage: React.FC = () => {
   const location = useLocation();
@@ -103,18 +63,6 @@ const ProductsListPage: React.FC = () => {
 
     fetchProducts();
   }, [formatLocation, language, perProductSParam]);
-
-  const sortProducts = (productsData: Product[], sortValue: Sort) => {
-    if (sortValue === Sort.Popularity) {
-      return [...productsData].sort(() => Math.random() - 0.5);
-    }
-
-    return [...productsData].sort((a, b) =>
-      sortValue === Sort.HighToLow ? b.priceRegular - a.priceRegular
-      : sortValue === Sort.LowToHigh ? a.priceRegular - b.priceRegular
-      : 0,
-    );
-  };
 
   useEffect(() => {
     const sortedProducts = sortProducts(allProducts, sortParam as Sort);

@@ -7,11 +7,12 @@ import { Product } from '@/types/Product.type';
 import { getAllProducts } from '@/api/products/products.api';
 import ProductSlider from '@/components/ProductSlider/ProductSlider';
 import { Loader } from '@/components/Loader/Loader';
-import { sortNewModal, sortByHotPrice } from '@/utils/products/sortProducts';
+import { sortByHotPrice } from '@/utils/products/sortProducts';
 import CategorySection from '@/components/CategorySection/CategorySection';
 import { useLanguage } from '@/hooks/useLanguage';
 import { LANGUAGE } from '@/constants/language';
 import AnimatedSection from '@/components/AnimatedSection/AnimatedSection';
+import { shuffle } from '@/utils/shuffle';
 
 const HomePage: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -29,7 +30,7 @@ const HomePage: React.FC = () => {
     fetchProducts();
   }, [language]);
 
-  const newModelProducts = sortNewModal(products);
+  const newModelProducts = shuffle(products);
   const hotPriceProducts = sortByHotPrice(products);
 
   if (products.length === 0) {
