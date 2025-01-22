@@ -68,10 +68,9 @@ export const Search: FC<Props> = ({ isOpen = false, onClickSearch }) => {
                 className={cn('primary-text', s.item)}
                 onClick={() => setListOpen(false)}
               >
-                <CustomLink
-                  label={name}
-                  path={`${category}/${id}`}
-                />
+                <CustomLink path={`${category}/${id}`}>
+                  <p style={{ paddingLeft: '10px' }}>{name}</p>
+                </CustomLink>
               </li>
             ))}
           </ul>
