@@ -67,7 +67,6 @@ const SearchProductPage = () => {
               pageRangeDisplayed={1}
               marginPagesDisplayed={1}
             />
-            ;
           </>
         );
     }
